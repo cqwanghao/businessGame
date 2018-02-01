@@ -1,2 +1,5 @@
 # businessGame
-activity
+## activity
+## cnpm install
+## npm run watch
+
