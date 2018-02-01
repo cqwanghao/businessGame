@@ -1,0 +1,377 @@
+@import '../../base/index.scss';
+html {
+  background: #eeeeee;
+}
+// 首页
+.containerHome{
+	.bannerBox{
+		width: 100%;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+	.carChoice{
+		padding-left: 0.48rem;
+		padding-right: 0.48rem;
+		padding-top: 0.32rem;
+		padding-bottom: 0.32rem;
+		margin-top: 0.56rem;
+		margin-bottom: 0.56rem;
+		font-size: 0.64rem;
+		font-family: "Microsoft YaHei";
+		color: #333333;
+		background-color: #ffffff;
+		.type{
+			border-left: 2px solid #21b5f0;
+			padding-left: 0.16rem;
+		}
+	}
+	.carList{
+		li{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0.24rem;
+			padding-left: 0.48rem;
+			padding-right: 0.48rem;
+			padding-top: 0.52rem;
+			padding-bottom: 0.52rem;
+			background-color: #ffffff;
+			img{
+				width: 2.2rem;
+				height: 2.2rem;
+			}
+			.describe{
+				flex: 1;
+				display: flex;
+				flex-direction:column;
+				justify-content: space-between;
+				margin-left: 0.48rem;
+				.word1{
+					font-size: 0.56rem;
+					color: #1a1a1a;
+				}
+				.word2{
+					font-size: 0.56rem;
+					color: #626161;
+				}
+				.word3{
+					font-size: 0.48rem;
+					color: #404040;
+				}
+			}
+			.detail{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 3.6rem;
+				.btn{
+					width: 1.72rem;
+					height: 0.8rem;
+					line-height: 0.8rem;
+					text-align: center;
+					border: 1px solid #319fff;
+					border-radius: 5px;
+					font-size: 0.44rem;
+					color: #319fff;
+				}
+			}
+		}
+	}
+}
+// 下单
+.containerOrder{
+	.bannerBox{
+		position: relative;
+		width: 100%;
+		margin-bottom: 0.48rem;
+		img{
+			display: block;
+			width: 100%;
+		}
+		p{	
+			position: absolute;
+			bottom: 1.12rem;
+			left: 0;
+			width: 100%;
+			font-size: 0.56rem;
+			text-align: center;
+			color: #ffffff;
+		}
+	}
+	.list{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 2.4rem;
+		margin-bottom: 0.24rem;
+		padding-left: 0.4rem;
+		padding-right: 0.4rem;
+		background-color: #ffffff;
+		.list-left{
+			font-size: 0.56rem;
+			color: #1a1a1a;
+			img{
+				width: 0.8rem;
+				margin-right: 0.24rem;
+			}
+		}
+		.list-right{
+			font-size: 0.56rem;
+			color: #626161;
+			span{
+				margin-left: 0.24rem;
+			}
+			.time{
+				padding: 0.4rem;
+				text-align: right;
+				border: none;
+			}
+			.contact{
+				padding: 0.4rem;
+				border: none;
+			}
+		}
+	}
+	.footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		height: 1.96rem;
+		font-size: 0.64rem;
+		color: #333333;
+		background-color: #ffffff;
+		span{
+			color: #f10b0b;
+		}
+		button{
+			height: 1.96rem;
+			padding: 0 0.4rem;
+			margin-left: 0.4rem;
+			font-size: 0.72rem;
+			background: none;
+			border: none;
+			background-color: #319fff;
+			color: #ffffff;
+		}
+	}
+}
+// 支付
+.containerPay{
+	.message{
+		margin-bottom: 0.24rem;
+		.option{
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 1.6rem;
+			padding-left: 1.4rem;
+			padding-right: 1.4rem;
+			border-bottom: 1px solid #eeeeee;
+			background-color: #ffffff;
+			span{
+				width: 3.2rem;
+				font-size: 0.56rem;
+				color: #1a1a1a;
+			}
+			input{
+				flex:1;
+				padding: 0.4rem;
+				border: none;
+				font-size: 0.56rem;
+				color: #1a1a1a;
+			}
+			.detail{
+				flex:1;
+				padding: 0.4rem;
+				font-size: 0.56rem;
+				color: #626161;
+				&.price{
+					color: #f10b0b;
+				}
+			}
+		}
+	}
+	.payType{
+		padding: 0.32rem 0.48rem;
+		background-color: #ffffff;
+		.title{
+			margin-bottom: 0.28rem;
+			font-size: 0.64rem;
+			color: #333333;
+		}
+		.weixin{
+			display: flex;
+			justify-content: space-between;
+			align-item: center;
+			.weixinBox{
+				font-size: 0.48rem;
+				color: #333333;
+				img{
+					width: 0.68rem;
+					height: 0.56rem;
+					margin-right: 0.32rem;
+				}
+			}
+			.circle{
+				width: 0.4rem;
+				height: 0.4rem;
+			}
+		}
+	}
+	.footer{
+		position: fixed;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    height: 1.96rem;
+	    padding: 0 0.48rem;
+	    font-size: 0.6rem;
+	    color: #333333;
+	    background-color: #ffffff;
+	    .total{
+		    span{
+		    	font-size: 0.56rem;
+		    	color: #f10b0b;
+		    }
+	    }
+	    button{
+	    	width: 3.52rem;
+	    	height: 1.04rem;
+	    	border-radius: 5px;
+		    font-size: 0.56rem;
+		    background: none;
+		    border: none;
+		    background-color: #e60012;
+		    color: #ffffff;
+	    }
+	}
+}
+// 评论
+.containerComment{
+	.comment{
+		li{
+			margin-bottom: 0.28rem;
+			padding: 0.24rem 0.48rem;
+			background-color: #ffffff;
+			.message{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.person{
+					font-size: 0.48rem;
+					color: #1a1a1a;
+					img{
+						width: 1.28rem;
+						height: 1.28rem;
+						margin-right: 0.24rem;
+						border-radius: 50%;
+					}
+				}
+				.date{
+					font-size: 0.4rem;
+					color: #7a7878;
+				}
+			}
+			.score{
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				margin: 0.28rem 0;
+				.starGroup{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img{
+						width: 0.36rem;
+						margin-right: 0.12rem;
+					}
+				}
+				span{
+					margin-left: 0.32rem;
+					font-size: 0.44rem;
+					color: #ffae00;
+				}
+			}
+			.word{
+				font-size: 0.56rem;
+				color: #333333;
+			}
+		}
+	}
+}
+// 发表评论
+.containerPublish{
+	.publishBox{
+		padding: 0.24rem 0.48rem;
+		background-color: #ffffff;
+		.title{
+			display: flex;
+			justify-content: flex-start;
+  			align-items: center;
+  			img{
+  				width: 1.6rem;
+  				height: 1.6rem;
+  			}
+  			span{
+  				margin-left: 0.24rem;
+  				font-size: 0.48rem;
+  				color: #1a1a1a;
+  			}
+		}
+		.score{
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			margin: 0.28rem 0;
+			.starGroup{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				img{
+					width: 0.84rem;
+					margin-right: 0.12rem;
+				}
+			}
+			span{
+				margin-left: 0.32rem;
+				font-size: 0.56rem;
+				color: #ffae00;
+			}
+		}
+		textarea{
+			width: 100%;
+			height: 7.0rem;
+			padding: 0.2rem;
+			font-size: 0.56rem;
+			border: none;
+			resize: none;
+		}
+		.footer{
+			position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 1.6rem;
+		    display: flex;
+		    justify-content: center;
+  			align-items: center;
+		    button{
+		    	width: 100%;
+		    	height: 100%;
+		    	font-size: 0.6rem;
+		    	border: none;
+		    	background: none;
+		    	background-color: #319fff;
+		    	color: #ffffff;
+		    }
+		}
+	}
+}

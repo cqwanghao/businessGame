@@ -1,0 +1,20 @@
+//  实现上下1像素边框
+@mixin brdCom($pst, $bdrColor, $leftDis: 0) {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  left: $leftDis;
+  #{$pst}: 0;
+  border-top: 1px solid $bdrColor;
+  color: $bdrColor;
+  transform: scaleY(.5);
+}
+
+// flex正方形上下剧中
+@mixin flexSq($size) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>下单</title>
+  <link rel="stylesheet" href="./css/DateTimePicker.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function () {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+  <div class="containerOrder">
+    <div class="bannerBox">
+      <img src="./images/banner2.jpg">
+      <p>某教练 本田雅阁 自动挡</p>
+    </div>
+    <div class="list">
+      <div class="list-left">
+        <img src="./images/calendar.png">预约时间</div>
+      <div class="list-right">
+        <input type="date" id="date1" readonly="" placeholder="选择日期" class="time" />
+        <span>></span>
+      </div>
+    </div>
+    <div class="list">
+      <div class="list-left">
+        <img src="./images/start.png">开始时间</div>
+      <div class="list-right">
+        <input type="time" id="date2" readonly="" placeholder="选择开始时间" class="time" />
+        <span>></span>
+      </div>
+    </div>
+    <div class="list">
+      <div class="list-left"><img src="./images/end.png">结束时间</div>
+      <div class="list-right"><input type="time" id="date3" readonly="" placeholder="选择截止时间" class="time" /><span>></span></div>
+    </div>
+    <div class="list">
+      <div class="list-left">
+        <img src="./images/contact.png">联系方式</div>
+      <div class="list-right">
+        <input type="text" placeholder="请填写联系人及联系方式" class="contact" />
+      </div>
+    </div>
+    <div class="footer">
+      <a href="javascript:;">
+        合计：
+        <span>￥120</span>
+        <button>我要预约</button>
+      </a>
+    </div>
+    <div id="dtBox"></div>
+  </div>
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="./js/DateTimePicker.js"></script>
+  <!-- <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+    <script type="text/javascript" src="./js/datePicker.js"></script> -->
+  <script type="text/javascript">
+    $(function () {
+      $("#dtBox").DateTimePicker({
+        dateFormat: "yyyy-MM-dd",
+        shortDayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+        shortMonthNames: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+        fullMonthNames: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+      });
+    });
+  </script>
+</body>
+
+</html>

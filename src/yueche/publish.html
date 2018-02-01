@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>发表评论</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      }; 
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="containerPublish">
+      <div class="publishBox">
+        <div class="title">
+          <img src="./images/title.png">
+          <span>描述相符</span>
+        </div>
+        <div class="score">
+          <div class="starGroup">
+            <img src="./images/starBig.png">
+            <img src="./images/starBig.png">
+            <img src="./images/starBig.png">
+            <img src="./images/starBig.png">
+            <img src="./images/starBig.png">
+          </div>
+          <span>5分</span>
+        </div>
+        <textarea placeholder="说点你对本次服务的感受吧。。。"></textarea>
+        <div class="footer">
+          <button>发布</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

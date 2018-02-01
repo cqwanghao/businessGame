@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>支付</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      }; 
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="containerPay">
+      <div class="message">
+        <div class="option">
+          <span>联系人：</span><div class="detail">谈美人</div>
+        </div>
+        <div class="option">
+          <span>预约时间：</span><div class="detail">2018年1月20日下午</div>
+        </div>
+        <div class="option">
+          <span>锻炼时长：</span><div class="detail">2小时</div>
+        </div>
+        <div class="option">
+          <span>实付金额：</span><div class="detail price">￥280</div>
+        </div>
+      </div>
+      <div class="payType">
+        <div class="title">支付方式：</div>
+        <div class="weixin">
+          <div class="weixinBox"><img src="./images/weixin.png">支付方式：</div>
+          <img src="./images/circle.png" class="circle">
+        </div>
+      </div>
+      <div class="footer">
+        <div class="total">
+          总计：<span>￥280</span>
+        </div>
+        <button>去支付</button>
+      </div>
+    </div>
+  </body>
+</html>

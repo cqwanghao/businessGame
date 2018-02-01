@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>评论</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      }; 
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="containerComment">
+      <ul class="comment">
+        <li>
+          <div class="message">
+            <div class="person">
+              <img src="./images/avatar.png">大**h
+            </div>
+            <div class="date">2018-01-01</div>
+          </div>
+          <div class="score">
+            <div class="starGroup">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+            </div>
+            <span>5分</span>
+          </div>
+          <p class="word">服务态度很好，价格合理</p>
+        </li>
+        <li>
+          <div class="message">
+            <div class="person">
+              <img src="./images/avatar.png">大**h
+            </div>
+            <div class="date">2018-01-01</div>
+          </div>
+          <div class="score">
+            <div class="starGroup">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+              <img src="./images/star.png">
+            </div>
+            <span>5分</span>
+          </div>
+          <p class="word">服务态度很好，价格合理</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
