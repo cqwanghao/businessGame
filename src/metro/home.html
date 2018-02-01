@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>麦德龙</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      }; 
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="container">
+      <!-- 云 -->
+      <div class="lamp">
+        <img src="./images/lamp.png" />
+      </div>
+      <!-- 烟花 -->
+      <div class="fireworks">
+        <img src="./images/fireworks.png" />
+      </div>
+      <!-- 新年字 -->
+      <div class="newyear">
+        <img src="./images/newyear.png" />
+      </div>
+      <!-- 云1 -->
+      <div class="cloud1">
+        <img src="./images/cloud1.png" />
+      </div>
+      <!-- 云2 -->
+      <div class="cloud2">
+        <img src="./images/cloud2.png" />
+      </div>
+      <!-- 雪花 -->
+      <div class="snowflake">
+        <img src="./images/snowflake.png" />
+      </div>
+      <!-- 雪 -->
+      <div class="snow">
+        <img src="./images/snow.png" />
+      </div>
+      <!-- 鞭炮1 -->
+      <div class="firecrackers1">
+        <img src="./images/firecrackers1.png" />
+      </div>
+      <!-- 鞭炮2 -->
+      <div class="firecrackers2">
+        <img src="./images/firecrackers2.png" />
+      </div>
+      <!-- 红包 -->
+      <div class="redbag">
+        <img src="./images/redbag.png" />
+      </div>
+      <!-- 狗1 -->
+      <div class="dog1">
+        <img src="./images/dog1.png" />
+      </div>
+      <!-- 抽签 -->
+      <div class="draw">
+        <img src="./images/draw1.png" class="draw1" />
+        <img src="./images/projection.png" class="projection" />
+      </div>
+      <!-- 狗2 -->
+      <div class="dog2">
+        <img src="./images/dog2.png" />
+        <img src="./images/acer.png" class="acer" />
+      </div>
+      <!-- 雪人 -->
+      <div class="snowman">
+        <img src="./images/snowman.png" />
+      </div>
+      <!-- 摇一摇 -->
+      <div class="shake">
+        <img src="./images/shake.png" class="shakeHand" />
+      </div>
+    </div>
+  </body>
+</html>

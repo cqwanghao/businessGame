@@ -1,5 +1,13 @@
 # businessGame
-## activity
-## cnpm install
-## npm run watch
+
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload
+npm run watch
+```
 

@@ -1,0 +1,152 @@
+@import '../../base/index.scss';
+html {
+  background: #ba131a;
+}
+body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.container{
+	position: relative;
+	height: 100%;
+	img{
+		display: block;
+		width: 100%;
+	}
+	// 灯
+	.lamp{
+		position: absolute;
+		top: -10.6%;
+		left: 0;
+		width: 7.84rem;
+	}
+	// 烟花
+	.fireworks{
+		position: absolute;
+		top: -7.7%;
+		right: 0;
+		width: 10.08rem;
+	}
+	// 新年字
+	.newyear{
+		position: absolute;
+		top: 12.6%;
+		width: 100%;
+		img{
+			width: 8.44rem;
+			margin: 0 auto;
+		}
+	}
+	// 云1
+	.cloud1{
+		position: absolute;
+		top: 33.6%;
+		left: .4rem;
+		width: 2.96rem;
+	}
+	// 云2
+	.cloud2{
+		position: absolute;
+		top: 29.4%;
+		right: -.4rem;
+		width: 4rem;
+	}
+	// 雪花
+	.snowflake{
+		position: absolute;
+		top: 39.8%;
+		left: .4rem;
+		width: 14.56rem;
+	}
+	// 雪
+	.snow{
+		position: absolute;
+		bottom: -.12rem;
+		left: -.4rem;
+		width: 18.4rem;
+	}
+	// 鞭炮1
+	.firecrackers1{
+		position: absolute;
+		top: 43.8%;
+		left: -.4rem;
+		width: 3.36rem;
+	}
+	// 鞭炮2
+	.firecrackers2{
+		position: absolute;
+		bottom: 2%;
+		left: .32rem;
+		width: 5.36rem;
+	}
+	// 红包
+	.redbag{
+		position: absolute;
+		bottom: 3.6%;
+		right: .36rem;
+		width: 5.04rem;
+	}
+	// 狗1
+	.dog1{
+		position: absolute;
+		bottom: 11.9%;
+		left: .45rem;
+		width: 5.04rem;
+		z-index: 2;
+	}
+	// 抽签
+	.draw{
+		position: absolute;
+		bottom: 14%;
+		left: 5.2rem;
+		width: 5.12rem;
+		z-index: 3;
+		.projection{
+			width: 100%;
+		}
+		.draw1{
+			position: absolute;
+			bottom: .32rem;
+			left: -.24rem;
+			width: 6rem;
+		}
+	}
+	// 狗2
+	.dog2{
+		position: absolute;
+		bottom: 12.6%;
+		left: 9.56rem;
+		width: 3.52rem;
+		z-index: 4;
+		.acer{
+			position: absolute;
+			top: -1.65rem;
+			left: 0;
+			width: 2.68rem;
+			z-index: -1;
+		}
+	}
+	// 雪人
+	.snowman{
+		position: absolute;
+		bottom: 16.8%;
+		left: 12.72rem;
+		width: 2.84rem;
+		z-index: 1;
+	}
+	// 摇一摇
+	.shake{
+		position: absolute;
+		bottom: .12rem;
+		left: 0;
+		width: 100%;
+		.shakeHand{
+			width: 2.76rem;
+			margin: 0 auto;
+		}
+	}
+}
