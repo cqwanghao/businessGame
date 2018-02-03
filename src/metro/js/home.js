@@ -1,0 +1,119 @@
+(function(){
+    $(function(){
+        // 摇一摇事件
+        var time = true;//记录摇晃的次数
+        var state = true;//记录是否上滑
+    
+        if (window.DeviceMotionEvent && time) {
+          var speed = 25; 
+          var last_update = 0;
+          var x = y = z = lastX = lastY = lastZ = 0;
+          
+          // 监听设备运动
+          window.addEventListener('devicemotion', function () {
+    
+            var acceleration = event.accelerationIncludingGravity; 
+            x = acceleration.x;  
+            y = acceleration.y;
+            var curTime = new Date().getTime();
+            
+            if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+    
+              if(state && curTime-last_update > 20){
+    
+                  var diffTime = curTime -last_update;
+                  last_update = curTime;
+                //   $(".pot>div:eq(0)").addClass("wave");
+                //   $(".pop:eq("+Math.round(Math.random() * 8) % 4+")").show();
+                //   $(".share").click(function(){
+                //     $(".links").show();
+                //     $(".links").click(function (){
+                //       $(".links").hide();
+                //     })
+                //   })
+                alert(11);
+                  state = false;
+                  time = false;          
+              }             
+            }
+            lastX = x;
+            lastY = y;
+          }, false);
+        }
+
+        // 图片加载
+        var progress = 0;
+        var queue = new createjs.LoadQueue(true);
+        var imagesArr = [
+            'images/acer.png',
+            'images/btn1.png',
+            'images/btn2.png',
+            'images/cloud1.png',
+            'images/cloud2.png',
+            'images/confetti1.png',
+            'images/confetti2.png',
+            'images/dog1.png',
+            'images/dog2.png',
+            'images/draw1.png',
+            'images/draw2.png',
+            'images/draw3.png',
+            'images/firecrackers1.png',
+            'images/firecrackers2.png',
+            'images/firelantern.png',
+            'images/fireworks.png',
+            'images/keyword1.png',
+            'images/lamp.png',
+            'images/loadingBg.png',
+            'images/newyear.png',
+            'images/play.png',
+            'images/progressbar.png',
+            'images/projection.png',
+            'images/qrcode.png',
+            'images/redbag.png',
+            'images/shake.png',
+            'images/signBg.png',
+            'images/signTitle.png',
+            'images/snow.png',
+            'images/snowflake.png',
+            'images/snowman.png',
+            'images/snowmanDog.png',
+            'images/television.png',
+            'images/tip.png',
+            'images/word1.png',
+            'images/word2.png',
+            'video/video.mp4',
+        ];
+        var imgLength = imagesArr.length;
+        queue.loadManifest(imagesArr);
+        queue.on("fileload", function (e) {
+            progress++;
+            // 进度条变化
+            $("#progressbar").css("left","-" + parseInt(100-progress/imgLength*100) + "%");
+            $("#progressValue").html(parseInt(progress/imgLength*100) + "%");
+        }, this);
+        queue.on("complete", function (e) {
+            // 显示播放按钮
+            $("#play").show();
+        }, this);
+
+        // 点击播放视频
+        $("#play").click(function(){
+            $(".loading").hide();
+            $(".media").show();
+            document.getElementById('video').play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    document.getElementById('video').play();
+                });
+            }, false);
+            // 播放结束之后
+            document.getElementById("video").addEventListener("ended",function(){
+                // 关闭视频页，显示抽签页
+                $(".media").hide();
+                $(".page1").show();
+            });
+        });
+
+    });
+
+})();
