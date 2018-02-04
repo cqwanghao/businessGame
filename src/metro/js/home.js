@@ -31,9 +31,20 @@
                 //       $(".links").hide();
                 //     })
                 //   })
-                alert(11);
-                  state = false;
-                  time = false;          
+                $(".page1 .shake").addClass("animated swing");
+                var animatedTimer = setTimeout(function(){
+                    $(".page1 .shake").removeClass("animated swing");
+                    clearTimeout(animatedTimer);
+                },1000);
+                // 播放摇一摇声音
+                document.getElementById('shakingAudio').play(); 
+                //处理iphone不能自动播放
+                document.addEventListener('WeixinJSBridgeReady',function(){  
+                    document.getElementById('shakingAudio').play();
+                },false);
+
+                //   state = false;
+                //   time = false;          
               }             
             }
             lastX = x;
@@ -68,7 +79,6 @@
             'images/play.png',
             'images/progressbar.png',
             'images/projection.png',
-            'images/qrcode.png',
             'images/redbag.png',
             'images/shake.png',
             'images/signBg.png',
@@ -81,7 +91,9 @@
             'images/tip.png',
             'images/word1.png',
             'images/word2.png',
-            'video/video.mp4',
+            'media/video.mov',
+            'media/shake.mp3',
+            'images/result1.png',
         ];
         var imgLength = imagesArr.length;
         queue.loadManifest(imagesArr);
@@ -95,6 +107,21 @@
             // 显示播放按钮
             $("#play").show();
         }, this);
+
+        document.getElementById('shakingAudio').play();
+        document.getElementById('shakingAudio').pause();
+        //处理iphone不能自动播放
+        document.addEventListener('WeixinJSBridgeReady',function(){  
+            document.getElementById('shakingAudio').play();
+            document.getElementById('shakingAudio').pause();
+        },false);
+
+        // 生成二维码
+        var qrcode = new QRCode(document.querySelector(".qrcode"), {
+            width : 150,
+            height : 150
+        });
+        qrcode.makeCode('http://www.baidu.com');
 
         // 点击播放视频
         $("#play").click(function(){
@@ -112,6 +139,16 @@
                 $(".media").hide();
                 $(".page1").show();
             });
+        });
+
+        // 长按事件
+        var press = $api.domAll('#synthesis');
+        new Hammer(press[0]).on('press', function(ev) {
+            var imgTimer = setTimeout(function(){
+                $(".tip").css("visibility","hidden");
+                $("#synthesis").hide();
+                clearTimeout(imgTimer);
+            },2000);
         });
 
     });

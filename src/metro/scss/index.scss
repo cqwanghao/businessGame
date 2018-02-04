@@ -33,6 +33,8 @@ body{
 			top: -10.6%;
 			left: .2rem;
 			width: 9.8rem;
+			-webkit-animation-duration: 4s;
+    		animation-duration: 4s;
 		}
 		// 纸屑1
 		.confetti1{
@@ -40,6 +42,8 @@ body{
 			top: 12.8%;
 			left: 22.6%;
 			width: 10.92rem;
+			-webkit-animation-duration: 3s;
+    		animation-duration: 3s;
 		}
 		// 狗子雪人
 		.snowmanDog{
@@ -54,12 +58,16 @@ body{
 			bottom: .32rem;
 			right: .48rem;
 			width: 10.92rem;
+			-webkit-animation-duration: 4s;
+    		animation-duration: 4s;
 		}
 		.word1{
 			position: absolute;
 			top: 5.4%;
 			right: .36rem;
 			width: 5.6rem;
+			-webkit-animation-duration: 3s;
+    		animation-duration: 3s;
 		}
 		.television{
 			position: absolute;
@@ -85,21 +93,30 @@ body{
 				position: relative;
 				width: 100%;
 				height: .62rem;
-				overflow: hidden;
-				border-radius: 10px;
-				.loadingBg{
+				.loadingWrap{
 					position: absolute;
 					left: 0;
 					top: 0;
-					z-index: 2;
 					width: 100%;
-				}
-				.progressbar{
-					position: absolute;
-					left: -100%;
-					top: 0;
-					z-index: 1;
-					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					border-radius: 10px;
+					z-index: 3;
+					.loadingBg{
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 2;
+						width: 100%;
+					}
+					.progressbar{
+						position: absolute;
+						left: -100%;
+						top: 0;
+						z-index: 1;
+						width: 100%;
+					}
+
 				}
 			}
 			.progressValue{
@@ -135,12 +152,16 @@ body{
 			top: -7.7%;
 			right: 0;
 			width: 10.08rem;
+			-webkit-animation-duration: 5.5s;
+			animation-duration: 5.5s;
 		}
 		// 新年字
 		.newyear{
 			position: absolute;
 			top: 12.6%;
 			width: 100%;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
 			img{
 				width: 8.44rem;
 				margin: 0 auto;
@@ -166,6 +187,8 @@ body{
 			top: 39.8%;
 			left: .4rem;
 			width: 14.56rem;
+			-webkit-animation-duration: 3s;
+			animation-duration: 3s;
 		}
 		// 雪
 		.snow{
@@ -187,6 +210,8 @@ body{
 			bottom: 2%;
 			left: .32rem;
 			width: 5.36rem;
+			-webkit-animation-duration: 4s;
+			animation-duration: 4s;
 		}
 		// 红包
 		.redbag{
@@ -253,6 +278,9 @@ body{
 				width: 2.76rem;
 				margin: 0 auto;
 			}
+			&.swing{
+				transform-origin: bottom center;
+			}
 		}
 	}
 	// 签文页
@@ -287,6 +315,7 @@ body{
 				}
 			}
 			.guide{
+				// display: none;
 				position: absolute;
 				top: 100%;
 				left: 0;
@@ -321,14 +350,26 @@ body{
 					margin: 0 auto;
 				}
 				.qrcode{
-					width: 3rem;
-					height: 3rem;
+					width: 100%;
+					img{
+						width: 3rem;
+						height: 3rem;
+					}
 				}
 				.word2{
 					width: 4.08rem;
 					margin-top: .24rem;
 				}
 			}
+		}
+		.synthesis{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			opacity: 0;
 		}
 	}
 }

@@ -1514,15 +1514,15 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page { position: relative; width: 100%; height: 100%; background-color: #ba131a; }
 
-.container .loading .firelantern { position: absolute; top: -10.6%; left: .2rem; width: 9.8rem; }
+.container .loading .firelantern { position: absolute; top: -10.6%; left: .2rem; width: 9.8rem; -webkit-animation-duration: 4s; animation-duration: 4s; }
 
-.container .loading .confetti1 { position: absolute; top: 12.8%; left: 22.6%; width: 10.92rem; }
+.container .loading .confetti1 { position: absolute; top: 12.8%; left: 22.6%; width: 10.92rem; -webkit-animation-duration: 3s; animation-duration: 3s; }
 
 .container .loading .snowmanDog { position: absolute; bottom: 0; left: 0; width: 100%; }
 
-.container .loading .confetti2 { position: absolute; bottom: .32rem; right: .48rem; width: 10.92rem; }
+.container .loading .confetti2 { position: absolute; bottom: .32rem; right: .48rem; width: 10.92rem; -webkit-animation-duration: 4s; animation-duration: 4s; }
 
-.container .loading .word1 { position: absolute; top: 5.4%; right: .36rem; width: 5.6rem; }
+.container .loading .word1 { position: absolute; top: 5.4%; right: .36rem; width: 5.6rem; -webkit-animation-duration: 3s; animation-duration: 3s; }
 
 .container .loading .television { position: absolute; top: 24.7%; left: 1.9%; width: 96.2%; }
 
@@ -1530,11 +1530,13 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .loading .loadingBox { position: absolute; top: 71%; left: 50%; width: 9.04rem; margin-left: -4.52rem; }
 
-.container .loading .loadingBox .loadingGroup { position: relative; width: 100%; height: .62rem; overflow: hidden; -webkit-border-radius: 10px; border-radius: 10px; }
+.container .loading .loadingBox .loadingGroup { position: relative; width: 100%; height: .62rem; }
 
-.container .loading .loadingBox .loadingGroup .loadingBg { position: absolute; left: 0; top: 0; z-index: 2; width: 100%; }
+.container .loading .loadingBox .loadingGroup .loadingWrap { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; -webkit-border-radius: 10px; border-radius: 10px; z-index: 3; }
 
-.container .loading .loadingBox .loadingGroup .progressbar { position: absolute; left: -100%; top: 0; z-index: 1; width: 100%; }
+.container .loading .loadingBox .loadingGroup .loadingWrap .loadingBg { position: absolute; left: 0; top: 0; z-index: 2; width: 100%; }
+
+.container .loading .loadingBox .loadingGroup .loadingWrap .progressbar { position: absolute; left: -100%; top: 0; z-index: 1; width: 100%; }
 
 .container .loading .loadingBox .progressValue { margin-top: .32rem; text-align: center; font-size: .68rem; color: #f7f5f6; font-family: "Microsoft YaHei"; }
 
@@ -1546,9 +1548,9 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .lamp { position: absolute; top: -10.6%; left: 0; width: 7.84rem; }
 
-.container .page1 .fireworks { position: absolute; top: -7.7%; right: 0; width: 10.08rem; }
+.container .page1 .fireworks { position: absolute; top: -7.7%; right: 0; width: 10.08rem; -webkit-animation-duration: 5.5s; animation-duration: 5.5s; }
 
-.container .page1 .newyear { position: absolute; top: 12.6%; width: 100%; }
+.container .page1 .newyear { position: absolute; top: 12.6%; width: 100%; -webkit-animation-duration: 2s; animation-duration: 2s; }
 
 .container .page1 .newyear img { width: 8.44rem; margin: 0 auto; }
 
@@ -1556,13 +1558,13 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .cloud2 { position: absolute; top: 29.4%; right: -.4rem; width: 4rem; }
 
-.container .page1 .snowflake { position: absolute; top: 39.8%; left: .4rem; width: 14.56rem; }
+.container .page1 .snowflake { position: absolute; top: 39.8%; left: .4rem; width: 14.56rem; -webkit-animation-duration: 3s; animation-duration: 3s; }
 
 .container .page1 .snow { position: absolute; bottom: 0; left: 0; width: 100%; }
 
 .container .page1 .firecrackers1 { position: absolute; top: 43.8%; left: -.4rem; width: 3.36rem; }
 
-.container .page1 .firecrackers2 { position: absolute; bottom: 2%; left: .32rem; width: 5.36rem; }
+.container .page1 .firecrackers2 { position: absolute; bottom: 2%; left: .32rem; width: 5.36rem; -webkit-animation-duration: 4s; animation-duration: 4s; }
 
 .container .page1 .redbag { position: absolute; bottom: 3.6%; right: .36rem; width: 5.04rem; }
 
@@ -1583,6 +1585,8 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 .container .page1 .shake { position: absolute; bottom: .12rem; left: 0; width: 100%; }
 
 .container .page1 .shake .shakeHand { width: 2.76rem; margin: 0 auto; }
+
+.container .page1 .shake.swing { -webkit-transform-origin: bottom center; -ms-transform-origin: bottom center; transform-origin: bottom center; }
 
 .container .page2 { display: none; }
 
@@ -1610,6 +1614,10 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page2 .signBox .qrcodes img { margin: 0 auto; }
 
-.container .page2 .signBox .qrcodes .qrcode { width: 3rem; height: 3rem; }
+.container .page2 .signBox .qrcodes .qrcode { width: 100%; }
+
+.container .page2 .signBox .qrcodes .qrcode img { width: 3rem; height: 3rem; }
 
 .container .page2 .signBox .qrcodes .word2 { width: 4.08rem; margin-top: .24rem; }
+
+.container .page2 .synthesis { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0; }

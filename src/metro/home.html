@@ -29,19 +29,19 @@
     <div class="container">
       <!-- 加载页 -->
       <div class="page loading">
-        <div class="firelantern">
+        <div class="firelantern animated pulse infinite">
           <img src="./images/firelantern.png" />
         </div>
-        <div class="confetti1">
+        <div class="confetti1 animated flash infinite">
             <img src="./images/confetti1.png" />
         </div>
         <div class="snowmanDog">
             <img src="./images/snowmanDog.png" />
         </div>
-        <div class="confetti2">
+        <div class="confetti2 animated flash infinite">
             <img src="./images/confetti2.png" />
         </div>
-        <div class="word1">
+        <div class="word1 animated swing infinite">
             <img src="./images/word1.png" />
         </div>
         <div class="television">
@@ -50,11 +50,13 @@
         </div>
         <div class="loadingBox">
           <div class="loadingGroup">
-            <div class="loadingBg">
-                <img src="./images/loadingBg.png" />
-            </div>
-            <div class="progressbar" id="progressbar" >
-                <img src="./images/progressbar.png" />
+            <div class="loadingWrap">
+              <div class="loadingBg">
+                  <img src="./images/loadingBg.png" />
+              </div>
+              <div class="progressbar" id="progressbar" >
+                  <img src="./images/progressbar.png" />
+              </div>
             </div>
           </div>
           <div class="progressValue" id="progressValue" >0%</div>
@@ -62,7 +64,7 @@
       </div>
       <!-- 视频 -->
       <div class="page media">
-          <video src="./video/video.mp4" preload class="video" id="video" ></video>
+          <video src="./media/video.mov" preload class="video" id="video" ></video>
       </div>
       <!-- 首页 -->
       <div class="page page1">
@@ -71,11 +73,11 @@
           <img src="./images/lamp.png" />
         </div>
         <!-- 烟花 -->
-        <div class="fireworks">
+        <div class="fireworks animated fadeIn infinite">
           <img src="./images/fireworks.png" />
         </div>
         <!-- 新年字 -->
-        <div class="newyear">
+        <div class="newyear animated bounceIn infinite">
           <img src="./images/newyear.png" />
         </div>
         <!-- 云1 -->
@@ -87,7 +89,7 @@
           <img src="./images/cloud2.png" />
         </div>
         <!-- 雪花 -->
-        <div class="snowflake">
+        <div class="snowflake animated fadeIn infinite">
           <img src="./images/snowflake.png" />
         </div>
         <!-- 雪 -->
@@ -99,7 +101,7 @@
           <img src="./images/firecrackers1.png" />
         </div>
         <!-- 鞭炮2 -->
-        <div class="firecrackers2">
+        <div class="firecrackers2 animated fadeIn infinite">
           <img src="./images/firecrackers2.png" />
         </div>
         <!-- 红包 -->
@@ -128,8 +130,9 @@
         <div class="shake">
           <img src="./images/shake.png" class="shakeHand" />
         </div>
+        <audio src="./media/shake.mp3" preload class="shakingAudio" id="shakingAudio" ></audio>
       </div>
-      <!-- 签文 -->
+      <!-- 签文页 -->
       <div class="page page2">
         <div class="signBox">
           <img src="./images/signBg.png" class="signBg" />
@@ -149,14 +152,21 @@
             </div>
           </div>
           <div class="qrcodes">
-              <img src="./images/qrcode.png" class="qrcode" />
+              <!-- 生成二维码 -->
+              <div class="qrcode"></div>
               <img src="./images/word2.png" class="word2" />
           </div>
+        </div>
+        <div class="synthesis" id="synthesis">
+          <img src="./images/result1.png" />
         </div>
       </div>
     </div>
     <script src="./js/jquery-1.11.0.min.js"></script>
     <script src="./js/preloadjs-0.6.2.min.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/hammer.min.js"></script>
     <script src="./js/home.js"></script>
   </body>
 </html>
