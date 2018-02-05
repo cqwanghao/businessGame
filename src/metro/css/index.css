@@ -1510,7 +1510,7 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container { position: relative; width: 100%; height: 100%; overflow: hidden; }
 
-.container img { display: block; width: 100%; }
+.container img { display: block; width: 100%; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
 .container .page { position: relative; width: 100%; height: 100%; background-color: #ba131a; }
 
@@ -1574,7 +1574,11 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .draw .projection { width: 100%; }
 
-.container .page1 .draw .draw1 { position: absolute; bottom: .32rem; left: -.24rem; width: 6rem; }
+.container .page1 .draw .draw1 { position: absolute; bottom: .32rem; left: -.24rem; width: 100%; background: url(../images/draw1.png) no-repeat bottom center/100%; }
+
+.container .page1 .draw .draw1.active { -webkit-animation: draw 1s 2; animation: draw 1s 2; }
+
+.container .page1 .draw .draw1 img { opacity: 0; }
 
 .container .page1 .dog2 { position: absolute; bottom: 12.6%; left: 9.56rem; width: 3.52rem; z-index: 4; }
 
@@ -1604,11 +1608,19 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page2 .signBox .guide { position: absolute; top: 100%; left: 0; width: 100%; margin-top: -.6rem; }
 
-.container .page2 .signBox .guide .tip img { width: 6.36rem; margin: 0 auto; }
+.container .page2 .signBox .guide .tip { -webkit-animation-duration: 2s; animation-duration: 2s; }
 
-.container .page2 .signBox .guide .btns { width: 85%; margin: 0 auto; margin-top: .52rem; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+.container .page2 .signBox .guide .tip img { width: 6.36rem; margin: 0 auto; -webkit-animation-duration: 2s; animation-duration: 2s; }
 
-.container .page2 .signBox .guide .btns img { width: 5.24rem; }
+.container .page2 .signBox .guide .btns { position: relative; z-index: 100; width: 85%; margin: 0 auto; margin-top: .52rem; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+
+.container .page2 .signBox .guide .btns a { text-decoration: none; outline: 0 none; }
+
+.container .page2 .signBox .guide .btns a.receive { -webkit-animation-delay: 2s; animation-delay: 2s; }
+
+.container .page2 .signBox .guide .btns a.share { -webkit-animation-delay: 2.5s; animation-delay: 2.5s; }
+
+.container .page2 .signBox .guide .btns a img { width: 5.24rem; }
 
 .container .page2 .signBox .qrcodes { display: none; position: absolute; top: 100%; left: 0; width: 100%; margin-top: .6rem; }
 
@@ -1621,3 +1633,13 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 .container .page2 .signBox .qrcodes .word2 { width: 4.08rem; margin-top: .24rem; }
 
 .container .page2 .synthesis { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0; }
+
+.container .page2 .synthesis img { pointer-events: auto; }
+
+@-webkit-keyframes draw { 0% { background-image: url(../images/draw1.png); }
+  50% { background-image: url(../images/draw2.png); }
+  100% { background-image: url(../images/draw3.png); } }
+
+@keyframes draw { 0% { background-image: url(../images/draw1.png); }
+  50% { background-image: url(../images/draw2.png); }
+  100% { background-image: url(../images/draw3.png); } }

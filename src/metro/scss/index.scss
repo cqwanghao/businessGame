@@ -18,6 +18,8 @@ body{
 	img{
 		display: block;
 		width: 100%;
+		pointer-events: none; 
+		user-select:none;
 	}
 	.page{
 		position: relative;
@@ -242,7 +244,15 @@ body{
 				position: absolute;
 				bottom: .32rem;
 				left: -.24rem;
-				width: 6rem;
+				// width: 6rem;
+				width: 100%;
+				background: url(../images/draw1.png) no-repeat bottom center/100%;
+				&.active{
+					animation: draw 1s 2;
+				}
+				img{
+					opacity: 0;
+				}
 			}
 		}
 		// 狗2
@@ -322,20 +332,36 @@ body{
 				width: 100%;
 				margin-top: -.6rem;
 				.tip{
+					-webkit-animation-duration: 2s;
+    				animation-duration: 2s;
 					img{
 						width: 6.36rem;
 						margin: 0 auto;
+						-webkit-animation-duration: 2s;
+    					animation-duration: 2s;
 					}
 				}
 				.btns{
+					position: relative;
+					z-index: 100;
 					width: 85%;
 					margin: 0 auto;
 					margin-top: .52rem;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					img{
-						width: 5.24rem;
+					a{
+						text-decoration: none; 
+						outline: 0 none;
+						&.receive{
+							animation-delay: 2s;
+						}
+						&.share{
+							animation-delay: 2.5s;
+						}
+						img{
+							width: 5.24rem;
+						}
 					}
 				}
 			}
@@ -370,6 +396,22 @@ body{
 			height: 100%;
 			z-index: 2;
 			opacity: 0;
+			img{
+				pointer-events: auto;
+			}
+		}
+	}
+
+	// 签筒动画
+	@keyframes draw{
+		0%   {
+			background-image: url(../images/draw1.png);		
+		}
+		50%  {
+			background-image: url(../images/draw2.png);
+		}
+		100% {
+			background-image: url(../images/draw3.png);
 		}
 	}
 }

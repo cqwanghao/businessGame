@@ -41,12 +41,14 @@
         <div class="confetti2 animated flash infinite">
             <img src="./images/confetti2.png" />
         </div>
-        <div class="word1 animated swing infinite">
+        <div class="word1 animated wobble infinite">
             <img src="./images/word1.png" />
         </div>
         <div class="television">
             <img src="./images/television.png" />
-            <img src="./images/play.png" class="play" id="play" />
+            <div class="play" id="play">
+              <img src="./images/play.png" />
+            </div>
         </div>
         <div class="loadingBox">
           <div class="loadingGroup">
@@ -117,7 +119,10 @@
         </div>
         <!-- 抽签 -->
         <div class="draw">
-          <img src="./images/draw1.png" class="draw1" />
+          <div class="draw1">
+              <img src="./images/draw1.png" />
+          </div>
+          <!-- <img src="./images/draw1.png" class="draw1" /> -->
           <img src="./images/projection.png" class="projection" />
         </div>
         <!-- 狗2 -->
@@ -145,12 +150,16 @@
               <img src="./images/keyword1.png" />
           </div>
           <div class="guide">
-            <div class="tip">
+            <div class="tip animated pulse infinite">
                 <img src="./images/tip.png" />
             </div>
             <div class="btns">
-              <img src="./images/btn1.png" />
-              <img src="./images/btn2.png" />
+              <a id="receive" class="receive animated bounceInUp">
+                  <img src="./images/btn1.png" />
+              </a>
+              <a id="share" class="share animated bounceInUp">
+                <img src="./images/btn2.png" />
+              </a>
             </div>
           </div>
           <div class="qrcodes">

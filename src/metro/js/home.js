@@ -42,6 +42,18 @@
                 document.addEventListener('WeixinJSBridgeReady',function(){  
                     document.getElementById('shakingAudio').play();
                 },false);
+                // 2s后出现摇签动画
+                var drawTimer = setTimeout(function(){
+                    $(".draw1").addClass("active");
+                    clearTimeout(drawTimer);
+                },2000);
+                // 4s后移除摇签动画类
+                var drawTimer2 = setTimeout(function(){
+                    $(".page1").hide();
+                    $(".page2").show();
+                    $(".draw1").removeClass("active");
+                    clearTimeout(drawTimer2);
+                },4000);
 
                 //   state = false;
                 //   time = false;          
@@ -144,13 +156,21 @@
         // 长按事件
         var press = $api.domAll('#synthesis');
         new Hammer(press[0]).on('press', function(ev) {
+            $(".tip").addClass("fadeOut");
             var imgTimer = setTimeout(function(){
                 $(".tip").css("visibility","hidden");
-                $("#synthesis").hide();
                 clearTimeout(imgTimer);
             },2000);
         });
 
+        // 点击领取礼包
+        $("#receive").click("on",function(){
+            alert("领取礼包");
+        });
+        // 点击分享给好友
+        $("#share").click("on",function(){
+            alert("分享给好友");
+        });
     });
 
 })();
