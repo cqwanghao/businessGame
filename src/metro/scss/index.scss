@@ -27,9 +27,14 @@ body{
 		height: 100%;
 		background-color: #ba131a;
 	}
+	// 加载页之前
+	.loadBefore{
+		// display: none;
+		background-color: #ba131a;
+	}
 	// 加载页
 	.loading{
-		// display: none;
+		display: none;
 		.firelantern{
 			position: absolute;
 			top: -10.6%;
@@ -175,6 +180,7 @@ body{
 			top: 33.6%;
 			left: .4rem;
 			width: 2.96rem;
+			animation: cloud1 20s linear infinite;
 		}
 		// 云2
 		.cloud2{
@@ -182,6 +188,7 @@ body{
 			top: 29.4%;
 			right: -.4rem;
 			width: 4rem;
+			animation: cloud2 6s linear infinite;
 		}
 		// 雪花
 		.snowflake{
@@ -314,16 +321,6 @@ body{
 					margin: 0 auto;
 				}
 			}
-			.keyword{
-				position: absolute;
-				bottom: .6rem;
-				left: 0;
-				width: 100%;
-				img{
-					width: 86.25%;
-					margin: 0 auto;
-				}
-			}
 			.guide{
 				// display: none;
 				position: absolute;
@@ -354,10 +351,10 @@ body{
 						text-decoration: none; 
 						outline: 0 none;
 						&.receive{
-							animation-delay: 2s;
+							animation-delay: 1s;
 						}
 						&.share{
-							animation-delay: 2.5s;
+							animation-delay: 1.5s;
 						}
 						img{
 							width: 5.24rem;
@@ -412,6 +409,61 @@ body{
 		}
 		100% {
 			background-image: url(../images/draw3.png);
+		}
+	}
+
+	// 云1动画
+	@keyframes cloud1{
+		0%   {
+			transform: translate3d(0,0,0);		
+		}
+		25%  {
+			transform: translate3d(100%,0,0);
+		}
+		50%  {
+			transform: translate3d(200%,0,0);
+		}
+		75%  {
+			transform: translate3d(100%,0,0);
+		}
+		100% {
+			transform: translate3d(0,0,0);
+		}
+	}
+	// 云2动画
+	@keyframes cloud2{
+		0%   {
+			transform: translate3d(0,0,0);		
+		}
+		10%  {
+			transform: translate3d(-5px,0,0);
+		}
+		20%  {
+			transform: translate3d(-10px,0,0);
+		}
+		30%  {
+			transform: translate3d(-15px,0,0);
+		}
+		40%  {
+			transform: translate3d(-20px,0,0);
+		}
+		50%  {
+			transform: translate3d(-25px,0,0);
+		}
+		60%  {
+			transform: translate3d(-20px,0,0);
+		}
+		70%  {
+			transform: translate3d(-15px,0,0);
+		}
+		80%  {
+			transform: translate3d(-10px,0,0);
+		}
+		90%  {
+			transform: translate3d(-5px,0,0);
+		}
+		100% {
+			transform: translate3d(0,0,0);
 		}
 	}
 }

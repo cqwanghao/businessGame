@@ -1514,6 +1514,10 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page { position: relative; width: 100%; height: 100%; background-color: #ba131a; }
 
+.container .loadBefore { background-color: #ba131a; }
+
+.container .loading { display: none; }
+
 .container .loading .firelantern { position: absolute; top: -10.6%; left: .2rem; width: 9.8rem; -webkit-animation-duration: 4s; animation-duration: 4s; }
 
 .container .loading .confetti1 { position: absolute; top: 12.8%; left: 22.6%; width: 10.92rem; -webkit-animation-duration: 3s; animation-duration: 3s; }
@@ -1554,9 +1558,9 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .newyear img { width: 8.44rem; margin: 0 auto; }
 
-.container .page1 .cloud1 { position: absolute; top: 33.6%; left: .4rem; width: 2.96rem; }
+.container .page1 .cloud1 { position: absolute; top: 33.6%; left: .4rem; width: 2.96rem; -webkit-animation: cloud1 20s linear infinite; animation: cloud1 20s linear infinite; }
 
-.container .page1 .cloud2 { position: absolute; top: 29.4%; right: -.4rem; width: 4rem; }
+.container .page1 .cloud2 { position: absolute; top: 29.4%; right: -.4rem; width: 4rem; -webkit-animation: cloud2 6s linear infinite; animation: cloud2 6s linear infinite; }
 
 .container .page1 .snowflake { position: absolute; top: 39.8%; left: .4rem; width: 14.56rem; -webkit-animation-duration: 3s; animation-duration: 3s; }
 
@@ -1602,10 +1606,6 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page2 .signBox .signTitle img { width: 79.1%; margin: 0 auto; }
 
-.container .page2 .signBox .keyword { position: absolute; bottom: .6rem; left: 0; width: 100%; }
-
-.container .page2 .signBox .keyword img { width: 86.25%; margin: 0 auto; }
-
 .container .page2 .signBox .guide { position: absolute; top: 100%; left: 0; width: 100%; margin-top: -.6rem; }
 
 .container .page2 .signBox .guide .tip { -webkit-animation-duration: 2s; animation-duration: 2s; }
@@ -1616,9 +1616,9 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page2 .signBox .guide .btns a { text-decoration: none; outline: 0 none; }
 
-.container .page2 .signBox .guide .btns a.receive { -webkit-animation-delay: 2s; animation-delay: 2s; }
+.container .page2 .signBox .guide .btns a.receive { -webkit-animation-delay: 1s; animation-delay: 1s; }
 
-.container .page2 .signBox .guide .btns a.share { -webkit-animation-delay: 2.5s; animation-delay: 2.5s; }
+.container .page2 .signBox .guide .btns a.share { -webkit-animation-delay: 1.5s; animation-delay: 1.5s; }
 
 .container .page2 .signBox .guide .btns a img { width: 5.24rem; }
 
@@ -1643,3 +1643,39 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 @keyframes draw { 0% { background-image: url(../images/draw1.png); }
   50% { background-image: url(../images/draw2.png); }
   100% { background-image: url(../images/draw3.png); } }
+
+@-webkit-keyframes cloud1 { 0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  25% { -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
+  50% { -webkit-transform: translate3d(200%, 0, 0); transform: translate3d(200%, 0, 0); }
+  75% { -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
+  100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
+
+@keyframes cloud1 { 0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  25% { -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
+  50% { -webkit-transform: translate3d(200%, 0, 0); transform: translate3d(200%, 0, 0); }
+  75% { -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
+  100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes cloud2 { 0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  10% { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); }
+  20% { -webkit-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0); }
+  30% { -webkit-transform: translate3d(-15px, 0, 0); transform: translate3d(-15px, 0, 0); }
+  40% { -webkit-transform: translate3d(-20px, 0, 0); transform: translate3d(-20px, 0, 0); }
+  50% { -webkit-transform: translate3d(-25px, 0, 0); transform: translate3d(-25px, 0, 0); }
+  60% { -webkit-transform: translate3d(-20px, 0, 0); transform: translate3d(-20px, 0, 0); }
+  70% { -webkit-transform: translate3d(-15px, 0, 0); transform: translate3d(-15px, 0, 0); }
+  80% { -webkit-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0); }
+  90% { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); }
+  100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
+
+@keyframes cloud2 { 0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  10% { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); }
+  20% { -webkit-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0); }
+  30% { -webkit-transform: translate3d(-15px, 0, 0); transform: translate3d(-15px, 0, 0); }
+  40% { -webkit-transform: translate3d(-20px, 0, 0); transform: translate3d(-20px, 0, 0); }
+  50% { -webkit-transform: translate3d(-25px, 0, 0); transform: translate3d(-25px, 0, 0); }
+  60% { -webkit-transform: translate3d(-20px, 0, 0); transform: translate3d(-20px, 0, 0); }
+  70% { -webkit-transform: translate3d(-15px, 0, 0); transform: translate3d(-15px, 0, 0); }
+  80% { -webkit-transform: translate3d(-10px, 0, 0); transform: translate3d(-10px, 0, 0); }
+  90% { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0); }
+  100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } }
