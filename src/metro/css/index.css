@@ -1594,7 +1594,7 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .shake .shakeHand { width: 2.76rem; margin: 0 auto; }
 
-.container .page1 .shake.swing { -webkit-transform-origin: bottom center; -ms-transform-origin: bottom center; transform-origin: bottom center; }
+.container .page1 .shake.swing { -webkit-transform-origin: bottom center; -ms-transform-origin: bottom center; transform-origin: bottom center; -webkit-animation-duration: 1.5s; animation-duration: 1.5s; }
 
 .container .page2 { display: none; }
 

@@ -26,11 +26,11 @@
 
                             var diffTime = curTime - last_update;
                             last_update = curTime;
-                            $(".page1 .shake").addClass("animated swing");
-                            var animatedTimer = setTimeout(function () {
-                                $(".page1 .shake").removeClass("animated swing");
-                                clearTimeout(animatedTimer);
-                            }, 1000);
+                            // $(".page1 .shake").addClass("animated swing");
+                            // var animatedTimer = setTimeout(function () {
+                            //     $(".page1 .shake").removeClass("animated swing");
+                            //     clearTimeout(animatedTimer);
+                            // }, 1000);
                             // 播放摇一摇声音
                             document.getElementById('shakingAudio').play();
                             //处理iphone不能自动播放
@@ -46,6 +46,8 @@
                             var drawTimer2 = setTimeout(function () {
                                 $(".page1").hide();
                                 $(".page2").show();
+                                // 随机选择抽签图片
+                                randomImg();
                                 $(".draw1").removeClass("active");
                                 clearTimeout(drawTimer2);
                             }, 4000);
@@ -68,7 +70,8 @@
             'images/snowmanDog.png',
             'images/confetti2.png',
             'images/word1.png',
-            'images/television.png',
+            'images/television1.png',
+            'images/television2.png',
             'images/play.png',
             'images/loadingBg.png',
             'images/progressbar.png',
@@ -116,6 +119,7 @@
             queue.on("complete", function (e) {
                 // 显示播放按钮
                 $("#play").show();
+                $("#television").attr("src","./images/television2.png");
             }, this);
         }, this);
         queue.on("fileload", function (e) {
@@ -160,6 +164,19 @@
             });
         });
 
+        // 随机选择抽签图片
+        function randomImg() {
+            var RndNum = Math.floor(Math.random()*2);
+            console.log(RndNum);
+            var signArr = [
+                'images/result1.png',
+                'images/result2.png',
+                'images/result3.png'
+            ];
+            alert(signArr[RndNum]);
+            $("#synthesis").find("img").attr("src",signArr[RndNum]);
+        }
+
         // 长按事件
         var press = $api.domAll('#synthesis');
         new Hammer(press[0]).on('press', function (ev) {
@@ -172,11 +189,87 @@
 
         // 点击领取礼包
         $("#receive").click("on", function () {
-            alert("领取礼包");
+            window.location.href = "https://metrochina.vchangyi.com/Metroredpack/Frontend/Index/index?me_id=8";
         });
         // 点击分享给好友
         $("#share").click("on", function () {
-            alert("分享给好友");
+            // alert("分享给好友");
+        });
+
+        // 微信分享
+        var coper = {};
+        var share = {};
+        share.title = "2018麦德龙专属幸运签，开抽！";
+        share.desc = "新年新气象，好运摇出来";
+        share.imgUrl = "http://h5.zegelo.com/static/sohurh/images/share-img.jpg";
+        share.link = "http://h5.zegelo.com/static/metro/index.html";
+        coper.GetJsSdkUiPackage = function () {
+            WeiXin.Ajax({
+                data: { url: window.location.href },
+                url: 'http://h5.zegelo.com/mp/api/GetJsSdkUiPackage',
+                cb: function (data) {
+                    console.log(data);
+                    if (data != null && data.success == true) {
+                        wx.config({
+
+                            appId: data.source.AppId, // 必填，公众号的唯一标识
+                            timestamp: data.source.Timestamp, // 必填，生成签名的时间戳
+                            nonceStr: data.source.NonceStr, // 必填，生成签名的随机串
+                            signature: data.source.Signature,// 必填，签名，见附录1
+                            jsApiList: WeiXin.jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                        });
+                        wx.error(function (res) {
+                            // alert(res)
+                        });
+                        wx.ready(function () {
+
+                            //转发到朋友圈
+                            wx.onMenuShareTimeline({
+                                title: share.title, // 分享标题
+                                link: share.link, // 分享链接
+                                imgUrl: share.imgUrl, // 分享图标
+                                success: function () {
+                                    //  alert("chenggong");
+                                    //WeiXin.Ajax({
+                                    //    data: { type: "share", sharetype: "1" },
+                                    //    url: '/mp/api/get',
+                                    //    cb: function (data) {
+                                    //    }
+                                    //});
+                                },
+                                cancel: function () {
+                                }
+                            });
+                            ////转发给朋友
+                            wx.onMenuShareAppMessage({
+                                title: share.title, // 分享标题
+                                desc: share.desc, // 分享desc
+                                link: share.link, // 分享链接
+                                imgUrl: share.imgUrl, // 分享图标
+                                type: 'link',
+                                dataUrl: '',
+                                success: function () {
+                                    //alert("chenggong");
+                                    //WeiXin.Ajax({
+                                    //    data: { type: "share", sharetype: "2" },
+                                    //    url: '/mp/api/get',
+                                    //    cb: function (data) {
+                                    //    }
+                                    //});
+                                },
+                                cancel: function () {
+                                }
+                            });
+
+                        });
+                    } else {
+                        WeiXin.log("GetJsSdkUiPackage加载异常")
+                    }
+                }
+            });
+        }
+        $(document).ready(function () {
+            coper.GetJsSdkUiPackage();
         });
     });
 
