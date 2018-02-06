@@ -1,5 +1,138 @@
 (function () {
     $(function () {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        var isQQBrowser = navigator.userAgent.indexOf("MQQBrowser") > -1
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 随机数
+        var RndNum;
+
+        // $("#testVideo")[0].play();
+        // $("#testVideo")[0].pause();
+
+        // var $video = $('#testVideo');
+        // $('#play').on("touchstart", function() {
+        //     // $(this).hide();
+        //     // 背景音乐暂停
+        //     document.getElementById('bgMusic').pause();
+        //     $("#audio_btn").removeClass('rotate');
+
+        //     $(".loading").hide();
+        //     $(".video").show();
+        //     $video[0].play();
+        // });
+        // if(!isWeiXin()&&isAndroid&&!isQQBrowser){
+        //     $video.show();
+        //     $video.removeAttr('x5-video-player-type');
+        //     $video.removeAttr('x5-video-player-fullscreen');
+        //     $video.removeAttr('webkit-playsinline');
+        //     $video.removeAttr('playsinline');
+        //     $video.css({
+        //         "width":"100%",
+        //         "height":"auto"
+        //     });					
+        //     $('#testCanvas').remove();
+        // }
+        // else{
+        //     var videoW, videoH;
+        //     setTimeout(function() {
+        //         videoW = $video.width();
+        //         videoH = $video.height();
+        //         TestCanvas.width = videoW;
+        //         TestCanvas.height = videoH;
+
+        //         // setCanvasStartImg();
+        //         //之所以这里要播放下，是因为经过测试，第一次点击CANVAS时，视频播放又立即停止了
+        //         TestVideo.play();
+        //         TestVideo.pause();
+
+        //         console.log(videoW);
+        //         console.log(videoH);
+        //         console.log(TestVideo.width);
+        //         console.log(TestVideo.height);
+        //     }, 100);
+
+
+        //     /*以下是渲染CANVAS画布中的视频*/
+
+        //     //获取video
+        //     var TestVideo = document.getElementById("testVideo");
+        //     //获取canvas画布
+        //     var TestCanvas = document.getElementById("testCanvas");
+        //     //设置画布
+        //     var TestCanvas2D = TestCanvas.getContext('2d');
+        //     //设置setinterval定时器
+        //     var TestVideoTimer = null;
+        //     //监听播放
+        //     TestVideo.addEventListener('play', function() {
+        //         $('.start_video').hide();
+        //         TestVideoTimer = setInterval(function() {
+        //             TestCanvas2D.drawImage(TestVideo, 0, 0, videoW, videoH);
+        //         }, 20);
+        //         TestVideo.setAttribute("x5-video-orientation", "landscape|portrait");//Andriod需要控制,不然不能横频
+        //     }, false);
+        //     //监听暂停
+        //     TestVideo.addEventListener('pause', function() {
+        //         clearInterval(TestVideoTimer);
+        //         $('.start_video').show();
+        //             TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏(翻页会暂停播放器)
+        //     }, false);
+        //     //监听结束
+        //     TestVideo.addEventListener('ended', function() {
+        //         clearInterval(TestVideoTimer);
+        //         // $('.start_video').show();
+        //         console.log('1 over');
+        //         // _this.showPage02(1);
+                
+        //         $(".video").hide();
+        //         $(".page1").show();
+        //         // 可以摇一摇
+        //         shake();
+        //         // 背景音乐播放
+        //         document.getElementById('bgMusic').play();
+        //         $("#audio_btn").addClass('rotate');
+
+        //         TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏
+
+        //     }, false);
+        // }
+
+        // 播放背景音乐
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+              audio.play();
+            }, false);
+          }
+          audioAutoPlay('bgMusic');
+          $('.video_exist').on('click', function () {
+            var media = document.getElementById('bgMusic');
+            if (media.paused) {
+              media.play();
+              $(this).addClass('rotate');
+            }else {
+              media.pause();
+              $(this).removeClass('rotate');
+            }
+          });
+        
+        //   记录是否摇过
+        var shakeFlag = false;
+        //  分享链接
+        var shareUrl = "http://h5.zegelo.com/static/metro/index.html";
+
+        // 微信分享
+        weixinShare(shareUrl);
 
         function shake() {
             // 摇一摇事件
@@ -54,6 +187,10 @@
 
                             //   state = false;
                             time = false;
+                            shakeFlag = true;
+                            shareUrl = "http://h5.zegelo.com/static/metro/share.html?type=" + RndNum + 1;
+                            // 微信分享
+                            weixinShare(shareUrl);
                         }
                     }
                     lastX = x;
@@ -100,16 +237,34 @@
             'images/projection.png',
             'images/redbag.png',
             'images/shake.png',
+            'images/share.png',
+            'images/shareLogo.jpg',
             'images/signTitle.png',
             'images/snow.png',
             'images/snowflake.png',
             'images/snowman.png',
             'images/tip.png',
             'images/word2.png',
-            'media/video.mov',
-            'media/shake.mp3',
             'images/signBg1.png',
+            'images/signBg2.png',
+            'images/signBg3.png',
+            'images/signBg4.png',
+            'images/signBg5.png',
+            'images/signBg6.png',
+            'images/signBg7.png',
+            'images/signBg8.png',
+            'images/signBg9.png',
+            'images/signBg10.png',
             'images/result1.png',
+            'images/result2.png',
+            'images/result3.png',
+            'images/result4.png',
+            'images/result5.png',
+            'images/result6.png',
+            'images/result7.png',
+            'images/result8.png',
+            'images/result9.png',
+            'images/result10.png',                        
         ];
         var imgLength = imagesArr.length;
         queue.loadManifest(imagesArr);
@@ -154,8 +309,14 @@
                     document.getElementById('video').play();
                 });
             }, false);
+            // 背景音乐暂停
+            document.getElementById('bgMusic').pause();
+            $("#audio_btn").removeClass('rotate');
             // 播放结束之后
             document.getElementById("video").addEventListener("ended", function () {
+                // 背景音乐播放
+                document.getElementById('bgMusic').play();
+                $("#audio_btn").addClass('rotate');
                 // 关闭视频页，显示抽签页
                 $(".media").hide();
                 $(".page1").show();
@@ -166,15 +327,10 @@
 
         // 随机选择抽签图片
         function randomImg() {
-            var RndNum = Math.floor(Math.random()*2);
+            RndNum = Math.floor(Math.random()*10);
             console.log(RndNum);
-            var signArr = [
-                'images/result1.png',
-                'images/result2.png',
-                'images/result3.png'
-            ];
-            alert(signArr[RndNum]);
-            $("#synthesis").find("img").attr("src",signArr[RndNum]);
+            $("#signBg").attr("src","images/signBg" + (RndNum + 1) + ".png");
+            $("#synthesis").find("img").attr("src","images/result" + (RndNum + 1) + ".png");
         }
 
         // 长按事件
@@ -191,86 +347,100 @@
         $("#receive").click("on", function () {
             window.location.href = "https://metrochina.vchangyi.com/Metroredpack/Frontend/Index/index?me_id=8";
         });
-        // 点击分享给好友
+        // 点击弹出遮罩层
         $("#share").click("on", function () {
-            // alert("分享给好友");
+            $(".cover").show();
         });
 
-        // 微信分享
-        var coper = {};
-        var share = {};
-        share.title = "2018麦德龙专属幸运签，开抽！";
-        share.desc = "新年新气象，好运摇出来";
-        share.imgUrl = "http://h5.zegelo.com/static/sohurh/images/share-img.jpg";
-        share.link = "http://h5.zegelo.com/static/metro/index.html";
-        coper.GetJsSdkUiPackage = function () {
-            WeiXin.Ajax({
-                data: { url: window.location.href },
-                url: 'http://h5.zegelo.com/mp/api/GetJsSdkUiPackage',
-                cb: function (data) {
-                    console.log(data);
-                    if (data != null && data.success == true) {
-                        wx.config({
+        $(".cover").click("on", function () {
+            $(".cover").hide();
+        });
 
-                            appId: data.source.AppId, // 必填，公众号的唯一标识
-                            timestamp: data.source.Timestamp, // 必填，生成签名的时间戳
-                            nonceStr: data.source.NonceStr, // 必填，生成签名的随机串
-                            signature: data.source.Signature,// 必填，签名，见附录1
-                            jsApiList: WeiXin.jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-                        });
-                        wx.error(function (res) {
-                            // alert(res)
-                        });
-                        wx.ready(function () {
-
-                            //转发到朋友圈
-                            wx.onMenuShareTimeline({
-                                title: share.title, // 分享标题
-                                link: share.link, // 分享链接
-                                imgUrl: share.imgUrl, // 分享图标
-                                success: function () {
-                                    //  alert("chenggong");
-                                    //WeiXin.Ajax({
-                                    //    data: { type: "share", sharetype: "1" },
-                                    //    url: '/mp/api/get',
-                                    //    cb: function (data) {
-                                    //    }
-                                    //});
-                                },
-                                cancel: function () {
-                                }
+        
+        function weixinShare(shareLink){
+            // 微信分享
+            var coper = {};
+            var share = {};
+            coper = {};
+            share = {};
+            share.title = "2018麦德龙专属幸运签，开抽！";
+            share.desc = "新年新气象，好运摇出来";
+            share.imgUrl = "http://h5.zegelo.com/static/metro/images/shareLogo.jpg";
+            share.link = "http://h5.zegelo.com/static/metro/index.html";
+            coper.GetJsSdkUiPackage = function () {
+                WeiXin.Ajax({
+                    // data: { url: window.location.href },
+                    // data: { url: shareUrl },
+                    data: { url: shareLink },
+                    url: 'http://h5.zegelo.com/mp/api/GetJsSdkUiPackage',
+                    cb: function (data) {
+                        console.log(data);
+                        if (data != null && data.success == true) {
+                            wx.config({
+    
+                                appId: data.source.AppId, // 必填，公众号的唯一标识
+                                timestamp: data.source.Timestamp, // 必填，生成签名的时间戳
+                                nonceStr: data.source.NonceStr, // 必填，生成签名的随机串
+                                signature: data.source.Signature,// 必填，签名，见附录1
+                                jsApiList: WeiXin.jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
                             });
-                            ////转发给朋友
-                            wx.onMenuShareAppMessage({
-                                title: share.title, // 分享标题
-                                desc: share.desc, // 分享desc
-                                link: share.link, // 分享链接
-                                imgUrl: share.imgUrl, // 分享图标
-                                type: 'link',
-                                dataUrl: '',
-                                success: function () {
-                                    //alert("chenggong");
-                                    //WeiXin.Ajax({
-                                    //    data: { type: "share", sharetype: "2" },
-                                    //    url: '/mp/api/get',
-                                    //    cb: function (data) {
-                                    //    }
-                                    //});
-                                },
-                                cancel: function () {
-                                }
+                            wx.error(function (res) {
+                                // alert(res)
                             });
-
-                        });
-                    } else {
-                        WeiXin.log("GetJsSdkUiPackage加载异常")
+                            wx.ready(function () {
+    
+                                //转发到朋友圈
+                                wx.onMenuShareTimeline({
+                                    title: share.title, // 分享标题
+                                    link: share.link, // 分享链接
+                                    imgUrl: share.imgUrl, // 分享图标
+                                    success: function () {
+                                        //  alert("chenggong");
+                                        //WeiXin.Ajax({
+                                        //    data: { type: "share", sharetype: "1" },
+                                        //    url: '/mp/api/get',
+                                        //    cb: function (data) {
+                                        //    }
+                                        //});
+                                    },
+                                    cancel: function () {
+                                    }
+                                });
+                                ////转发给朋友
+                                wx.onMenuShareAppMessage({
+                                    title: share.title, // 分享标题
+                                    desc: share.desc, // 分享desc
+                                    link: share.link, // 分享链接
+                                    imgUrl: share.imgUrl, // 分享图标
+                                    type: 'link',
+                                    dataUrl: '',
+                                    success: function () {
+                                        //alert("chenggong");
+                                        //WeiXin.Ajax({
+                                        //    data: { type: "share", sharetype: "2" },
+                                        //    url: '/mp/api/get',
+                                        //    cb: function (data) {
+                                        //    }
+                                        //});
+                                    },
+                                    cancel: function () {
+                                    }
+                                });
+    
+                            });
+                        } else {
+                            WeiXin.log("GetJsSdkUiPackage加载异常")
+                        }
                     }
-                }
+                });
+            }
+            $(document).ready(function () {
+                coper.GetJsSdkUiPackage();
             });
         }
-        $(document).ready(function () {
-            coper.GetJsSdkUiPackage();
-        });
+
+
+
     });
 
 })();

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>麦德龙</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        (function (window, document) {
+            var setRem = function () {
+                var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+                if (innerWidth > 768) {
+                    document.documentElement.style.fontSize = 48 + 'px';
+                } else {
+                    document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+                }
+            };
+            window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+            setRem();
+        })(window, document);
+    </script>
+</head>
+
+<body>
+    <div class="sharePage">
+        <div class="page">
+            <div class="signBox">
+                <img src="./images/signBg1.png" class="signBg" id="signBg" />
+                <div class="signTitle">
+                    <img src="./images/signTitle.png" />
+                </div>
+                <div class="guide">
+                    <div class="btns">
+                        <a href="http://h5.zegelo.com/static/metro/index.html" id="link">
+                            <img src="./images/btn3.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script>
+        (function(){
+            $(document).ready(function(){
+                // 获取参数值
+                function getUrlParameter(key) {
+                    // var value = null,
+                    var value = "",
+                        params = location.search.slice(1).split("&");
+                    for(var i = 0 ; i < params.length ; i++){
+                        var _key = params[i].split("=")[0];
+                        if(key == _key) {
+                            value = params[i].split("=")[1];
+                        }
+                    }
+                    return value;
+                }
+
+                var imageNum = getUrlParameter("type");
+
+                $("#signBg").attr("src","images/signBg" + imageNum + ".png");
+
+            });
+        })();
+    </script>
+</body>
+
+</html>

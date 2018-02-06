@@ -27,6 +27,17 @@ body{
 		height: 100%;
 		background-color: #ba131a;
 	}
+	// 背景音乐
+	.video_exist {
+		width: 1.6rem;
+		height: 1.6rem;
+		position: absolute;
+		right: .4rem;
+		top: .4rem;
+		z-index: 10;
+		background: url(../images/normalmusic.png) no-repeat;
+		background-size: 1.6rem 1.6rem;
+	}
 	// 加载页之前
 	.loadBefore{
 		// display: none;
@@ -136,6 +147,15 @@ body{
 		}
 	}
 	// 视频
+	.video{
+		display: none;
+		// z-index: -1;
+		video{
+			width: 1920px;
+    		height: 1080px;
+		}
+	}
+	// 老视频
 	.media{
 		display: none;
 		.video{
@@ -399,6 +419,23 @@ body{
 			}
 		}
 	}
+	// 遮罩层
+	.cover{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background-color: rgba(0,0,0,.7);
+		.share{
+			position: absolute;
+			top: .64rem;
+			right: .72rem;
+			width: 10.56rem;
+		}
+	}
 
 	// 签筒动画
 	@keyframes draw{
@@ -465,6 +502,80 @@ body{
 		}
 		100% {
 			transform: translate3d(0,0,0);
+		}
+	}
+	// 旋转动画
+	.rotate {
+		animation: rotating 2s linear infinite;
+	}
+	  
+	@keyframes rotating {
+		from {
+			transform: rotate(0)
+		}
+		to {
+			transform: rotate(360deg)
+		}
+	}
+}
+// 分享页面
+.sharePage{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	img{
+		display: block;
+		width: 100%;
+		pointer-events: none; 
+		user-select:none;
+	}
+	.page{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #ba131a;
+		.signBox{
+			position: absolute;
+			top: 1.44rem;
+			left: 2%;
+			width: 96%;
+			.signBg{
+				width: 100%;
+			}
+			.signTitle{
+				position: absolute;
+				top: -1.12rem;
+				left: 0;
+				width: 100%;
+				img{
+					width: 79.1%;
+					margin: 0 auto;
+				}
+			}
+			.guide{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				margin-top: 1.88rem;
+				.btns{
+					position: relative;
+					z-index: 100;
+					width: 85%;
+					margin: 0 auto;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					a{
+						text-decoration: none; 
+						outline: 0 none;
+						img{
+							width: 6.28rem;
+						}
+					}
+				}
+			}
 		}
 	}
 }

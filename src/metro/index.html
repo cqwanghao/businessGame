@@ -27,6 +27,10 @@
 </head>
   <body>
     <div class="container">
+      <!-- 背景音乐 -->
+      <div id="audio_btn" class="video_exist rotate">
+        <audio loop="" autoplay="" src="./media/music.mp3" id="bgMusic" preload=""></audio>
+      </div>
       <!-- 加载页之前 -->
       <div class="page loadBefore"></div>
       <!-- 加载页 -->
@@ -66,9 +70,14 @@
           <div class="progressValue" id="progressValue" >0%</div>
         </div>
       </div>
+      <!-- <div class="page video">
+          <canvas id="testCanvas" style="width: 100%;" style="display:none"></canvas>
+          <video style="display: none;" id="testVideo" poster="./images/acer.png" src="./media/video.mp4" preload="auto" x-webkit-airplay="true" webkit-playsinline="webkit-playsinline" playsinline="playsinline" x5-video-player-type="h5" x5-video-player-fullscreen="true"></video>
+      </div> -->
       <!-- 音频视频 -->
       <div class="page media">
-          <video src="./media/video.mov" preload class="video" id="video" ></video>
+          <video src="./media/video.mp4" preload class="video" id="video"></video>
+          <!-- <video src="./media/video.mp4" preload class="video" id="video" x-webkit-airplay="true" webkit-playsinline="webkit-playsinline" playsinline="playsinline" x5-video-player-type="h5" x5-video-player-fullscreen="true"></video> -->
           <audio preload class="shakingAudio" id="shakingAudio" >
             <source src="./media/shake.mp3" type="audio/mpeg">
           </audio>
@@ -144,7 +153,7 @@
       <!-- 签文页 -->
       <div class="page page2">
         <div class="signBox">
-          <img src="./images/signBg1.png" class="signBg" />
+          <img src="./images/signBg1.png" class="signBg" id="signBg" />
           <div class="signTitle">
               <img src="./images/signTitle.png" />
           </div>
@@ -170,6 +179,10 @@
         <div class="synthesis" id="synthesis">
           <img src="./images/result1.png" />
         </div>
+      </div>
+      <!-- 遮罩层 -->
+      <div class="cover">
+        <img src="./images/share.png" class="share" />
       </div>
     </div>
     <script src="./js/jquery-1.11.0.min.js"></script>
