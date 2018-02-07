@@ -1506,9 +1506,13 @@ template { display: none; }
 
 .slideOutUp { -webkit-animation-name: slideOutUp; animation-name: slideOutUp; }
 
+html, html { background: #ba131a; }
+
 body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
 
 .container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+
+.container.active { overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 .container img { display: block; width: 100%; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
@@ -1602,7 +1606,7 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .container .page1 .shake.swing { -webkit-transform-origin: bottom center; -ms-transform-origin: bottom center; transform-origin: bottom center; -webkit-animation-duration: 1.5s; animation-duration: 1.5s; }
 
-.container .page2 { display: none; }
+.container .page2 { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 520px; }
 
 .container .page2 .signBox { position: absolute; top: 1.44rem; left: 2%; width: 96%; }
 
@@ -1702,7 +1706,21 @@ body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow:
 
 .sharePage img { display: block; width: 100%; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
-.sharePage .page { position: relative; width: 100%; height: 100%; background-color: #ba131a; }
+.sharePage .loading { position: relative; width: 100%; height: 100%; background-color: #ba131a; }
+
+.sharePage .loading .loadingBox { position: absolute; top: 50%; left: 50%; width: 9.04rem; margin-left: -4.52rem; }
+
+.sharePage .loading .loadingBox .loadingGroup { position: relative; width: 100%; height: .62rem; }
+
+.sharePage .loading .loadingBox .loadingGroup .loadingWrap { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; -webkit-border-radius: 10px; border-radius: 10px; z-index: 3; }
+
+.sharePage .loading .loadingBox .loadingGroup .loadingWrap .loadingBg { position: absolute; left: 0; top: 0; z-index: 2; width: 100%; }
+
+.sharePage .loading .loadingBox .loadingGroup .loadingWrap .progressbar { position: absolute; left: -100%; top: 0; z-index: 1; width: 100%; }
+
+.sharePage .loading .loadingBox .progressValue { margin-top: .32rem; text-align: center; font-size: .68rem; color: #f7f5f6; font-family: "Microsoft YaHei"; }
+
+.sharePage .page { display: none; position: relative; width: 100%; height: 100%; background-color: #ba131a; }
 
 .sharePage .page .signBox { position: absolute; top: 1.44rem; left: 2%; width: 96%; }
 

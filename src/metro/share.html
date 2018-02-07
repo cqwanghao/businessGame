@@ -28,6 +28,21 @@
 
 <body>
     <div class="sharePage">
+        <div class="loading">
+            <div class="loadingBox">
+                <div class="loadingGroup">
+                    <div class="loadingWrap">
+                        <div class="loadingBg">
+                            <img src="./images/loadingBg.png" />
+                        </div>
+                        <div class="progressbar" id="progressbar" >
+                            <img src="./images/progressbar.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="progressValue" id="progressValue" >0%</div>
+            </div>
+        </div>
         <div class="page">
             <div class="signBox">
                 <img src="./images/signBg1.png" class="signBg" id="signBg" />
@@ -45,6 +60,10 @@
         </div>
     </div>
     <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/preloadjs-0.6.2.min.js"></script>
+    <!--微信分享-->
+    <script src="http://h5.zegelo.com/Themes/js/WeiXin.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script>
         (function(){
             $(document).ready(function(){
@@ -65,6 +84,114 @@
                 var imageNum = getUrlParameter("type");
 
                 $("#signBg").attr("src","images/signBg" + imageNum + ".png");
+
+                // 微信分享
+                var coper = {};
+                var share = {};
+                coper = {};
+                share = {};
+                share.title = "2018麦德龙专属幸运签，开抽！";
+                share.desc = "新年新气象，好运摇出来";
+                share.imgUrl = "http://h5.zegelo.com/static/metro/images/shareLogo.jpg";
+                share.link = "http://h5.zegelo.com/static/metro/index.html";
+
+                coper.GetJsSdkUiPackage = function () {
+                    WeiXin.Ajax({
+                        data: { url: window.location.href },
+                        url: 'http://h5.zegelo.com/mp/api/GetJsSdkUiPackage',
+                        cb: function (data) {
+                            console.log(data);
+                            if (data != null && data.success == true) {
+                                wx.config({
+                                    // debug: true,
+                                    appId: data.source.AppId, // 必填，公众号的唯一标识
+                                    timestamp: data.source.Timestamp, // 必填，生成签名的时间戳
+                                    nonceStr: data.source.NonceStr, // 必填，生成签名的随机串
+                                    signature: data.source.Signature,// 必填，签名，见附录1
+                                    jsApiList: WeiXin.jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                                });
+                                wx.error(function (res) {
+                                    // alert(res)
+                                });
+                                wx.ready(function () {
+
+                                    //转发到朋友圈
+                                    wx.onMenuShareTimeline({
+                                        title: share.title, // 分享标题
+                                        link: share.link, // 分享链接
+                                        imgUrl: share.imgUrl, // 分享图标
+                                        success: function () {
+                                            //  alert("chenggong");
+                                            //WeiXin.Ajax({
+                                            //    data: { type: "share", sharetype: "1" },
+                                            //    url: '/mp/api/get',
+                                            //    cb: function (data) {
+                                            //    }
+                                            //});
+                                        },
+                                        cancel: function () {
+                                        }
+                                    });
+                                    ////转发给朋友
+                                    wx.onMenuShareAppMessage({
+                                        title: share.title, // 分享标题
+                                        desc: share.desc, // 分享desc
+                                        link: share.link, // 分享链接
+                                        imgUrl: share.imgUrl, // 分享图标
+                                        type: 'link',
+                                        dataUrl: '',
+                                        success: function () {
+                                            //alert("chenggong");
+                                            //WeiXin.Ajax({
+                                            //    data: { type: "share", sharetype: "2" },
+                                            //    url: '/mp/api/get',
+                                            //    cb: function (data) {
+                                            //    }
+                                            //});
+                                        },
+                                        cancel: function () {
+                                        }
+                                    });
+
+                                });
+                            } else {
+                                WeiXin.log("GetJsSdkUiPackage加载异常")
+                            }
+                        }
+                    });
+                }
+                coper.GetJsSdkUiPackage();
+
+                // loading页图片加载
+                var queueBefore = new createjs.LoadQueue(true);
+                var imagesBeforeArr = [
+                    'images/signTitle.png',
+                    'images/btn3.png',
+                    'images/signBg1.png',
+                    'images/signBg2.png',
+                    'images/signBg3.png',
+                    'images/signBg4.png',
+                    'images/signBg5.png',
+                    'images/signBg6.png',
+                    'images/signBg7.png',
+                    'images/signBg8.png',
+                    'images/signBg9.png',
+                    'images/signBg10.png'                    
+                ];
+                // 图片进度
+                var progress = 0;
+                var imgLength = imagesBeforeArr.length;
+                queueBefore.loadManifest(imagesBeforeArr);
+                queueBefore.on("complete", function (e) {
+                    $(".loading").hide();
+                    $(".page").show();
+                }, this);
+                queueBefore.on("fileload", function (e) {
+                    progress++;
+                    // 进度条变化
+                    $("#progressbar").css("left", "-" + parseInt(100 - progress / imgLength * 100) + "%");
+                    $("#progressValue").html(parseInt(progress / imgLength * 100) + "%");
+                }, this);
 
             });
         })();

@@ -1,7 +1,7 @@
 @import '../../base/index.scss';
-// html {
-//   background: #ba131a;
-// }
+html,html{
+  	background: #ba131a;
+}
 body{
 	position: absolute;
 	top: 0;
@@ -15,6 +15,10 @@ body{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	&.active{
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
 	img{
 		display: block;
 		width: 100%;
@@ -324,6 +328,14 @@ body{
 	// 签文页
 	.page2{
 		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 520px;
+		// overflow-y: auto;
+		// -webkit-overflow-scrolling: touch;
 		.signBox{
 			position: absolute;
 			top: 1.44rem;
@@ -530,7 +542,58 @@ body{
 		pointer-events: none; 
 		user-select:none;
 	}
+	.loading{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #ba131a;
+		.loadingBox{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 9.04rem;
+			margin-left: -4.52rem;
+			.loadingGroup{
+				position: relative;
+				width: 100%;
+				height: .62rem;
+				.loadingWrap{
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					border-radius: 10px;
+					z-index: 3;
+					.loadingBg{
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 2;
+						width: 100%;
+					}
+					.progressbar{
+						position: absolute;
+						left: -100%;
+						top: 0;
+						z-index: 1;
+						width: 100%;
+					}
+
+				}
+			}
+			.progressValue{
+				margin-top: .32rem;
+				text-align: center;
+				font-size: .68rem;
+				color: #f7f5f6;
+				font-family: "Microsoft YaHei";
+			}
+		} 
+	}
 	.page{
+		display: none;
 		position: relative;
 		width: 100%;
 		height: 100%;
