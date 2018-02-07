@@ -415,14 +415,14 @@
         }
 
         // 长按事件
-        // var press = $api.domAll('#synthesis');
-        // new Hammer(press[0]).on('press', function (ev) {
-        //     $(".tip").addClass("fadeOut");
-        //     var imgTimer = setTimeout(function () {
-        //         $(".tip").css("visibility", "hidden");
-        //         clearTimeout(imgTimer);
-        //     }, 2000);
-        // });
+        var press = $api.domAll('#synthesis');
+        new Hammer(press[0]).on('press', function (ev) {
+            $(".tip").addClass("fadeOut");
+            var imgTimer = setTimeout(function () {
+                $(".tip").css("visibility", "hidden");
+                clearTimeout(imgTimer);
+            }, 2000);
+        });
 
         // 点击领取礼包
         $("#receive").click("on", function () {
