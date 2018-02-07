@@ -70,13 +70,16 @@
           <div class="progressValue" id="progressValue" >0%</div>
         </div>
       </div>
-      <!-- <div class="page video">
+      <!-- <div class="page videoPage">
           <canvas id="testCanvas" style="width: 100%;" style="display:none"></canvas>
           <video style="display: none;" id="testVideo" poster="./images/acer.png" src="./media/video.mp4" preload="auto" x-webkit-airplay="true" webkit-playsinline="webkit-playsinline" playsinline="playsinline" x5-video-player-type="h5" x5-video-player-fullscreen="true"></video>
       </div> -->
       <!-- 音频视频 -->
       <div class="page media">
-          <video src="./media/video.mp4" preload class="video" id="video"></video>
+          <video poster="./images/poster.png" class="video" id="video" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint" x-webkit-airplay="true" webkit-playsinline="true" playsinline="true">
+            <source src="./media/video.mp4" type="video/mp4" />
+          </video>
+          <!-- <video src="./media/video.mp4" preload class="video" id="video"></video> -->
           <!-- <video src="./media/video.mp4" preload class="video" id="video" x-webkit-airplay="true" webkit-playsinline="webkit-playsinline" playsinline="playsinline" x5-video-player-type="h5" x5-video-player-fullscreen="true"></video> -->
           <audio preload class="shakingAudio" id="shakingAudio" >
             <source src="./media/shake.mp3" type="audio/mpeg">
@@ -93,7 +96,7 @@
           <img src="./images/fireworks.png" />
         </div>
         <!-- 新年字 -->
-        <div class="newyear animated bounceIn infinite">
+        <div class="newyear">
           <img src="./images/newyear.png" />
         </div>
         <!-- 云1 -->
@@ -131,7 +134,12 @@
         <!-- 抽签 -->
         <div class="draw">
           <div class="draw1">
-              <img src="./images/draw1.png" />
+              <img src="./images/lotpot.png" class="lotpot" />
+              <img src="./images/sign1.png" class="sign1" />
+              <img src="./images/sign2.png" class="sign2" />
+              <img src="./images/sign3.png" class="sign3" />
+              <img src="./images/light.png" class="light" />
+              <img src="./images/sign4.png" class="sign4" />
           </div>
           <!-- <img src="./images/draw1.png" class="draw1" /> -->
           <img src="./images/projection.png" class="projection" />
@@ -162,10 +170,10 @@
                 <img src="./images/tip.png" class="animated pulse infinite"/>
             </div>
             <div class="btns">
-              <a id="receive" class="receive animated fadeIn">
+              <a id="receive" class="receive">
                   <img src="./images/btn1.png" />
               </a>
-              <a id="share" class="share animated fadeIn">
+              <a id="share" class="share">
                 <img src="./images/btn2.png" />
               </a>
             </div>

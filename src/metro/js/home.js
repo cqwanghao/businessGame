@@ -16,6 +16,8 @@
         // 随机数
         var RndNum = Math.floor(Math.random()*10);
 
+        // return false;
+
         // $("#testVideo")[0].play();
         // $("#testVideo")[0].pause();
 
@@ -312,12 +314,19 @@
             'images/firecrackers2.png',
             'images/fireworks.png',
             'images/lamp.png',
+            'images/light.png',
+            'images/lotpot.png',
             'images/newyear.png',
+            'images/poster.png',
             'images/projection.png',
             'images/redbag.png',
             'images/shake.png',
             'images/share.png',
             'images/shareLogo.jpg',
+            'images/sign1.png',
+            'images/sign2.png',
+            'images/sign3.png',
+            'images/sign4.png',
             'images/signTitle.png',
             'images/snow.png',
             'images/snowflake.png',
@@ -353,6 +362,7 @@
             $("#progressValue").html(parseInt(progress / imgLength * 100) + "%");
         }, this);
 
+
         document.getElementById('shakingAudio').play();
         document.getElementById('shakingAudio').pause();
         //处理iphone不能自动播放
@@ -368,6 +378,8 @@
         });
         qrcode.makeCode('http://h5.zegelo.com/static/metro/index.html');
 
+        //获取video
+        var TestVideo = document.getElementById("video");
         // 点击播放视频
         $("#play").click(function () {
             $(".loading").hide();
@@ -378,9 +390,10 @@
                     document.getElementById('video').play();
                 });
             }, false);
+            TestVideo.setAttribute("x5-video-orientation", "landscape|portrait");//Andriod需要控制,不然不能横频
             // 背景音乐暂停
             document.getElementById('bgMusic').pause();
-            $("#audio_btn").removeClass('rotate');
+            $("#audio_btn").removeClass('rotate').hide();
 
             // 视频播放结束之后
             document.getElementById("video").addEventListener("ended", function () {
@@ -392,17 +405,19 @@
                 $(".page1").show();
                 // 可以摇一摇
                 shake();
+                TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏
             });
-            // 视频其他操作
+            // 视频暂停之后
             document.getElementById("video").addEventListener("pause", function () {
                 // 背景音乐播放
                 document.getElementById('bgMusic').play();
-                $("#audio_btn").addClass('rotate');
+                $("#audio_btn").addClass('rotate').show();
                 // 关闭视频页，显示抽签页
                 $(".media").hide();
                 $(".page1").show();
                 // 可以摇一摇
                 shake();
+                TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏(翻页会暂停播放器)
             });
         });
 

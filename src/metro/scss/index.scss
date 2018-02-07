@@ -151,7 +151,7 @@ body{
 		}
 	}
 	// 视频
-	.video{
+	.videoPage{
 		display: none;
 		// z-index: -1;
 		video{
@@ -162,9 +162,13 @@ body{
 	// 老视频
 	.media{
 		display: none;
+		// background-color: #524e4e;
+		background-color: #000;
 		.video{
 			width: 100%;
 			height: 100%;
+			// width: 200px;
+			// height: 300px;
 		}
 	}
 	// 首页
@@ -277,13 +281,40 @@ body{
 				left: -.24rem;
 				// width: 6rem;
 				width: 100%;
-				background: url(../images/draw1.png) no-repeat bottom center/100%;
-				&.active{
-					animation: draw 1s 2;
+				.sign1,.sign2{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
 				}
-				img{
-					opacity: 0;
+				.sign3{
+					position: absolute;
+					top: 0;
+					left: 50%;
+					width: 1.24rem;
+					transform: translate3d(-50%,-100%,0);
 				}
+				.light{
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					width: 100%;
+					transform: translate3d(-50%,-50%,0);
+				}
+				.sign4{
+					position: absolute;
+					top: -20%;
+					left: 50%;
+					width: 1.6rem;
+					transform: translate3d(-50%,0,0);
+				}
+				// background: url(../images/draw1.png) no-repeat bottom center/100%;
+				// &.active{
+				// 	animation: draw 1s 2;
+				// }
+				// img{
+				// 	opacity: 0;
+				// }
 			}
 		}
 		// 狗2
@@ -450,17 +481,17 @@ body{
 	}
 
 	// 签筒动画
-	@keyframes draw{
-		0%   {
-			background-image: url(../images/draw1.png);		
-		}
-		50%  {
-			background-image: url(../images/draw2.png);
-		}
-		100% {
-			background-image: url(../images/draw3.png);
-		}
-	}
+	// @keyframes draw{
+	// 	0%   {
+	// 		background-image: url(../images/draw1.png);		
+	// 	}
+	// 	50%  {
+	// 		background-image: url(../images/draw2.png);
+	// 	}
+	// 	100% {
+	// 		background-image: url(../images/draw3.png);
+	// 	}
+	// }
 
 	// 云1动画
 	@keyframes cloud1{
