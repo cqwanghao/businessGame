@@ -47,7 +47,7 @@
         <div class="confetti2 animated flash infinite">
             <img src="./images/confetti2.png" />
         </div>
-        <div class="word1 animated wobble infinite">
+        <div class="word1">
             <img src="./images/word1.png" />
         </div>
         <div class="television">
@@ -134,12 +134,20 @@
         <!-- 抽签 -->
         <div class="draw">
           <div class="draw1">
-              <img src="./images/lotpot.png" class="lotpot" />
-              <img src="./images/sign1.png" class="sign1" />
-              <img src="./images/sign2.png" class="sign2" />
-              <img src="./images/sign3.png" class="sign3" />
-              <img src="./images/light.png" class="light" />
-              <img src="./images/sign4.png" class="sign4" />
+              <div class="lotpotGroup">
+                <img src="./images/lotpot.png" class="lotpot" />
+                <img src="./images/sign1.png" class="sign1" />
+                <img src="./images/sign2.png" class="sign2" />
+              </div>
+              <div class="sign3">
+                <img src="./images/sign3.png" />
+              </div>
+              <div class="light">
+                <img src="./images/light.png" />
+              </div>
+              <div class="sign4">
+                <img src="./images/sign4.png" />
+              </div>
           </div>
           <!-- <img src="./images/draw1.png" class="draw1" /> -->
           <img src="./images/projection.png" class="projection" />
@@ -195,6 +203,7 @@
     </div>
     <script src="./js/jquery-1.11.0.min.js"></script>
     <script src="./js/preloadjs-0.6.2.min.js"></script>
+    <script src="./js/soundjs-0.6.2.min.js"></script>
     <script src="./js/qrcode.min.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/hammer.min.js"></script>

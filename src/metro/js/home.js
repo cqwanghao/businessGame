@@ -116,17 +116,17 @@
               audio.play();
             }, false);
           }
-          audioAutoPlay('bgMusic');
-          $('.video_exist').on('click', function () {
-            var media = document.getElementById('bgMusic');
-            if (media.paused) {
-              media.play();
-              $(this).addClass('rotate');
-            }else {
-              media.pause();
-              $(this).removeClass('rotate');
-            }
-          });
+        audioAutoPlay('bgMusic');
+        $('.video_exist').on('click', function () {
+        var media = document.getElementById('bgMusic');
+        if (media.paused) {
+            media.play();
+            $(this).addClass('rotate');
+        }else {
+            media.pause();
+            $(this).removeClass('rotate');
+        }
+        });
         
         //   记录是否摇过
         var shakeFlag = false;
@@ -211,8 +211,8 @@
             coper.GetJsSdkUiPackage();
         });
 
+        // 摇一摇事件
         function shake() {
-            // 摇一摇事件
             var time = true;//记录摇晃的次数
             var state = true;//记录是否上滑
             if (window.DeviceMotionEvent && time) {
@@ -241,29 +241,25 @@
                             //     $(".page1 .shake").removeClass("animated swing");
                             //     clearTimeout(animatedTimer);
                             // }, 1000);
+
+                            createjs.Sound.play("shake");
+
                             // 播放摇一摇声音
-                            document.getElementById('shakingAudio').play();
-                            //处理iphone不能自动播放
-                            document.addEventListener('WeixinJSBridgeReady', function () {
-                                document.getElementById('shakingAudio').play();
-                            }, false);
+                            // document.getElementById('shakingAudio').play();
+                            // //处理iphone不能自动播放
+                            // document.addEventListener('WeixinJSBridgeReady', function () {
+                            //     document.getElementById('shakingAudio').play();
+                            // }, false);
+
+
                             // 2s后出现摇签动画
-                            var drawTimer = setTimeout(function () {
-                                $(".draw1").addClass("active");
-                                clearTimeout(drawTimer);
-                            }, 2000);
-                            // 4s后移除摇签动画类
-                            var drawTimer2 = setTimeout(function () {
-                                $(".page1").hide();
-                                $(".page2").show();
-                                $(".container").addClass("active");
-                                // 随机选择抽签图片
-                                randomImg();
-                                $(".draw1").removeClass("active");
-                                // 图片合成
-                                drawImage();
-                                clearTimeout(drawTimer2);
-                            }, 4000);
+                            // var drawTimer = setTimeout(function () {
+                            //     $(".draw1").addClass("active");
+                            //     clearTimeout(drawTimer);
+                            // }, 2000);
+
+                            // 摇签动画
+                            signLight();
 
                             //   state = false;
                             time = false;
@@ -271,6 +267,8 @@
                             var shareUrl = "http://h5.zegelo.com/static/metro/share.html?type=" + (RndNum + 1);
                             // 微信分享
                             share.link = shareUrl;
+                            share.title = "我的2018关键词是。。。你的呢？";
+                            share.desc = "麦德龙专属新年幸运签，开抽！";
                             coper.GetJsSdkUiPackage();
                         }
                     }
@@ -278,6 +276,54 @@
                     lastY = y;
                 }, false);
             }
+        }
+
+        // 测试代码,正式需删除
+        // $(".page1").on("click",function(){
+        //     // 摇签动画
+        //     signLight();
+        // });
+        // $(".loading").on("click",function(){
+        //     alert(11);
+        //     createjs.Sound.play("shake");
+        // });
+
+        // 摇签动画
+        function signLight(){
+            $(".page1 .draw .lotpotGroup").addClass("animated swing2 infinite");
+            var signTimer = setTimeout(function(){
+                $(".page1 .draw .lotpotGroup").removeClass("animated swing2 infinite");
+                $(".page1 .draw .sign3 img").addClass("animated bounceInUp2");
+                clearTimeout(signTimer);
+            },2000);
+            
+            var signTimer1 = setTimeout(function(){
+                $(".page1 .draw .light img").addClass("on");
+                clearTimeout(signTimer1);
+            },2500);
+
+            // var signTimer2 = setTimeout(function(){
+            //     $(".page1 .draw .sign3 img").removeClass("animated bounceInUp2").addClass("animated fadeOut");
+            //     clearTimeout(signTimer2);
+            // },3500);
+
+            // var signTimer3 = setTimeout(function(){
+            //     $(".page1 .draw .sign4 img").addClass("on");
+            //     clearTimeout(signTimer3);
+            // },4500);
+
+            // 7s后移除摇签动画类
+            var drawTimer2 = setTimeout(function () {
+                $(".page1").hide();
+                $(".page2").show();
+                $(".container").addClass("active");
+                // 随机选择抽签图片
+                randomImg();
+                $(".draw1").removeClass("active");
+                // 图片合成
+                drawImage();
+                clearTimeout(drawTimer2);
+            }, 4500);
         }
 
         // loading页图片加载
@@ -292,7 +338,7 @@
             'images/television2.png',
             'images/play.png',
             'images/loadingBg.png',
-            'images/progressbar.png',
+            'images/progressbar.png'
         ];
         // var imgBeforeLength = imagesBeforeArr.length;
         queueBefore.loadManifest(imagesBeforeArr);
@@ -342,9 +388,11 @@
             'images/signBg7.png',
             'images/signBg8.png',
             'images/signBg9.png',
-            'images/signBg10.png'                    
+            'images/signBg10.png',
+            {"src": "media/shake.mp3","id": "shake"}                    
         ];
         var imgLength = imagesArr.length;
+        queue.installPlugin(createjs.Sound);
         queue.loadManifest(imagesArr);
         queueBefore.on("complete", function (e) {
             $(".loadBefore").hide();
@@ -353,6 +401,8 @@
                 // 显示播放按钮
                 $("#play").show();
                 $("#television").attr("src","./images/television2.png");
+                // 进度条消失
+                $(".loading .loadingBox").hide();
             }, this);
         }, this);
         queue.on("fileload", function (e) {
@@ -363,13 +413,13 @@
         }, this);
 
 
-        document.getElementById('shakingAudio').play();
-        document.getElementById('shakingAudio').pause();
-        //处理iphone不能自动播放
-        document.addEventListener('WeixinJSBridgeReady', function () {
-            document.getElementById('shakingAudio').play();
-            document.getElementById('shakingAudio').pause();
-        }, false);
+        // document.getElementById('shakingAudio').play();
+        // document.getElementById('shakingAudio').pause();
+        // //处理iphone不能自动播放
+        // document.addEventListener('WeixinJSBridgeReady', function () {
+        //     document.getElementById('shakingAudio').play();
+        //     document.getElementById('shakingAudio').pause();
+        // }, false);
 
         // 生成二维码
         var qrcode = new QRCode(document.querySelector(".qrcode"), {

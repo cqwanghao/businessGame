@@ -281,6 +281,16 @@ body{
 				left: -.24rem;
 				// width: 6rem;
 				width: 100%;
+				.lotpotGroup{
+					position: relative;
+					z-index: 2;
+					&.swing2 {
+						transform-origin: bottom center;
+						animation-name: swing2;
+						animation-duration: 0.5s; 
+					}
+
+				}
 				.sign1,.sign2{
 					position: absolute;
 					bottom: 0;
@@ -291,22 +301,49 @@ body{
 					position: absolute;
 					top: 0;
 					left: 50%;
+					z-index: 1;
 					width: 1.24rem;
 					transform: translate3d(-50%,-100%,0);
+					img{
+						opacity: 0;
+						animation-fill-mode: forwards;
+						animation-duration: 1.5s;
+						&.bounceInUp2 {  
+							animation-name: bounceInUp2; 
+						}
+					}
 				}
 				.light{
+					// display: none;
 					position: fixed;
-					top: 50%;
+					top: 40%;
 					left: 50%;
+					z-index: 2;
 					width: 100%;
 					transform: translate3d(-50%,-50%,0);
+					img{
+						opacity: 0;
+						transform: scale(0);
+						&.on{
+							animation: light 1.5s forwards ease-in-out;
+						}
+					}
 				}
 				.sign4{
+					// display: none;
 					position: absolute;
 					top: -20%;
 					left: 50%;
+					z-index: 2;
 					width: 1.6rem;
 					transform: translate3d(-50%,0,0);
+					img{
+						opacity: 0;
+						transform: scale(0);
+						&.on{
+							animation: light 1.5s forwards ease-in-out;
+						}
+					}
 				}
 				// background: url(../images/draw1.png) no-repeat bottom center/100%;
 				// &.active{
@@ -559,6 +596,49 @@ body{
 		to {
 			transform: rotate(360deg)
 		}
+	}
+
+	@keyframes swing2 { 
+		20% { -webkit-transform: rotate3d(0, 0, 1, 20deg); transform: rotate3d(0, 0, 1, 20deg); }
+		40% { -webkit-transform: rotate3d(0, 0, 1, -15deg); transform: rotate3d(0, 0, 1, -15deg); }
+		60% { -webkit-transform: rotate3d(0, 0, 1, 10deg); transform: rotate3d(0, 0, 1, 10deg); }
+		80% { -webkit-transform: rotate3d(0, 0, 1, -10deg); transform: rotate3d(0, 0, 1, -10deg); }
+		to { -webkit-transform: rotate3d(0, 0, 1, 0deg); transform: rotate3d(0, 0, 1, 0deg); } 
+	}
+
+	@keyframes bounceInUp2 { 
+		from, 60%, 75%, 90%, to { 
+			-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+			animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+		}
+		from { 
+			opacity: 0;
+			-webkit-transform: translate3d(0, 300px, 0);
+			transform: translate3d(0, 300px, 0); 
+		}
+		60% { 
+			opacity: 1;
+			-webkit-transform: translate3d(0, -20px, 0);
+			transform: translate3d(0, -20px, 0); 
+		}
+		75% { 
+			-webkit-transform: translate3d(0, 10px, 0); 
+			transform: translate3d(0, 10px, 0); 
+		}
+		90% { 
+			-webkit-transform: translate3d(0, -5px, 0); 
+			transform: translate3d(0, -5px, 0); 
+		}
+		to { 
+			opacity: 1;
+			-webkit-transform: translate3d(0, 0, 0); 
+			transform: translate3d(0, 0, 0); 
+		}
+	}
+
+  	@keyframes light {
+		0% { opacity: 0; transform: scale(0); }
+		100% { opacity: 1; transform: scale(1); }
 	}
 }
 // 分享页面
