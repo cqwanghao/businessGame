@@ -213,6 +213,20 @@
             coper.GetJsSdkUiPackage();
         });
 
+        // 关键词
+        var keywords = [
+            '巴适自在',
+            '吃嘛嘛香',
+            '冲劲爆表',
+            '大放异彩',
+            '福气满满',
+            '钱包得意',
+            '强行脱单',
+            '幸福敲门',
+            '颜值正义',
+            '迎风向前'
+        ];
+
         // 摇一摇事件
         function shake() {
             var time = true;//记录摇晃的次数
@@ -269,7 +283,7 @@
                             var shareUrl = "http://h5.zegelo.com/static/metro/share.html?type=" + (RndNum + 1);
                             // 微信分享
                             share.link = shareUrl;
-                            share.title = "我的2018关键词是。。。你的呢？";
+                            share.title = "我的2018关键词是" + keywords[RndNum] + "，你的呢？";
                             share.desc = "麦德龙专属新年幸运签，开抽！";
                             coper.GetJsSdkUiPackage();
                         }
