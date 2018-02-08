@@ -112,20 +112,22 @@
         function audioAutoPlay(id){
             var audio = document.getElementById(id);
             audio.play();
+            audio.pause();
             document.addEventListener("WeixinJSBridgeReady", function () {
               audio.play();
+              audio.pause();
             }, false);
           }
         audioAutoPlay('bgMusic');
         $('.video_exist').on('click', function () {
-        var media = document.getElementById('bgMusic');
-        if (media.paused) {
-            media.play();
-            $(this).addClass('rotate');
-        }else {
-            media.pause();
-            $(this).removeClass('rotate');
-        }
+            var media = document.getElementById('bgMusic');
+            if (media.paused) {
+                media.play();
+                $(this).addClass('rotate');
+            }else {
+                media.pause();
+                $(this).removeClass('rotate');
+            }
         });
         
         //   记录是否摇过
@@ -353,12 +355,10 @@
             'images/cloud2.png',
             'images/dog1.png',
             'images/dog2.png',
-            'images/draw1.png',
-            'images/draw2.png',
-            'images/draw3.png',
             'images/firecrackers1.png',
             'images/firecrackers2.png',
             'images/fireworks.png',
+            'images/golden.jpg',
             'images/lamp.png',
             'images/light.png',
             'images/lotpot.png',
@@ -366,6 +366,7 @@
             'images/poster.png',
             'images/projection.png',
             'images/redbag.png',
+            'images/shading.png',
             'images/shake.png',
             'images/share.png',
             'images/shareLogo.jpg',
@@ -389,7 +390,8 @@
             'images/signBg8.png',
             'images/signBg9.png',
             'images/signBg10.png',
-            {"src": "media/shake.mp3","id": "shake"}                    
+            {"src": "media/shake.mp3","id": "shake"},
+            {"src": "media/music1.mp3","id": "music"}
         ];
         var imgLength = imagesArr.length;
         queue.installPlugin(createjs.Sound);
@@ -400,7 +402,7 @@
             queue.on("complete", function (e) {
                 // 显示播放按钮
                 $("#play").show();
-                $("#television").attr("src","./images/television2.png");
+                $("#television").attr("src","images/television2.png");
                 // 进度条消失
                 $(".loading .loadingBox").hide();
             }, this);
@@ -440,7 +442,6 @@
                     document.getElementById('video').play();
                 });
             }, false);
-            TestVideo.setAttribute("x5-video-orientation", "landscape|portrait");//Andriod需要控制,不然不能横频
             // 背景音乐暂停
             document.getElementById('bgMusic').pause();
             $("#audio_btn").removeClass('rotate').hide();
@@ -455,7 +456,12 @@
                 $(".page1").show();
                 // 可以摇一摇
                 shake();
-                TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏
+                // 显示播放按钮
+                $("#audio_btn").show().addClass("rotate");
+                // 播放背景音乐
+                // createjs.Sound.play("music");
+                document.getElementById('bgMusic').play();
+                $("#audio_btn").addClass('rotate');
             });
             // 视频暂停之后
             document.getElementById("video").addEventListener("pause", function () {
@@ -467,7 +473,12 @@
                 $(".page1").show();
                 // 可以摇一摇
                 shake();
-                TestVideo.setAttribute("x5-video-orientation", "portrait");//设置成竖屏(翻页会暂停播放器)
+                // 显示播放按钮
+                $("#audio_btn").show().addClass("rotate");
+                // 播放背景音乐
+                // createjs.Sound.play("music");
+                document.getElementById('bgMusic').play();
+                $("#audio_btn").addClass('rotate');
             });
         });
 
@@ -502,7 +513,6 @@
             $(".cover").hide();
         });
 
-        
 
         // 图片合成
         function drawImage(){
@@ -510,12 +520,14 @@
             // new QRCode(document.querySelector(".qrcode"), 'http://h5.zegelo.com/static/metro/index.html');
             //图片数组
             var data = [
-                './images/signBg1.png',
-                './images/signTitle.png',
-                './images/qrcode.png',
-                './images/word2.png'
+                'images/signBg1.png',
+                'images/signTitle.png',
+                'images/golden.jpg',
+                'images/qrcode.png',
+                'images/word2.png',
+                'images/shading.png'
             ];
-            data[0] = './images/signBg'+ (RndNum + 1) +'.png';
+            data[0] = 'images/signBg'+ (RndNum + 1) +'.png';
             // var base64 = [];
             draw(function(share) {
                 $('#synthesis').find("img").attr('src', share);
@@ -540,33 +552,45 @@
                     var w = "";
                     var h = "";
                     switch (n | 0) {
-                    case 0:
-                        x = 15;
-                        y = 72;
-                        w = 720;
-                        h = 848;
-                        break;
-                    case 1:
-                        x = 96;
-                        y = 16;
-                        w = 570;
-                        h = 142;
-                        break;
-                    case 2:
-                        var qrImg = $('.qrcode img').attr('src');
-                        if (!qrImg) return alert('二维码生成失败~');
-                        data[2] = qrImg;
-                        x = 300;
-                        y = 952;
-                        w = 150;
-                        h = 150;
-                        break;
-                    case 3:
-                        x = 268;
-                        y = 1120;
-                        w = 214;
-                        h = 52;
-                        break;
+                        case 0:
+                            x = 15;
+                            y = 92;
+                            w = 720;
+                            h = 848;
+                            break;
+                        case 1:
+                            x = 94;
+                            y = 34;
+                            w = 570;
+                            h = 142;
+                            break;
+                        case 2:
+                            x = 287;
+                            y = 969;
+                            w = 173;
+                            h = 173;
+                            break;
+                        case 3:
+                            var qrImg = $('.qrcode img').attr('src');
+                            if (!qrImg) return alert('二维码生成失败~');
+                            data[2] = qrImg;
+                            x = 298;
+                            y = 980;
+                            w = 150;
+                            h = 150;
+                            break;
+                        case 4:
+                            x = 180;
+                            y = 1165;
+                            w = 390;
+                            h = 27;
+                            break;
+                        case 5:
+                            x = 0;
+                            y = 1224;
+                            w = 750;
+                            h = 108;
+                            break;
                     }
                     var img = new Image;
                     img.crossOrigin = 'Anonymous'; //解决跨域

@@ -33,6 +33,7 @@ body{
 	}
 	// 背景音乐
 	.video_exist {
+		display: none;
 		width: 1.6rem;
 		height: 1.6rem;
 		position: absolute;
@@ -380,11 +381,11 @@ body{
 		// 摇一摇
 		.shake{
 			position: absolute;
-			bottom: .12rem;
+			top: 29.4%;
 			left: 0;
 			width: 100%;
 			.shakeHand{
-				width: 2.76rem;
+				width: 2.48rem;
 				margin: 0 auto;
 			}
 			&.swing{
