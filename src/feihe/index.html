@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>飞鹤</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      }; 
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="container">
+      <!-- 加载页 -->
+      <div class="page loading">
+        <div class="loadingTitle">
+          <img src="images/loadingTitle.png" />
+        </div>  
+      </div>
+      <!-- 简介页 -->
+      <div class="page brief">
+         <div class="brief-dog">
+           <img src="images/brief-dog.png" />
+         </div>
+         <div class="brief-cloud1">
+          <img src="images/brief-cloud1.png" />
+        </div>
+        <div class="brief-cloud2">
+          <img src="images/brief-cloud2.png" />
+        </div>
+        <div class="brief-flower">
+          <img src="images/brief-flower.png" />
+        </div>
+        <div class="brief-word1">
+          <img src="images/brief-word1.png" />
+        </div>
+        <div class="brief-cloud3">
+          <img src="images/brief-cloud3.png" />
+        </div>
+        <div class="brief-card">
+          <img src="images/brief-card.png" />
+        </div>
+      </div>
+      <!-- 填写讯页 -->
+      <div class="page message">
+        <div class="message-tree">
+          <img src="images/message-tree.png" />
+        </div>
+        <div class="message-crane">
+          <img src="images/message-crane.png" />
+        </div>
+        <div class="message-lantern">
+          <img src="images/message-lantern.png" />
+        </div>
+        <div class="message-word1">
+          <img src="images/message-word1.png" />
+        </div>
+        <div class="message-box">
+          <img src="images/message-box.png" />
+          <div class="date">
+            <input type="text" class="year" />
+            <span>年</span>
+            <input type="text" class="month" />
+            <span>月</span>
+          </div>
+        </div>
+        <div class="message-word2">
+          <img src="images/message-word2.png" />
+        </div>
+        <div class="message-box2">
+          <img src="images/message-box.png" />
+          <div class="addr">
+            <input type="text" class="addr-s" />
+          </div>
+        </div>
+        <div class="message-cloud1">
+          <img src="images/message-cloud1.png" />
+        </div>
+        <div class="message-bird">
+          <img src="images/message-bird.png" />
+        </div>
+        <div class="message-cloud2">
+          <img src="images/message-cloud2.png" />
+        </div>
+        <div class="message-upload">
+          <img src="images/message-upload.png" />
+        </div>
+      </div>
+      <!-- 模板页 -->
+      <div class="page templet"></div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/soundjs-0.6.2.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <!--微信分享-->
+    <script src="http://h5.zegelo.com/Themes/js/WeiXin.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <!-- <script src="js/home.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,228 @@
+@import '../../base/index.scss';
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+  	background: #ffffff;
+}
+.container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+// page通用样式
+.page {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+}
+// 加载页
+.loading{
+	z-index: 11;
+	background: url(../images/loadingBg.png) #000000 no-repeat center top/100%;
+	.loadingTitle{
+		position: absolute;
+		bottom: 7.6%;
+		left: 0;
+		width: 100%;
+		img{
+			display: block;
+			width: 2.76rem;
+			margin: 0 auto;
+		}
+	}
+}
+// 简介页
+.brief{
+	z-index: 11;
+	background: url(../images/briefBg.png) #000000 no-repeat center top/100%;
+	img{
+		display: block;
+		width: 100%;
+	}
+	.brief-dog{
+		position: absolute;
+		top: 14.4%;
+		left: 0;
+		width: 4.52rem;
+	}
+	.brief-cloud1{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 5.88rem;
+	}
+	.brief-cloud2{
+		position: absolute;
+		top: 73.6%;
+		left: 0;
+		width: 4.04rem;
+	}
+	.brief-flower{
+		position: absolute;
+		top: 37.9%;
+		right: 10.4%;
+		width: 2.48rem;
+	}
+	.brief-word1{
+		position: absolute;
+		top: 18.9%;
+		left: 50%;
+		width: 8.4rem;
+		transform: translate3d(-50%,0,0);
+	}
+	.brief-cloud3{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 86.5%;
+	}
+	.brief-card{
+		position: absolute;
+		bottom: 0;
+		right: 24.4%;
+		width: 51.2%;
+	}
+}
+// 填写讯页
+.message{
+	z-index: 11;
+	background: url(../images/briefBg.png) #000000 no-repeat center top/100%;
+	img{
+		display: block;
+		width: 100%;
+	}
+	.message-tree{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.message-crane{
+		position: absolute;
+		top: 0;
+		left: 53.3%;
+		width: 1.24rem;
+	}
+	.message-lantern{
+		position: absolute;
+		top: 6.1%;
+		left: 72%;
+		width: 3.6rem;
+	}
+	.message-word1{
+		position: absolute;
+		top: 23.8%;
+		left: 50%;
+		width: 4.48rem;
+		transform: translate3d(-50%,0,0);
+	}
+	.message-box{
+		position: absolute;
+		top: 32%;
+		left: 50%;
+		z-index: 2;
+		width: 10.48rem;
+		transform: translate3d(-50%,0,0);
+		.date{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			input{
+				border: none;
+				background: none;
+				width: 2.8rem;
+				text-align: right;
+				font-size: .8rem;
+				letter-spacing: .08rem;
+				color: #dfdfdf;
+				&.month{
+					margin-left: 1rem;
+				}
+			}
+			span{
+				margin-left: .2rem;
+				font-size: .6rem;
+				color: #dfdfdf;
+			}
+		}
+	}
+	.message-word2{
+		position: absolute;
+		top: 51.9%;
+		left: 50%;
+		width: 4.54rem;
+		transform: translate3d(-50%,0,0);
+	}
+	.message-box2{
+		position: absolute;
+		top: 59.4%;
+		left: 50%;
+		z-index: 2;
+		width: 10.48rem;
+		transform: translate3d(-50%,0,0);
+		.addr{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			input{
+				border: none;
+				background: none;
+				text-align: center;
+				font-size: .72rem;
+				letter-spacing: .08rem;
+				color: #dfdfdf;
+			}
+		}
+	}
+	.message-cloud1{
+		position: absolute;
+		top: 36%;
+		left: 0;
+		width: 6.92rem;
+	}
+	.message-bird{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 96.6%;
+	}
+	.message-cloud2{
+		position: absolute;
+		top: 85.7%;
+		right: 0;
+		width: 2.8rem;
+	}
+	.message-upload{
+		position: absolute;
+		top: 88.3%;
+		left: 50%;
+		width: 7.24rem;
+		transform: translate3d(-50%,0,0);
+	}
+}
+// 模板页
+.templet{
+	display: block;
+	z-index: 11;
+	background: url(../images/briefBg.png) #000000 no-repeat center top/100%;
+	img{
+		display: block;
+		width: 100%;
+	}
+}
