@@ -517,7 +517,9 @@
 
         // 点击领取礼包
         $("#receive").click("on", function () {
-            window.location.href = "https://metrochina.vchangyi.com/Metroredpack/Frontend/Index/index?me_id=8";
+            // window.location.href = "https://metrochina.vchangyi.com/Metroredpack/Frontend/Index/index?me_id=8";
+            // 抽麦穗的测试链接
+            window.location.href = "https://metrochina.vchangyi.com/Metroredpack/Frontend/Index/index?me_id=11";
         });
         // 点击弹出遮罩层
         $("#share").click("on", function () {
