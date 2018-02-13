@@ -9,6 +9,7 @@
 	<meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>飞鹤</title>
+  <link rel="stylesheet" href="css/slidePage.min.css">
   <link rel="stylesheet" href="css/index.css">
   <script>
     (function (window, document) {
@@ -26,15 +27,19 @@
   </script>
 </head>
   <body>
-    <div class="container">
+    <div class="container slide-container" id="slide-container">
       <!-- 加载页 -->
-      <div class="page loading">
+      <div class="page loading slide-page">
         <div class="loadingTitle">
-          <img src="images/loadingTitle.png" />
+          <div class="loading-circle">
+            <img src="images/loading-circle" />
+            <span>0</span>
+          </div>
+          <img src="images/loading1.png" class="loading1" />
         </div>  
       </div>
       <!-- 简介页 -->
-      <div class="page brief">
+      <div class="page brief slide-page">
          <div class="brief-dog">
            <img src="images/brief-dog.png" />
          </div>
@@ -58,7 +63,7 @@
         </div>
       </div>
       <!-- 填写讯页 -->
-      <div class="page message">
+      <div class="page message slide-page">
         <div class="message-tree">
           <img src="images/message-tree.png" />
         </div>
@@ -103,7 +108,7 @@
         </div>
       </div>
       <!-- 模板页 -->
-      <div class="page templet">
+      <div class="page templet slide-page">
         <div class="templet-tree">
           <img src="images/templet-tree.png" />
         </div>
@@ -140,15 +145,61 @@
         </div>
       </div>
       <!-- 分享页 -->
-      <div class="page share"></div>
+      <div class="page share slide-page">
+        <div class="share-cloud2">
+          <img src="images/share-cloud2.png" />
+        </div>
+        <div class="result">
+          <img src="images/result1.png" />
+        </div>
+        <div class="share-cloud1">
+          <img src="images/share-cloud1.png" />
+        </div>
+        <div class="share-pine">
+          <img src="images/share-pine.png" />
+        </div>
+        <div class="share-logo">
+          <img src="images/share-logo.png" />
+        </div>
+        <div class="share-stone">
+          <img src="images/share-stone.png" />
+        </div>
+        <div class="share-crane">
+          <img src="images/share-crane.png" />
+        </div>
+        <div class="share-mushroom">
+          <img src="images/share-mushroom.png" />
+        </div>
+        <div class="share-btn">
+          <img src="images/share-btn.png" />
+        </div>
+        <div class="share-btn">
+          <img src="images/share-btn.png" />
+        </div><div class="share-save">
+          <img src="images/share-save.png" />
+        </div>
+      </div>
+      <!-- 分享遮罩页 -->
+      <div class="page cover">
+        <div class="cover-light">
+          <img src="images/cover-light.png" />
+        </div>
+        <div class="cover-cloud">
+          <img src="images/cover-cloud.png" />
+        </div>
+        <div class="cover-crane">
+          <img src="images/cover-crane.png" />
+        </div>
+      </div>
     </div>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/preloadjs-0.6.2.min.js"></script>
     <script src="js/soundjs-0.6.2.min.js"></script>
     <script src="js/qrcode.min.js"></script>
+    <script src="js/slidePage.min.js"></script>
     <!--微信分享-->
     <script src="http://h5.zegelo.com/Themes/js/WeiXin.js"></script>
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <!-- <script src="js/home.js"></script> -->
+    <script src="js/index.js"></script>
   </body>
 </html>

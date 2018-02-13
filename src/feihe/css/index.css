@@ -1510,15 +1510,21 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .container { position: relative; width: 100%; height: 100%; overflow: hidden; }
 
-.page { display: none; position: absolute; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; }
+.page { position: absolute; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; background: url(../images/loadingBg.png) #000000 no-repeat center top/cover; }
 
-.loading { z-index: 11; background: url(../images/loadingBg.png) #000000 no-repeat center top/100%; }
+.loading { z-index: 11; background-image: url(../images/loadingBg.png); }
 
 .loading .loadingTitle { position: absolute; bottom: 7.6%; left: 0; width: 100%; }
 
-.loading .loadingTitle img { display: block; width: 2.76rem; margin: 0 auto; }
+.loading .loadingTitle img { display: block; margin: 0 auto; }
 
-.brief { z-index: 11; background: url(../images/briefBg.png) #000000 no-repeat center top/100%; }
+.loading .loadingTitle .loading-circle { position: relative; width: .8rem; height: .8rem; margin: 0 auto .32rem; font-size: .48rem; color: #e6392a; }
+
+.loading .loadingTitle .loading-circle span { position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-align: center; line-height: .8rem; }
+
+.loading .loadingTitle .loading1 { width: 2.72rem; }
+
+.brief { z-index: 11; background-image: url(../images/briefBg.png); }
 
 .brief img { display: block; width: 100%; }
 
@@ -1536,7 +1542,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .brief .brief-card { position: absolute; bottom: 0; right: 24.4%; width: 51.2%; }
 
-.message { z-index: 11; background: url(../images/briefBg.png) #000000 no-repeat center top/100%; }
+.message { z-index: 11; background-image: url(../images/briefBg.png); }
 
 .message img { display: block; width: 100%; }
 
@@ -1574,7 +1580,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .message .message-upload { position: absolute; top: 88.3%; left: 50%; width: 7.24rem; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
 
-.templet { display: block; z-index: 11; background: url(../images/briefBg.png) #000000 no-repeat center top/100%; }
+.templet { z-index: 11; background-image: url(../images/briefBg.png); }
 
 .templet img { display: block; width: 100%; }
 
@@ -1596,7 +1602,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .templet .arrow-right { position: absolute; top: 46.6%; right: 3.4%; width: .88rem; }
 
-.templet .upload-area { position: absolute; top: 15.5%; left: 50%; width: 10.74rem; height: 16.32rem; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+.templet .upload-area { position: absolute; top: 15.5%; left: 50%; z-index: 1; width: 10.74rem; height: 16.32rem; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
 
 .templet .upload-area .upload-box { position: absolute; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; }
 
@@ -1606,6 +1612,36 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .templet .upload-area .fileUpload { position: absolute; left: 0; top: 0; z-index: 5; display: block; width: 100%; height: 100%; opacity: 0; }
 
-.share { z-index: 11; background: url(../images/shareBg.png) #000000 no-repeat center top/100%; }
+.share { z-index: 11; background-image: url(../images/shareBg.png); }
 
 .share img { display: block; width: 100%; }
+
+.share .share-cloud2 { position: absolute; top: 42.7%; right: 0; width: 4.4rem; }
+
+.share .result { position: absolute; top: 9.2%; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); width: 10.8rem; }
+
+.share .share-cloud1 { position: absolute; top: 13.8%; left: 0; width: 3.28rem; }
+
+.share .share-pine { position: absolute; top: o; right: 0; width: 8.4rem; }
+
+.share .share-logo { position: absolute; top: 1.4%; left: 3.2%; width: 3.36rem; }
+
+.share .share-stone { position: absolute; bottom: 0; left: 0; width: 100%; }
+
+.share .share-crane { position: absolute; bottom: 10.4%; right: 0; width: 4.2rem; }
+
+.share .share-mushroom { position: absolute; bottom: 0; right: 0; width: 100%; }
+
+.share .share-btn { position: absolute; bottom: 0; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); width: 8.88rem; }
+
+.share .share-save { position: absolute; bottom: 18.2%; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); width: 3.4rem; }
+
+.cover { display: none; z-index: 12; background-color: rgba(0, 0, 0, 0.8); }
+
+.cover img { display: block; width: 100%; }
+
+.cover .cover-light { position: absolute; top: 0; left: 0; width: 100%; }
+
+.cover .cover-cloud { position: absolute; top: 5.4%; right: 0; width: 4.96rem; }
+
+.cover .cover-crane { position: absolute; top: 0.9%; right: 12%; width: 2.24rem; }
