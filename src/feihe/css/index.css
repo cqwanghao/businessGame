@@ -1596,7 +1596,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .templet .templet-lantern3 { position: absolute; top: 49.9%; left: 75.7%; width: 2rem; z-index: 2; }
 
-.templet .templet-cloud { position: absolute; top: 28.6%; right: 0; width: 5.6rem; z-index: 2; }
+.templet .templet-cloud { position: absolute; top: 28.6%; right: 0; width: 5.6rem; }
 
 .templet .arrow-left { position: absolute; top: 46.6%; left: 3.4%; width: .88rem; }
 
@@ -1612,9 +1612,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .templet .uploadBox .swiper-container .upload-area .upload-box .templetBg { display: block; max-width: 100%; width: auto; }
 
-.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box1 { background: url(../images/templet-upload2.png) no-repeat center center/100%; }
+.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box1 { background: url(../images/templet-upload1.png) no-repeat center center/100%; }
 
 .templet .uploadBox .swiper-container .upload-area .upload-box.upload-box2 { background: url(../images/templet-upload2.png) no-repeat center center/100%; }
+
+.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box3 { background: url(../images/templet-upload3.png) no-repeat center center/100%; }
 
 .templet .uploadBox .swiper-container .upload-area .templetImg { position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; }
 

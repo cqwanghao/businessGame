@@ -287,7 +287,7 @@ html,body{
 		top: 28.6%;
 		right: 0;
 		width: 5.6rem;
-		z-index: 2;
+		// z-index: 2;
 	}
 	.arrow-left{
 		position: absolute;
@@ -338,10 +338,13 @@ html,body{
 						width: auto;
 					}
 					&.upload-box1{
-						background: url(../images/templet-upload2.png) no-repeat center center/100%;
+						background: url(../images/templet-upload1.png) no-repeat center center/100%;
 					}
 					&.upload-box2{
 						background: url(../images/templet-upload2.png) no-repeat center center/100%;
+					}
+					&.upload-box3{
+						background: url(../images/templet-upload3.png) no-repeat center center/100%;
 					}
 				}
 				.templetImg{
