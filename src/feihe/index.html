@@ -10,6 +10,7 @@
   <meta http-equiv="Expires" content="0" />
   <title>飞鹤</title>
   <link rel="stylesheet" href="css/slidePage.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/index.css">
   <script>
     (function (window, document) {
@@ -130,18 +131,39 @@
         <div class="templet-cloud">
           <img src="images/templet-cloud.png" />
         </div>
-        <div class="arrow-left">
+        <div class="arrow-left swiper-arrow-prev">
           <img src="images/arrow-left.png" />
         </div>
-        <div class="arrow-right">
+        <div class="arrow-right swiper-arrow-next">
           <img src="images/arrow-right.png" />
         </div>
-        <div class="upload-area">
-          <div class="upload-box">
-            <img src="images/templet-bg2.png" class="templetBg" />
-          </div>
-          <img src="images/templet2.png" class="templetImg" />
-          <input type="file" class="fileUpload" id="upload" accept="image/*">
+        <div class="uploadBox">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="upload-area swiper-slide">
+                    <div class="upload-box upload-box1">
+                      <img src="images/templet-bg2.png" class="templetBg" />
+                    </div>
+                    <img src="images/templet2.png" class="templetImg" />
+                    <!-- <input type="file" class="fileUpload" id="upload" accept="image/*"> -->
+                  </div>
+                  <div class="upload-area swiper-slide">
+                    <div class="upload-box upload-box2">
+                      <img src="images/templet-bg2.png" class="templetBg" />
+                    </div>
+                    <img src="images/templet2.png" class="templetImg" />
+                    <!-- <input type="file" class="fileUpload" id="upload" accept="image/*"> -->
+                  </div>
+                  <div class="upload-area swiper-slide">
+                    <div class="upload-box upload-box3">
+                      <img src="images/templet-bg2.png" class="templetBg" />
+                    </div>
+                    <img src="images/templet2.png" class="templetImg" />
+                    <!-- <input type="file" class="fileUpload" id="upload" accept="image/*"> -->
+                  </div>
+                </div>
+            </div>
+            <input type="file" class="fileUpload" id="upload" accept="image/*">
         </div>
       </div>
       <!-- 分享页 -->
@@ -150,7 +172,7 @@
           <img src="images/share-cloud2.png" />
         </div>
         <div class="result">
-          <img src="images/result1.png" />
+          <img src="images/result1.png" id="resultImg" />
         </div>
         <div class="share-cloud1">
           <img src="images/share-cloud1.png" />
@@ -197,6 +219,10 @@
     <script src="js/soundjs-0.6.2.min.js"></script>
     <script src="js/qrcode.min.js"></script>
     <script src="js/slidePage.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/AlloyFinger.js"></script>
+    <script src="js/transformjs.js"></script>
+    <script src="js/html2canvas.js"></script>
     <!--微信分享-->
     <script src="http://h5.zegelo.com/Themes/js/WeiXin.js"></script>
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
