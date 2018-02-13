@@ -22,9 +22,13 @@ html,body{
 	height: 100%;
 	background: url(../images/loadingBg.png) #000000 no-repeat center top/cover;
 }
+img{
+	pointer-events: none; 
+	user-select:none;
+}
 // 加载页
 .loading{
-	z-index: 11;
+	z-index: 13;
 	background-image: url(../images/loadingBg.png);
 	.loadingTitle{
 		position: absolute;
@@ -338,13 +342,13 @@ html,body{
 						width: auto;
 					}
 					&.upload-box1{
-						background: url(../images/templet-upload1.png) no-repeat center center/100%;
+						background: url(../images/templet-bg1.png) #d8c6a9 no-repeat center center/100%;
 					}
 					&.upload-box2{
-						background: url(../images/templet-upload2.png) no-repeat center center/100%;
+						background: url(../images/templet-bg2.png) no-repeat center center/100%;
 					}
 					&.upload-box3{
-						background: url(../images/templet-upload3.png) no-repeat center center/100%;
+						background: url(../images/templet-bg3.png) no-repeat center center/100%;
 					}
 				}
 				.templetImg{
@@ -354,6 +358,108 @@ html,body{
 					z-index: 2;
 					width: 100%;
 					height: 100%;
+				}
+				.word-area{
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 3;
+					width: 100%;
+					height: 100%;
+					&.word-area1{
+						.p1{
+							position: absolute;
+							top: 28%;
+							left: 6.5%;
+							font-size: .64rem;
+							color: #4a351d;
+							span{
+								margin-left: .24rem;
+								color: #d44040;
+							}
+						}
+						.p2{
+							position: absolute;
+							top: 33.9%;
+							left: 6.5%;
+							font-size: .48rem;
+							color: #4a351d;
+						}
+						.p3{
+							position: absolute;
+							top: 76.1%;
+							left: 32.5%;
+							font-size: .32rem;
+							color: #4a351d;
+						}
+						.p4{
+							position: absolute;
+							top: 80.9%;
+							left: 32.5%;
+							width: 48.3%;
+							font-size: .32rem;
+							color: #4a351d;
+							span{
+								color: #df0606;
+							}
+						}
+					}
+					&.word-area2{
+						.vertical{
+							position: absolute;
+							top: 5.4%;
+							left: 8%;
+							height: 5.2rem;
+							writing-mode:tb-rl;
+							.word{
+								padding: 0 .08rem;
+								border-left: .02rem solid #3c0300;
+								font-size: .36rem;
+								color: #959595;
+								span{
+									color: #ff0000;
+								}
+							}
+						}
+						.p7{
+							position: absolute;
+							top: 44%;
+							left: 59.2%;
+							width: 2.8rem;
+							text-align: center;
+							letter-spacing: .2rem;
+							font-size: .36rem;
+							color: #f85645;
+						}
+					}
+					&.word-area3{
+						.vertical{
+							position: absolute;
+							top: 69.3%;
+							left: 41.5%;
+							height: 5.2rem;
+							writing-mode:tb-rl;
+							.word{
+								padding: 0 .08rem;
+								font-size: .36rem;
+								color: #df3f35;
+								span{
+									color: #595959;
+								}
+							}
+						}
+						.p7{
+							position: absolute;
+							top: 78%;
+							left: 34%;
+							// width: 2.8rem;
+							// text-align: center;
+							letter-spacing: .2rem;
+							font-size: .36rem;
+							color: #595959;
+							writing-mode:tb-rl;
+						}
+					}
 				}
 				// .fileUpload{
 				// 	position: absolute;
@@ -400,6 +506,9 @@ html,body{
 		z-index: 1;
 		transform: translate3d(-50%,0,0);
 		width: 10.8rem;
+		img{
+			pointer-events: auto;
+		}
 	}
 	.share-cloud1{
 		position: absolute;
@@ -458,7 +567,7 @@ html,body{
 .cover{
 	display: none;
 	z-index: 12;
-	background-color: rgba(0,0,0,.8);
+	background: rgba(0,0,0,.8);
 	img{
 		display: block;
 		width: 100%;

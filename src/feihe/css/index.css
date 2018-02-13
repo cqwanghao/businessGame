@@ -1512,7 +1512,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .page { position: absolute; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; background: url(../images/loadingBg.png) #000000 no-repeat center top/cover; }
 
-.loading { z-index: 11; background-image: url(../images/loadingBg.png); }
+img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.loading { z-index: 13; background-image: url(../images/loadingBg.png); }
 
 .loading .loadingTitle { position: absolute; bottom: 7.6%; left: 0; width: 100%; }
 
@@ -1612,13 +1614,43 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .templet .uploadBox .swiper-container .upload-area .upload-box .templetBg { display: block; max-width: 100%; width: auto; }
 
-.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box1 { background: url(../images/templet-upload1.png) no-repeat center center/100%; }
+.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box1 { background: url(../images/templet-bg1.png) #d8c6a9 no-repeat center center/100%; }
 
-.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box2 { background: url(../images/templet-upload2.png) no-repeat center center/100%; }
+.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box2 { background: url(../images/templet-bg2.png) no-repeat center center/100%; }
 
-.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box3 { background: url(../images/templet-upload3.png) no-repeat center center/100%; }
+.templet .uploadBox .swiper-container .upload-area .upload-box.upload-box3 { background: url(../images/templet-bg3.png) no-repeat center center/100%; }
 
 .templet .uploadBox .swiper-container .upload-area .templetImg { position: absolute; top: 0; left: 0; z-index: 2; width: 100%; height: 100%; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area { position: absolute; top: 0; left: 0; z-index: 3; width: 100%; height: 100%; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p1 { position: absolute; top: 28%; left: 6.5%; font-size: .64rem; color: #4a351d; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p1 span { margin-left: .24rem; color: #d44040; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p2 { position: absolute; top: 33.9%; left: 6.5%; font-size: .48rem; color: #4a351d; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p3 { position: absolute; top: 76.1%; left: 32.5%; font-size: .32rem; color: #4a351d; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p4 { position: absolute; top: 80.9%; left: 32.5%; width: 48.3%; font-size: .32rem; color: #4a351d; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area1 .p4 span { color: #df0606; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area2 .vertical { position: absolute; top: 5.4%; left: 8%; height: 5.2rem; -webkit-writing-mode: tb-rl; -ms-writing-mode: tb-rl; writing-mode: tb-rl; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area2 .vertical .word { padding: 0 .08rem; border-left: .02rem solid #3c0300; font-size: .36rem; color: #959595; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area2 .vertical .word span { color: #ff0000; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area2 .p7 { position: absolute; top: 44%; left: 59.2%; width: 2.8rem; text-align: center; letter-spacing: .2rem; font-size: .36rem; color: #f85645; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area3 .vertical { position: absolute; top: 69.3%; left: 41.5%; height: 5.2rem; -webkit-writing-mode: tb-rl; -ms-writing-mode: tb-rl; writing-mode: tb-rl; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area3 .vertical .word { padding: 0 .08rem; font-size: .36rem; color: #df3f35; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area3 .vertical .word span { color: #595959; }
+
+.templet .uploadBox .swiper-container .upload-area .word-area.word-area3 .p7 { position: absolute; top: 78%; left: 34%; letter-spacing: .2rem; font-size: .36rem; color: #595959; -webkit-writing-mode: tb-rl; -ms-writing-mode: tb-rl; writing-mode: tb-rl; }
 
 .templet .uploadBox .fileUpload { position: absolute; left: 0; top: 0; z-index: 5; display: block; width: 100%; height: 100%; opacity: 0; }
 
@@ -1629,6 +1661,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 .share .share-cloud2 { position: absolute; top: 42.7%; right: 0; width: 4.4rem; }
 
 .share .result { position: absolute; top: 9.2%; left: 50%; z-index: 1; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); width: 10.8rem; }
+
+.share .result img { pointer-events: auto; }
 
 .share .share-cloud1 { position: absolute; top: 13.8%; left: 0; width: 3.28rem; }
 
@@ -1646,7 +1680,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #ffffff; }
 
 .share .share-save { position: absolute; bottom: 18.2%; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); width: 3.4rem; }
 
-.cover { display: none; z-index: 12; background-color: rgba(0, 0, 0, 0.8); }
+.cover { display: none; z-index: 12; background: rgba(0, 0, 0, 0.8); }
 
 .cover img { display: block; width: 100%; }
 

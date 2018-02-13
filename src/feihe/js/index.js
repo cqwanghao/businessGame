@@ -1,5 +1,77 @@
 (function () {
     $(function () {
+        //预加载资源
+        var progress = 0;
+        var queue = new createjs.LoadQueue(false);
+        var manifest = [
+            'images/arrow-left.png',
+            'images/arrow-right.png',
+            'images/briefBg.png',
+            'images/brief-card.png',
+            'images/brief-cloud1.png',
+            'images/brief-cloud2.png',
+            'images/brief-cloud3.png',
+            'images/brief-dog.png',
+            'images/brief-flower.png',
+            'images/brief-word1.png',
+            'images/cover-cloud.png',
+            'images/cover-crane.png',
+            'images/cover-light.png',
+            'images/loading1.png',
+            'images/loadingBg.png',
+            'images/loading-circle.png',
+            'images/message-bird.png',
+            'images/message-box.png',
+            'images/message-cloud1.png',
+            'images/message-cloud2.png',
+            'images/message-crane.png',
+            'images/message-lantern.png',
+            'images/message-tree.png',
+            'images/message-upload.png',
+            'images/message-word1.png',
+            'images/message-word2.png',
+            'images/result1.png',
+            'images/shareBg.png',
+            'images/share-btn.png',
+            'images/share-cloud1.png',
+            'images/share-cloud2.png',
+            'images/share-cloud3.png',
+            'images/share-crane.png',
+            'images/share-logo.png',
+            'images/share-mushroom.png',
+            'images/share-pine.png',
+            'images/share-save.png',
+            'images/share-stone.png',
+            'images/templet1.png',
+            'images/templet2.png',
+            'images/templet3.png',
+            'images/templet-bg1.png',
+            'images/templet-bg2.png',
+            'images/templet-bg3.png',
+            'images/templet-card.png',
+            'images/templet-cloud.png',
+            'images/templet-lantern.png',
+            'images/templet-lantern2.png',
+            'images/templet-lantern3.png',
+            'images/templet-pine.png',
+            'images/templet-tree.png',
+            'images/templet-upload1.png',
+            'images/templet-upload2.png',
+            'images/templet-upload3.png',
+        ];
+        queue.loadManifest(manifest);
+        queue.on("fileload", function (e) {
+            progress++;
+            $('#progress').html(parseInt(progress / manifest.length * 100));
+        }, this);
+        queue.on('complete', handleComplete, this);
+        //加载完毕处理函数
+        function handleComplete() {
+            var timer = setTimeout(function(){
+                $('.page.loading').fadeOut();
+            },1000);
+        }
+
         // 全屏滚动
         var slide = new slidePage({
             useAnimation: true,
@@ -16,7 +88,7 @@
         });
         window.slide = slide;
 
-        slide.slideTo(4);
+        // slide.slideTo(4);
 
         var pageIndex = 0;
 
@@ -26,14 +98,11 @@
                 init: function(){
                     pageIndex = this.activeIndex;
                     console.log(pageIndex);
-                    //移动缩放旋转
-                    transformImg();
+                    
                 },
                 slideChangeTransitionEnd: function(){
                     pageIndex = this.activeIndex;
                     console.log(pageIndex);
-                    //移动缩放旋转
-                    transformImg();
                 },
             },
             navigation: {
@@ -59,6 +128,8 @@
                 $('#upload').hide();
                 $(".arrow-left").hide();
                 $(".arrow-right").hide();
+                //移动缩放旋转
+                transformImg();
             }
         });
 
@@ -67,7 +138,8 @@
         // var mobanImg = document.querySelector(".templetImg");
         function transformImg(){
             var pinchRotateImg = $('.templetBg')[pageIndex];
-            var mobanImg = $(".templetImg")[pageIndex];
+            var mobanImg = $(".word-area")[pageIndex];
+            // var mobanImg = $(".templetImg")[pageIndex];
             Transform(pinchRotateImg);
             new AlloyFinger(mobanImg, {
                 rotate: function (evt) {
@@ -121,6 +193,14 @@
                 // $('.page.saveImg ').fadeIn();
                 // $('.page.canvas').fadeOut();
             });
+        });
+
+        // 分享按钮
+        $("#share-btn").click(function(){
+            $(".cover").fadeIn();
+        });
+        $(".cover").click(function(){
+            $(".cover").fadeOut();
         });
 
     });
