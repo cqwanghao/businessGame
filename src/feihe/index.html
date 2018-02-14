@@ -233,6 +233,12 @@
         <div class="result">
           <img src="images/result1.png" id="resultImg" />
         </div>
+        <div class="shareResult" id="shareResult">
+          <img src="images/result1.png" id="shareImg" />
+        </div>
+        <div class="shareLogo">
+          <img src="" id="shareLogo"  />
+        </div>
         <div class="share-cloud1">
           <img src="images/share-cloud1.png" />
         </div>
@@ -277,10 +283,22 @@
         </div>
       </div>
     </div>
+    
+    <!-- 上传的照片 -->
+    <input name="UploadPhoto" type="hidden" />
+    <!-- 选择的模版号 -->
+    <input name="TempLateID" type="hidden" />
+    <!-- 合成的照片 -->
+    <input name="UserPhoto" type="hidden" />
+    <!-- 200*200的照片 -->
+    <input name="SharePhoto" type="hidden" />
+
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/preloadjs-0.6.2.min.js"></script>
     <script src="js/soundjs-0.6.2.min.js"></script>
     <script src="js/qrcode.min.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/exif.js"></script>
     <script src="js/slidePage.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/AlloyFinger.js"></script>

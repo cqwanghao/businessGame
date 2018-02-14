@@ -278,7 +278,7 @@ img{
 		bottom: 0;
 		left: 0;
 		width: 96.6%;
-		z-index: 3;
+		// z-index: 3;
 	}
 	.message-cloud2{
 		position: absolute;
@@ -290,6 +290,7 @@ img{
 		position: absolute;
 		top: 88.3%;
 		left: 50%;
+		z-index: 2;
 		width: 7.24rem;
 		transform: translate3d(-50%,0,0);
 	}
@@ -331,6 +332,7 @@ img{
 		position: absolute;
 		bottom: 2.9%;
 		left: 21.6%;
+		z-index: 2;
 		width: 7.72rem;
 	}
 	.templet-lantern3{
@@ -351,12 +353,14 @@ img{
 		position: absolute;
 		top: 46.6%;
 		left: 3.4%;
+		z-index: 2;
 		width: .88rem;
 	}
 	.arrow-right{
 		position: absolute;
 		top: 46.6%;
 		right: 3.4%;
+		z-index: 2;
 		width: .88rem;
 	}
 	.slideWrapper {
@@ -622,6 +626,25 @@ img{
 		img{
 			pointer-events: auto;
 		}
+	}
+	.shareResult{
+		position: absolute;
+		top: 9.2%;
+		left: 50%;
+		z-index: -1;
+		transform: translate3d(-50%,0,0);
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 10.88rem;
+		}
+	}
+	.shareLogo{
+		display: none;
 	}
 	.share-cloud1{
 		position: absolute;

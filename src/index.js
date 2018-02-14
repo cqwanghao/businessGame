@@ -1,7 +1,30 @@
 (function () {
     $(function () {
+
         //预加载资源
         var progress = 0;
+        // 全屏滚动
+        var slide = null;
+
+        slideScroll(1);
+        // 销毁实例
+        slide.destroy();
+
+        // loading页图片加载
+        // var queueBefore = new createjs.LoadQueue(true);
+        // var imagesBeforeArr = [
+        //     'images/loadingBg.png',
+        // ];
+        // var imgBeforeLength = imagesBeforeArr.length;
+
+        // 服务器路径
+        // imagesBeforeArr.forEach(function(item,index){
+        //     item = "/Scripts/mp/FeiHe/"+ item;
+        //     imagesBeforeArr[index] = item;
+        // });
+        // console.log(imagesBeforeArr);
+
+        // queueBefore.loadManifest(imagesBeforeArr);
         var queue = new createjs.LoadQueue(false);
         var manifest = [
             'images/arrow-left.png',
@@ -61,12 +84,17 @@
         ];
 
         // 服务器路径
-        // manifest.forEach(function(item,index){
-        //     item = "/Scripts/mp/FeiHe/"+ item;
-        //     manifest[index] = item;
-        // });
+        manifest.forEach(function(item,index){
+            item = "/Scripts/mp/FeiHe/"+ item;
+            manifest[index] = item;
+        });
+        // console.log(manifest);
 
         queue.loadManifest(manifest);
+        // queueBefore.on("complete", function (e) {
+        //     $('.page.loading').addClass("active");
+        //     queue.on('complete', handleComplete, this);
+        // }, this);
         queue.on("fileload", function (e) {
             progress++;
             $('#progress').html(parseInt(progress / manifest.length * 100));
@@ -76,15 +104,49 @@
         function handleComplete() {
             var timer = setTimeout(function(){
                 // $('.page.loading').fadeOut();
-                // slideScroll(2);
+                slideScroll(2);
             },1000);
         }
+
+        // 出生年、月、医院
+        var dateYear = "";
+        var dateMonth = "";
+        var dateAddr = "";
+        var userName = "微风";
+
+        // 全屏滚动
+        function slideScroll(pageNum){
+            slide = new slidePage({
+                useAnimation: true,
+                page: pageNum || 1,
+                before: function(origin,direction,target){
+                    console.log("origin:"+origin+",direction:"+direction+",target:"+target);
+                },
+                after: function(origin,direction,target){
+                    console.log("origin:"+origin+",direction:"+direction+",target:"+target);
+                    if(target == 4){
+                        // 销毁当前实例
+                        // slide.destroy();
+                        dateYear = $(".year").val();
+                        dateMonth = $(".month").val();
+                        dateAddr = $(".addr-s").val();
+                        
+                        $(".t-year").html(dateYear);
+                        $(".t-month").html(dateMonth);
+                        $(".t-addr").html(dateAddr);
+                        $(".t-name").html(userName);
+                    }
+                },
+            });
+            window.slide = slide;
+        }
+
+
+        // slide.slideTo(3);
 
         // 验证年
         $(".year").on("input",function(){
             var yearVal = $(".year").val();
-            console.log(yearVal);
-            console.log(isNaN(yearVal));
             if(isNaN(yearVal)){
                 $(".year").val("");
                 return false;
@@ -92,7 +154,6 @@
             if(yearVal.length > 4){
                 yearVal = yearVal.substring(0,4);
                 $(".year").val(yearVal);
-                console.log(yearVal);
                 return false;
             }
         });
@@ -100,8 +161,6 @@
         // 验证月
         $(".month").on("input",function(e){
             var monthVal = $(".month").val();
-            console.log(monthVal);
-            console.log(isNaN(monthVal));
             if(isNaN(monthVal)){
                 $(".month").val("");
                 return false;
@@ -111,61 +170,7 @@
                 return false;
             }
         });
-
-        // 出生年、月、医院
-        var dateYear = "";
-        var dateMonth = "";
-        var dateAddr = "";
-        var userName = "微风";
-
-        // 全屏滚动
-        var slide = new slidePage({
-            useAnimation: true,
-            before: function(origin,direction,target){
-                switch (target | 0) {
-                    case 1: 
-                        $('.glbYun1').show().removeClass('active');
-                        break;
-                    case 2:
-                        $('.glbYun1').show().addClass('active');
-                        break;
-                    case 3: 
-                        // $('.glbYun1').hide();
-                        break;
-                    default:
-                        break;
-                }
-            },
-            after: function(origin,direction,target){
-                switch (target | 0) {
-                    case 1: 
-                        $('.glbYun1').show().removeClass('active');
-                        break;
-                    case 2:
-                        $('.glbYun1').show().addClass('active');
-                        break;
-                    case 3: 
-                        $('.glbYun1').hide();
-                        break;
-                    default:
-                        break;
-                }
-                if(target == 4){
-                    // 销毁当前实例
-                    // slide.destroy();
-                    dateYear = $(".year").val();
-                    dateMonth = $(".month").val();
-                    dateAddr = $(".addr-s").val();
-                    
-                    $(".t-year").html(dateYear);
-                    $(".t-month").html(dateMonth);
-                    $(".t-addr").html(dateAddr);
-                    $(".t-name").html(userName);
-                }
-            },
-        });
-        window.slide = slide;
-
+ 
         // 跳到下一页
         $(".next-btn").click(function(){
             slide.slideNext();
@@ -208,99 +213,25 @@
         },1000);
 
         //上传图片
-        // $("#upload").on("change", function (e) {
-        //     var file = e.target.files[0];
-        //     if (!file.type.match('image.*')) {
-        //     return false;
-        //     }
-        //     var reader = new FileReader();
-        //     reader.readAsDataURL(file);
-        //     reader.onload = function (arg) {
-        //         // 销毁实例
-        //         swiper.destroy();
-        //         // 更换模板
-        //         $(".upload-area").hide().eq(pageIndex).show();
-        //         $('.templetBg').eq(pageIndex).attr('src', arg.target.result);
-        //         $('#upload').hide();
-        //         $(".arrow-left").hide();
-        //         $(".arrow-right").hide();
-        //         //移动缩放旋转
-        //         transformImg();
-        //     }
-        // });
-
-        //上传图片
         $("#upload").on("change", function (e) {
-            layer.open({
-                type: 2,
-                content:'上传中...',
-                shadeClose: false
-            });
             var file = e.target.files[0];
-            var Orientation = null;
             if (!file.type.match('image.*')) {
-                return false;
+            return false;
             }
-            EXIF.getData(file, function () {
-                Orientation = EXIF.getTag(this, 'Orientation');
-            });
-
-            var fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
-            fileReader.onload = function (event) {
-                var result = event.target.result; //返回的dataURL
-                var image = new Image();
-                image.src = result;
-                image.onload = function () { //创建一个image对象，给canvas绘制使用
-
-                    var cvs = document.createElement('canvas');
-                    var ctx = cvs.getContext('2d');
-                    var scale = 1; //预留压缩比
-
-                    cvs.width = this.width * scale;
-                    cvs.height = this.height * scale; //计算等比缩小后图片宽高
-
-                    if (Orientation && Orientation != 1) {
-                        switch (Orientation) {
-                            case 6: // 旋转90度
-
-                            cvs.width = this.height * scale;
-                            cvs.height = this.width * scale;
-                            ctx.rotate(Math.PI / 2);
-                            // (0,-imgHeight) 从旋转原理图那里获得的起始点
-                            ctx.drawImage(this, 0, -this.height * scale, this.width * scale, this.height * scale);
-                            break;
-                            case 3: // 旋转180度
-                            ctx.rotate(Math.PI);
-                            ctx.drawImage(this, this.width * scale, -this.height * scale, this.width * scale, this.height * scale);
-                            break;
-                            case 8: // 旋转-90度
-
-                            cvs.width = this.height * scale;
-                            cvs.height = this.width * scale;
-                            ctx.rotate(3 * Math.PI / 2);
-                            ctx.drawImage(this, -this.width * scale, 0, this.width * scale, this.height * scale);
-                            break;
-
-                        }
-                    } else {
-                        ctx.drawImage(this, 0, 0, cvs.width, cvs.height);
-                    } 
-                    // $('#pinchRotateImg').attr('src', cvs.toDataURL('image/png', 0.7));
-                    // $('#upload').hide();
-                    // 销毁实例
-                    swiper.destroy();
-                    // 更换模板
-                    $(".upload-area").hide().eq(pageIndex).show();
-                    $('.templetBg').eq(pageIndex).attr('src', event.target.result);
-                    $('#upload').hide();
-                    $(".arrow-left").hide();
-                    $(".arrow-right").hide();
-                    //移动缩放旋转
-                    transformImg();
-                    layer.closeAll();
-                };
-            };
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function (arg) {
+                // 销毁实例
+                swiper.destroy();
+                // 更换模板
+                $(".upload-area").hide().eq(pageIndex).show();
+                $('.templetBg').eq(pageIndex).attr('src', arg.target.result);
+                $('#upload').hide();
+                $(".arrow-left").hide();
+                $(".arrow-right").hide();
+                //移动缩放旋转
+                transformImg();
+            }
         });
 
         //移动缩放旋转
@@ -336,20 +267,11 @@
             html2canvas($(".upload-area")[pageIndex], {
                 backgroundColor: 'transparent', // 设置背景透明
             }).then(function (canvas) {
-                // 合成图
                 $('#resultImg').attr('src', canvas.toDataURL("image/png"));
-                // 分享小图
-                $('#shareImg').attr('src', canvas.toDataURL("image/png"));
 
-                var resultTimer = setTimeout(function(){
-                    html2canvas(document.querySelector("#shareResult"), {
-                        backgroundColor: 'transparent', // 设置背景透明
-                    }).then(function (canvas2) {
-                        // console.log(canvas2.toDataURL("image/png"));
-                        $("#shareLogo").attr("src",canvas2.toDataURL("image/png"));
-                    });
-                    clearTimeout(resultTimer);
-                },2000);
+                // dateYear = $(".year").val();
+                // dateMonth = $(".month").val();
+                // dateAddr = $(".addr-s").val();
 
                 if(!dateYear || !dateMonth || !dateAddr || !userName){
                     alert("信息不能为空");
@@ -362,9 +284,13 @@
                 $("[name=UploadPhoto]").val($(".templetBg").eq(pageIndex).attr("src"));
                 $("[name=TempLateID]").val(pageIndex + 1);
                 $("[name=UserPhoto]").val($("#resultImg").attr("src"));
-                $("[name=SharePhoto]").val($("#shareLogo").attr("src"));
+                $("[name=SharePhoto]").val($("#resultImg").attr("src"));
 
-                // 调用接口
+
+                // console.log($(".templetBg").eq(pageIndex).attr("src"));
+                // console.log($("[name=UploadPhoto]").val());
+                // console.log($("[name=TempLateID]").val());
+                // console.log($("[name=UserPhoto]").val());
                 coper.subuserPhoto();
 
                 // 跳到下一页
