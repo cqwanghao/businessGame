@@ -1606,7 +1606,9 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .templet .arrow-right { position: absolute; top: 46.6%; right: 3.4%; width: .88rem; }
 
-.templet .uploadBox { position: absolute; top: 15.5%; left: 50%; z-index: 1; width: 10.74rem; height: 16.32rem; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+.templet .slideWrapper { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; padding-bottom: 1.6rem; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.templet .uploadBox { width: 10.74rem; height: 16.32rem; position: relative; }
 
 .templet .uploadBox .swiper-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
