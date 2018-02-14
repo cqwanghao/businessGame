@@ -2,21 +2,6 @@
     $(function () {
         //预加载资源
         var progress = 0;
-        // loading页图片加载
-        var queueBefore = new createjs.LoadQueue(true);
-        var imagesBeforeArr = [
-            'images/loadingBg.png',
-        ];
-        // var imgBeforeLength = imagesBeforeArr.length;
-
-        // 服务器路径
-        // imagesBeforeArr.forEach(function(item,index){
-        //     item = "/Scripts/mp/FeiHe/"+ item;
-        //     imagesBeforeArr[index] = item;
-        // });
-        // console.log(imagesBeforeArr);
-
-        queueBefore.loadManifest(imagesBeforeArr);
         var queue = new createjs.LoadQueue(false);
         var manifest = [
             'images/arrow-left.png',
@@ -83,21 +68,10 @@
         // console.log(manifest);
 
         queue.loadManifest(manifest);
-        queueBefore.on("complete", function (e) {
-            $('.page.loading').addClass("active");
-            queue.on('complete', handleComplete, this);
-        }, this);
         queue.on("fileload", function (e) {
             progress++;
             $('#progress').html(parseInt(progress / manifest.length * 100));
         }, this);
-        // queue.on('complete', handleComplete, this);
-        //加载完毕处理函数
-        function handleComplete() {
-            var timer = setTimeout(function(){
-                $('.page.loading').fadeOut();
-            },2000);
-        }
 
         // 出生年、月、医院
         var dateYear = "";
@@ -129,12 +103,6 @@
         });
         window.slide = slide;
 
-        // slide.slideTo(3);
- 
-        // 跳到下一页
-        $(".next-btn").click(function(){
-            slide.slideNext();
-        });
 
         var pageIndex = 0;
 

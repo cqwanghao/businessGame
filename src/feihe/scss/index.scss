@@ -3,7 +3,7 @@ html,body{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-  	background: #ffffff;
+	background-color: #e2413f;
 }
 .container{
 	position: relative;
@@ -13,15 +13,12 @@ html,body{
 }
 // page通用样式
 .page {
-	// display: none;
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-	min-height: 500px;
-	background: url(../images/loadingBg.png) #000000 no-repeat center top/cover;
 }
 img{
 	pointer-events: none; 
@@ -30,10 +27,18 @@ img{
 // 加载页
 .loading{
 	z-index: 13;
-	background-color: #df3d3b;
-	&.active{
-		background-image: url(../images/loadingBg.png);
-		background-color: #000000;
+	background-image: url(../images/loading.jpg);
+	background-size: 100%;
+	background-position: left top;
+	background-color: #e2413f;
+	.loadingBg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: url(../images/loadingBg.png) no-repeat center;
+		background-size: 100%;
 	}
 	.loadingTitle{
 		position: absolute;
@@ -69,7 +74,11 @@ img{
 // 简介页
 .brief{
 	z-index: 11;
-	background-image: url(../images/briefBg.png);
+	background-image: url(../images/bgMain.jpg);
+	background-size: 100%;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: #e2413f;
 	img{
 		display: block;
 		width: 100%;
@@ -664,4 +673,14 @@ img{
 			width: 9.44rem;
 		}
 	}
+}
+
+.slide-container .slide-page {
+	background-position: left top;
+	margin: 0;
+	padding: 0;
+}
+
+.slide-container .slide-page.transition {
+	transition: all 3s;
 }
