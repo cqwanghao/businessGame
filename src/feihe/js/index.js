@@ -83,10 +83,34 @@
         var slide = new slidePage({
             useAnimation: true,
             before: function(origin,direction,target){
-                console.log("origin:"+origin+",direction:"+direction+",target:"+target);
+                switch (target | 0) {
+                    case 1: 
+                        $('.glbYun1').show().removeClass('active');
+                        break;
+                    case 2:
+                        $('.glbYun1').show().addClass('active');
+                        break;
+                    case 3: 
+                        // $('.glbYun1').hide();
+                        break;
+                    default:
+                        break;
+                }
             },
             after: function(origin,direction,target){
-                console.log("origin:"+origin+",direction:"+direction+",target:"+target);
+                switch (target | 0) {
+                    case 1: 
+                        $('.glbYun1').show().removeClass('active');
+                        break;
+                    case 2:
+                        $('.glbYun1').show().addClass('active');
+                        break;
+                    case 3: 
+                        $('.glbYun1').hide();
+                        break;
+                    default:
+                        break;
+                }
                 if(target == 3){
                     // 销毁当前实例
                     // slide.destroy();

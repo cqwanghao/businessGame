@@ -1506,9 +1506,13 @@ template { display: none; }
 
 .slideOutUp { -webkit-animation-name: slideOutUp; animation-name: slideOutUp; }
 
-html, body { width: 100%; height: 100%; overflow: hidden; background-color: #e2413f; }
+html, body { width: 100%; height: 100%; background-color: #db3f3c; }
 
-.container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.container { position: relative; width: 100%; height: 100%; }
+
+.glbYun1 { width: 10.48rem; position: absolute; right: -6.2rem; top: 94%; z-index: 40; -webkit-transition: top 3s; -o-transition: top 3s; transition: top 3s; }
+
+.glbYun1.active { top: -20px; }
 
 .page { position: absolute; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; }
 
@@ -1517,6 +1521,8 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .loading { z-index: 13; background-image: url(../images/loading.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-color: #e2413f; }
 
 .loading .loadingBg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/loadingBg.png) no-repeat center; -webkit-background-size: 100% 100%; background-size: 100%; }
+
+.loading .brief-cloud12 { position: absolute; bottom: 0; right: -6.4rem; width: 10.48rem; }
 
 .loading .loadingTitle { position: absolute; bottom: 7.6%; left: 0; width: 100%; }
 
@@ -1528,13 +1534,17 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .loading .loadingTitle .loading1 { width: 2.72rem; }
 
+.loading .yun1 { position: absolute; bottom: 3.52rem; left: -2.2rem; width: 4.88rem; }
+
+.loading .yun2 { width: 9.28rem; position: absolute; right: -5.2rem; top: 6.4rem; }
+
 .brief { z-index: 11; background-image: url(../images/bgMain.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-repeat: no-repeat; background-color: #e2413f; }
 
 .brief img { display: block; width: 100%; }
 
 .brief .brief-dog { position: absolute; top: 14.4%; left: 0; width: 4.52rem; }
 
-.brief .brief-cloud1 { position: absolute; top: 0; right: 0; width: 5.88rem; }
+.brief .brief-cloud1 { position: absolute; top: 0; right: -6.4rem; width: 10.48rem; }
 
 .brief .brief-cloud2 { position: absolute; top: 73.6%; left: 0; width: 4.04rem; }
 
@@ -1542,7 +1552,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .brief .brief-word1 { position: absolute; top: 18.9%; left: 50%; width: 8.4rem; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
 
-.brief .brief-cloud3 { position: absolute; bottom: 0; right: 0; width: 86.5%; }
+.brief .brief-cloud3 { position: absolute; bottom: -14rem; right: 0; width: 86.5%; }
 
 .brief .brief-card { position: absolute; bottom: 0; right: 24.4%; width: 51.2%; }
 
@@ -1552,7 +1562,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .message .message-tree { position: absolute; top: 0; left: 0; width: 100%; }
 
-.message .message-crane { position: absolute; top: 0; left: 53.3%; width: 1.24rem; }
+.message .infoBoxZ { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
 .message .message-lantern { position: absolute; top: 6.1%; left: 72%; width: 3.6rem; }
 
@@ -1578,7 +1588,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .message .message-cloud1 { position: absolute; top: 36%; left: 0; width: 6.92rem; }
 
-.message .message-bird { position: absolute; bottom: 0; left: 0; width: 96.6%; }
+.message .message-bird { position: absolute; bottom: 0; left: 0; width: 96.6%; z-index: 3; }
 
 .message .message-cloud2 { position: absolute; top: 85.7%; right: 0; width: 2.8rem; }
 
