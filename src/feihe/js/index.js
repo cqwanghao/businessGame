@@ -8,6 +8,14 @@
             'images/loadingBg.png',
         ];
         // var imgBeforeLength = imagesBeforeArr.length;
+
+        // 服务器路径
+        // imagesBeforeArr.forEach(function(item,index){
+        //     item = "/Scripts/mp/FeiHe/"+ item;
+        //     imagesBeforeArr[index] = item;
+        // });
+        // console.log(imagesBeforeArr);
+
         queueBefore.loadManifest(imagesBeforeArr);
         var queue = new createjs.LoadQueue(false);
         var manifest = [
@@ -66,6 +74,14 @@
             'images/templet-upload3.png',
             'images/warn.png',
         ];
+
+        // 服务器路径
+        // manifest.forEach(function(item,index){
+        //     item = "/Scripts/mp/FeiHe/"+ item;
+        //     manifest[index] = item;
+        // });
+        // console.log(manifest);
+
         queue.loadManifest(manifest);
         queueBefore.on("complete", function (e) {
             $('.page.loading').addClass("active");
@@ -147,8 +163,7 @@
             height: 150,
             colorDark: "#d7453c"
         });
-        // qrcode.makeCode('http://h5.zegelo.com/static/metro/index.html');
-        qrcode.makeCode('https://www.baidu.com/');
+        qrcode.makeCode('http://h5.zegelo.com/MP/FeiHe/Index');
 
         var qrcodeTimer = setTimeout(function(){
             // 获取二维码
