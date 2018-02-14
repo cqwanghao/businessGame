@@ -58,6 +58,7 @@
             'images/templet-upload1.png',
             'images/templet-upload2.png',
             'images/templet-upload3.png',
+            'images/warn.png',
         ];
         queue.loadManifest(manifest);
         queue.on("fileload", function (e) {
@@ -69,8 +70,14 @@
         function handleComplete() {
             var timer = setTimeout(function(){
                 $('.page.loading').fadeOut();
-            },1000);
+            },2000);
         }
+
+        // 出生年、月、医院
+        var dateYear = "";
+        var dateMonth = "";
+        var dateAddr = "";
+        var userName = "偶然的细雨";
 
         // 全屏滚动
         var slide = new slidePage({
@@ -80,15 +87,28 @@
             },
             after: function(origin,direction,target){
                 console.log("origin:"+origin+",direction:"+direction+",target:"+target);
-                if(target == 4){
+                if(target == 3){
                     // 销毁当前实例
                     // slide.destroy();
+                    dateYear = $(".year").val();
+                    dateMonth = $(".month").val();
+                    dateAddr = $(".addr-s").val();
+                    
+                    $(".t-year").html(dateYear);
+                    $(".t-month").html(dateMonth);
+                    $(".t-addr").html(dateAddr);
+                    $(".t-name").html(userName);
                 }
             },
         });
         window.slide = slide;
 
-        // slide.slideTo(4);
+        // slide.slideTo(3);
+ 
+        // 跳到下一页
+        $(".next-btn").click(function(){
+            slide.slideNext();
+        });
 
         var pageIndex = 0;
 
@@ -110,6 +130,22 @@
                 prevEl: '.swiper-arrow-prev',
             },
         });
+
+        // 生成二维码
+        var qrcode = new QRCode(document.querySelector(".qrcode"), {
+            width: 150,
+            height: 150,
+            colorDark: "#d7453c"
+        });
+        // qrcode.makeCode('http://h5.zegelo.com/static/metro/index.html');
+        qrcode.makeCode('https://www.baidu.com/');
+
+        var qrcodeTimer = setTimeout(function(){
+            // 获取二维码
+            var qrcodeImg = $(".qrcode img").attr("src");
+            $(".qrcodes img").attr("src",qrcodeImg);
+            clearTimeout(qrcodeTimer);
+        },1000);
 
         //上传图片
         $("#upload").on("change", function (e) {
@@ -168,30 +204,16 @@
             }).then(function (canvas) {
                 $('#resultImg').attr('src', canvas.toDataURL("image/png"));
 
-                // 重新初始化实例
-                // slide = new slidePage({
-                //     useAnimation: true,
-                //     before: function(origin,direction,target){
-                //         console.log("origin:"+origin+",direction:"+direction+",target:"+target);
-                //     },
-                //     after: function(origin,direction,target){
-                //         console.log("origin:"+origin+",direction:"+direction+",target:"+target);
-                //         if(target == 4){
-                //             // 销毁当前实例
-                //             slide.destroy();
-                //             console.log(slide);
-                //         }
-                //     },
-                // });
-                // window.slide = slide;
+                if(!dateYear || !dateMonth || !dateAddr || !userName){
+                    alert("信息不能为空");
+                    // 跳到上一页
+                    slide.slidePrev();
+                    return false;
+                }
+                console.log(dateYear+","+dateMonth+","+dateAddr+","+userName);
 
-                // console.log(slide);
                 // 跳到下一页
-                // slide.slideNext();
-                // 传入page页码，滑动定位到对应的page
-                slide.slideTo(5);
-                // $('.page.saveImg ').fadeIn();
-                // $('.page.canvas').fadeOut();
+                slide.slideNext();
             });
         });
 
