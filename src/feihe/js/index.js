@@ -2,6 +2,13 @@
     $(function () {
         //预加载资源
         var progress = 0;
+        // loading页图片加载
+        var queueBefore = new createjs.LoadQueue(true);
+        var imagesBeforeArr = [
+            'images/loadingBg.png',
+        ];
+        // var imgBeforeLength = imagesBeforeArr.length;
+        queueBefore.loadManifest(imagesBeforeArr);
         var queue = new createjs.LoadQueue(false);
         var manifest = [
             'images/arrow-left.png',
@@ -18,7 +25,6 @@
             'images/cover-crane.png',
             'images/cover-light.png',
             'images/loading1.png',
-            'images/loadingBg.png',
             'images/loading-circle.png',
             'images/message-bird.png',
             'images/message-box.png',
@@ -61,11 +67,15 @@
             'images/warn.png',
         ];
         queue.loadManifest(manifest);
+        queueBefore.on("complete", function (e) {
+            $('.page.loading').addClass("active");
+            queue.on('complete', handleComplete, this);
+        }, this);
         queue.on("fileload", function (e) {
             progress++;
             $('#progress').html(parseInt(progress / manifest.length * 100));
         }, this);
-        queue.on('complete', handleComplete, this);
+        // queue.on('complete', handleComplete, this);
         //加载完毕处理函数
         function handleComplete() {
             var timer = setTimeout(function(){
@@ -77,7 +87,7 @@
         var dateYear = "";
         var dateMonth = "";
         var dateAddr = "";
-        var userName = "偶然的细雨";
+        var userName = "微风";
 
         // 全屏滚动
         var slide = new slidePage({

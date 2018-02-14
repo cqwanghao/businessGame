@@ -30,7 +30,11 @@ img{
 // 加载页
 .loading{
 	z-index: 13;
-	background-image: url(../images/loadingBg.png);
+	background-color: #df3d3b;
+	&.active{
+		background-image: url(../images/loadingBg.png);
+		background-color: #000000;
+	}
 	.loadingTitle{
 		position: absolute;
 		bottom: 7.6%;
@@ -592,7 +596,7 @@ img{
 		position: absolute;
 		bottom: 10.4%;
 		right: 0;
-		z-index: 12;
+		// z-index: 12;
 		width: 4.2rem;
 	}
 	.share-mushroom{
