@@ -83,8 +83,6 @@
         // 验证年
         $(".year").on("input",function(){
             var yearVal = $(".year").val();
-            console.log(yearVal);
-            console.log(isNaN(yearVal));
             if(isNaN(yearVal)){
                 $(".year").val("");
                 return false;
@@ -92,7 +90,6 @@
             if(yearVal.length > 4){
                 yearVal = yearVal.substring(0,4);
                 $(".year").val(yearVal);
-                console.log(yearVal);
                 return false;
             }
         });
@@ -100,8 +97,6 @@
         // 验证月
         $(".month").on("input",function(e){
             var monthVal = $(".month").val();
-            console.log(monthVal);
-            console.log(isNaN(monthVal));
             if(isNaN(monthVal)){
                 $(".month").val("");
                 return false;
@@ -365,7 +360,7 @@
                 $("[name=SharePhoto]").val($("#shareLogo").attr("src"));
 
                 // 调用接口
-                coper.subuserPhoto();
+                // coper.subuserPhoto();
 
                 // 跳到下一页
                 slide.slideNext();
