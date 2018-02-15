@@ -116,25 +116,31 @@
             useAnimation: true,
             before: function(origin,direction,target){
                 $('.pageAnimate').fadeOut();
-                if (direction === 'prev') {
-                    switch (target | 0) {
-                        case 1: 
-                            $('.page.loading .pageAnimate').fadeIn();
-                            console.log(9999)
-                            // $('.glbYun1').show().removeClass('active');
-                            break;
-                        case 2:
-                            $('.glbYun1').show().addClass('active');
-                            break;
-                        case 3: 
-                            $('.xianhe2').show();
-                            break;
-                        default:
-                            break;
-                    }
+                switch (target | 0) {
+                    case 1: 
+                        $('.page.loading .pageAnimate').fadeIn();
+                        console.log(9999)
+                        // $('.glbYun1').show().removeClass('active');
+                        break;
+                    case 2:
+                        $('.page.guodu .pageAnimate').fadeIn();
+                        break;
+                    case 3: 
+                        $('.xianhe2').show();
+                        break;
+                    default:
+                        break;
                 }
             },
             after: function(origin,direction,target){
+                switch (target | 0) {
+                    case 2:
+                        if (direction === 'next') slide.slideNext();
+                        else slide.slidePrev();
+                        break;
+                    default:
+                        break;
+                }
                 // $('.pageAnimate').hide();
                 // if (direction === 'prev') {
                 //     switch (target | 0) {

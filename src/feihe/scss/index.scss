@@ -10,17 +10,6 @@ html,body{
 	width: 100%;
 	height: 100%;
 }
-.glbYun1 {
-	width: 10.48rem /* 262/25 */;
-	position: absolute;
-	right: -6.2rem /* 130/25 */;
-	top: 94%;
-	z-index: 40;
-	transition: top 3s;
-	&.active {
-		top: -20px;
-	}
-}
 
 .pageAnimate {
 	display: none;
@@ -138,6 +127,24 @@ img{
 	background-position: left top;
 	background-repeat: no-repeat;
 	background-color: #e2413f;
+	.yun1 {
+		width: 19.24rem /* 481/25 */;
+		position: absolute;
+		left: -12rem /* 300/25 */;
+		top: 9.6rem /* 240/25 */;
+	}
+	.yun2 {
+		width: 15.48rem /* 387/25 */;
+		position: absolute;
+		right: -9.28rem /* 232/25 */;
+		bottom: 2.8rem /* 70/25 */;
+	}
+	.xianhe {
+		width: 14.56rem /* 364/25 */;
+		position: absolute;
+		right: -5.2rem /* 130/25 */;
+		top: 1.52rem /* 38/25 */;
+	}
 }
 // 简介页
 .brief{
