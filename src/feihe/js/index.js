@@ -323,16 +323,7 @@
                 // 分享小图
                 $('#shareImg').attr('src', canvas.toDataURL("image/png"));
 
-                var resultTimer = setTimeout(function(){
-                    html2canvas(document.querySelector("#shareResult"), {
-                        backgroundColor: 'transparent', // 设置背景透明
-                    }).then(function (canvas2) {
-                        // console.log(canvas2.toDataURL("image/png"));
-                        $("#shareLogo").attr("src",canvas2.toDataURL("image/png"));
-                    });
-                    clearTimeout(resultTimer);
-                },2000);
-
+                
                 if(!dateYear || !dateMonth || !dateAddr || !userName){
                     alert("信息不能为空");
                     // 跳到上一页
@@ -340,14 +331,23 @@
                     return false;
                 }
                 console.log(dateYear+","+dateMonth+","+dateAddr+","+userName);
-
-                $("[name=UploadPhoto]").val($(".templetBg").eq(pageIndex).attr("src"));
-                $("[name=TempLateID]").val(pageIndex + 1);
-                $("[name=UserPhoto]").val($("#resultImg").attr("src"));
-                $("[name=SharePhoto]").val($("#shareLogo").attr("src"));
-
-                // 调用接口
-                // coper.subuserPhoto();
+                
+                var resultTimer = setTimeout(function(){
+                    html2canvas(document.querySelector("#shareResult"), {
+                        backgroundColor: 'transparent', // 设置背景透明
+                    }).then(function (canvas2) {
+                        // console.log(canvas2.toDataURL("image/png"));
+                        $("#shareLogo").attr("src",canvas2.toDataURL("image/png"));
+                        $("[name=UploadPhoto]").val($(".templetBg").eq(pageIndex).attr("src"));
+                        $("[name=TempLateID]").val(pageIndex + 1);
+                        $("[name=UserPhoto]").val($("#resultImg").attr("src"));
+                        $("[name=SharePhoto]").val($("#shareLogo").attr("src"));
+        
+                        // 调用接口
+                        // coper.subuserPhoto();
+                    });
+                    clearTimeout(resultTimer);
+                },2000);
 
                 // 跳到下一页
                 slide.slideNext();
