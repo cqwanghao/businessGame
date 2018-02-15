@@ -267,7 +267,7 @@ template { display: none; }
   44.4% { -webkit-transform: skewX(-3.125deg) skewY(-3.125deg); transform: skewX(-3.125deg) skewY(-3.125deg); }
   55.5% { -webkit-transform: skewX(1.5625deg) skewY(1.5625deg); transform: skewX(1.5625deg) skewY(1.5625deg); }
   66.6% { -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg); transform: skewX(-0.78125deg) skewY(-0.78125deg); }
-  77.7% { -webkit-transform: skewX(0.39062deg) skewY(0.39062deg); transform: skewX(0.39062deg) skewY(0.39062deg); }
+  77.7% { -webkit-transform: skewX(0.39063deg) skewY(0.39063deg); transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% { -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg); transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
 
 .jello { -webkit-animation-name: jello; animation-name: jello; -webkit-transform-origin: center; -ms-transform-origin: center; transform-origin: center; }
@@ -1157,8 +1157,8 @@ template { display: none; }
     transform: skewX(1.5625deg) skewY(1.5625deg); }
   66.6% { -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
-  77.7% { -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
-    transform: skewX(0.39062deg) skewY(0.39062deg); }
+  77.7% { -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% { -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
 
@@ -1174,8 +1174,8 @@ template { display: none; }
     transform: skewX(1.5625deg) skewY(1.5625deg); }
   66.6% { -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
-  77.7% { -webkit-transform: skewX(0.39062deg) skewY(0.39062deg);
-    transform: skewX(0.39062deg) skewY(0.39062deg); }
+  77.7% { -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% { -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
     transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
 
@@ -2539,7 +2539,7 @@ html, body { width: 100%; height: 100%; background-color: #db3f3c; }
 
 img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
-.loading { z-index: 13; background-image: url(../images/loading.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-color: #e2413f; }
+.loading { z-index: 13; background-image: url(../images/loading.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-color: #e2413f; background-repeat: no-repeat; }
 
 .loading .xingxing1 { width: 2.04rem; height: 2.16rem; position: absolute; left: 1.04rem; top: 11.32rem; z-index: 2; }
 
@@ -2561,13 +2561,19 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .loading .yun2 { width: 9.28rem; position: absolute; right: -5.2rem; top: 6.4rem; }
 
+.loading .xianhe3 { position: absolute; right: -20%; bottom: -22%; width: 100%; }
+
 .guodu { z-index: 11; background-image: url(../images/bgMain.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-repeat: no-repeat; background-color: #e2413f; }
+
+.guodu .xianhe3 { position: absolute; right: -20%; top: -20%; width: 100%; }
 
 .guodu .yun1 { width: 19.24rem; position: absolute; left: -12rem; top: 9.6rem; }
 
 .guodu .yun2 { width: 15.48rem; position: absolute; right: -9.28rem; bottom: 2.8rem; }
 
-.guodu .xianhe { width: 14.56rem; position: absolute; right: -5.2rem; top: 1.52rem; }
+.guodu .xianhe { width: 14.56rem; position: absolute; top: -10%; right: 0; -webkit-transform: translate3d(21%, 0, 0); transform: translate3d(21%, 0, 0); opacity: 0; }
+
+.guodu .xianhe.active { -webkit-animation: xinhe 3s; animation: xinhe 3s; }
 
 .brief { z-index: 11; background-image: url(../images/bgMain.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-repeat: no-repeat; background-color: #e2413f; }
 
@@ -2585,11 +2591,13 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .brief .brief-cloud3 { position: absolute; bottom: -14rem; right: 0; width: 86.5%; }
 
-.brief .brief-card { position: absolute; bottom: 0; right: 24.4%; width: 51.2%; }
+.brief .brief-card { position: absolute; bottom: 0; right: 24.4%; width: 51.2%; z-index: 2; }
+
+.brief .cloud1 { position: absolute; bottom: -23%; right: 0; width: 100%; z-index: 1; }
 
 .guodu2 { z-index: 11; background-image: url(../images/briefBg.png); }
 
-.guodu2 .yun1 { width: 13rem; position: absolute; right: -0.2rem; top: -8.4rem; }
+.guodu2 .cloud1 { position: absolute; top: -51%; right: 0; width: 100%; }
 
 .guodu2 .gou1 { width: 12.16rem; position: absolute; right: -4.4rem; top: 1.6rem; z-index: 3; }
 
@@ -2599,11 +2607,13 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .guodu2 .message-cloud2 { width: 5.6rem; position: absolute; right: 0; bottom: 4.4rem; }
 
-.guodu2 .xianhe2 { width: 100%; position: absolute; left: 0; bottom: -8.8rem; }
+.guodu2 .xianhe2 { width: 100%; position: absolute; left: 0; bottom: -16%; }
 
 .message { z-index: 11; background-image: url(../images/briefBg.png); }
 
 .message img { display: block; width: 100%; }
+
+.message .xianhe2 { width: 100%; position: absolute; left: 0; top: -35%; }
 
 .message .message-tree { position: absolute; top: 0; left: 0; width: 100%; }
 
@@ -2784,3 +2794,13 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .slide-container .slide-page { background-position: left top; margin: 0; padding: 0; }
 
 .slide-container .slide-page.transition { -webkit-transition: all 3s; -o-transition: all 3s; transition: all 3s; }
+
+@-webkit-keyframes xinhe { from { -webkit-transform: translate3d(21%, 0, 0); transform: translate3d(21%, 0, 0);
+    opacity: 0; }
+  to { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);
+    opacity: 1; } }
+
+@keyframes xinhe { from { -webkit-transform: translate3d(21%, 0, 0); transform: translate3d(21%, 0, 0);
+    opacity: 0; }
+  to { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);
+    opacity: 1; } }

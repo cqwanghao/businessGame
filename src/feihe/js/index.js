@@ -133,10 +133,21 @@
                 }
             },
             after: function(origin,direction,target){
+                if(target === 2){
+                    console.log(2);
+                    $(".xianhe3").addClass("animated fadeOut");
+                    $(".xianhe").addClass("active");
+                    var timer = setTimeout(function(){
+                        $(".xianhe3").removeClass("animated fadeOut");
+                        $(".xianhe").removeClass("active");
+                        clearTimeout(timer);
+                    },3000);
+                }
+                console.log("target:"+target);
                 switch (target | 0) {
                     case 2:
-                        if (direction === 'next') slide.slideNext();
-                        else slide.slidePrev();
+                        // if (direction === 'next') slide.slideNext();
+                        // else slide.slidePrev();
                         break;
                     default:
                         break;
