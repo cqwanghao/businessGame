@@ -154,18 +154,18 @@
                 //             break;
                 //     }
                 // }
-                // if(target == 4){
-                //     // 销毁当前实例
-                //     // slide.destroy();
-                //     dateYear = $(".year").val();
-                //     dateMonth = $(".month").val();
-                //     dateAddr = $(".addr-s").val();
+                if(target == 4){
+                    // 销毁当前实例
+                    // slide.destroy();
+                    dateYear = $(".year").val();
+                    dateMonth = $(".month").val();
+                    dateAddr = $(".addr-s").val();
                     
-                //     $(".t-year").html(dateYear);
-                //     $(".t-month").html(dateMonth);
-                //     $(".t-addr").html(dateAddr);
-                //     $(".t-name").html(userName);
-                // }
+                    $(".t-year").html(dateYear);
+                    $(".t-month").html(dateMonth);
+                    $(".t-addr").html(dateAddr);
+                    $(".t-name").html(userName);
+                }
             },
         });
         window.slide = slide;
@@ -325,7 +325,8 @@
 
                 
                 if(!dateYear || !dateMonth || !dateAddr || !userName){
-                    alert("信息不能为空");
+                    $(".messageCover").fadeIn();
+                    // alert("信息不能为空");
                     // 跳到上一页
                     slide.slidePrev();
                     return false;
@@ -360,6 +361,10 @@
         });
         $(".cover").click(function(){
             $(".cover").fadeOut();
+        });
+
+        $(".messageCover").click(function(){
+            $(".messageCover").fadeOut();
         });
 
     });
