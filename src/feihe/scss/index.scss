@@ -15,18 +15,6 @@ html,body{
 	display: none;
 }
 
-.xianhe2 {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: -8.4rem /* 210/25 */;
-	width: 100%;
-	z-index: 40;
-	&.active {
-
-	}
-}
-
 .brief-cloud3 {
 	position: absolute;
 	bottom: -14rem /* 350/25 */;
@@ -41,6 +29,7 @@ html,body{
 	z-index: 10;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 img{
 	pointer-events: none; 
@@ -201,6 +190,47 @@ img{
 		bottom: 0;
 		right: 24.4%;
 		width: 51.2%;
+	}
+}
+.guodu2 {
+	z-index: 11;
+	background-image: url(../images/briefBg.png);
+	.yun1 {
+		width: 13rem;
+    position: absolute;
+    right: -0.2rem;
+    top: -8.4rem;
+	}
+	.gou1 {
+		width: 12.16rem /* 304/25 */;
+		position: absolute;
+		right: -4.4rem /* 110/25 */;
+		top: 1.6rem /* 40/25 */;
+		z-index: 3;
+	}
+	.brief-cloud1 {
+		width: 10.48rem /* 262/25 */;
+		position: absolute;
+		left: -5.6rem /* 140/25 */;
+		top: 7.6rem /* 190/25 */;
+	}
+	.message-lantern {
+		width: 3.6rem /* 90/25 */;
+		position: absolute;
+		left: 6rem /* 150/25 */;
+		top: 11.2rem /* 280/25 */;
+	}
+	.message-cloud2 {
+		width: 5.6rem /* 140/25 */;
+		position: absolute;
+		right: 0;
+		bottom: 4.4rem /* 110/25 */;
+	}
+	.xianhe2 {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: -8.8rem /* 220/25 */;
 	}
 }
 // 填写讯页
