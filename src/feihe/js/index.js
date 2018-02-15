@@ -74,10 +74,7 @@
         queue.on('complete', handleComplete, this);
         //加载完毕处理函数
         function handleComplete() {
-            var timer = setTimeout(function(){
-                // $('.page.loading').fadeOut();
-                // slideScroll(2);
-            },1000);
+           console.log('complete')
         }
 
         // 验证年
@@ -123,6 +120,7 @@
                         break;
                     case 2:
                         $('.glbYun1').show().addClass('active');
+                        // $('.xianhe2').hide();
                         break;
                     case 3: 
                         // $('.glbYun1').hide();
@@ -140,7 +138,7 @@
                         $('.glbYun1').show().addClass('active');
                         break;
                     case 3: 
-                        $('.glbYun1').hide();
+                        $('.xianhe2').show();
                         break;
                     default:
                         break;
@@ -201,28 +199,6 @@
             $(".qrcodes img").attr("src",qrcodeImg);
             clearTimeout(qrcodeTimer);
         },1000);
-
-        //上传图片
-        // $("#upload").on("change", function (e) {
-        //     var file = e.target.files[0];
-        //     if (!file.type.match('image.*')) {
-        //     return false;
-        //     }
-        //     var reader = new FileReader();
-        //     reader.readAsDataURL(file);
-        //     reader.onload = function (arg) {
-        //         // 销毁实例
-        //         swiper.destroy();
-        //         // 更换模板
-        //         $(".upload-area").hide().eq(pageIndex).show();
-        //         $('.templetBg').eq(pageIndex).attr('src', arg.target.result);
-        //         $('#upload').hide();
-        //         $(".arrow-left").hide();
-        //         $(".arrow-right").hide();
-        //         //移动缩放旋转
-        //         transformImg();
-        //     }
-        // });
 
         //上传图片
         $("#upload").on("change", function (e) {
@@ -287,7 +263,7 @@
                     swiper.destroy();
                     // 更换模板
                     $(".upload-area").hide().eq(pageIndex).show();
-                    $('.templetBg').eq(pageIndex).attr('src', event.target.result);
+                    $('.templetBg').eq(pageIndex).attr('src', cvs.toDataURL('image/png', 0.7));
                     $('#upload').hide();
                     $(".arrow-left").hide();
                     $(".arrow-right").hide();

@@ -1,4 +1,5 @@
 @import '../../base/index.scss';
+@import './animate.scss';
 html,body{
 	width: 100%;
 	height: 100%;
@@ -20,6 +21,25 @@ html,body{
 		top: -20px;
 	}
 }
+
+.xianhe2 {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: -8.4rem /* 210/25 */;
+	width: 100%;
+	z-index: 40;
+	&.active {
+
+	}
+}
+
+.brief-cloud3 {
+	position: absolute;
+	bottom: -14rem /* 350/25 */;
+	right: 0;
+	width: 86.5%;
+}
 // page通用样式
 .page {
 	position: absolute;
@@ -40,6 +60,14 @@ img{
 	background-size: 100%;
 	background-position: left top;
 	background-color: #e2413f;
+	.xingxing1 {
+		width: 2.04rem /* 51/25 */;
+		height: 2.16rem /* 54/25 */;
+		position: absolute;
+		left: 1.04rem /* 26/25 */;
+		top: 11.32rem /* 283/25 */;
+		z-index: 2;
+	}
 	.loadingBg {
 		position: absolute;
 		left: 0;
