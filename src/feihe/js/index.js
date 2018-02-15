@@ -74,6 +74,7 @@
         queue.on('complete', handleComplete, this);
         //加载完毕处理函数
         function handleComplete() {
+            $('.pageAnimate').show();
            console.log('complete')
         }
 
@@ -114,47 +115,57 @@
         var slide = new slidePage({
             useAnimation: true,
             before: function(origin,direction,target){
-                switch (target | 0) {
-                    case 1: 
-                        $('.glbYun1').show().removeClass('active');
-                        break;
-                    case 2:
-                        $('.glbYun1').show().addClass('active');
-                        // $('.xianhe2').hide();
-                        break;
-                    case 3: 
-                        // $('.glbYun1').hide();
-                        break;
-                    default:
-                        break;
+                $('.pageAnimate').fadeOut();
+                if (direction === 'prev') {
+                    switch (target | 0) {
+                        case 1: 
+                            $('.page.loading .pageAnimate').fadeIn();
+                            console.log(9999)
+                            // $('.glbYun1').show().removeClass('active');
+                            break;
+                        case 2:
+                            $('.glbYun1').show().addClass('active');
+                            break;
+                        case 3: 
+                            $('.xianhe2').show();
+                            break;
+                        default:
+                            break;
+                    }
                 }
             },
             after: function(origin,direction,target){
-                switch (target | 0) {
-                    case 1: 
-                        $('.glbYun1').show().removeClass('active');
-                        break;
-                    case 2:
-                        $('.glbYun1').show().addClass('active');
-                        break;
-                    case 3: 
-                        $('.xianhe2').show();
-                        break;
-                    default:
-                        break;
-                }
-                if(target == 4){
-                    // 销毁当前实例
-                    // slide.destroy();
-                    dateYear = $(".year").val();
-                    dateMonth = $(".month").val();
-                    dateAddr = $(".addr-s").val();
+                // $('.pageAnimate').hide();
+                // if (direction === 'prev') {
+                //     switch (target | 0) {
+                //         case 1: 
+                //             $('.page.loading .pageAnimate').show();
+                //             console.log(9999)
+                //             // $('.glbYun1').show().removeClass('active');
+                //             break;
+                //         case 2:
+                //         alert(2)
+                //             $('.glbYun1').show().addClass('active');
+                //             break;
+                //         case 3: 
+                //             $('.xianhe2').show();
+                //             break;
+                //         default:
+                //             break;
+                //     }
+                // }
+                // if(target == 4){
+                //     // 销毁当前实例
+                //     // slide.destroy();
+                //     dateYear = $(".year").val();
+                //     dateMonth = $(".month").val();
+                //     dateAddr = $(".addr-s").val();
                     
-                    $(".t-year").html(dateYear);
-                    $(".t-month").html(dateMonth);
-                    $(".t-addr").html(dateAddr);
-                    $(".t-name").html(userName);
-                }
+                //     $(".t-year").html(dateYear);
+                //     $(".t-month").html(dateMonth);
+                //     $(".t-addr").html(dateAddr);
+                //     $(".t-name").html(userName);
+                // }
             },
         });
         window.slide = slide;
