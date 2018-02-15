@@ -2567,6 +2567,8 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .loading .yun2 { width: 9.28rem; position: absolute; right: -5.2rem; top: 6.4rem; }
 
+.guodu { z-index: 11; background-image: url(../images/bgMain.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-repeat: no-repeat; background-color: #e2413f; }
+
 .brief { z-index: 11; background-image: url(../images/bgMain.jpg); -webkit-background-size: 100% 100%; background-size: 100%; background-position: left top; background-repeat: no-repeat; background-color: #e2413f; }
 
 .brief img { display: block; width: 100%; }

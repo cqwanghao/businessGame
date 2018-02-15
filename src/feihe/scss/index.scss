@@ -130,6 +130,15 @@ img{
 		top: 6.4rem /* 160/25 */;
 	}
 }
+//过度页
+.guodu {
+	z-index: 11;
+	background-image: url(../images/bgMain.jpg);
+	background-size: 100%;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: #e2413f;
+}
 // 简介页
 .brief{
 	z-index: 11;
