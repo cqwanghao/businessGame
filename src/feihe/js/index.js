@@ -110,82 +110,139 @@
         var dateMonth = "";
         var dateAddr = "";
         var userName = "微风";
-
+        
+        var slide = null;
+        slideFun(1);
         // 全屏滚动
-        var slide = new slidePage({
-            useAnimation: true,
-            before: function(origin,direction,target){
-                $('.pageAnimate').fadeOut();
-                switch (target | 0) {
-                    case 1: 
-                        $('.page.loading .pageAnimate').fadeIn();
-                        console.log(9999)
-                        // $('.glbYun1').show().removeClass('active');
-                        break;
-                    case 2:
-                        $('.page.guodu .pageAnimate').fadeIn();
-                        break;
-                    case 3: 
-                        $('.xianhe2').show();
-                        break;
-                    default:
-                        break;
-                }
-            },
-            after: function(origin,direction,target){
-                if(target === 2){
-                    console.log(2);
-                    $(".xianhe3").addClass("animated fadeOut");
-                    $(".xianhe").addClass("active");
-                    var timer = setTimeout(function(){
-                        $(".xianhe3").removeClass("animated fadeOut");
-                        $(".xianhe").removeClass("active");
-                        clearTimeout(timer);
-                    },3000);
-                }
-                console.log("target:"+target);
-                switch (target | 0) {
-                    case 2:
-                        // if (direction === 'next') slide.slideNext();
-                        // else slide.slidePrev();
-                        break;
-                    default:
-                        break;
-                }
-                // $('.pageAnimate').hide();
-                // if (direction === 'prev') {
-                //     switch (target | 0) {
-                //         case 1: 
-                //             $('.page.loading .pageAnimate').show();
-                //             console.log(9999)
-                //             // $('.glbYun1').show().removeClass('active');
-                //             break;
-                //         case 2:
-                //         alert(2)
-                //             $('.glbYun1').show().addClass('active');
-                //             break;
-                //         case 3: 
-                //             $('.xianhe2').show();
-                //             break;
-                //         default:
-                //             break;
-                //     }
-                // }
-                if(target == 4){
-                    // 销毁当前实例
-                    // slide.destroy();
-                    dateYear = $(".year").val();
-                    dateMonth = $(".month").val();
-                    dateAddr = $(".addr-s").val();
-                    
-                    $(".t-year").html(dateYear);
-                    $(".t-month").html(dateMonth);
-                    $(".t-addr").html(dateAddr);
-                    $(".t-name").html(userName);
-                }
-            },
-        });
-        window.slide = slide;
+        function slideFun(pageNum){
+            slide = new slidePage({
+                useAnimation: true,
+                page: pageNum || 1,
+                before: function(origin,direction,target){
+                    if(origin === 1){
+                        $(".loading .yun1").addClass("animated shake");
+                        $(".loading .yun2").addClass("animated shake");
+                        var timer = setTimeout(function(){
+                            $(".loading .yun1").removeClass("animated shake");
+                            $(".loading .yun2").removeClass("animated shake");
+                            clearTimeout(timer);
+                        },1000);
+                    }
+                    // $('.pageAnimate').fadeOut();
+                    // switch (target | 0) {
+                    //     case 1: 
+                    //         $('.page.loading .pageAnimate').fadeIn();
+                    //         console.log(9999)
+                    //         // $('.glbYun1').show().removeClass('active');
+                    //         break;
+                    //     case 2:
+                    //         $('.page.guodu .pageAnimate').fadeIn();
+                    //         break;
+                    //     case 3: 
+                    //         $('.xianhe2').show();
+                    //         break;
+                    //     default:
+                    //         break;
+                    // }
+                },
+                after: function(origin,direction,target){
+                    if(target === 2){
+                        console.log(2);
+                        $(".xianhe3").addClass("animated fadeOut");
+                        $(".xianhe").addClass("active");
+                        $(".guodu .yun1").addClass("active");
+                        $(".guodu .yun2").addClass("active");
+                        var timer = setTimeout(function(){
+                            $(".xianhe3").removeClass("animated fadeOut");
+                            $(".xianhe").removeClass("active");
+                            $(".guodu .yun1").removeClass("active");
+                            $(".guodu .yun2").removeClass("active");
+                            clearTimeout(timer);
+                        },3000);
+                        if(direction === "next"){
+                            slide.slideNext();
+                        }else if(direction === "prev"){
+                            slide.slidePrev();
+                        }
+                    }
+                    if(target === 4){
+                        $(".message-lantern").addClass("animated shake");
+                        $(".brief-cloud1").addClass("active");
+                        var timer = setTimeout(function(){
+                            $(".message-lantern").removeClass("animated shake");
+                            $(".brief-cloud1").removeClass("active");
+                            clearTimeout(timer);
+                        },3000);
+                        if(direction === "next"){
+                            slide.slideNext();
+                        }else if(direction === "prev"){
+                            slide.slidePrev();
+                        }
+                    }
+                    // if(target === 5){
+                    //     dateYear = $(".year").val();
+                    //     dateMonth = $(".month").val();
+                    //     dateAddr = $(".addr-s").val();
+                    //     if(!dateYear || !dateMonth || !dateAddr){
+                    //         // 销毁当前实例
+                    //         slide.destroy();
+                    //     }else{
+                    //         slideFun(5);
+                    //     }
+                    // }
+                    if(target === 6){
+                        $(".templet-lantern2").addClass("animated shake");
+                        $(".templet-lantern3").addClass("animated shake");
+                        var timer = setTimeout(function(){
+                            $(".templet-lantern2").removeClass("animated shake");
+                            $(".templet-lantern3").removeClass("animated shake");
+                            clearTimeout(timer);
+                        },3000);
+                    }
+                    console.log("target:"+target);
+                    switch (target | 0) {
+                        case 2:
+                            // if (direction === 'next') slide.slideNext();
+                            // else slide.slidePrev();
+                            break;
+                        default:
+                            break;
+                    }
+                    // $('.pageAnimate').hide();
+                    // if (direction === 'prev') {
+                    //     switch (target | 0) {
+                    //         case 1: 
+                    //             $('.page.loading .pageAnimate').show();
+                    //             console.log(9999)
+                    //             // $('.glbYun1').show().removeClass('active');
+                    //             break;
+                    //         case 2:
+                    //         alert(2)
+                    //             $('.glbYun1').show().addClass('active');
+                    //             break;
+                    //         case 3: 
+                    //             $('.xianhe2').show();
+                    //             break;
+                    //         default:
+                    //             break;
+                    //     }
+                    // }
+                    if(target == 6){
+                        // 销毁当前实例
+                        // slide.destroy();
+                        dateYear = $(".year").val();
+                        dateMonth = $(".month").val();
+                        dateAddr = $(".addr-s").val();
+                        
+                        $(".t-year").html(dateYear);
+                        $(".t-month").html(dateMonth);
+                        $(".t-addr").html(dateAddr);
+                        $(".t-name").html(userName);
+                    }
+                },
+            });
+            window.slide = slide;
+        }
 
         // 跳到下一页
         $(".next-btn").click(function(){

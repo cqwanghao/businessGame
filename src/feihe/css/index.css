@@ -2569,7 +2569,11 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .guodu .yun1 { width: 19.24rem; position: absolute; left: -12rem; top: 9.6rem; }
 
+.guodu .yun1.active { -webkit-animation: yun1 3s linear forwards; animation: yun1 3s linear forwards; }
+
 .guodu .yun2 { width: 15.48rem; position: absolute; right: -9.28rem; bottom: 2.8rem; }
+
+.guodu .yun2.active { -webkit-animation: yun1 2s linear forwards; animation: yun1 2s linear forwards; }
 
 .guodu .xianhe { width: 14.56rem; position: absolute; top: -10%; right: 0; -webkit-transform: translate3d(21%, 0, 0); transform: translate3d(21%, 0, 0); opacity: 0; }
 
@@ -2602,6 +2606,8 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .guodu2 .gou1 { width: 12.16rem; position: absolute; right: -4.4rem; top: 1.6rem; z-index: 3; }
 
 .guodu2 .brief-cloud1 { width: 10.48rem; position: absolute; left: -5.6rem; top: 7.6rem; }
+
+.guodu2 .brief-cloud1.active { -webkit-animation: yun1 3s linear forwards; animation: yun1 3s linear forwards; }
 
 .guodu2 .message-lantern { width: 3.6rem; position: absolute; left: 6rem; top: 11.2rem; }
 
@@ -2804,3 +2810,9 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
     opacity: 0; }
   to { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);
     opacity: 1; } }
+
+@-webkit-keyframes yun1 { from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to { -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); } }
+
+@keyframes yun1 { from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to { -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); } }
