@@ -239,8 +239,6 @@
             on: {
                 init: function () {
                     pageIndex = this.activeIndex;
-                    // pageIndex = pageIndex - 1;
-                    console.log(pageIndex);
                     $(".upload-box").hide().eq(pageIndex).show();
                     $(".fileUpload").hide().eq(pageIndex).show();
                     // 上传图片
@@ -248,14 +246,6 @@
                 },
                 slideChangeTransitionEnd: function () {
                     pageIndex = this.activeIndex;
-                    // if(pageIndex === 4){
-                    //     pageIndex = 1;
-                    // }
-                    // if(pageIndex === 0){
-                    //     pageIndex = 3;
-                    // }
-                    // pageIndex = pageIndex - 1;
-                    console.log(pageIndex);
                     $(".upload-box").hide().eq(pageIndex).show();
                     $(".fileUpload").hide().eq(pageIndex).show();
                     // 上传图片
@@ -288,7 +278,6 @@
         function uploadImg(){
             //上传图片
             $(".fileUpload").eq(pageIndex).on("change", function (e) {
-                // console.log("pageIndex:"+pageIndex);
                 layer.open({
                     type: 2,
                     content: '上传中...',
@@ -344,17 +333,8 @@
                         } else {
                             ctx.drawImage(this, 0, 0, cvs.width, cvs.height);
                         }
-                        // $('#pinchRotateImg').attr('src', cvs.toDataURL('image/png', 0.7));
-                        // $('#upload').hide();
-                        // 销毁实例
-                        // swiper.destroy();
                         // 更换模板
-                        // $(".upload-area").hide().eq(pageIndex).show();
                         $('.templetBg').attr('src', cvs.toDataURL('image/png', 0.7));
-                        // $('.templetBg').eq(pageIndex).attr('src', cvs.toDataURL('image/png', 0.7));
-                        // $('#upload').hide();
-                        // $(".arrow-left").hide();
-                        // $(".arrow-right").hide();
                         if (!uploadFlag) {
                             //移动缩放旋转
                             transformImg();
@@ -373,7 +353,7 @@
             var pinchRotateImg2 = $('.templetBg')[2];
             var pinchRotateImg3 = $('.templetBg')[3];
             var pinchRotateImg4 = $('.templetBg')[4];
-            // var mobanImg = $("#upload")[0];
+
             var mobanImg0 = $(".fileUpload")[0];
             var mobanImg1 = $(".fileUpload")[1];
             var mobanImg2 = $(".fileUpload")[2];
@@ -477,8 +457,8 @@
 
         //生成图片
         $('#templet-card').click(function () {
+            // 判断图片是否上传
             var fileFlag = false;
-            // console.log(document.getElementById('templet-card').value)
             for(var i = 0;i < $(".fileUpload").length;i++){
                 if($(".fileUpload")[i].files.length != 0){
                     fileFlag = true;
@@ -506,11 +486,9 @@
             }
             console.log(tagIndex);
             $(".word-area .tag img").eq(pageIndex).attr("src", "images/tag" + tagIndex + "-" + (RndNum + 1) + ".png");
-            // $(".word-area .tag img").eq(pageIndex).attr("src", "images/tag" + (pageIndex + 1) + "-" + (RndNum + 1) + ".png");
             // 服务器路径
             // $(".word-area .tag img").eq(pageIndex).attr("src", "/Scripts/mp/FeiHe/images/tag" + (pageIndex + 1) + "-" + (RndNum + 1) + ".png");
             
-            // console.log("images/tag" + (pageIndex + 1) + "-" + (RndNum + 1) + ".png");
             $(".word-area .tag").eq(pageIndex).show();
             $(".t-tag").show();
 
@@ -527,7 +505,6 @@
                     // 合成图
                     $('#resultImg').attr('src', canvas.toDataURL("image/png"));
                     // 分享小图
-                    // $('#shareImg').attr('src', canvas.toDataURL("image/png"));
                     $('#shareImg').attr('src', $(".upload-box img").attr("src"));
 
                     $(".share").css("z-index",1);
@@ -535,14 +512,10 @@
                     $(".loadingPage").hide();
                     $(".share").show();
 
-                    // pageSwiper.slideNext();
-                    // console.log(dateYear+","+dateMonth+","+dateAddr+","+userName);
-
                     var resultTimer = setTimeout(function () {
                         html2canvas(document.querySelector("#shareResult"), {
                             backgroundColor: 'transparent', // 设置背景透明
                         }).then(function (canvas2) {
-                            // console.log(canvas2.toDataURL("image/png"));
                             $("#shareLogo").attr("src", canvas2.toDataURL("image/png"));
                             $("[name=UploadPhoto]").val($(".templetBg").eq(pageIndex).attr("src"));
                             $("[name=TempLateID]").val(tagIndex + 1);
