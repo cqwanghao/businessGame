@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>为新生鹤彩</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/jquery.1.8.2.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/swiper.animate1.0.3.min.js"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/preloadjs-0.6.2.min.js"></script>
+  <script src="js/soundjs-0.6.2.min.js"></script>
+  <script src="js/TweenMax.min.js"></script>
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/layer/layer.js"></script>
+  <script src="js/exif.js"></script>
+  <script src="js/AlloyFinger.js"></script>
+  <script src="js/transformjs.js"></script>
+  <script src="js/html2canvas.js"></script>
+  <script src="js/share.js"></script>
+  <script>
+    (function (window, document) {
+      var setRem = function () {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+    <div class="pageSwiper">
+      <!-- 分享页 -->
+      <div class="share">
+        <div class="share-cloud2">
+          <img src="images/share-cloud2.png" />
+        </div>
+        <div class="noresult">
+          <img src="images/result1.png" id="resultImg" />
+        </div>
+        <div class="shareResult" id="shareResult">
+          <img src="images/result1.png" id="shareImg" />
+        </div>
+        <div class="shareLogo">
+          <img src="" id="shareLogo" />
+        </div>
+        <div class="share-cloud1">
+          <img src="images/share-cloud1.png" />
+        </div>
+        <div class="share-pine">
+          <img src="images/share-pine.png" />
+        </div>
+        <div class="share-logo">
+          <img src="images/share-logo.png" />
+        </div>
+        <div class="share-stone">
+          <img src="images/share-stone.png" />
+        </div>
+        <div class="share-crane">
+          <img src="images/share-crane.png" />
+        </div>
+        <div class="share-mushroom">
+          <img src="images/share-mushroom.png" />
+        </div>
+        <div class="share-btn" id="play-btn">
+          <img src="images/play-btn.png" />
+        </div>
+        <div class="share-mushroom2">
+          <img src="images/share-mushroom2.png" />
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
