@@ -175,12 +175,6 @@ template { display: none; }
 
 .bdr-btm::after { content: ' '; position: absolute; width: 100%; left: 0; bottom: 0; border-top: 1px solid #ddd; color: #ddd; -webkit-transform: scaleY(0.5); -ms-transform: scaleY(0.5); transform: scaleY(0.5); }
 
-.clearfix:before, .clearfix:after { display: table; content: ''; }
-
-.clearfix:after { clear: both; zoom: 1; }
-
-img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-
 /*! animate.css -http://daneden.me/animate Version - 3.5.2 Licensed under the MIT license - http://opensource.org/licenses/MIT Copyright (c) 2017 Daniel Eden */
 .animated { -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
 
@@ -2811,11 +2805,11 @@ html, body { width: 100%; height: 100%; }
 
 .loadingPage .textBox { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; width: 100%; height: 100%; padding-bottom: 2.2rem; position: absolute; left: 0; top: 0; }
 
-.loadingPage .textBox .text1 { width: 15rem; height: 6.28rem; background: url(../images/text1.png) no-repeat center; -webkit-background-size: 15rem 6.28rem; background-size: 15rem 6.28rem; visibility: hidden; }
+.loadingPage .textBox .text1 { width: 15rem; height: 6rem; background: url(../images/text1.png) no-repeat center; -webkit-background-size: 15rem 6rem; background-size: 15rem 6rem; visibility: hidden; }
 
-.loadingPage .textBox .text2 { width: 15rem; height: 3.44rem; background: url(../images/text2.png) no-repeat center; -webkit-background-size: 15rem 3.44rem; background-size: 15rem 3.44rem; visibility: hidden; }
+.loadingPage .textBox .text2 { width: 15rem; height: 4.48rem; background: url(../images/text2.png) no-repeat center; -webkit-background-size: 15rem 4.48rem; background-size: 15rem 4.48rem; visibility: hidden; }
 
-.loadingPage .textBox .text3 { width: 100%; height: 4.64rem; background: url(../images/text3.png) no-repeat center; -webkit-background-size: 100% 4.64rem; background-size: 100% 4.64rem; visibility: hidden; }
+.loadingPage .textBox .text3 { width: 100%; height: 4.12rem; background: url(../images/text3.png) no-repeat center; -webkit-background-size: 100% 4.12rem; background-size: 100% 4.12rem; visibility: hidden; }
 
 .loadingPage .gou1 { width: 4.52rem; height: 8.24rem; z-index: 6; background: url(../images/gou1.png) no-repeat center; -webkit-background-size: 4.52rem 8.24rem; background-size: 4.52rem 8.24rem; position: absolute; left: 0; top: 100%; -webkit-animation-delay: .2s; animation-delay: .2s; -webkit-animation-duration: 2s; animation-duration: 2s; }
 
@@ -2991,7 +2985,7 @@ html, body { width: 100%; height: 100%; }
 
 .templet .uploadBox .swiper-container .upload-area .upload-box .templetBg { display: block; max-width: 100%; width: auto; }
 
-.templet .uploadBox .swiper-container .upload-area .upload-box .upload-box-wrap { padding: .4rem; position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; overflow: hidden; }
+.templet .uploadBox .swiper-container .upload-area .upload-box .upload-box-wrap { position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; overflow: hidden; }
 
 .templet .uploadBox .swiper-container .upload-area .upload-box.upload-box1 { background: url(../images/templet-bg1.png) #d8c6a9 no-repeat center center/100%; }
 
