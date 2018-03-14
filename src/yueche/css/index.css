@@ -1629,3 +1629,27 @@ html { background: #eeeeee; }
 .containerPublish .publishBox .footer { position: fixed; bottom: 0; left: 0; width: 100%; height: 1.6rem; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
 
 .containerPublish .publishBox .footer button { width: 100%; height: 100%; font-size: 0.6rem; border: none; background: none; background-color: #319fff; color: #ffffff; }
+
+.containerMessage .person { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/bg.png) no-repeat top center/cover; }
+
+.containerMessage .person .bg { display: block; width: 100%; }
+
+.containerMessage .person .area { width: 100%; min-height: 100%; padding-top: .8rem; }
+
+.containerMessage .person .area .avatar { width: 4.8rem; height: 4.8rem; margin: 0 auto; -webkit-border-radius: 50%; border-radius: 50%; overflow: hidden; }
+
+.containerMessage .person .area .avatar img { display: block; width: 100%; }
+
+.containerMessage .person .area .messageBox { margin-top: 2rem; }
+
+.containerMessage .person .area .messageBox .option { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; margin: 0 auto; margin-bottom: .68rem; width: 12.4rem; height: 2rem; background-color: #ffffff; }
+
+.containerMessage .person .area .messageBox .option .icon { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; width: 2.2rem; }
+
+.containerMessage .person .area .messageBox .option .icon img { width: 30px; }
+
+.containerMessage .person .area .messageBox .option .message { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+
+.containerMessage .person .area .messageBox .option .message .info { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; padding-left: .4rem; padding-right: .64rem; border: none; background: none; font-size: .56rem; color: #626161; }
+
+.containerMessage .person .area .messageBox .option .message .code { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-width: 3.2rem; font-size: .36rem; color: #999999; }
