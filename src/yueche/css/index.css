@@ -1636,9 +1636,13 @@ html { background: #eeeeee; }
 
 .containerMessage .person .area { width: 100%; min-height: 100%; padding-top: .8rem; }
 
-.containerMessage .person .area .avatar { width: 4.8rem; height: 4.8rem; margin: 0 auto; -webkit-border-radius: 50%; border-radius: 50%; overflow: hidden; }
+.containerMessage .person .area .avatar { position: relative; width: 4.8rem; height: 4.8rem; margin: 0 auto; -webkit-border-radius: 50%; border-radius: 50%; overflow: hidden; z-index: 100; }
 
-.containerMessage .person .area .avatar img { display: block; width: 100%; }
+.containerMessage .person .area .avatar .avatarImg { display: block; width: 100%; }
+
+.containerMessage .person .area .avatar .fileUpload { position: absolute; left: 0; top: 0; z-index: 5; width: 100%; height: 100%; opacity: 0; }
+
+.containerMessage .person .area .avatarResult { display: none; width: 4.8rem; height: 4.8rem; }
 
 .containerMessage .person .area .messageBox { margin-top: 2rem; }
 
@@ -1653,3 +1657,5 @@ html { background: #eeeeee; }
 .containerMessage .person .area .messageBox .option .message .info { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; padding-left: .4rem; padding-right: .64rem; border: none; background: none; font-size: .56rem; color: #626161; }
 
 .containerMessage .person .area .messageBox .option .message .code { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-width: 3.2rem; font-size: .36rem; color: #999999; }
+
+.containerMessage .person .area .messageBox .submit { display: block; width: 12.4rem; height: 2rem; margin: 0 auto; font-size: 0.6rem; border: none; background: none; background-color: #319fff; color: #ffffff; }

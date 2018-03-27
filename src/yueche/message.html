@@ -29,9 +29,11 @@
     <div class="containerMessage">
       <div class="person">
         <div class="area">
-          <div class="avatar">
-            <img src="images/avatar1.png" >
+          <div class="avatar" id="avatar" >
+            <img src="images/avatar1.png" class="avatarImg" >
+            <input type="file" class="fileUpload" id="upload" accept="image/*">
           </div>
+          <img src="" id="avatarResult" class="avatarResult" />
           <div class="messageBox">
             <div class="option">
               <div class="icon">
@@ -66,9 +68,18 @@
                 <div class="code">获取验证码</div>
               </div>
             </div>
+            <button class="submit" >提交</button>
           </div>
         </div>
       </div>
     </div>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/orienter.min.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/AlloyFinger.js"></script>
+    <script src="js/transformjs.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <script src="js/message.js" ></script>
   </body>
 </html>
