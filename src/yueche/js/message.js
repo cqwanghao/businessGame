@@ -56,32 +56,11 @@ $(function () {
                 } else {
                     ctx.drawImage(this, 0, 0, cvs.width, cvs.height);
                 }
-                // 更换模板
+                // 获得的图片
                 $('.avatarImg').attr('src', cvs.toDataURL('image/png', 0.7));
                 layer.closeAll();
             };
         };
-    });
-
-    var pinchRotateImg = $('.avatarImg')[0];
-
-    var mobanImg = $(".fileUpload")[0];
-    Transform(pinchRotateImg);
-    new AlloyFinger(mobanImg, {
-        rotate: function (evt) {
-            pinchRotateImg.rotateZ += evt.angle;
-        },
-        multipointStart: function () {
-            initScale = pinchRotateImg.scaleX;
-        },
-        pinch: function (evt) {
-            pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.zoom;
-        },
-        pressMove: function (evt) {
-            pinchRotateImg.translateX += evt.deltaX;
-            pinchRotateImg.translateY += evt.deltaY;
-            evt.preventDefault();
-        }
     });
 
     $(".submit").click(function(){
