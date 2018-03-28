@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport"
+	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>脱单联盟</title>
+  <link rel="stylesheet" href="./css/index.css?111">
+  <script src="./js/jquery.1.8.2.min.js"></script>
+  <script src="./js/qrcode.js"></script>
+  <script>
+    (function (window, document) {
+      var setRem = function() {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        }else { 
+          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+  <body>
+    <div class="qrcode" style="display: none"></div>
+    <div class="page page1" id="page1">
+      <div class="chatListBox">
+        <div class="chatBox">
+          <div class="newsList newsList1 active">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      今年必须结束单身了求介绍靠谱儿对象！
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      亲爱的我以后绝不玩SM了，你回来吧
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      <a class="link link1">点击生成你的“愚乐”群聊</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsList newsList2">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                    因为一些特殊原因，我要回老家 了，就不一一道别了，祝各位一 切顺利！
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+                <div class="photo">
+                  <img src="./images/photo3.png" alt="">
+                </div>
+                <div class="msg">
+                    <span class="msgBox">
+                        回老家也可以用BOSS直聘找到 好工作！
+                      <div class="triangle"></div>
+                    </span>
+                </div>
+              </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo2.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      别走了，留下了一起吃喝玩乐吧
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo4.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      回朝鲜也好，毕竟你在理也算富 翁～
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo5.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      被绿了也没什么大不了的
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      离开干嘛？你去哪都拉低GDP
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      算你狠！有胆你也试试你朋友怎么说你！<a class="link link2">点击生成你的专属答题码</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="formBox">
+            <form class="msgForm">
+              <input type="text" placeholder="自拟答案">
+              <div class="publish"><button class="refresh" type="button">发送</button></div>
+            </form>
+            <ul class="msgList msgList1">
+              <li>今天出门没吃药还是没照镜子？</li>
+              <li>为什么要结束单身？手机不好玩还是狗粮不好吃？</li>
+              <li>你需要介绍男的还是女的？</li>
+              <li>给你介绍一下这是对象</li>
+            </ul>
+            <ul class="msgList msgList2">
+              <li>亲爱的我以后绝不玩SM了，你回来吧</li>
+              <li>看.片.＋v：肆零依y_rj</li>
+              <li>我看你就是想蹭饭……</li>
+              <li>你被盗号了么？</li>
+            </ul>
+          </div>
+          <div class="btnActions">
+            <div class="btn btn1" data-status="1">呵呵我信了</div>
+            <div class="btn btn2" data-status="0">滚蛋你骗人</div>
+          </div>
+        </div>
+      </div>
+      <div class="ModaList">
+        <div class="actions">
+          <div class="btn btn1">有××个人信了</div>
+          <div class="btn btn2">有××个人揭穿</div>
+        </div>
+        <div class="list">
+          <div class="cell">
+            <span>哥舒：</span>有钱买车票么？
+          </div>
+          <div class="cell">
+            <span>星星：</span>滚滚滚，赶紧滚！ 
+          </div>
+          <div class="cell">
+            <span>庚总：</span>巴黎圣母院少个敲钟的，就你了！ 
+          </div>
+          <div class="cell">
+            <span>若白：</span>把欠我的钱先还了！
+          </div>
+          <div class="cell">
+            <span>森森：</span>你走吧，走了就别再回来
+          </div>
+          <div class="cell">
+            <span>李荣浩：</span>别走了，在哪你都拉低GDP
+          </div>
+          <div class="cell">
+            <span>小野：</span>被绿了没什么大不了的
+          </div>
+          <div class="cell">
+            <span>喵呜：</span>还是再拼俩年吧～如果还是没混出来再回去也不迟啊！
+          </div>
+        </div>
+        <!-- <div class="bootomBox"></div> -->
+      </div>
+      <div class="shareModa">
+        <!-- <img class="shareImg" src="./images/canvas.png" alt=""> -->
+        <img class="shareImg" src="./images/result1.png" alt="">
+        <div class="close"></div>
+        <div class="title"><img src="./images/shou.png">长按分享图片</div>
+        <div class="text">分享后，再次扫码可查看留言</div>
+      </div>
+    </div>
+    <div class="page page2" id="page2">
+      <div class="chatListBox">
+        <div class="chatBox">
+          <div class="newsList newsList1 active">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      把老板炒了准备创业求支（众）持（筹）
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      兄弟，你这是非法集资啊
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      <a class="link link1">点击生成你的“愚乐”群聊</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsList newsList2">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                    因为一些特殊原因，我要回老家 了，就不一一道别了，祝各位一 切顺利！
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+                <div class="photo">
+                  <img src="./images/photo3.png" alt="">
+                </div>
+                <div class="msg">
+                    <span class="msgBox">
+                        回老家也可以用BOSS直聘找到 好工作！
+                      <div class="triangle"></div>
+                    </span>
+                </div>
+              </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo2.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      别走了，留下了一起吃喝玩乐吧
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo4.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      回朝鲜也好，毕竟你在理也算富 翁～
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo5.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      被绿了也没什么大不了的
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      离开干嘛？你去哪都拉低GDP
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      算你狠！有胆你也试试你朋友怎么说你！<a class="link link2">点击生成你的专属答题码</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="formBox">
+            <form class="msgForm">
+              <input type="text" placeholder="自拟答案">
+              <div class="publish"><button class="refresh" type="button">发送</button></div>
+            </form>
+            <ul class="msgList msgList1">
+              <li>为什么要创业？嫌发际线太低吗？</li>
+              <li>0.08红包祝你发财，将来不用分红，退群了886</li>
+              <li>你准备干啥，是去要饭呢还是去卖身？</li>
+              <li>兄弟，你这是非法集资啊</li>
+            </ul>
+            <ul class="msgList msgList2">
+              <li>一入微商深似海</li>
+              <li>没钱支持，我去给你买几个橘子…</li>
+              <li>你不会被骗了吧，要是被迫的，你就打个笑脸</li>
+              <li>别告诉我这就是你的项目——拉群圈钱</li>
+            </ul>
+          </div>
+          <div class="btnActions">
+            <div class="btn btn1" data-status="1">呵呵我信了</div>
+            <div class="btn btn2" data-status="0">滚蛋你骗人</div>
+          </div>
+        </div>
+      </div>
+      <div class="ModaList">
+        <div class="actions">
+          <div class="btn btn1">有××个人信了</div>
+          <div class="btn btn2">有××个人揭穿</div>
+        </div>
+        <div class="list">
+          <div class="cell">
+            <span>哥舒：</span>有钱买车票么？
+          </div>
+          <div class="cell">
+            <span>星星：</span>滚滚滚，赶紧滚！ 
+          </div>
+          <div class="cell">
+            <span>庚总：</span>巴黎圣母院少个敲钟的，就你了！ 
+          </div>
+          <div class="cell">
+            <span>若白：</span>把欠我的钱先还了！
+          </div>
+          <div class="cell">
+            <span>森森：</span>你走吧，走了就别再回来
+          </div>
+          <div class="cell">
+            <span>李荣浩：</span>别走了，在哪你都拉低GDP
+          </div>
+          <div class="cell">
+            <span>小野：</span>被绿了没什么大不了的
+          </div>
+          <div class="cell">
+            <span>喵呜：</span>还是再拼俩年吧～如果还是没混出来再回去也不迟啊！
+          </div>
+        </div>
+      </div>
+      <div class="shareModa">
+        <!-- <img class="shareImg" src="./images/canvas.png" alt=""> -->
+        <img class="shareImg" src="./images/result2.png" alt="">
+        <div class="close"></div>
+        <div class="title"><img src="./images/shou.png">长按分享图片</div>
+        <div class="text">分享后，再次扫码可查看留言</div>
+      </div>
+    </div>
+    <div class="page page3 active" id="page3">
+      <div class="chatListBox">
+        <div class="chatBox">
+          <div class="newsList newsList1 active">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      把老板炒了准备创业求支（众）持（筹）
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      兄弟，你这是非法集资啊
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      <a class="link link1">点击生成你的“愚乐”群聊</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsList newsList2">
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                    因为一些特殊原因，我要回老家 了，就不一一道别了，祝各位一 切顺利！
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+                <div class="photo">
+                  <img src="./images/photo3.png" alt="">
+                </div>
+                <div class="msg">
+                    <span class="msgBox">
+                        回老家也可以用BOSS直聘找到 好工作！
+                      <div class="triangle"></div>
+                    </span>
+                </div>
+              </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo2.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      别走了，留下了一起吃喝玩乐吧
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo4.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      回朝鲜也好，毕竟你在理也算富 翁～
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo5.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      被绿了也没什么大不了的
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated right">
+              <div class="photo">
+                <img src="./images/photo6.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox msgBox1">
+                      离开干嘛？你去哪都拉低GDP
+                    <div class="triangle triangle1"></div>
+                  </span>
+              </div>
+            </div>
+            <div class="newsItem fadeIn animated left">
+              <div class="photo">
+                <img src="./images/photo1.png" alt="">
+              </div>
+              <div class="msg">
+                  <span class="msgBox">
+                      算你狠！有胆你也试试你朋友怎么说你！<a class="link link2">点击生成你的专属答题码</a>
+                    <div class="triangle"></div>
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="formBox">
+            <form class="msgForm">
+              <input type="text" placeholder="自拟答案">
+              <div class="publish"><button class="refresh" type="button">发送</button></div>
+            </form>
+            <ul class="msgList msgList1">
+              <li>为什么要创业？嫌发际线太低吗？</li>
+              <li>0.08红包祝你发财，将来不用分红，退群了886</li>
+              <li>你准备干啥，是去要饭呢还是去卖身？</li>
+              <li>兄弟，你这是非法集资啊</li>
+            </ul>
+            <ul class="msgList msgList2">
+              <li>一入微商深似海</li>
+              <li>没钱支持，我去给你买几个橘子…</li>
+              <li>你不会被骗了吧，要是被迫的，你就打个笑脸</li>
+              <li>别告诉我这就是你的项目——拉群圈钱</li>
+            </ul>
+          </div>
+          <div class="btnActions">
+            <div class="btn btn1" data-status="1">呵呵我信了</div>
+            <div class="btn btn2" data-status="0">滚蛋你骗人</div>
+          </div>
+        </div>
+      </div>
+      <div class="ModaList">
+        <div class="actions">
+          <div class="btn btn1">有××个人信了</div>
+          <div class="btn btn2">有××个人揭穿</div>
+        </div>
+        <div class="list">
+          <div class="cell">
+            <span>哥舒：</span>有钱买车票么？
+          </div>
+          <div class="cell">
+            <span>星星：</span>滚滚滚，赶紧滚！ 
+          </div>
+          <div class="cell">
+            <span>庚总：</span>巴黎圣母院少个敲钟的，就你了！ 
+          </div>
+          <div class="cell">
+            <span>若白：</span>把欠我的钱先还了！
+          </div>
+          <div class="cell">
+            <span>森森：</span>你走吧，走了就别再回来
+          </div>
+          <div class="cell">
+            <span>李荣浩：</span>别走了，在哪你都拉低GDP
+          </div>
+          <div class="cell">
+            <span>小野：</span>被绿了没什么大不了的
+          </div>
+          <div class="cell">
+            <span>喵呜：</span>还是再拼俩年吧～如果还是没混出来再回去也不迟啊！
+          </div>
+        </div>
+      </div>
+      <div class="shareModa">
+        <!-- <img class="shareImg" src="./images/canvas.png" alt=""> -->
+        <img class="shareImg" src="./images/result2.png" alt="">
+        <div class="close"></div>
+        <div class="title"><img src="./images/shou.png">长按分享图片</div>
+        <div class="text">分享后，再次扫码可查看留言</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    (function() {
+      //生成二维码
+      new QRCode(document.querySelector(".qrcode"), 'https://github.com/zjj131415')
+      //图片数组
+      var data=['http://wx.qlogo.cn/mmopen/vi_32/M5bIsGJ28pulMQ2iadpTo3Wf2dROjlUAdO1Q8stJW3CHPdfa3IyRbAof8EHRbhM33ZP0pPRuibTpWGnh2K3qibvSw/0', './images/canvas.png', './images/qrBg.jpg', './images/qrBg.jpg', './images/qrLog.png'],
+          base64=[];
+      //显示隐藏
+      $('.btn').on('click', function() {
+        var status = $(this).data('status');
+        $('.page.active .msgList').removeClass('active');
+        !(status | 0) ? $('.page.active .msgList2').addClass('active') : $('.page.active .msgList1').addClass('active');
+        $('.page.active .btnActions').removeClass("active");
+        $('.page.active .formBox').show();
+        // $('.msgList').show();
+        document.querySelector('.page.active .chatListBox').scrollTop = $('.page.active .chatBox').height() - $('.page.active .chatListBox').height();
+      });
+      $('.page.active .msgForm input').focus(function() {
+        $('.page.active .msgList').removeClass('active');
+        // $('.msgList').hide();
+      })
+      $('.page.active .msgForm input').blur(function(e) {
+        console.log(e)
+        $('.page.active .formBox').hide();
+        $('.page.active .btnActions').addClass("active");
+      });
+      //关闭分享图
+      $('.page.active .close').click(function() {
+        $('.page.active .shareModa').hide();
+      })
+      //点击生成图片
+      $('.page.active .link2').click(function() {
+        $('.shareModa').show();
+        // draw(function(share) {
+        //   $('.shareImg').attr('src', share);
+        //   $('.shareModa').show();
+        // })
+      });
+      // 点击生成“愚乐”群聊
+      $('.page.active .link1').click(function() {
+        $(".page.active .newsList1").removeClass("active");
+        $(".page.active .newsList2").addClass("active");
+        $('.page.active .btnActions').addClass("active");
+        listShow($('.page.active .newsList2'));
+      });
+
+      //一个一个显示，需要添加active；
+      listShow($('.page.active .newsList1'));
+
+      // 刷新页面
+      $(".page.active .refresh").click(function(){
+        window.history.go(0);
+      });
+      
+      function listShow(obj){
+        var timeCount = null;
+        var count = 0;
+        timeCount = setInterval(function() {
+          obj.find('.newsItem').eq(count).addClass('active');
+          count ++;
+          document.querySelector('.page.active .chatListBox').scrollTop = $('.page.active .chatBox').height() - $('.page.active .chatListBox').height();
+          if (count > obj.find('.newsItem').length) return clearInterval(timeCount);
+        }, 300)
+      }
+
+      //合成图片
+      function draw(fn){
+        var c=document.createElement('canvas'),
+          ctx=c.getContext('2d'),
+          len=data.length;
+        c.width=750;
+        c.height=1334;
+        ctx.rect(0,0,c.width,c.height);
+        ctx.fillStyle='#1c1f70';
+        ctx.fill();
+        function drawing(n){
+          if(n<len){
+            var x = 0;
+            var y = 0;
+            var w = "";
+            var h = "";
+            switch (n | 0) {
+              case 0:
+                x = 303;
+                y = 174;
+                w = 142;
+                h = 142;
+                break;
+              case 1:
+                x = 0;
+                y = 0;
+                w = 750;
+                h = 1334;
+                break;
+              case 2:
+                x = 255;
+                y = 825;
+                w = 240;
+                h = 240;
+                break;
+              case 3:
+                var qrImg = $('.qrcode img').attr('src');
+                if (!qrImg) return alert('二维码生成失败~');
+                data[3] = qrImg;
+                x = 266;
+                y = 836;
+                w = 218;
+                h = 218;
+                break;
+              case 4:
+                x = 348;
+                y = 918;
+                w = 57;
+                h = 57;
+                break;
+            }
+            var img=new Image;
+            img.crossOrigin = 'Anonymous'; //解决跨域
+            img.src=data[n];
+            img.onload=function(){
+              ctx.drawImage(img, x, y, w, h);
+              drawing(n+1);//递归
+            }
+          }else{
+            //保存生成作品图片
+            base64.push(c.toDataURL("image/jpeg",0.8));
+            fn && fn(c.toDataURL("image/jpeg",0.8))
+          }
+        }
+        drawing(0);
+      }
+    })()
+  </script>
+</html>
