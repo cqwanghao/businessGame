@@ -78,63 +78,212 @@ body {
       }
     }
   }
+  .shareModa .text{
+    color: #d7935a;
+  }
 }
 #page3{
   background: url(../images/bg3.jpg) no-repeat #324c74;
   .msgBox{
-    border-color: #2d3826;
+    border-color: #ffa661;
     &.msgBox1{
-      background-color: #2d3826;
+      border-color: #94b9ff;
+      background-color: #94b9ff;
     }
     .link{
-      color: #d7935a;
+      color: #ffa661;
     }
     .triangle{
-      border-color: #2d3826;
+      border-color: #ffa661;
       &.triangle1{
-        background-color: #2d3826;
+        background-color: #94b9ff;
+        border-color: #94b9ff;
       }
     }
   }
-  .msgList1{
-    background-color: #2d3826;
+  .msgList{
     li{
-      border-color: #d7935a;
+      color: #000000;
+    }
+  }
+  .msgList1{
+    background-color: #ffa661;
+    li{
+      border-color: #94b9ff;
     }
   }
   .msgList2{
-    background-color: #d7935a;
+    background-color: #94b9ff;
     li{
-      border-color: #2d3826;
+      border-color: #ffa661;
     }
   }
   .btnActions{
     .btn1{
-      background-color: #2d3826;
+      background-color: #94b9ff;
     }
     .btn2{
-      background-color: #d7935a;
+      background-color: #ffa661;
     }
   }
   .publish{
-    background-color: #2d3826;
+    background-color: #94b9ff;
   }
   .ModaList{
     .actions{
       .btn1{
-        background-color: #2d3826;
+        background-color: #94b9ff;
       }
       .btn2{
-        background-color: #d7935a;
+        background-color: #ffa661;
       }
     }
     .list{
       .cell{
         > span{
-          color: #2d3826;
+          color: #ffa661;
         }
       }
     }
+  }
+  .shareModa .text{
+    color: #ffbc41;
+  }
+}
+#page4{
+  background: url(../images/bg4.jpg) no-repeat #4a2a2f;
+  .msgBox{
+    border-color: #ffbc41;
+    &.msgBox1{
+      border-color: #543234;
+      background-color: #543234;
+    }
+    .link{
+      color: #ffbc41;
+    }
+    .triangle{
+      border-color: #ffa661;
+      &.triangle1{
+        background-color: #543234;
+        border-color: #543234;
+      }
+    }
+  }
+  .msgList{
+    li{
+      color: #000000;
+    }
+  }
+  .msgList1{
+    background-color: #ffbd42;
+    li{
+      border-color: #543234;
+    }
+  }
+  .msgList2{
+    background-color: #543234;
+    li{
+      border-color: #ffbc41;
+    }
+  }
+  .btnActions{
+    .btn1{
+      background-color: #543234;
+    }
+    .btn2{
+      background-color: #ffbc41;
+    }
+  }
+  .publish{
+    background-color: #543234;
+  }
+  .ModaList{
+    .actions{
+      .btn1{
+        background-color: #ffbc41;
+      }
+      .btn2{
+        background-color: #543234;
+      }
+    }
+    .list{
+      .cell{
+        > span{
+          color: #543234;
+        }
+      }
+    }
+  }
+  .shareModa .text{
+    color: #ffbc41;
+  }
+}
+#page5{
+  background: url(../images/bg5.jpg) no-repeat #3c472d;
+  .msgBox{
+    border-color: #8fa472;
+    &.msgBox1{
+      border-color: #242d17;
+      background-color: #242d17;
+    }
+    .link{
+      color: #8fa472;
+    }
+    .triangle{
+      border-color: #8fa472;
+      &.triangle1{
+        background-color: #242d17;
+        border-color: #242d17;
+      }
+    }
+  }
+  .msgList{
+    li{
+      color: #000000;
+    }
+  }
+  .msgList1{
+    background-color: #8fa472;
+    li{
+      border-color: #6d7364;
+    }
+  }
+  .msgList2{
+    background-color: #242d17;
+    li{
+      border-color: #8fa472;
+    }
+  }
+  .btnActions{
+    .btn1{
+      background-color: #8fa472;
+    }
+    .btn2{
+      background-color: #242d17;
+    }
+  }
+  .publish{
+    background-color: #242d17;
+  }
+  .ModaList{
+    .actions{
+      .btn1{
+        background-color: #8fa472;
+      }
+      .btn2{
+        background-color: #242d17;
+      }
+    }
+    .list{
+      .cell{
+        > span{
+          color: #8fa472;
+        }
+      }
+    }
+  }
+  .shareModa .text{
+    color: #8fa472;
   }
 }
 
@@ -194,7 +343,7 @@ body {
           .msgBox {
             padding: .4rem .48rem;
             border: 1px solid #f0614f;
-            background: #fff;
+            background-color: #f8f8f8;
             border-radius: .16rem;
             line-height: 1.4;
             font-size: .64rem;
@@ -212,7 +361,7 @@ body {
           height: .4rem;
           margin-top: -.2rem;
           transform: rotate(-45deg);
-          background: #fff;
+          background-color: #f8f8f8;
           border: 1px solid #f0614f;
           border-right: none;
           border-bottom: none;
