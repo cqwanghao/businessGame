@@ -1,6 +1,5 @@
 (function() {
   var pageNo = getUrlParameter("pageNo");
-  console.log(pageNo);
   switch(pageNo){
     case "1":
       $("#page1").addClass("active");
@@ -50,7 +49,6 @@
     // $('.msgList').hide();
   })
   $('.page.active .msgForm input').blur(function(e) {
-    console.log(e)
     $('.page.active .formBox').hide();
     $('.page.active .btnActions').addClass("active");
   });
