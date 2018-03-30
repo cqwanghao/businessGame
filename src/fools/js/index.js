@@ -1,38 +1,48 @@
 (function() {
+  //图片数组
+  var data=['./images/result.png','./images/qrLog.png'],
+      base64=[];
+
   var pageNo = getUrlParameter("pageNo");
   switch(pageNo){
     case "1":
       $("#page1").addClass("active");
       document.title = "脱单联盟";
+      data[0] = './images/result1.png';
       break;
     case "2":
       $("#page2").addClass("active");
       document.title = "未来全球500强董事会";
+      data[0] = './images/result2.png';
       break;
     case "3":
       $("#page3").addClass("active");
       document.title = "闺蜜比天大";
+      data[0] = './images/result3.png';
       break;
     case "4":
       $("#page4").addClass("active");
       document.title = "刚撕了公司那个碧池";
+      data[0] = './images/result4.png';
       break;
     case "5":
       $("#page5").addClass("active");
       document.title = "老铁绿不绿";
+      data[0] = './images/result5.png';
       break;
     default:
       $("#page1").addClass("active");
       document.title = "脱单联盟";
+      data[0] = './images/result1.png';
       break;
   }
 
   //生成二维码
-  new QRCode(document.querySelector(".qrcode"), 'https://github.com/zjj131415')
-  //图片数组
-  var data=['http://wx.qlogo.cn/mmopen/vi_32/M5bIsGJ28pulMQ2iadpTo3Wf2dROjlUAdO1Q8stJW3CHPdfa3IyRbAof8EHRbhM33ZP0pPRuibTpWGnh2K3qibvSw/0', './images/canvas.png', './images/qrBg.jpg', './images/qrBg.jpg', './images/qrLog.png'],
-      base64=[];
-  
+  new QRCode(document.querySelector(".qrcode"), {
+    text: "http://www.baidu.com",
+    width: 300,
+    height: 300
+  });  
   
   //显示隐藏
   $('.btn').on('click', function() {
@@ -53,42 +63,68 @@
     $('.page.active .btnActions').addClass("active");
   });
   //关闭分享图
-  $('.page.active .close').click(function() {
+  // $('.page.active .close').click(function() {
+  //   $('.page.active .shareModa').hide();
+  // })
+  $('.page.active').on("click",".close",function() {
     $('.page.active .shareModa').hide();
-  })
+  });
   //点击生成图片
-  $('.page.active .link2').click(function() {
-    $('.shareModa').show();
-    // draw(function(share) {
-    //   $('.shareImg').attr('src', share);
-    //   $('.shareModa').show();
-    // })
+  // $('.page.active .link2').click(function() {
+  //   $('.shareModa').show();
+  //   draw(function(share) {
+  //     $('.shareImg').attr('src', share);
+  //     $('.shareModa').show();
+  //   })
+  // });
+  $('.page.active').on("click",".link2",function() {
+    // $('.shareModa').show();
+    draw(function(share) {
+      $('.shareImg').attr('src', share);
+      $('.shareModa').show();
+    })
   });
   // 点击生成“愚乐”群聊
   $('.page.active .link1').click(function() {
     $(".page.active .newsList1").removeClass("active");
     $(".page.active .newsList2").addClass("active");
-    $('.page.active .btnActions').addClass("active");
     listShow($('.page.active .newsList2'));
   });
+  
+  $('.page.active .btnActions').addClass("active");
 
+
+  createjs.Sound.addEventListener("fileload", listShow);
+  createjs.Sound.registerSound({src:"./media/didi.mp3", id:"sound"});
   //一个一个显示，需要添加active；
-  listShow($('.page.active .newsList1'));
+  // listShow($('.page.active .newsList1'));
+  // listShow($('.page.active .newsList2'));
 
   // 刷新页面
   $(".page.active .refresh").click(function(){
     window.history.go(0);
   });
   
-  function listShow(obj){
+  function listShow(){
+    var obj = $('.page.active .newsList2');
     var timeCount = null;
     var count = 0;
     timeCount = setInterval(function() {
       obj.find('.newsItem').eq(count).addClass('active');
       count ++;
+      if (count < obj.find('.newsItem').length + 1) {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+          WeixinJSBridge.invoke('getNetworkType', {}, function (res) {
+            createjs.Sound.play("./media/didi.mp3");
+          });
+        } else {
+          createjs.Sound.play("./media/didi.mp3");
+        }
+        
+      }
       document.querySelector('.page.active .chatListBox').scrollTop = $('.page.active .chatBox').height() - $('.page.active .chatListBox').height();
       if (count > obj.find('.newsItem').length) return clearInterval(timeCount);
-    }, 300)
+    }, 800)
   }
 
   //合成图片
@@ -109,37 +145,19 @@
         var h = "";
         switch (n | 0) {
           case 0:
-            x = 303;
-            y = 174;
-            w = 142;
-            h = 142;
-            break;
-          case 1:
             x = 0;
             y = 0;
             w = 750;
             h = 1334;
             break;
-          case 2:
-            x = 255;
-            y = 825;
-            w = 240;
-            h = 240;
-            break;
-          case 3:
+          case 1:
             var qrImg = $('.qrcode img').attr('src');
             if (!qrImg) return alert('二维码生成失败~');
-            data[3] = qrImg;
-            x = 266;
-            y = 836;
-            w = 218;
-            h = 218;
-            break;
-          case 4:
-            x = 348;
-            y = 918;
-            w = 57;
-            h = 57;
+            data[1] = qrImg;
+            x = 89;
+            y = 608;
+            w = 572;
+            h = 572;
             break;
         }
         var img=new Image;
