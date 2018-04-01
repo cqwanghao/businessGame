@@ -2529,9 +2529,19 @@ template { display: none; }
 
 html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -webkit-background-size: 100% 100%; background-size: 100%; background-position: center center; background-color: #ebebeb; }
 
+.video_exist { width: 1.28rem; height: 1.28rem; background: url(../images/music_off.png) center center no-repeat; -webkit-background-size: 1.28rem 1.28rem; background-size: 1.28rem 1.28rem; }
+
+.video_exist.off { display: none; }
+
+.video_exist.rotate { background-image: url(../images/music_on.png); -webkit-animation: rotating 2s linear infinite; animation: rotating 2s linear infinite; }
+
+.video_exist { position: absolute; top: .64rem; right: .64rem; z-index: 1001; }
+
 .page { display: none; position: absolute; width: 100%; height: 100%; overflow: hidden; background-repeat: no-repeat; -webkit-background-size: 100% 100%; background-size: 100%; }
 
 .page.down:after { content: ""; position: absolute; bottom: 1rem; left: 50%; width: 1.04rem; height: .68rem; margin-left: -.52rem; background: url(../images/arrow.png) center center no-repeat; -webkit-background-size: cover; background-size: cover; -webkit-animation: start 1.5s infinite ease-in-out; animation: start 1.5s infinite ease-in-out; z-index: 1; }
+
+.page.on:after { position: absolute; content: ""; width: 100%; height: 100%; left: 0; top: 0; z-index: 1; }
 
 .page00 { display: block; background: url(../images/loading.gif) center center no-repeat; -webkit-background-size: 100% 100%; background-size: 100%; }
 
@@ -2561,11 +2571,13 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 
 .page02 .voice .strips .strip2 { position: absolute; top: 50%; left: 25%; width: .16rem; height: .4rem; margin-top: -.2rem; }
 
+.page02 .voice .strips .strip2.active { -webkit-animation: play 2s infinite ease-in-out; animation: play 2s infinite ease-in-out; -webkit-animation-delay: -0.5s; animation-delay: -0.5s; }
+
 .page02 .voice .strips .strip3 { position: absolute; top: 50%; left: 40.88%; width: .28rem; height: .76rem; margin-top: -.38rem; }
 
-.page03 { background-image: url(../images/bg3.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
+.page02 .voice .strips .strip3.active { -webkit-animation: play 2s infinite ease-in-out; animation: play 2s infinite ease-in-out; -webkit-animation-delay: 0s; animation-delay: 0s; }
 
-.page03 .arrow { position: absolute; bottom: 2rem; left: 50%; width: 1.04rem; height: .68rem; margin-left: -.52rem; }
+.page03 { background-image: url(../images/bg3.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
 
 .page03 .page03-01 { position: absolute; top: 1.4rem; right: 1rem; width: 10.16rem; }
 
@@ -2577,8 +2589,6 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 
 .page04 { background-image: url(../images/bg4.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
 
-.page04 .arrow { position: absolute; bottom: 2rem; left: 50%; width: 1.04rem; height: .68rem; margin-left: -.52rem; }
-
 .page04 .page04-01 { position: absolute; top: 1.44rem; left: 1.4rem; width: 10.16rem; }
 
 .page04 .page04-02 { position: absolute; bottom: 4.92rem; left: 50%; width: 13.24rem; margin-left: -6.62rem; }
@@ -2586,8 +2596,6 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 .page04 .page04-03 { position: absolute; bottom: 1.56rem; left: 1.16rem; width: 13.76rem; }
 
 .page05 { background-image: url(../images/bg5.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
-
-.page05 .arrow { position: absolute; bottom: 2rem; left: 50%; width: 1.04rem; height: .68rem; margin-left: -.52rem; }
 
 .page05 .page05-01 { position: absolute; top: 1.4rem; left: 1.36rem; width: 8.28rem; }
 
@@ -2597,29 +2605,31 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 
 .page06 { background-image: url(../images/bg6.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
 
-.page06 .arrow { position: absolute; bottom: 2rem; left: 50%; width: 1.04rem; height: .68rem; margin-left: -.52rem; }
-
 .page06 .page06-01 { position: absolute; top: 1.4rem; right: 1rem; width: 5.12rem; }
 
 .page06 .page06-02 { position: absolute; bottom: 4.92rem; left: 50%; width: 87.6%; margin-left: -43.8%; }
 
-.page06 .page06-03 { position: absolute; bottom: 26.3%; right: 1.6rem; width: 11.28rem; }
+.page06 .car { position: absolute; bottom: 26.3%; right: 1.6rem; width: 11.28rem; }
+
+.page06 .car .page06-03 { display: block; width: 100%; }
+
+.page06 .car .page06-04 { position: absolute; top: 0; left: 0; width: 100%; -webkit-animation: carLight 6s linear infinite; animation: carLight 6s linear infinite; }
 
 .page07 { background-image: url(../images/bg7.png); background-position: center center; -webkit-background-size: cover; background-size: cover; }
 
-.page07 .page07-01 { position: absolute; top: 2.48rem; left: 50%; width: 10.48rem; margin-left: -5.28rem; }
+.page07 .page07-01 { position: absolute; top: .48rem; left: 50%; width: 10.48rem; margin-left: -5.28rem; }
 
-.page07 .page07-02 { position: absolute; top: 5.04rem; left: 50%; width: 11rem; margin-left: -5.5rem; }
+.page07 .page07-02 { position: absolute; top: 3.04rem; left: 50%; width: 11rem; margin-left: -5.5rem; }
 
-.page07 .page07-02 a { display: block; position: relative; }
+.page07 .page07-02 .select { display: block; position: relative; }
 
-.page07 .page07-02 a.selecta.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02as.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
+.page07 .page07-02 .select.selecta.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02as.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
 
-.page07 .page07-02 a.selectb.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02bs.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
+.page07 .page07-02 .select.selectb.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02bs.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
 
-.page07 .page07-02 a.selectc.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02cs.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
+.page07 .page07-02 .select.selectc.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02cs.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
 
-.page07 .page07-02 a.selectd.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02ds.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
+.page07 .page07-02 .select.selectd.on:after { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url(../images/page07-02ds.png) center center no-repeat; -webkit-background-size: contain; background-size: contain; }
 
 .page07 .page07-02 .page07-03 { display: block; width: 11rem; margin-top: .8rem; }
 
@@ -2663,6 +2673,16 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 
 .cover3 .message .tip .close img { display: block; }
 
+@-webkit-keyframes rotating { from { -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  to { -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotating { from { -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  to { -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
 @-webkit-keyframes start { 0%, 30% { opacity: 1;
     -webkit-transform: translate(0, -5px);
             transform: translate(0, -5px); }
@@ -2682,3 +2702,27 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
   100% { opacity: 1;
     -webkit-transform: translate(0, -5px);
             transform: translate(0, -5px); } }
+
+@-webkit-keyframes play { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@keyframes play { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes carLight { 0% { opacity: 0; }
+  12% { opacity: 1; }
+  24% { opacity: 0; }
+  36% { opacity: 1; }
+  48% { opacity: 0; }
+  60% { opacity: 1; }
+  72% { opacity: 0; }
+  100% { opacity: 0; } }
+
+@keyframes carLight { 0% { opacity: 0; }
+  12% { opacity: 1; }
+  24% { opacity: 0; }
+  36% { opacity: 1; }
+  48% { opacity: 0; }
+  60% { opacity: 1; }
+  72% { opacity: 0; }
+  100% { opacity: 0; } }

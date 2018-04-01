@@ -331,6 +331,11 @@ function pageHide(e, b) {
             mediaPlay=true;
             $("#media").audioAutoPlay("media");
         }
+        // 音乐调用 有音乐解开注释
+        // if ($("#audio_btn1").length > 0) {
+        //     $("#media1").audioAutoPlay("media1");
+        //     $("#media1")[0].pause();
+        // }
         // 音乐调用end
         // -==================================================================
 
@@ -345,16 +350,16 @@ function pageHide(e, b) {
         }
 
         // 统一关闭
-        $(".close").on("click",function(){
-            $(this).closest(".p-pup").hide();
-        });
+        // $(".close").on("click",function(){
+        //     $(this).closest(".p-pup").hide();
+        // });
         // 选择demo
-        $(".select-demo select").on("change",function(){
-            var value=$(this).val();
-            var text=$(this).find("option:selected").text();
-            $(this).prev().attr("data-id",value)
-            $(this).prev().html(text)
-        });
+        // $(".select-demo select").on("change",function(){
+        //     var value=$(this).val();
+        //     var text=$(this).find("option:selected").text();
+        //     $(this).prev().attr("data-id",value)
+        //     $(this).prev().html(text)
+        // });
 
 
     })

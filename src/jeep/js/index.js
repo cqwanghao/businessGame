@@ -8,6 +8,12 @@
 
     var queue = new createjs.LoadQueue(true);
     var fest = [
+        {"src":"./images/music_on.png","id":"music_on"},
+        {"src":"./images/music_off.png","id":"music_off"},
+        {"src":"./media/shake.mp3","id":"shake"},
+        {"src":"./media/bgm.mp3","id":"bgm"},
+		{"src":"./media/phone.mp3","id":"phone"},
+
         {"src":"./images/page01-01.png","id":"page01-01"},
         {"src":"./images/page01-02.png","id":"page01-02"},
         {"src":"./images/page01-03.png","id":"page01-03"},
@@ -24,8 +30,7 @@
 
         {"src":"./images/bg3.png","id":"bg3"},
         {"src":"./images/page03-01.png","id":"page03-01"},
-        {"src":"./images/kaka1.png","id":"kaka1"},
-        {"src":"./images/kaka2.png","id":"kaka2"},
+        {"src":"./images/kaka.png","id":"kaka"},
         {"src":"./images/page03-02.png","id":"page03-02"},
         {"src":"./images/page03-03.png","id":"page03-03"},
         {"src":"./images/arrow.png","id":"arrow"},
@@ -44,6 +49,7 @@
         {"src":"./images/page06-01.png","id":"page06-01"},
         {"src":"./images/page06-02.png","id":"page06-02"},
         {"src":"./images/page06-03.png","id":"page06-03"},
+        {"src":"./images/page06-04.png","id":"page06-04"},
 
         {"src":"./images/bg7.png","id":"bg7"},
         {"src":"./images/page07-01.png","id":"page07-01"},
@@ -108,6 +114,14 @@
                 pageHide($(".page02"),dir);
                 pageShow($(".page01"),dir);
             }
+            // 暂停背景音乐
+            // var timer = setTimeout(function(){
+            //     $("#media")[0].pause();
+            //     $("#audio_btn").removeClass("rotate");
+            //     // createjs.Sound.play("phone");
+            //     clearTimeout(timer);
+            // },1000);
+            $("#media1")[0].play();
         },
 
         curPage02: function(dir) {
@@ -130,6 +144,12 @@
                 pageHide($(".page04"),dir);
                 pageShow($(".page03"),dir);
             }
+            TweenMax.killAll(true);
+            TweenMax.from($('.kaka'), 2, {
+                opacity: 0,
+                ease: Linear.easeIn,
+                transform: 'translate3d(-10% , 0, 0) scale(1)'
+            });
         },
 
         curPage04: function(dir) {
@@ -141,6 +161,12 @@
                 pageHide($(".page05"),dir);
                 pageShow($(".page04"),dir);
             }
+            TweenMax.killAll(true);
+            TweenMax.from($('.page04-03'), 1, {
+                ease: Circ.easeOut,
+                transform: 'translate3d(30% , -20%, 0) scale(0.5)',
+                delay:0.5
+            });
         },
 
         curPage05: function(dir) {
@@ -152,6 +178,22 @@
                 pageHide($(".page06"),dir);
                 pageShow($(".page05"),dir);
             }
+            TweenMax.killAll(true);
+            var tl = new TimelineMax();
+            tl.to($('.page05-03'), 0.5, {
+                opacity: 1,
+                transform: 'translate3d(-140% , 20%, 0) scale(0.4)'
+            },0);
+            tl.to($('.page05-03'), 0.5, {
+                opacity: 1,
+                ease:Sine.easeIn,
+                transform: 'translate(-10% , -10%) scale(1) rotate(10deg)'
+            });
+            tl.to($('.page05-03'), 0.5, {
+                opacity: 1,
+                ease:Sine.easeIn,
+                transform: 'translate(30% , -10%) scale(1.4) rotate(30deg)'
+            });
         },
 
         curPage06: function(dir) {
@@ -179,30 +221,168 @@
         // 事件绑定
         addEvent: function() {
             var _this = this;
+            // createjs.Sound.play("shake");
+            // createjs.Sound.play("phone");
+            // createjs.Sound.stop();
 
-            $.tap(".page01",function(i,e){
-				console.log("page01");
-				tar.hitTag('进入高晓松语音页面');
-                // if(!e.hasClass("active")){return false;}
-                // if(e.is(":animated")){return false;}
-                if (i==2) {
-                    _this.curPage02(1);
-                }else{
-                    // _this.curPage01(-1);
-                }
+            // 播放背景音乐
+            function audioAutoPlay(id){
+                var audio = document.getElementById(id);
+                audio.play();
+                audio.pause();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+                audio.pause();
+                }, false);
+            }
+            audioAutoPlay('media1');
+
+            // 进入语音播放
+            $.tap(".page01-02",function(){
+                createjs.Sound.play("shake");
+                createjs.Sound.stop();
+                pageHide($(".page01"),1);
+                pageShow($(".page02"),1);
             });
 
-            $.tap(".page02",function(i,e){
-				console.log("page02");
-				tar.hitTag('进入高晓松语音播放页面');
-                // if(!e.hasClass("active")){return false;}
-                // if(e.is(":animated")){return false;}
-                if (i==2) {
+            // 播放高晓松语音
+            $.tap(".voice",function(e){
+                if (!e) return;
+                // 防止多次点击
+                $(".page02").addClass("on");
+                // 暂停背景音乐播放
+                $("#media")[0].pause();
+                $("#audio_btn").removeClass("rotate");
+                createjs.Sound.play("shake");
+                // 开始播放第一段语音
+                $(".voice1 .strips img").addClass("active");
+                $(".voice1 .dot").hide();
+                // 播放完第一段语音
+                var timer1 = setTimeout(function(){
+                    $(".voice1 .strips img").removeClass("active");
+                    $(".voice2 .strips img").addClass("active");
+                    $(".voice2 .dot").hide();
+                    clearTimeout(timer1);
+                },2000);
+                // 播放完第二段语音
+                var timer2 = setTimeout(function(){
+                    $(".voice2 .strips img").removeClass("active");
+                    $(".voice3 .strips img").addClass("active");
+                    $(".voice3 .dot").hide();
+                    clearTimeout(timer2);
+                },9000);
+                // 播放完第三段语音
+                var timer3 = setTimeout(function(){
+                    $(".voice3 .strips img").removeClass("active");
+                    $(".voice4 .strips img").addClass("active");
+                    $(".voice4 .dot").hide();
+                    clearTimeout(timer3);
+                },12000);
+                // 播放完第四段语音
+                var timer4 = setTimeout(function(){
+                    $(".voice4 .strips img").removeClass("active");
+                    clearTimeout(timer4);
+                },15000);
+
+                // 语音播放完之后
+                var time1 = setTimeout(function(){
+                    createjs.Sound.stop();
+                    $("#media")[0].play();
+                    $("#audio_btn").addClass("rotate");
+                    clearTimeout(time1);
+                    // 进入线索一
                     _this.curPage03(1);
-                }else if(i==-2){
-                    _this.curPage01(-1);
+                    $(".page02").removeClass("on");
+                    var voice = setTimeout(function(){
+                        $(".voice .dot").show();
+                        clearTimeout(voice);
+                    },1000);
+                    clearTimeout(time1);
+                },16000);
+            });
+
+            // 选择答案
+            $(".page07-02 .select").on("click",function(){
+                $(".page07-02 .select").removeClass("on");
+                $(this).addClass("on");
+            });
+
+            // 确定答案
+            $(".page07-03").on("click",function(){
+                var idx = $(".page07-02 .select.on").index();
+                if (idx == 2) {
+                    $(".cover2").show();
+                }else{
+                    $(".cover1").show();
+                }
+                pageShow($(".page08"),1);
+            });
+
+            // 再试一次
+            $(".cover1 .btn").on("click",function(){
+                $(this).closest(".cover1").hide();
+            });
+
+            // 勾选
+            $(".cover2 .appoint").on("click",function(){
+                if ($(this).hasClass("on")) {
+                    $(this).removeClass("on");
+                }else{
+                    $(this).addClass("on");
                 }
             });
+
+            // 阻止手机虚拟键盘弹起
+            $("#city").focus(function () {
+                document.activeElement.blur();
+            });
+
+            // 提交
+            $(".submit").on("click",function(){
+                $(".cover3").show();
+            });
+
+            // 关闭预约成功
+            $(".close").on("click",function(){
+                $(".cover3").hide();
+            });
+
+            // 城市选择器
+            var area1 = new LArea();
+            area1.init({
+                'trigger': '#city',
+                'valueTo': '#value1',
+                'keys': {
+                    id: 'value',
+                    name: 'text'
+                },
+                'type': 2,
+                'data': [provs_data, citys_data, dists_data]
+            });
+
+            // $.tap(".page01",function(i,e){
+			// 	console.log("page01");
+			// 	tar.hitTag('进入高晓松语音页面');
+            //     // if(!e.hasClass("active")){return false;}
+            //     // if(e.is(":animated")){return false;}
+            //     if (i==2) {
+            //         _this.curPage02(1);
+            //     }else{
+            //         // _this.curPage01(-1);
+            //     }
+            // });
+
+            // $.tap(".page02",function(i,e){
+			// 	console.log("page02");
+			// 	tar.hitTag('进入高晓松语音播放页面');
+            //     // if(!e.hasClass("active")){return false;}
+            //     // if(e.is(":animated")){return false;}
+            //     if (i==2) {
+            //         _this.curPage03(1);
+            //     }else if(i==-2){
+            //         _this.curPage01(-1);
+            //     }
+            // });
 
             $.tap(".page03",function(i,e){
 				console.log("page03");

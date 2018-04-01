@@ -10,19 +10,17 @@
   <meta http-equiv="Expires" content="0" />
   <title>高晓松心里的TA？</title>
   <link rel="stylesheet" href="./css/LArea.css" />
-  <link rel="stylesheet" href="./css/index.css?111">
+  <link rel="stylesheet" href="./css/index.css">
+
   <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script src="http://js.tarsocial.com/h5stat-2.1.1.js"></script>
   <script src="./js/jquery.1.8.2.min.js"></script>
-  <!-- <script src="./js/swiper.min.js"></script> -->
   <script src="./js/preloadjs.js"></script>
   <script src="./js/soundjs.js"></script>
   <script src="./js/TweenMax.min.js"></script>
   <script src="./js/LArea.js"></script>
   <script src="./js/LAreaData2.js"></script> 
   <script src="./js/common.js"></script>
-  <!-- <script src="./js/index.js?v=1"></script> -->
-  <!-- <script src="./js/qrcode.js"></script> -->
   <script>
     (function (window, document) {
       var setRem = function() {
@@ -39,6 +37,12 @@
   </script>
 </head>
   <body>
+    <div id="audio_btn" class="video_exist rotate">
+        <audio loop="" src="./media/bgm.mp3" id="media" preload=""></audio>
+    </div>
+    <div id="audio_btn1" class="video_exist off">
+        <audio src="./media/phone.mp3" id="media1" preload=""></audio>
+    </div>
     <div class="page page00"></div>
     <div class="page page01">
       <img src="./images/page01-01.png" class="page01-01">
@@ -85,47 +89,46 @@
     </div>
     <div class="page page03 down">
       <img src="./images/page03-01.png" class="page03-01">
-      <img src="./images/kaka2.png" class="kaka">
+      <img src="./images/kaka.png" class="kaka">
       <img src="./images/page03-03.png" class="page03-03">
       <img src="./images/page03-02.png" class="page03-02">
-      <!-- <img src="./images/arrow.png" class="arrow"> -->
     </div>
     <div class="page page04 down">
       <img src="./images/page04-01.png" class="page04-01">
       <img src="./images/page04-02.png" class="page04-02">
       <img src="./images/page04-03.png" class="page04-03">
-      <!-- <img src="./images/arrow.png" class="arrow"> -->
     </div>
     <div class="page page05 down">
       <img src="./images/page05-01.png" class="page05-01">
       <img src="./images/page05-02.png" class="page05-02">
       <img src="./images/page05-03.png" class="page05-03">
-      <!-- <img src="./images/arrow.png" class="arrow"> -->
     </div>
     <div class="page page06 down">
       <img src="./images/page06-01.png" class="page06-01">
       <img src="./images/page06-02.png" class="page06-02">
-      <img src="./images/page06-03.png" class="page06-03">
-      <!-- <img src="./images/arrow.png" class="arrow"> -->
+      <div class="car">
+        <img src="./images/page06-03.png" class="page06-03">
+        <img src="./images/page06-04.png" class="page06-04">
+      </div>
     </div>
     <div class="page page07">
       <img src="./images/page07-01.png" class="page07-01">
       <div class="page07-02">
-        <a class="selecta" href="javascript:;">
+        <div class="select selecta" data-val="A">
             <img src="./images/page07-02a.png">
-        </a>
-        <a class="selectb" href="javascript:;">
+        </div>
+        <div class="select selectb" data-val="B">
             <img src="./images/page07-02b.png">
-        </a>
-        <a class="selectc" href="javascript:;">
+        </div>
+        <div class="select selectc" data-val="C">
             <img src="./images/page07-02c.png">
-        </a>
-        <a class="selectd" href="javascript:;">
+        </div>
+        <div class="select selectd" data-val="D">
             <img src="./images/page07-02d.png">
-        </a>
-        <a class="page07-03" href="javascript:;">
+        </div>
+        <div class="page07-03">
           <img src="./images/page07-03.png">
-        </a>
+        </div>
         <img src="./images/page07-04.png" class="page07-04">
       </div>
       <img src="./images/page07-05.png" class="page07-05">
@@ -134,37 +137,38 @@
       <div class="message">
         <div class="tip">
           <img src="./images/error.png" class="error">
-          <a class="btn" href="javascript:;">
+          <div class="btn">
             <img src="./images/btn.png">
-          </a>
+          </div>
         </div>
       </div>
     </div>
     <div class="cover cover2">
       <div class="message">
         <div class="page-form">
-          <input type="text" placeholder="姓名">
-          <input type="text" placeholder="手机号">
-          <input type="text" placeholder="城市">
+          <input type="text" name="TrueName" placeholder="姓名">
+          <input type="text" name="TelPhone" placeholder="手机号">
+          <input type="text" id="city" placeholder="城市">
+          <input id="value1" name="AddRess2" type="hidden">
         </div>
-        <a class="appoint on" href="javascript:;">
+        <div class="appoint on">
           <img src="./images/appoint1.png">
-        </a>
-        <a class="submit" href="javascript:;">
+        </div>
+        <div class="submit">
             <img src="./images/submit.png">
-          </a>
+        </div>
       </div>
     </div>
     <div class="cover cover3">
       <div class="message">
         <div class="tip">
           <img src="./images/privilege.png">
-          <a class="detail" href="javascript:;">
+          <div class="detail">
             <img src="./images/detail.png">
-          </a>
-          <a class="close" href="javascript:;">
+          </div>
+          <div class="close">
             <img src="./images/close.png">
-          </a>
+          </div>
         </div>
       </div>
     </div>

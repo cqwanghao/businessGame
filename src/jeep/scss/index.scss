@@ -1,16 +1,34 @@
 @import "../../base/index";
 @import './animate.scss';
-// @import './swiper.scss';
 html,
 body{
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  // background: url(../images/bg1.jpg) no-repeat #4b1217;
   background-size: 100%;
   background-position: center center;
   background-color: #ebebeb;
+}
+
+.video_exist { 
+  width: 1.28rem; 
+  height: 1.28rem; 
+  background: url(../images/music_off.png) center center no-repeat;
+  background-size: 1.28rem 1.28rem;
+  &.off{
+    display: none;
+  }
+}
+.video_exist.rotate { 
+  background-image: url(../images/music_on.png);
+  animation: rotating 2s linear infinite;
+}
+.video_exist {
+  position: absolute;
+  top: .64rem; 
+  right: .64rem;
+  z-index: 1001; 
 }
 
 .page{
@@ -19,7 +37,6 @@ body{
   width: 100%;
   height: 100%;
   overflow: hidden;
-  // background: url(../images/loading.gif) center center no-repeat;
   background-repeat: no-repeat;
   background-size: 100%;
   &.down:after{
@@ -33,6 +50,15 @@ body{
     background: url(../images/arrow.png) center center no-repeat;
     background-size: cover;
     animation: start 1.5s infinite ease-in-out;
+    z-index: 1;
+  }
+  &.on:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
     z-index: 1;
   }
 }
@@ -117,6 +143,10 @@ body{
         width: .16rem;
         height: .4rem;
         margin-top: -.2rem;
+        &.active{
+          animation: play 2s infinite ease-in-out;
+          animation-delay: -0.5s;
+        }
       }
       .strip3{
         position: absolute;
@@ -125,6 +155,10 @@ body{
         width: .28rem;
         height: .76rem;
         margin-top: -.38rem;
+        &.active{
+          animation: play 2s infinite ease-in-out;
+          animation-delay: 0s;
+        }
       }
     }
   }
@@ -133,14 +167,6 @@ body{
   background-image: url(../images/bg3.png);
   background-position: center center;
   background-size: cover;
-  .arrow{
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    width: 1.04rem;
-    height: .68rem;
-    margin-left: -.52rem;
-  }
   .page03-01{
     position: absolute;
     top: 1.4rem;
@@ -171,14 +197,6 @@ body{
   background-image: url(../images/bg4.png);
   background-position: center center;
   background-size: cover;
-  .arrow{
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    width: 1.04rem;
-    height: .68rem;
-    margin-left: -.52rem;
-  }
   .page04-01{
     position: absolute;
     top: 1.44rem;
@@ -203,14 +221,6 @@ body{
   background-image: url(../images/bg5.png);
   background-position: center center;
   background-size: cover;
-  .arrow{
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    width: 1.04rem;
-    height: .68rem;
-    margin-left: -.52rem;
-  }
   .page05-01{
     position: absolute;
     top: 1.4rem;
@@ -236,14 +246,6 @@ body{
   background-image: url(../images/bg6.png);
   background-position: center center;
   background-size: cover;
-  .arrow{
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    width: 1.04rem;
-    height: .68rem;
-    margin-left: -.52rem;
-  }
   .page06-01{
     position: absolute;
     top: 1.4rem;
@@ -257,11 +259,22 @@ body{
     width: 87.6%;
     margin-left: -43.8%;
   }
-  .page06-03{
+  .car{
     position: absolute;
     bottom: 26.3%;
     right: 1.6rem;
     width: 11.28rem;
+    .page06-03{
+      display: block;
+      width: 100%;
+    }
+    .page06-04{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: carLight 6s linear infinite;
+    }
   }
 }
 .page07{
@@ -270,18 +283,20 @@ body{
   background-size: cover;
   .page07-01{
     position: absolute;
-    top: 2.48rem;
+    // top: 2.48rem;
+    top: .48rem;
     left: 50%;
     width: 10.48rem;
     margin-left: -5.28rem;
   }
   .page07-02{
     position: absolute;
-    top: 5.04rem;
+    // top: 5.04rem;
+    top: 3.04rem;
     left: 50%;
     width: 11rem;
     margin-left: -5.5rem;
-    a{
+    .select{
       display: block;
       position: relative;
       &.selecta.on:after{
@@ -459,9 +474,32 @@ body{
   }
 }
 
-// 动画
+// 播放按钮动画
+@keyframes rotating { 
+  from { -webkit-transform: rotate(0); transform: rotate(0); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } 
+}
+
+// 箭头动画
 @keyframes start {
 	0%, 30% { opacity: 1; transform: translate(0, -5px) }
 	60% { opacity: 0; transform: translate(0, 5px) }
 	100% { opacity: 1; transform: translate(0, -5px) }
+}
+
+// 播放语音动画
+@keyframes play {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+// 车灯闪烁
+@keyframes carLight {
+  0% { opacity: 0; }
+  12% { opacity: 1; }
+  24% { opacity: 0; }
+  36% { opacity: 1; }
+  48% { opacity: 0; }
+  60% { opacity: 1; }
+  72% { opacity: 0; }
+  100% { opacity: 0; }
 }
