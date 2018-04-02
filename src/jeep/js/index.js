@@ -12,9 +12,8 @@
         }
     });
 
-
-    var queue = new createjs.LoadQueue(true);
-    var fest = [
+    var queue0 = new createjs.LoadQueue(true);
+    var fest0 = [
         {"src":"./images/music_on.png","id":"music_on"},
         {"src":"./images/music_off.png","id":"music_off"},
         {"src":"./media/shake.mp3","id":"shake"},
@@ -41,6 +40,10 @@
         {"src":"./images/page03-02.png","id":"page03-02"},
         {"src":"./images/page03-03.png","id":"page03-03"},
         {"src":"./images/arrow.png","id":"arrow"},
+    ];
+
+    var queue = new createjs.LoadQueue(true);
+    var fest = [
 
         {"src":"./images/bg4.png","id":"bg4"},
         {"src":"./images/page04-01.png","id":"page04-01"},
@@ -92,6 +95,25 @@
             var _this = this;
             _this.addEvent();
 
+            queue0.installPlugin(createjs.Sound);
+            queue0.loadManifest(fest0);
+            queue0.on("fileload", _this.handleFileprogress0, this);
+            queue0.on("complete", _this.handleComplete0, this);
+        },
+
+        // 加载进度0
+        handleFileprogress0:function(e) {
+            // progress++;
+            // if (progress = fest.length) {
+            //     // console.log(progress);
+            // }
+        },
+
+        //加载进度完成0
+        handleComplete0: function() {
+            var _this = this;
+            console.log("第一段加载进度完成");
+            _this.curPage01(1);
             queue.installPlugin(createjs.Sound);
             queue.loadManifest(fest);
             queue.on("fileload", _this.handleFileprogress, this);
@@ -102,14 +124,13 @@
         handleFileprogress:function(e) {
             progress++;
             if (progress = fest.length) {
-                console.log(progress);
+                // console.log(progress);
             }
         },
 
         //加载进度完成
         handleComplete: function() {
-            console.log("加载进度完成");
-            this.curPage01(1);
+            console.log("全部加载进度完成");
         },
 
         curPage01:function(dir){
@@ -140,6 +161,9 @@
                 pageHide($(".page03"),dir);
                 pageShow($(".page02"),dir);
             }
+            // 暂停背景音乐播放
+            $("#media")[0].pause();
+            $("#audio_btn").addClass("off").removeClass("rotate");
         },
 
         curPage03: function(dir) {
@@ -153,6 +177,9 @@
                 pageHide($(".page04"),dir);
                 pageShow($(".page03"),dir);
             }
+            // 开始播放背景音乐
+            $("#media")[0].play();
+            $("#audio_btn").removeClass("off").addClass("rotate");
             TweenMax.killAll(true);
             TweenMax.from($('.page03-03'), 2, {
                 opacity: 0,
@@ -253,13 +280,10 @@
                 if (!e) return;
                 // 防止多次点击
                 $(".page02").addClass("on");
-                // 暂停背景音乐播放
-                $("#media")[0].pause();
+                // $("#media")[0].pause();
                 createjs.Sound.stop();
                 reset();
                 createjs.Sound.play("shake");
-                $("#media")[0].pause();
-                $("#audio_btn").removeClass("rotate");
                 // 开始播放第一段语音
                 $(".voice1 .strips img").addClass("active");
                 $(".voice1 .dot").hide();
@@ -295,7 +319,7 @@
                     createjs.Sound.stop();
                     // 开始播放背景音乐
                     $("#media")[0].play();
-                    $("#audio_btn").addClass("rotate");
+                    $("#audio_btn").removeClass("off").addClass("rotate");
                     // clearTimeout(time1);
                     // 进入线索一
                     _this.curPage03(1);

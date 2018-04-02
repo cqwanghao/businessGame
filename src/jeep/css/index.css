@@ -2599,9 +2599,9 @@ html, body { position: relative; width: 100%; height: 100%; overflow: hidden; -w
 
 .page05 .page05-01 { position: absolute; top: 1.4rem; left: 1.36rem; width: 8.28rem; }
 
-.page05 .guang1 { position: absolute; top: 0; left: 0; z-index: 6; width: 100%; height: 100%; background-image: url(../images/guang1.png); background-position: center center; -webkit-background-size: 100% 100%; background-size: 100%; opacity: 0; }
+.page05 .guang1 { position: absolute; top: 0; left: 0; z-index: 6; width: 100%; height: 100%; background-image: url(../images/guang1.png); background-position: center center; -webkit-background-size: 100% 100%; background-size: 100%; opacity: 0; -webkit-animation: carLight 6s linear infinite; animation: carLight 6s linear infinite; }
 
-.page05 .guang2 { position: absolute; top: 0; left: 0; z-index: 6; width: 100%; height: 100%; background-image: url(../images/guang2.png); background-position: center center; -webkit-background-size: 100% 100%; background-size: 100%; opacity: 0; }
+.page05 .guang2 { position: absolute; top: 0; left: 0; z-index: 6; width: 100%; height: 100%; background-image: url(../images/guang2.png); background-position: center center; -webkit-background-size: 100% 100%; background-size: 100%; opacity: 0; -webkit-animation: carLight 8s linear infinite; animation: carLight 8s linear infinite; }
 
 .page05 .page05-02 { position: absolute; bottom: 2.92rem; left: 50%; width: 8.76rem; margin-left: -4.38rem; }
 

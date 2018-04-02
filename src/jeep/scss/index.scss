@@ -242,6 +242,7 @@ body{
     // background-size: cover;
     background-size: 100%;
     opacity: 0;
+    animation: carLight 6s linear infinite;
   }
   .guang2 {
     position: absolute;
@@ -255,6 +256,7 @@ body{
     // background-size: cover;
     background-size: 100%;
     opacity: 0;
+    animation: carLight 8s linear infinite;
   }
   .page05-02{
     position: absolute;
