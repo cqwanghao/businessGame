@@ -1,10 +1,17 @@
 (function() {
     var scroll=true;
+    var kai = true;
+    var timer1 = null;
+    var timer2 = null;
+    var timer3 = null;
+    var timer4 = null;
+    var time1 = null;
     $(document).on("touchmove", 'body', function(e) {
         if (scroll) {
             e.preventDefault();
         }
     });
+
 
     var queue = new createjs.LoadQueue(true);
     var fest = [
@@ -43,7 +50,7 @@
         {"src":"./images/bg5.png","id":"bg5"},
         {"src":"./images/page05-01.png","id":"page05-01"},
         {"src":"./images/page05-02.png","id":"page05-02"},
-        {"src":"./images/page05-03.png","id":"page05-03"},
+        // {"src":"./images/page05-03.png","id":"page05-03"},
 
         {"src":"./images/bg6.png","id":"bg6"},
         {"src":"./images/page06-01.png","id":"page06-01"},
@@ -140,12 +147,13 @@
             if (dir==1) {
                 pageHide($(".page02"),dir);
                 pageShow($(".page03"),dir);
+                reset();
             }else{
                 pageHide($(".page04"),dir);
                 pageShow($(".page03"),dir);
             }
             TweenMax.killAll(true);
-            TweenMax.from($('.kaka'), 2, {
+            TweenMax.from($('.page03-03'), 2, {
                 opacity: 0,
                 ease: Linear.easeIn,
                 transform: 'translate3d(-10% , 0, 0) scale(1)'
@@ -180,20 +188,15 @@
             }
             TweenMax.killAll(true);
             var tl = new TimelineMax();
-            tl.to($('.page05-03'), 0.5, {
-                opacity: 1,
-                transform: 'translate3d(-140% , 20%, 0) scale(0.4)'
+            tl.to($('.guang1'), 1.5, {
+                ease: Circ.easeOut,
+                opacity: 1
             },0);
-            tl.to($('.page05-03'), 0.5, {
-                opacity: 1,
-                ease:Sine.easeIn,
-                transform: 'translate(-10% , -10%) scale(1) rotate(10deg)'
-            });
-            tl.to($('.page05-03'), 0.5, {
-                opacity: 1,
-                ease:Sine.easeIn,
-                transform: 'translate(30% , -10%) scale(1.4) rotate(30deg)'
-            });
+
+            tl.to($('.guang2'), 1.5, {
+                ease: Circ.easeOut,
+                opacity: 1
+            },0);
         },
 
         curPage06: function(dir) {
@@ -249,46 +252,47 @@
             $.tap(".voice",function(e){
                 if (!e) return;
                 // 防止多次点击
-                $(".page02").addClass("on");
+                // $(".page02").addClass("on");
                 // 暂停背景音乐播放
                 $("#media")[0].pause();
-                $("#audio_btn").removeClass("rotate");
+                createjs.Sound.stop();
+                reset();
                 createjs.Sound.play("shake");
+                $("#media")[0].pause();
+                $("#audio_btn").removeClass("rotate");
                 // 开始播放第一段语音
                 $(".voice1 .strips img").addClass("active");
                 $(".voice1 .dot").hide();
                 // 播放完第一段语音
-                var timer1 = setTimeout(function(){
+                timer1 = setTimeout(function(){
                     $(".voice1 .strips img").removeClass("active");
                     $(".voice2 .strips img").addClass("active");
                     $(".voice2 .dot").hide();
                     clearTimeout(timer1);
                 },2000);
                 // 播放完第二段语音
-                var timer2 = setTimeout(function(){
+                timer2 = setTimeout(function(){
                     $(".voice2 .strips img").removeClass("active");
                     $(".voice3 .strips img").addClass("active");
                     $(".voice3 .dot").hide();
                     clearTimeout(timer2);
                 },9000);
                 // 播放完第三段语音
-                var timer3 = setTimeout(function(){
+                timer3 = setTimeout(function(){
                     $(".voice3 .strips img").removeClass("active");
                     $(".voice4 .strips img").addClass("active");
                     $(".voice4 .dot").hide();
                     clearTimeout(timer3);
                 },12000);
                 // 播放完第四段语音
-                var timer4 = setTimeout(function(){
+                timer4 = setTimeout(function(){
                     $(".voice4 .strips img").removeClass("active");
                     clearTimeout(timer4);
                 },15000);
 
                 // 语音播放完之后
-                var time1 = setTimeout(function(){
+                time1 = setTimeout(function(){
                     createjs.Sound.stop();
-                    $("#media")[0].play();
-                    $("#audio_btn").addClass("rotate");
                     clearTimeout(time1);
                     // 进入线索一
                     _this.curPage03(1);
@@ -372,17 +376,20 @@
             //     }
             // });
 
-            // $.tap(".page02",function(i,e){
-			// 	console.log("page02");
-			// 	tar.hitTag('进入高晓松语音播放页面');
-            //     // if(!e.hasClass("active")){return false;}
-            //     // if(e.is(":animated")){return false;}
-            //     if (i==2) {
-            //         _this.curPage03(1);
-            //     }else if(i==-2){
-            //         _this.curPage01(-1);
-            //     }
-            // });
+            $.tap(".page02",function(i,e){
+				console.log("page02");
+				tar.hitTag('进入高晓松语音播放页面');
+                // if(!e.hasClass("active")){return false;}
+                // if(e.is(":animated")){return false;}
+                if (i==2) {
+                    _this.curPage03(1);
+                    createjs.Sound.stop();
+                    $("#media")[0].play();
+                    $("#audio_btn").addClass("rotate");
+                }else if(i==-2){
+                    _this.curPage01(-1);
+                }
+            });
 
             $.tap(".page03",function(i,e){
 				console.log("page03");
@@ -448,6 +455,18 @@
 
 
     };
+
+    //初始化音乐
+    function reset() {
+        createjs.Sound.stop();
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+        clearTimeout(timer4);
+        clearTimeout(time1);
+        $(".strips img").removeClass("active");
+        $(".dot").show();
+    }
 
     game.init();
 

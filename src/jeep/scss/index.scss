@@ -27,7 +27,7 @@ body{
 .video_exist {
   position: absolute;
   top: .64rem; 
-  right: .64rem;
+  left: .64rem;
   z-index: 1001; 
 }
 
@@ -175,7 +175,7 @@ body{
   }
   .page03-02{
     position: absolute;
-    bottom: 4.92rem;
+    bottom: 3.2rem;
     left: 50%;
     width: 11.04rem;
     margin-left: -5.52rem;
@@ -188,14 +188,14 @@ body{
   }
   .page03-03{
     position: absolute;
-    bottom: 2rem;
+    bottom: 0;
     right: .48rem;
     width: 11.96rem;
   }
 }
 .page04{
   background-image: url(../images/bg4.png);
-  background-position: center center;
+  background-position: center bottom;
   background-size: cover;
   .page04-01{
     position: absolute;
@@ -205,16 +205,16 @@ body{
   }
   .page04-02{
     position: absolute;
-    bottom: 4.92rem;
+    bottom: 3.92rem;
     left: 50%;
     width: 13.24rem;
     margin-left: -6.62rem;
   }
   .page04-03{
     position: absolute;
-    bottom: 1.56rem;
-    left: 1.16rem;
-    width: 13.76rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
 }
 .page05{
@@ -227,20 +227,44 @@ body{
     left: 1.36rem;
     width: 8.28rem;
   }
+  .guang1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/guang1.png);
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+  }
+  .guang2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/guang2.png);
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+  }
   .page05-02{
     position: absolute;
-    bottom: 4.92rem;
+    bottom: 3.92rem;
     left: 50%;
     width: 8.76rem;
     margin-left: -4.38rem;
   }
-  .page05-03{
-    position: absolute;
-    bottom: 26%;
-    left: 50%;
-    width: 1.52rem;
-    margin-left: -.76rem;
-  }
+  // .page05-03{
+  //   position: absolute;
+  //   bottom: 26%;
+  //   left: 50%;
+  //   width: 1.52rem;
+  //   margin-left: -.76rem;
+  // }
 }
 .page06{
   background-image: url(../images/bg6.png);
@@ -254,14 +278,14 @@ body{
   }
   .page06-02{
     position: absolute;
-    bottom: 4.92rem;
+    bottom: 3.92rem;
     left: 50%;
     width: 87.6%;
     margin-left: -43.8%;
   }
   .car{
     position: absolute;
-    bottom: 26.3%;
+    bottom: 18%;
     right: 1.6rem;
     width: 11.28rem;
     .page06-03{
