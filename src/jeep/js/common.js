@@ -327,10 +327,10 @@ function pageHide(e, b) {
         })
         // 音乐end
         // 音乐调用 有音乐解开注释
-        if ($("#audio_btn").length > 0) {
-            mediaPlay=true;
-            $("#media").audioAutoPlay("media");
-        }
+        // if ($("#audio_btn").length > 0) {
+        //     mediaPlay=true;
+        //     $("#media").audioAutoPlay("media");
+        // }
         // 音乐调用 有音乐解开注释
         // if ($("#audio_btn1").length > 0) {
         //     $("#media1").audioAutoPlay("media1");

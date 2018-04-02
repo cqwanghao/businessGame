@@ -237,6 +237,7 @@
                 audio.pause();
                 }, false);
             }
+            audioAutoPlay('media');
             audioAutoPlay('media1');
 
             // 进入语音播放
@@ -292,7 +293,10 @@
                 // 语音播放完之后
                 time1 = setTimeout(function(){
                     createjs.Sound.stop();
-                    clearTimeout(time1);
+                    // 开始播放背景音乐
+                    $("#media")[0].play();
+                    $("#audio_btn").addClass("rotate");
+                    // clearTimeout(time1);
                     // 进入线索一
                     _this.curPage03(1);
                     $(".page02").removeClass("on");
@@ -389,8 +393,6 @@
                 if (i==2) {
                     _this.curPage03(1);
                     createjs.Sound.stop();
-                    $("#media")[0].play();
-                    $("#audio_btn").addClass("rotate");
                 }else if(i==-2){
                     _this.curPage01(-1);
                 }

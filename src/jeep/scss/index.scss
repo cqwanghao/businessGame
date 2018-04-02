@@ -26,8 +26,10 @@ body{
 }
 .video_exist {
   position: absolute;
-  top: .64rem; 
-  left: .64rem;
+  // top: .64rem; 
+  // left: .64rem;
+  top: .24rem;
+  left: .24rem;
   z-index: 1001; 
 }
 
@@ -220,7 +222,8 @@ body{
 .page05{
   background-image: url(../images/bg5.png);
   background-position: center center;
-  background-size: cover;
+  // background-size: cover;
+  background-size: 100%;
   .page05-01{
     position: absolute;
     top: 1.4rem;
@@ -236,7 +239,8 @@ body{
     height: 100%;
     background-image: url(../images/guang1.png);
     background-position: center center;
-    background-size: cover;
+    // background-size: cover;
+    background-size: 100%;
     opacity: 0;
   }
   .guang2 {
@@ -248,7 +252,8 @@ body{
     height: 100%;
     background-image: url(../images/guang2.png);
     background-position: center center;
-    background-size: cover;
+    // background-size: cover;
+    background-size: 100%;
     opacity: 0;
   }
   .page05-02{
@@ -368,12 +373,14 @@ body{
     .page07-03{
       display: block;
       width: 11rem;
-      margin-top: .8rem;
+      // margin-top: .8rem;
+      margin-top: .2rem;
     }
     .page07-04{
       display: block;
       width: 11rem;
-      margin-top: .8rem;
+      // margin-top: .8rem;
+      margin-top: .2rem;
       z-index: 10;
       position: relative;
     }
@@ -422,7 +429,7 @@ body{
   background-position: top center;
   .message{
     position: absolute;
-    bottom: 17.6%;
+    bottom: 5%;
     left: 50%;
     width: 68.8%;
     margin-left: -34.4%;
@@ -538,4 +545,27 @@ body{
   60% { opacity: 1; }
   72% { opacity: 0; }
   100% { opacity: 0; }
+}
+
+// 针对iPhone X
+@media only screen and (min-device-width: 375px) and (min-height: 748px) {
+  .page07{
+    .page07-01{
+      top: 2.48rem;
+    }
+    .page07-02{
+      top: 5.04rem;
+      .page07-03{
+        margin-top: .8rem;
+      }
+      .page07-04{
+        margin-top: .8rem;
+      }
+    }
+  }
+  .cover2{
+    .message{
+      bottom: 17.6%;
+    }
+  }
 }
