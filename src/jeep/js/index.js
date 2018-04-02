@@ -148,6 +148,7 @@
                 pageHide($(".page02"),dir);
                 pageShow($(".page03"),dir);
                 reset();
+                $(".page02").removeClass("on");
             }else{
                 pageHide($(".page04"),dir);
                 pageShow($(".page03"),dir);
@@ -187,16 +188,14 @@
                 pageShow($(".page05"),dir);
             }
             TweenMax.killAll(true);
-            var tl = new TimelineMax();
-            tl.to($('.guang1'), 1.5, {
-                ease: Circ.easeOut,
+            var tl6 = new TimelineMax();
+            tl6.restart();
+            tl6.to($('.guang1'), 1, {
                 opacity: 1
-            },0);
-
-            tl.to($('.guang2'), 1.5, {
-                ease: Circ.easeOut,
+            }, 1);
+            tl6.to($('.guang2'), 1, {
                 opacity: 1
-            },0);
+            }, 1);
         },
 
         curPage06: function(dir) {
@@ -252,7 +251,7 @@
             $.tap(".voice",function(e){
                 if (!e) return;
                 // 防止多次点击
-                // $(".page02").addClass("on");
+                $(".page02").addClass("on");
                 // 暂停背景音乐播放
                 $("#media")[0].pause();
                 createjs.Sound.stop();
@@ -336,6 +335,11 @@
                 }
             });
 
+            //分享关闭
+            $('.cover4').on('click', function() {
+                $(this).fadeOut();
+            })
+
             // 阻止手机虚拟键盘弹起
             $("#city").focus(function () {
                 document.activeElement.blur();
@@ -349,6 +353,7 @@
             // 关闭预约成功
             $(".close").on("click",function(){
                 $(".cover3").hide();
+                $('.cover4').fadeIn();
             });
 
             // 城市选择器
