@@ -419,6 +419,8 @@
                     createjs.Sound.stop();
                 }else if(i==-2){
                     _this.curPage01(-1);
+                    reset();
+                    $(".page02").removeClass("on");
                 }
             });
 

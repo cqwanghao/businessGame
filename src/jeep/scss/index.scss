@@ -519,6 +519,11 @@ body{
   z-index: 105;
 }
 
+// 插件样式更改
+.area_roll>div .gear {
+  // margin-top: 0;
+}
+
 // 播放按钮动画
 @keyframes rotating { 
   from { -webkit-transform: rotate(0); transform: rotate(0); }
@@ -550,7 +555,7 @@ body{
 }
 
 // 针对iPhone X
-@media only screen and (min-device-width: 375px) and (min-height: 748px) {
+@media only screen and (min-device-width: 375px) and (min-height: 700px) {
   .page07{
     .page07-01{
       top: 2.48rem;
