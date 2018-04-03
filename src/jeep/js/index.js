@@ -33,17 +33,16 @@
         {"src":"./images/page02-02.png","id":"page02-02"},
         {"src":"./images/page02-03.png","id":"page02-03"},
         {"src":"./images/page02-04.png","id":"page02-04"},
+    ];
 
+    var queue = new createjs.LoadQueue(true);
+    var fest = [
         {"src":"./images/bg3.png","id":"bg3"},
         {"src":"./images/page03-01.png","id":"page03-01"},
         {"src":"./images/kaka.png","id":"kaka"},
         {"src":"./images/page03-02.png","id":"page03-02"},
         {"src":"./images/page03-03.png","id":"page03-03"},
         {"src":"./images/arrow.png","id":"arrow"},
-    ];
-
-    var queue = new createjs.LoadQueue(true);
-    var fest = [
 
         {"src":"./images/bg4.png","id":"bg4"},
         {"src":"./images/page04-01.png","id":"page04-01"},
@@ -171,12 +170,15 @@
             if (dir==1) {
                 pageHide($(".page02"),dir);
                 pageShow($(".page03"),dir);
-                reset();
                 $(".page02").removeClass("on");
             }else{
                 pageHide($(".page04"),dir);
                 pageShow($(".page03"),dir);
             }
+            // 原点还原
+            var voice = setTimeout(function(){
+                reset();
+            },1000);
             // 开始播放背景音乐
             $("#media")[0].play();
             $("#audio_btn").removeClass("off").addClass("rotate");
@@ -324,10 +326,6 @@
                     // 进入线索一
                     _this.curPage03(1);
                     $(".page02").removeClass("on");
-                    var voice = setTimeout(function(){
-                        $(".voice .dot").show();
-                        clearTimeout(voice);
-                    },1000);
                     clearTimeout(time1);
                 },16000);
             });
