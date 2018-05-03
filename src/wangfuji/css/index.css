@@ -1780,13 +1780,13 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .addressWrap .wrap .fillPage .detail .option { margin-bottom: 0.48rem; }
 
-.addressWrap .wrap .fillPage .detail .option .caption { font-size: 0.56rem; color: #3f2c01; }
+.addressWrap .wrap .fillPage .detail .option .caption { width: 10.68rem; margin: 0 auto; font-size: 0.56rem; color: #3f2c01; }
 
-.addressWrap .wrap .fillPage .detail .option .area { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 10.68rem; margin-top: 0.48rem; }
+.addressWrap .wrap .fillPage .detail .option .area { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 10.68rem; margin: 0.48rem auto 0; }
 
 .addressWrap .wrap .fillPage .detail .option .area .addr { width: 3.36rem; height: 2.32rem; padding-left: 0.2rem; padding-right: 1rem; line-height: 2.32rem; text-align: center; overflow: hidden; font-size: 0.56rem; color: #3f2c01; background-image: url(../images/textbox2.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
-.addressWrap .wrap .fillPage .detail .option .input-box { width: 10.68rem; height: 2.44rem; margin-top: 0.48rem; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.addressWrap .wrap .fillPage .detail .option .input-box { width: 10.68rem; height: 2.44rem; margin: 0.48rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
 .addressWrap .wrap .fillPage .detail .option .input-box input { width: 100%; height: 100%; padding-left: 0.6rem; padding-right: 0.6rem; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
 
@@ -1812,13 +1812,13 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .profileWrap .wrap .WeChat .w2 { font-size: 0.56rem; color: #3f2c01; }
 
-.profileWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin-top: 1.2rem; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.profileWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin: 1.2rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
 .profileWrap .wrap .input-box input { width: 100%; height: 100%; padding-left: 4rem; padding-right: 0.6rem; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
 
 .profileWrap .wrap .input-box .tag { position: absolute; top: 50%; left: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
 
-.profileWrap .wrap .phone { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; width: 10.36rem; height: 2.04rem; margin-top: 1.2rem; padding-left: 0.48rem; font-size: 0.56rem; color: #3f2c01; background-image: url(../images/textbox3.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.profileWrap .wrap .phone { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; width: 10.36rem; height: 2.04rem; margin: 1.2rem auto 0; padding-left: 0.48rem; font-size: 0.56rem; color: #3f2c01; background-image: url(../images/textbox3.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
 .profileWrap .wrap .phone span { margin-left: 1.08rem; }
 
@@ -1832,7 +1832,7 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .loginWrap .wrap .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
 
-.loginWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin-top: 1.2rem; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.loginWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin: 1.2rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
 .loginWrap .wrap .input-box.phone { margin-top: 1.68rem; }
 
@@ -1881,3 +1881,55 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 .helpWrap .wrap .answers li .question { letter-spacing: 1px; font-size: 0.48rem; color: #3f2c01; }
 
 .helpWrap .wrap .answers li .answer { line-height: 0.56rem; margin-top: 0.4rem; padding-left: 1rem; font-size: 0.4rem; color: #745f31; }
+
+.buyWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.buyWrap .wrap .commodity-box { margin-top: 2rem; }
+
+.buyWrap .wrap .commodity-box .commodity .photo { width: 5.48rem; margin: 0 auto 2.2rem; }
+
+.buyWrap .wrap .commodity-box .commodity .photo img { display: block; width: 100%; }
+
+.buyWrap .wrap .commodity-box .commodity .describe { text-align: center; font-size: 0.4rem; color: #3f2c01; }
+
+.buyWrap .wrap .commodity-box .commodity .describe span { color: #d9002a; }
+
+.buyWrap .wrap .btns { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; margin-top: 3rem; }
+
+.buyWrap .wrap .btns .btn { width: 4.64rem; }
+
+.buyWrap .wrap .btns .btn img { display: block; width: 100%; }
+
+.payWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.payWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+
+.payWrap .wrap .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
+
+.payWrap .wrap .describe { margin-top: 0.6rem; font-size: 0.48rem; color: #3f2c01; }
+
+.payWrap .wrap .describe span { color: #d9002a; }
+
+.payWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin: 1.2rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.payWrap .wrap .input-box input { width: 100%; height: 100%; padding-left: 4rem; padding-right: 0.6rem; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
+
+.payWrap .wrap .input-box .tag { position: absolute; top: 50%; left: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
+
+.payWrap .wrap .input-box .polygon { position: absolute; top: 50%; right: 1.12rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); width: 0.36rem; height: 0.4rem; background-image: url(../images/polygon.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.payWrap .wrap .btns { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 10.68rem; margin: 1.6rem auto 0; }
+
+.payWrap .wrap .btns .btn { width: 4.64rem; }
+
+.payWrap .wrap .btns .btn img { display: block; width: 100%; }
+
+.awardWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.awardWrap .wrap .prize-photo { width: 9.32rem; height: 9.32rem; margin: 0 auto; padding-top: 2.08rem; background-image: url(../images/bg1.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.awardWrap .wrap .prize-photo .photo { display: block; width: 3.4rem; margin: 0 auto; }
+
+.awardWrap .wrap .word { width: 9.6rem; margin: -1.6rem auto 0; line-height: 1.04rem; text-align: center; font-size: 0.72rem; color: #3f2c01; }
+
+.awardWrap .wrap .word .name { margin-left: 0.6rem; color: #d9002a; }
