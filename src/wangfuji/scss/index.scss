@@ -316,7 +316,7 @@ body{
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 		.head-title{
-			font-family: "SimSun";
+			letter-spacing: 2px;
 			font-size: .56rem /* 14/25 */;
 			color: #745f31;
 		}
@@ -560,6 +560,7 @@ body{
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 		.head-title{
+			letter-spacing: 2px;
 			font-size: .56rem /* 14/25 */;
 			color: #745f31;
 		}
@@ -643,6 +644,7 @@ body{
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 		.head-title{
+			letter-spacing: 2px;
 			font-size: .56rem /* 14/25 */;
 			color: #745f31;
 		}
@@ -746,6 +748,262 @@ body{
 						display: block;
 						width: 100%;
 					}
+				}
+			}
+		}
+	}
+}
+// profile
+.profileWrap{
+	.wrap{
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		.head-title{
+			letter-spacing: 2px;
+			font-size: .56rem /* 14/25 */;
+			color: #745f31;
+		}
+		.message{
+			margin-top: 0.48rem;
+			font-size: 0.48rem;
+			color: #745f31;
+		}
+		.name{
+			display: flex;
+			align-items: center;
+			margin-top: 1.08rem /* 27/25 */;
+			font-size: .48rem /* 12/25 */;
+			color: #745f31;
+			.t1{
+				width: 2.4rem /* 60/25 */;
+			}
+			.t2{
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+		}
+		.WeChat{
+			display: flex;
+			align-items: center;
+			margin-top: .4rem /* 10/25 */;
+			font-size: .48rem /* 12/25 */;
+			color: #745f31;
+			.w1{
+				width: 2.4rem /* 60/25 */;
+			}
+			.w2{
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+		}
+		.input-box{
+			position: relative;
+			width: 10.68rem /* 267/25 */;
+			height: 2.44rem /* 61/25 */;
+			margin-top: 1.2rem /* 30/25 */;
+			background-image: url(../images/textbox.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			input{
+				width: 100%;
+				height: 100%;
+				padding-left: 4rem /* 100/25 */;
+				padding-right: .6rem /* 15/25 */;
+				border: none;
+				background: none;
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+			.tag{
+				position: absolute;
+				top: 50%;
+				left: .6rem /* 15/25 */;
+				transform: translate(0,-50%);
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+		}
+		.phone{
+			display: flex;
+			align-items: center;
+			width: 10.36rem /* 259/25 */;
+			height: 2.04rem /* 51/25 */;
+			margin-top: 1.2rem /* 30/25 */;
+			padding-left: .48rem /* 12/25 */;
+			font-size: .56rem /* 14/25 */;
+			color: #3f2c01;
+			background-image: url(../images/textbox3.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			span{
+				margin-left: 1.08rem /* 27/25 */;
+			}
+		}
+		.update{
+			width: 7.76rem /* 194/25 */;
+			margin: 1.6rem /* 40/25 */ auto 0;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+// login
+.loginWrap{
+	.wrap{
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		.head-title{
+			letter-spacing: 2px;
+			font-size: .56rem /* 14/25 */;
+			color: #745f31;
+		}
+		.message{
+			margin-top: 0.48rem;
+			font-size: 0.48rem;
+			color: #745f31;
+		}
+		.input-box{
+			position: relative;
+			width: 10.68rem /* 267/25 */;
+			height: 2.44rem /* 61/25 */;
+			margin-top: 1.2rem /* 30/25 */;
+			background-image: url(../images/textbox.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			&.phone{
+				margin-top: 1.68rem /* 42/25 */;
+			}
+			input{
+				width: 100%;
+				height: 100%;
+				padding-left: .6rem /* 15/25 */;
+				padding-right: 4rem /* 100/25 */;
+				border: none;
+				background: none;
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+			.tag{
+				position: absolute;
+				top: 50%;
+				right: .6rem /* 15/25 */;
+				transform: translate(0,-50%);
+				font-size: .56rem /* 14/25 */;
+				color: #3f2c01;
+			}
+		}
+		.update{
+			width: 7.76rem /* 194/25 */;
+			margin: 2.8rem /* 70/25 */ auto 0;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+// introduction
+.introductionWrap{
+	.wrap{
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		.head-title{
+			letter-spacing: 2px;
+			font-size: .56rem /* 14/25 */;
+			color: #745f31;
+		}
+		.message{
+			margin-top: .48rem /* 12/25 */;
+			margin-bottom: .48rem /* 12/25 */;
+			font-size: .48rem /* 12/25 */;
+			color: #745f31;
+		}
+		.word{
+			line-height: .6rem /* 15/25 */;
+			text-indent:1em;
+			letter-spacing: 1px;
+			font-size: .4rem /* 10/25 */;
+			color: #745f31;
+		}
+		.enterprise{
+			margin: .6rem /* 15/25 */ auto .48rem /* 12/25 */;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.contact{
+			margin-bottom: .2rem /* 5/25 */;
+			letter-spacing: 1px;
+			font-size: .4rem /* 10/25 */;
+			color: #745f31;
+		}
+	}
+}
+// about
+.aboutWrap{
+	.wrap{
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+	}
+	.enterprise{
+		margin: 0 auto .48rem /* 12/25 */;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+	.word{
+		line-height: .6rem /* 15/25 */;
+		letter-spacing: 1px;
+		font-size: .4rem /* 10/25 */;
+		color: #745f31;
+	}
+	.qrcode{
+		width: 6.96rem /* 174/25 */;
+		margin: 1.2rem /* 30/25 */ auto;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+	.tip{
+		text-align: center;
+		font-size: .56rem /* 14/25 */;
+		color: #745f31;
+	}
+}
+// help
+.helpWrap{
+	.wrap{
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		.head-title{
+			letter-spacing: 2px;
+			font-size: .56rem /* 14/25 */;
+			color: #745f31;
+		}
+		.answers{
+			li{
+				padding-top: .6rem /* 15/25 */;
+				padding-bottom: .6rem /* 15/25 */;
+				border-bottom: 1px dashed #000e1e;
+				.question{
+					letter-spacing: 1px;
+					font-size: .48rem /* 12/25 */;
+					color: #3f2c01;
+				}
+				.answer{
+					line-height: .56rem /* 14/25 */;
+					margin-top: .4rem /* 10/25 */;
+					padding-left: 1rem /* 25/25 */;
+					font-size: .4rem /* 10/25 */;
+					color: #745f31;
 				}
 			}
 		}

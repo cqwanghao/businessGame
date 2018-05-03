@@ -1616,7 +1616,7 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .orderWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
 
-.orderWrap .wrap .head-title { font-family: "SimSun"; font-size: 0.56rem; color: #745f31; }
+.orderWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
 
 .orderWrap .wrap .orderPage { display: none; }
 
@@ -1726,7 +1726,7 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .photoWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
 
-.photoWrap .wrap .head-title { font-size: 0.56rem; color: #745f31; }
+.photoWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
 
 .photoWrap .wrap .photo-box { height: 20.8rem; overflow: auto; -webkit-overflow-scrolling: touch; margin-top: 0.24rem; font-size: 0; }
 
@@ -1756,7 +1756,7 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 
 .addressWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
 
-.addressWrap .wrap .head-title { font-size: 0.56rem; color: #745f31; }
+.addressWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
 
 .addressWrap .wrap .addrPage { display: none; }
 
@@ -1793,3 +1793,91 @@ body { background-color: #dbd9c3; font-family: "Microsoft YaHei"; }
 .addressWrap .wrap .fillPage .detail .btn_save { width: 7.76rem; margin: 1.8rem auto 0; }
 
 .addressWrap .wrap .fillPage .detail .btn_save img { display: block; width: 100%; }
+
+.profileWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.profileWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+
+.profileWrap .wrap .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
+
+.profileWrap .wrap .name { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-top: 1.08rem; font-size: 0.48rem; color: #745f31; }
+
+.profileWrap .wrap .name .t1 { width: 2.4rem; }
+
+.profileWrap .wrap .name .t2 { font-size: 0.56rem; color: #3f2c01; }
+
+.profileWrap .wrap .WeChat { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; margin-top: 0.4rem; font-size: 0.48rem; color: #745f31; }
+
+.profileWrap .wrap .WeChat .w1 { width: 2.4rem; }
+
+.profileWrap .wrap .WeChat .w2 { font-size: 0.56rem; color: #3f2c01; }
+
+.profileWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin-top: 1.2rem; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.profileWrap .wrap .input-box input { width: 100%; height: 100%; padding-left: 4rem; padding-right: 0.6rem; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
+
+.profileWrap .wrap .input-box .tag { position: absolute; top: 50%; left: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
+
+.profileWrap .wrap .phone { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; width: 10.36rem; height: 2.04rem; margin-top: 1.2rem; padding-left: 0.48rem; font-size: 0.56rem; color: #3f2c01; background-image: url(../images/textbox3.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.profileWrap .wrap .phone span { margin-left: 1.08rem; }
+
+.profileWrap .wrap .update { width: 7.76rem; margin: 1.6rem auto 0; }
+
+.profileWrap .wrap .update img { display: block; width: 100%; }
+
+.loginWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.loginWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+
+.loginWrap .wrap .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
+
+.loginWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin-top: 1.2rem; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.loginWrap .wrap .input-box.phone { margin-top: 1.68rem; }
+
+.loginWrap .wrap .input-box input { width: 100%; height: 100%; padding-left: 0.6rem; padding-right: 4rem; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
+
+.loginWrap .wrap .input-box .tag { position: absolute; top: 50%; right: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
+
+.loginWrap .wrap .update { width: 7.76rem; margin: 2.8rem auto 0; }
+
+.loginWrap .wrap .update img { display: block; width: 100%; }
+
+.introductionWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.introductionWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+
+.introductionWrap .wrap .message { margin-top: 0.48rem; margin-bottom: 0.48rem; font-size: 0.48rem; color: #745f31; }
+
+.introductionWrap .wrap .word { line-height: 0.6rem; text-indent: 1em; letter-spacing: 1px; font-size: 0.4rem; color: #745f31; }
+
+.introductionWrap .wrap .enterprise { margin: 0.6rem auto 0.48rem; }
+
+.introductionWrap .wrap .enterprise img { display: block; width: 100%; }
+
+.introductionWrap .wrap .contact { margin-bottom: 0.2rem; letter-spacing: 1px; font-size: 0.4rem; color: #745f31; }
+
+.aboutWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.aboutWrap .enterprise { margin: 0 auto 0.48rem; }
+
+.aboutWrap .enterprise img { display: block; width: 100%; }
+
+.aboutWrap .word { line-height: 0.6rem; letter-spacing: 1px; font-size: 0.4rem; color: #745f31; }
+
+.aboutWrap .qrcode { width: 6.96rem; margin: 1.2rem auto; }
+
+.aboutWrap .qrcode img { display: block; width: 100%; }
+
+.aboutWrap .tip { text-align: center; font-size: 0.56rem; color: #745f31; }
+
+.helpWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+
+.helpWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+
+.helpWrap .wrap .answers li { padding-top: 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px dashed #000e1e; }
+
+.helpWrap .wrap .answers li .question { letter-spacing: 1px; font-size: 0.48rem; color: #3f2c01; }
+
+.helpWrap .wrap .answers li .answer { line-height: 0.56rem; margin-top: 0.4rem; padding-left: 1rem; font-size: 0.4rem; color: #745f31; }
