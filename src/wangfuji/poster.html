@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>王福记猪肉脯</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    (function (window, document) {
+      var setRem = function () {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+  <div class="posterWrap">
+    <!-- 公共头部 -->
+    <div class="nav_main">
+      <div class="home"></div>
+      <div class="cart"></div>
+      <div class="mine">
+        <ul class="menus">
+          <li>订单</li>
+          <li>照片</li>
+          <li>地址</li>
+          <li>个人资料</li>
+          <li>退出</li>
+        </ul>
+      </div>
+      <div class="menu"></div>
+    </div>
+    <!-- poster -->
+    <div class="page">
+      <div class="wrap">
+        <img src="./images/poster-head.png" class="poster-head" />
+        <img src="./images/bottle5.png" class="bottle" />
+        <div class="rule-box">
+          <p class="caption">活动规则</p>
+          <p class="rule">活动时间：2018.05.001-2018.06.30</p>
+          <p class="rule">活动规则：上传自己照片（确认没有侵犯他人肖像权）提交个人资料可进入排行榜</p>
+          <p class="reward">奖励机制：点赞数最高者可获得iPhoneX并印在产品上销往全球。</p>
+          <img src="./images/qrcode2.png" class="qrcode" />
+          <p class="scanning">扫描二维码参加活动</p>
+        </div>
+      </div>
+      <!-- mask -->
+      <div class="pageMask">
+        <div class="close"></div>
+        <ul class="maskMenu">
+          <li>
+            <a href="javascript:;">
+              <img src="./images/mask-item1.png" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/mask-item2.png" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/mask-item3.png" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/mask-item4.png" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <img src="./images/mask-item5.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

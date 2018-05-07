@@ -136,19 +136,27 @@
           <ul class="product">
             <li class="item">
               <img src="./images/product-item1.png" class="pic" />
-              <p class="name">王福记秘制黑猪肉脯<span class="price">￥80.00</span></p>
+              <p class="name">王福记秘制黑猪肉脯
+                <span class="price">￥80.00</span>
+              </p>
             </li>
             <li class="item">
               <img src="./images/product-item2.png" class="pic" />
-              <p class="name">王福记黑猪肉脯（原味）（香辣）<span class="price">￥80.00</span></p>
+              <p class="name">王福记黑猪肉脯（原味）（香辣）
+                <span class="price">￥80.00</span>
+              </p>
             </li>
             <li class="item">
               <img src="./images/product-item3.png" class="pic" />
-              <p class="name">王福记桐香猪肉脯<span class="price">￥80.00</span></p>
+              <p class="name">王福记桐香猪肉脯
+                <span class="price">￥80.00</span>
+              </p>
             </li>
             <li class="item">
               <img src="./images/product-item4.png" class="pic" />
-              <p class="name">猪肉纸卷【薄如蝉翼，脆香可口】<span class="price">￥80.00</span></p>
+              <p class="name">猪肉纸卷【薄如蝉翼，脆香可口】
+                <span class="price">￥80.00</span>
+              </p>
             </li>
           </ul>
         </div>
@@ -188,6 +196,16 @@
   </div>
   <script src="./js/jquery-1.11.0.min.js"></script>
   <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // 去结算
+        $(".page").on("click", ".btn_pay", function () {
+          window.location.href = "pay.html";
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

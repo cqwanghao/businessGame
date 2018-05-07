@@ -28,6 +28,21 @@
 
 <body>
   <div class="loadingWrap">
+    <!-- 公共头部 -->
+    <div class="nav_main">
+      <div class="home"></div>
+      <div class="cart"></div>
+      <div class="mine">
+        <ul class="menus">
+          <li>订单</li>
+          <li>照片</li>
+          <li>地址</li>
+          <li>个人资料</li>
+          <li>退出</li>
+        </ul>
+      </div>
+      <div class="menu"></div>
+    </div>
     <!-- loading -->
     <div class="page0">
       <div class="logo"></div>
@@ -37,31 +52,77 @@
     </div>
     <!-- home -->
     <div class="page page1">
-      <!-- 公共头部 -->
-      <div class="nav_main">
-        <div class="home"></div>
-        <div class="cart"></div>
-        <div class="mine">
-          <ul class="menus">
-            <li>订单</li>
-            <li>照片</li>
-            <li>地址</li>
-            <li>个人资料</li>
-            <li>退出</li>
-          </ul>
-        </div>
-        <div class="menu"></div>
-      </div>
       <img src="./images/home-banner.png" class="page1-1" />
       <div class="links">
-        <a href="javascript:;" class="link">
+        <a href="javascript:;" class="link link1">
           <img src="./images/home-item1.png" class="item item1" />
         </a>
-        <a href="javascript:;" class="link">
+        <a href="javascript:;" class="link link2">
           <img src="./images/home-item2.png" class="item item2" />
         </a>
-        <a href="javascript:;" class="link">
+        <a href="javascript:;" class="link link3">
           <img src="./images/home-item3.png" class="item item3" />
+        </a>
+      </div>
+    </div>
+    <!-- upload -->
+    <div class="page page2">
+      <div class="wrap">
+        <div class="head-title">来不急解释，先传个照片吧</div>
+        <div class="upload-group">
+          <div class="upload-area">
+            <img src="./images/bottle-bg.png" class="bottle-bg" />
+            <div class="uploads">
+              <img src="./images/upload-bg.png" class="upload-bg" />
+            </div>
+            <input type="file" class="fileUpload" accept="image/*">
+          </div>
+          <div class="operation">
+            <img src="./images/enlarge.png" class="btn" />
+            <img src="./images/shrink.png" class="btn shrink" />
+            <img src="./images/rotate.png" class="btn rotate" />
+          </div>
+        </div>
+        <p class="care">注：照片不得超过3兆,建议png格式。</p>
+        <div class="picture">
+          <div class="adjust">
+            <div class="type">
+              <img src="./images/brightness.png" class="brightness" />
+            </div>
+            <input type="range" class="range" />
+          </div>
+          <div class="adjust">
+            <div class="type">
+              <img src="./images/contrast.png" class="contrast" />
+            </div>
+            <input type="range" class="range" />
+          </div>
+        </div>
+        <a href="javascript:;" class="link">
+          <img src="./images/btn_save3.png" />
+        </a>
+      </div>
+    </div>
+    <!-- rule -->
+    <div class="pageRule">
+      <div class="rule-box">
+        <div class="rule-title">活动规则</div>
+        <p class="p1">活动时间：2018.05.001-2018.06.30</p>
+        <p class="p1">活动规则：上传自己照片（确认没有侵犯他人肖像权）</p>
+        <p class="p1">提交个人资料可进入排行榜</p>
+        <p class="p2">奖励机制：点赞数最高者可获得iPhoneX并印在产品上销往全球。</p>
+        <p class="p3">请确认你上传的图片没有侵犯他人的肖像权，若照片中出现未成年人，你的申请也将被残忍拒绝。</p>
+        <p class="p4">本条例作为王福记猪肉脯一般网站条例的补充条款，适用于使用本网站提交和上传内容的用户。用户在本网站注册后就可以提交和上传信息，并同意遵守条例内容。
+          </p>
+        <div class="agree">
+          <label>
+            <input type="checkbox" checked class="checkbox" />
+            <img src="./images/checkbox_checked.png" class="check" />
+          </label>
+          <p>我接受并同意照片使用条款</p>
+        </div>
+        <a href="javascript:;" class="link">
+          <img src="./images/btn_agree.png" />
         </a>
       </div>
     </div>
@@ -98,7 +159,60 @@
     </div>
   </div>
   <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/layer/layer.js"></script>
   <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // home
+        $(".page1").on("click",".link1",function(){
+          $(".page1").hide();
+          $(".page2").show();
+        });
+        // 明星代言人
+        $(".page1").on("click",".link2",function(){
+          var flag = 2;
+          if(flag == 1){
+            // 未定制
+            $(".page1").hide();
+            $(".page2").show();
+          }else if(flag == 2){
+            window.location.href="ranklist.html";
+          }
+        });
+        // 立即购买
+        $(".page1").on("click",".link3",function(){
+          window.location.href="buy.html";
+        });
+        // upload
+        $(".page2").on("click",".link",function(){
+          $(".pageRule").fadeIn(500);
+        });
+        // 同意条款
+        $(".pageRule .agree").on("click","input",function(){
+          var flag = $(this).is(':checked');
+          if(flag){
+            $(this).siblings().attr("src","./images/checkbox_checked.png");
+          }else{
+            $(this).siblings().attr("src","./images/checkbox_n.png");
+          }
+        });
+        // 确认同意
+        $(".pageRule").on("click",".link",function(){
+          var flag = $(".agree").find(".checkbox").is(':checked');
+          if(!flag){
+            layer.open({
+              content: '请选中同意按钮!'
+              ,skin: 'msg'
+              ,time: 2 //2秒后自动关闭
+            });
+            return false;
+          }
+          window.location.href="customized.html";
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
