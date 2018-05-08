@@ -151,12 +151,12 @@
           </li>
         </ul>
         <div class="btns">
-          <a href="javascript:;" class="link participate">
+          <div class="link participate">
             <img src="./images/btn_join.png" />
-          </a>
-          <a href="javascript:;" class="link share">
+          </div>
+          <div class="link share">
             <img src="./images/btn_share.png" />
-          </a>
+          </div>
         </div>
       </div>
       <!-- share -->
@@ -169,84 +169,85 @@
         <div class="close"></div>
         <ul class="maskMenu">
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item1.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item2.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item3.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item4.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item5.png" />
-            </a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <script src="./js/jquery-1.11.0.min.js"></script>
-    <script src="./js/layer/layer.js"></script>
-    <script src="./js/index.js"></script>
-    <script>
-      (function () {
-        $(function () {
-          // 参加
-          $(".page .btns").on("click",".participate",function(){
-            var flag = 2;
-            if(flag == 1){
-              // 未参加过
-              window.location.href="home.html";
-            }else if(flag == 2){
-              // 已参加过
-              layer.open({
-                content: '您已经参与过了!'
-                ,skin: 'msg'
-                ,time: 2 //2秒后自动关闭
-              });
-            }
-          });
-          // 点赞
-          $(".page .rank-group").on("click",".like",function(){
-            var _this = $(this);
-            var thumbs = $(this).hasClass("active");
-            if(thumbs){
-              // 已点过赞
-              layer.open({
-                content: '您已经点过赞了!'
-                ,skin: 'msg'
-                ,time: 2 //2秒后自动关闭
-              });
-            }else{
-              $(this).addClass("active");
-              $(this).find(".add").fadeIn(500);
-              var timer = setTimeout(function(){
-                _this.find(".add").fadeOut(500);
-              },500);
-            }
-          });
-          // 分享开启
-          $(".page .btns").on("click",".share",function(){
-            $(".pageShare").fadeIn(500);
-          });
-          // 分享关闭
-          $(".pageShare").on("click",function(){
-            $(".pageShare").fadeOut(500);
-          });
+  </div>
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/layer/layer.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // 参加
+        $(".page .btns").on("click", ".participate", function () {
+          var flag = 2;
+          if (flag == 1) {
+            // 未参加过
+            window.location.href = "home.html";
+          } else if (flag == 2) {
+            // 已参加过
+            layer.open({
+              content: '您已经参与过了!'
+              , skin: 'msg'
+              , time: 2 //2秒后自动关闭
+            });
+          }
         });
-      })();
-    </script>
+        // 点赞
+        $(".page .rank-group").on("click", ".like", function () {
+          var _this = $(this);
+          var thumbs = $(this).hasClass("active");
+          if (thumbs) {
+            // 已点过赞
+            layer.open({
+              content: '您已经点过赞了!'
+              , skin: 'msg'
+              , time: 2 //2秒后自动关闭
+            });
+          } else {
+            $(this).addClass("active");
+            $(this).find(".add").fadeIn(500);
+            var timer = setTimeout(function () {
+              _this.find(".add").fadeOut(500);
+            }, 500);
+          }
+        });
+        // 分享开启
+        $(".page .btns").on("click", ".share", function () {
+          $(".pageShare").fadeIn(500);
+        });
+        // 分享关闭
+        $(".pageShare").on("click", function () {
+          $(".pageShare").fadeOut(500);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

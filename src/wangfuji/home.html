@@ -54,15 +54,15 @@
     <div class="page page1">
       <img src="./images/home-banner.png" class="page1-1" />
       <div class="links">
-        <a href="javascript:;" class="link link1">
+        <div class="link link1">
           <img src="./images/home-item1.png" class="item item1" />
-        </a>
-        <a href="javascript:;" class="link link2">
+        </div>
+        <div class="link link2">
           <img src="./images/home-item2.png" class="item item2" />
-        </a>
-        <a href="javascript:;" class="link link3">
+        </div>
+        <div class="link link3">
           <img src="./images/home-item3.png" class="item item3" />
-        </a>
+        </div>
       </div>
     </div>
     <!-- upload -->
@@ -98,9 +98,9 @@
             <input type="range" class="range" />
           </div>
         </div>
-        <a href="javascript:;" class="link">
+        <div class="link">
           <img src="./images/btn_save3.png" />
-        </a>
+        </div>
       </div>
     </div>
     <!-- rule -->
@@ -113,7 +113,7 @@
         <p class="p2">奖励机制：点赞数最高者可获得iPhoneX并印在产品上销往全球。</p>
         <p class="p3">请确认你上传的图片没有侵犯他人的肖像权，若照片中出现未成年人，你的申请也将被残忍拒绝。</p>
         <p class="p4">本条例作为王福记猪肉脯一般网站条例的补充条款，适用于使用本网站提交和上传内容的用户。用户在本网站注册后就可以提交和上传信息，并同意遵守条例内容。
-          </p>
+        </p>
         <div class="agree">
           <label>
             <input type="checkbox" checked class="checkbox" />
@@ -121,9 +121,9 @@
           </label>
           <p>我接受并同意照片使用条款</p>
         </div>
-        <a href="javascript:;" class="link">
+        <div class="link">
           <img src="./images/btn_agree.png" />
-        </a>
+        </div>
       </div>
     </div>
     <!-- mask -->
@@ -131,84 +131,108 @@
       <div class="close"></div>
       <ul class="maskMenu">
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item1.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item2.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item3.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item4.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item5.png" />
-          </a>
+          </div>
         </li>
       </ul>
     </div>
   </div>
   <script src="./js/jquery-1.11.0.min.js"></script>
   <script src="./js/layer/layer.js"></script>
+  <script src="./js/exif.js"></script>
+  <script src="./js/AlloyFinger.js"></script>
+  <script src="./js/transformjs.js"></script>
+  <script src="./js/html2canvas.js"></script>
   <script src="./js/index.js"></script>
   <script>
     (function () {
       $(function () {
         // home
-        $(".page1").on("click",".link1",function(){
+        $(".page1").on("click", ".link1", function () {
           $(".page1").hide();
           $(".page2").show();
         });
         // 明星代言人
-        $(".page1").on("click",".link2",function(){
+        $(".page1").on("click", ".link2", function () {
           var flag = 2;
-          if(flag == 1){
+          if (flag == 1) {
             // 未定制
             $(".page1").hide();
             $(".page2").show();
-          }else if(flag == 2){
-            window.location.href="ranklist.html";
+          } else if (flag == 2) {
+            window.location.href = "ranklist.html";
           }
         });
         // 立即购买
-        $(".page1").on("click",".link3",function(){
-          window.location.href="buy.html";
-        });
-        // upload
-        $(".page2").on("click",".link",function(){
-          $(".pageRule").fadeIn(500);
+        $(".page1").on("click", ".link3", function () {
+          window.location.href = "buy.html";
         });
         // 同意条款
-        $(".pageRule .agree").on("click","input",function(){
+        $(".pageRule .agree").on("click", "input", function () {
           var flag = $(this).is(':checked');
-          if(flag){
-            $(this).siblings().attr("src","./images/checkbox_checked.png");
-          }else{
-            $(this).siblings().attr("src","./images/checkbox_n.png");
+          if (flag) {
+            $(this).siblings().attr("src", "./images/checkbox_checked.png");
+          } else {
+            $(this).siblings().attr("src", "./images/checkbox_n.png");
           }
         });
         // 确认同意
-        $(".pageRule").on("click",".link",function(){
+        $(".pageRule").on("click", ".link", function () {
           var flag = $(".agree").find(".checkbox").is(':checked');
-          if(!flag){
+          if (!flag) {
             layer.open({
               content: '请选中同意按钮!'
-              ,skin: 'msg'
-              ,time: 2 //2秒后自动关闭
+              , skin: 'msg'
+              , time: 2 //2秒后自动关闭
             });
             return false;
           }
-          window.location.href="customized.html";
+          window.location.href = "customized.html";
+        });
+
+        var uploadFlag = false;
+        // 上传图片
+        uploadImg($(".fileUpload"), function (cvs) {
+          // 替换图片
+          $(".uploads").find("img").attr('src', cvs.toDataURL('image/png', 0.7));
+          if (!uploadFlag) {
+            var obj1 = $('.upload-bg')[0];
+            var obj2 = $(".fileUpload")[0];
+            //移动缩放旋转
+            transformImg(obj1, obj2);
+          }
+          uploadFlag = true;
+        });
+        // 生成图片
+        $(".page2").on("click", ".link", function () {
+          $(".pageRule").fadeIn(500);
+          html2canvas($(".upload-area")[0], {
+            backgroundColor: 'transparent', // 设置背景透明
+          }).then(function (canvas) {
+            // 生成的图片url
+            console.log(canvas.toDataURL("image/png"));
+          });
         });
       });
     })();

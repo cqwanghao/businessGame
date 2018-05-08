@@ -285,9 +285,9 @@
                 });
                 var file = e.target.files[0];
                 var Orientation = null;
-                // if (!file.type.match('image.*')) {
-                //     return false;
-                // }
+                if (!file.type.match('image.*')) {
+                    return false;
+                }
                 EXIF.getData(file, function () {
                     Orientation = EXIF.getTag(this, 'Orientation');
                 });

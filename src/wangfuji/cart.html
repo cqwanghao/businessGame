@@ -53,60 +53,63 @@
         <ul class="goodlist">
           <li class="list">
             <div class="left">
-              <div class="check">
+              <label class="check">
+                <input type="checkbox" class="checkbox" />
                 <img src="./images/checkbox_n.png" />
-              </div>
+              </label>
               <div class="goods">
                 <div class="name">王福记猪肉脯（酥香）</div>
                 <div class="price">￥80.00</div>
               </div>
             </div>
             <div class="right">
-              <div class="operation">
+              <div class="operation reduce">
                 <img src="./images/reduce.png" />
               </div>
               <span class="num">1</span>
-              <div class="operation">
+              <div class="operation add">
                 <img src="./images/add.png" />
               </div>
             </div>
           </li>
           <li class="list">
             <div class="left">
-              <div class="check">
+              <label class="check">
+                <input type="checkbox" class="checkbox" />
                 <img src="./images/checkbox_n.png" />
-              </div>
+              </label>
               <div class="goods">
                 <div class="name">王福记猪肉脯（酥香）</div>
                 <div class="price">￥80.00</div>
               </div>
             </div>
             <div class="right">
-              <div class="operation">
+              <div class="operation reduce">
                 <img src="./images/reduce.png" />
               </div>
               <span class="num">1</span>
-              <div class="operation">
+              <div class="operation add">
                 <img src="./images/add.png" />
               </div>
             </div>
           </li>
           <li class="list">
             <div class="left">
-              <div class="check">
+              <label class="check">
+                <input type="checkbox" class="checkbox" />
                 <img src="./images/checkbox_n.png" />
-              </div>
+              </label>
               <div class="goods">
                 <div class="name">王福记猪肉脯（酥香）</div>
                 <div class="price">￥80.00</div>
               </div>
             </div>
             <div class="right">
-              <div class="operation">
+              <div class="operation reduce">
                 <img src="./images/reduce.png" />
               </div>
               <span class="num">1</span>
-              <div class="operation">
+              <div class="operation add">
                 <img src="./images/add.png" />
               </div>
             </div>
@@ -114,9 +117,10 @@
         </ul>
         <div class="checkAll list">
           <div class="left">
-            <div class="check">
+            <label class="check">
+              <input type="checkbox" class="checkbox" />
               <img src="./images/checkbox_n.png" />
-            </div>
+            </label>
             <div class="goods">
               <div class="name">全选</div>
             </div>
@@ -167,29 +171,29 @@
       <div class="close"></div>
       <ul class="maskMenu">
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item1.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item2.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item3.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item4.png" />
-          </a>
+          </div>
         </li>
         <li>
-          <a href="javascript:;">
+          <div class="menu-item">
             <img src="./images/mask-item5.png" />
-          </a>
+          </div>
         </li>
       </ul>
     </div>
@@ -199,6 +203,46 @@
   <script>
     (function () {
       $(function () {
+        // 选择商品
+        $(".page .goodlist").on("click", ".checkbox", function () {
+          var flag = $(this).is(":checked");
+          if (flag) {
+            $(this).siblings().attr("src", "./images/checkbox_checked.png");
+          } else {
+            $(this).siblings().attr("src", "./images/checkbox_n.png");
+          }
+        });
+        // 全选
+        $(".page .checkAll").on("click", ".checkbox", function () {
+          var flag = $(this).is(":checked");
+          // console.log(flag);
+          console.log($(".page .goodlist li").eq(0).find(".checkbox").is(":checked"));
+          if (flag) {
+            $(this).siblings().attr("src", "./images/checkbox_checked.png");
+            $(".page .goodlist li").find(".checkbox").prop("checked", true).siblings().attr("src", "./images/checkbox_checked.png");
+            // $(".page .goodlist li").find(".checkbox").each(function(){  
+            //   //此处如果用attr，会出现第三次失效的情况  
+            //   $(this).prop("checked",true);
+            // });
+          } else {
+            $(this).siblings().attr("src", "./images/checkbox_n.png");
+            $(".page .goodlist li").find(".checkbox").removeAttr("checked").siblings().attr("src", "./images/checkbox_n.png");
+          }
+        });
+        // 加减
+        $(".page .goodlist").on("click", ".operation", function () {
+          var flag = $(this).hasClass("reduce");
+          var number = parseInt($(this).siblings(".num").html());
+          if (flag) {
+            number--;
+          } else {
+            number++;
+          }
+          if (number <= 1) {
+            number = 1;
+          }
+          $(this).siblings(".num").html(number);
+        });
         // 去结算
         $(".page").on("click", ".btn_pay", function () {
           window.location.href = "pay.html";

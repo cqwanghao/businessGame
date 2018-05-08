@@ -48,53 +48,53 @@
     <div class="page">
       <div class="wrap">
         <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="commodity-box">
-                      <div class="commodity">
-                        <div class="photo">
-                          <img src="./images/bottle2.png" />
-                        </div>
-                        <div class="describe">王福记猪肉脯（酥香）
-                          <span>￥
-                            <span>80.00</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="commodity-box">
+                <div class="commodity">
+                  <div class="photo">
+                    <img src="./images/bottle2.png" />
+                  </div>
+                  <div class="describe">王福记猪肉脯（酥香）
+                    <span>￥
+                      <span>80.00</span>
+                    </span>
+                  </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="commodity-box">
-                      <div class="commodity">
-                        <div class="photo">
-                          <img src="./images/bottle2.png" />
-                        </div>
-                        <div class="describe">王福记猪肉脯（酥香）111
-                          <span>￥
-                            <span>90.00</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="commodity-box">
-                      <div class="commodity">
-                        <div class="photo">
-                          <img src="./images/bottle2.png" />
-                        </div>
-                        <div class="describe">王福记猪肉脯（酥香）222
-                          <span>￥
-                            <span>100.00</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-slide">
+              <div class="commodity-box">
+                <div class="commodity">
+                  <div class="photo">
+                    <img src="./images/bottle2.png" />
+                  </div>
+                  <div class="describe">王福记猪肉脯（酥香）111
+                    <span>￥
+                      <span>90.00</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="commodity-box">
+                <div class="commodity">
+                  <div class="photo">
+                    <img src="./images/bottle2.png" />
+                  </div>
+                  <div class="describe">王福记猪肉脯（酥香）222
+                    <span>￥
+                      <span>100.00</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 如果需要导航按钮 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
         <!-- <div class="commodity-box">
           <div class="commodity">
@@ -109,12 +109,12 @@
           </div>
         </div> -->
         <div class="btns">
-          <a href="javascript:;" class="btn btn1">
+          <div class="btn btn1">
             <img src="./images/btn_pay4.png" />
-          </a>
-          <a href="javascript:;" class="btn btn2">
+          </div>
+          <div class="btn btn2">
             <img src="./images/btn_pay5.png" />
-          </a>
+          </div>
         </div>
       </div>
       <!-- mask -->
@@ -122,58 +122,59 @@
         <div class="close"></div>
         <ul class="maskMenu">
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item1.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item2.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item3.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item4.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item5.png" />
-            </a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <script src="./js/jquery-1.11.0.min.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script src="./js/index.js"></script>
-    <script>
-      (function () {
-        $(function () {
-          var swiper = new Swiper('.swiper-container', {
-              slidesPerView: 'auto',
-              navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-          });
-
-          // 立即购买
-          $(".page .btns").on("click", ".btn1", function () {
-            window.location.href = "pay.html";
-          });
-          // 立即定制
-          $(".page .btns").on("click", ".btn2", function () {
-            window.location.href = "home.html";
-          });
+  </div>
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 'auto',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         });
-      })();
-    </script>
+
+        // 立即购买
+        $(".page .btns").on("click", ".btn1", function () {
+          window.location.href = "pay.html";
+        });
+        // 立即定制
+        $(".page .btns").on("click", ".btn2", function () {
+          window.location.href = "home.html";
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

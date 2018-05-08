@@ -48,7 +48,7 @@
       <div class="wrap">
         <div class="head-title">欢迎回来 我的照片</div>
         <ul class="photo-box">
-          <li>
+          <li class="photo-list">
             <div class="frame">
               <div class="frame-box">
                 <img src="./images/photo1.png" />
@@ -56,6 +56,7 @@
             </div>
             <div class="btns">
               <div class="upload">
+                <input type="file" class="fileUpload" accept="image/*">
                 <img src="./images/btn_upload.png" />
               </div>
               <div class="del">删除</div>
@@ -64,7 +65,7 @@
               <img src="./images/btn_order.png" />
             </div>
           </li>
-          <li>
+          <li class="photo-list">
             <div class="frame">
               <div class="frame-box">
                 <img src="./images/photo2.png" />
@@ -72,6 +73,7 @@
             </div>
             <div class="btns">
               <div class="upload">
+                <input type="file" class="fileUpload" accept="image/*">
                 <img src="./images/btn_upload.png" />
               </div>
               <div class="del">删除</div>
@@ -80,14 +82,15 @@
               <img src="./images/btn_order.png" />
             </div>
           </li>
-          <li>
+          <li class="photo-list">
             <div class="frame">
               <div class="frame-box">
-                <img src="./images/photo3.png"  />
+                <img src="./images/photo3.png" />
               </div>
             </div>
             <div class="btns">
               <div class="upload">
+                <input type="file" class="fileUpload" accept="image/*">
                 <img src="./images/btn_upload.png" />
               </div>
               <div class="del">删除</div>
@@ -96,7 +99,7 @@
               <img src="./images/btn_order.png" />
             </div>
           </li>
-          <li>
+          <li class="photo-list">
             <div class="frame">
               <div class="frame-box">
                 <img src="./images/photo-no.png" />
@@ -104,6 +107,7 @@
             </div>
             <div class="btns">
               <div class="upload">
+                <input type="file" class="fileUpload" accept="image/*">
                 <img src="./images/btn_upload2.png" />
               </div>
               <div class="del">删除</div>
@@ -112,22 +116,6 @@
               <img src="./images/btn_order.png" />
             </div>
           </li>
-          <li>
-              <div class="frame">
-                <div class="frame-box">
-                  <img src="./images/photo-no.png" />
-                </div>
-              </div>
-              <div class="btns">
-                <div class="upload">
-                  <img src="./images/btn_upload2.png" />
-                </div>
-                <div class="del">删除</div>
-              </div>
-              <div class="book">
-                <img src="./images/btn_order.png" />
-              </div>
-            </li>
         </ul>
         <div class="icon_addmore">
           <img src="./images/icon_addmore.png" />
@@ -138,35 +126,82 @@
         <div class="close"></div>
         <ul class="maskMenu">
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item1.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item2.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item3.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item4.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item5.png" />
-            </a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <script src="./js/jquery-1.11.0.min.js"></script>
-    <script src="./js/index.js"></script>
+  </div>
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/layer/layer.js"></script>
+  <script src="./js/exif.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // 跳转到定制页
+        $(".page .photo-box").on("click", ".book", function () {
+          window.location.href = "home.html";
+        });
+        // 上传图片
+        uploadImg($(".page .photo-box"), function (cvs, $this) {
+          console.log($this.closest(".photo-list").index());
+          var index = $this.closest(".photo-list").index();
+          // 上传图片
+          $(".photo-box .photo-list").eq(index).find(".frame-box").find("img").attr('src', cvs.toDataURL('image/png', 0.7));
+        }, ".upload");
+        // 删除当前图片
+        $(".photo-box").on("click", ".del", function () {
+          var index = $(this).closest(".photo-list").index();
+          $(".photo-box").find(".photo-list").eq(index).remove();
+        });
+        // 增加图片
+        $(".icon_addmore").on("click", function () {
+          var html = "";
+          html += '<li class="photo-list">';
+          html += '<div class="frame">';
+          html += '<div class="frame-box">';
+          html += '<img src="./images/photo-no.png" />';
+          html += '</div>';
+          html += '</div>';
+          html += '<div class="btns">';
+          html += '<div class="upload">';
+          html += '<input type="file" class="fileUpload" accept="image/*">';
+          html += '<img src="./images/btn_upload2.png" />';
+          html += '</div>';
+          html += '<div class="del">删除</div>';
+          html += '</div>';
+          html += '<div class="book">';
+          html += '<img src="./images/btn_order.png" />';
+          html += '</div>';
+          html += '</li>';
+          $(".photo-box").append(html);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

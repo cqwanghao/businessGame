@@ -50,63 +50,64 @@
         <p class="tip">（长按保存图片呼朋唤友来帮助点赞吧）</p>
         <p class="slogan">您将有机会成为王福记代言人</p>
         <p class="slogan">销往全世界</p>
-        <a href="javascript:;" class="btnGo btnGo1">
+        <div class="btnGo btnGo1">
           <img src="./images/btn_go.png" />
-        </a>
+        </div>
         <p class="slogan">定制专属产品</p>
         <p class="slogan">马上定制，属于独一无二的你</p>
-        <a href="javascript:;" class="btnGo btnGo2">
+        <div class="btnGo btnGo2">
           <img src="./images/btn_go.png" />
-        </a>
+        </div>
       </div>
       <!-- mask -->
       <div class="pageMask">
         <div class="close"></div>
         <ul class="maskMenu">
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item1.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item2.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item3.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item4.png" />
-            </a>
+            </div>
           </li>
           <li>
-            <a href="javascript:;">
+            <div class="menu-item">
               <img src="./images/mask-item5.png" />
-            </a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <script src="./js/jquery-1.11.0.min.js"></script>
-    <script src="./js/index.js"></script>
-    <script>
-      (function () {
-        $(function () {
-          // btn1
-          $(".page").on("click",".btnGo1",function(){
-            window.location.href="ranklist.html";
-          });
-          // btn2
-          $(".page").on("click",".btnGo2",function(){
-            window.location.href="pay.html";
-          });
+  </div>
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // btn1
+        $(".page").on("click", ".btnGo1", function () {
+          window.location.href = "ranklist.html";
         });
-      })();
-    </script>
+        // btn2
+        $(".page").on("click", ".btnGo2", function () {
+          window.location.href = "pay.html";
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
