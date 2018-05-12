@@ -1537,7 +1537,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .pageMask .maskMenu li a img { display: block; }
 
-.page { width: 100%; height: 30.96rem; padding-top: 4rem; background-image: url(../images/bg.png); -webkit-background-size: 100% 30.96rem; background-size: 100% 30.96rem; background-repeat: no-repeat; background-position: center; }
+.page { width: 100%; height: 30.96rem; padding-top: 4rem; background-image: url(../images/bg.jpg); -webkit-background-size: 100% 30.96rem; background-size: 100% 30.96rem; background-repeat: no-repeat; background-position: center; }
 
 .loadingWrap .page0 { display: none; padding-top: 6rem; }
 
@@ -1714,6 +1714,10 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .cartWrap .wrap .list .right .total span { color: #d9002a; }
 
 .cartWrap .wrap .list .right .money { font-size: 0.68rem; color: #d9002a; }
+
+.cartWrap .wrap .list .del { width: 0.72rem; }
+
+.cartWrap .wrap .list .del img { display: block; width: 100%; }
 
 .cartWrap .wrap .checkAll { padding-left: 0.48rem; padding-right: 0.48rem; }
 
@@ -2033,27 +2037,41 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .payWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
 
-.payWrap .wrap .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
+.payWrap .wrap .pay { display: none; }
 
-.payWrap .wrap .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
+.payWrap .wrap .pay.active { display: block; }
 
-.payWrap .wrap .describe { margin-top: 0.6rem; font-size: 0.48rem; color: #3f2c01; }
+.payWrap .wrap .pay .head-title { letter-spacing: 2px; font-size: 0.56rem; color: #745f31; }
 
-.payWrap .wrap .describe span { color: #d9002a; }
+.payWrap .wrap .pay .message { margin-top: 0.48rem; font-size: 0.48rem; color: #745f31; }
 
-.payWrap .wrap .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin: 1.2rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.payWrap .wrap .pay .describe { margin-top: 0.6rem; font-size: 0.48rem; color: #3f2c01; }
 
-.payWrap .wrap .input-box input { width: 100%; height: 100%; padding-left: 4rem; padding-right: 2rem; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
+.payWrap .wrap .pay .describe span { color: #d9002a; }
 
-.payWrap .wrap .input-box .tag { position: absolute; top: 50%; left: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
+.payWrap .wrap .pay .describe .name { display: inline-block; width: 44%; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; color: #3f2c01; }
 
-.payWrap .wrap .input-box .polygon { position: absolute; top: 50%; right: 1.12rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); width: 0.36rem; height: 0.4rem; background-image: url(../images/polygon.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+.payWrap .wrap .pay .describe .price { display: inline-block; width: 30%; margin-left: 0.4rem; }
 
-.payWrap .wrap .btns { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 10.68rem; margin: 1.6rem auto 0; }
+.payWrap .wrap .pay .describe .price.price1 { color: #d9002a; font-size: 0.72rem; }
 
-.payWrap .wrap .btns .btn { width: 4.64rem; }
+.payWrap .wrap .pay .describe .num { color: #3f2c01; }
 
-.payWrap .wrap .btns .btn img { display: block; width: 100%; }
+.payWrap .wrap .pay .input-box { position: relative; width: 10.68rem; height: 2.44rem; margin: 1.2rem auto 0; background-image: url(../images/textbox.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.payWrap .wrap .pay .input-box input { width: 100%; height: 100%; padding-left: 4rem; padding-right: 2rem; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; border: none; background: none; font-size: 0.56rem; color: #3f2c01; }
+
+.payWrap .wrap .pay .input-box .tag { position: absolute; top: 50%; left: 0.6rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); font-size: 0.56rem; color: #3f2c01; }
+
+.payWrap .wrap .pay .input-box .polygon { position: absolute; top: 50%; right: 1.12rem; -webkit-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); width: 0.36rem; height: 0.4rem; background-image: url(../images/polygon.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
+
+.payWrap .wrap .pay .btns { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 10.68rem; margin: 1.6rem auto 0; }
+
+.payWrap .wrap .pay .btns .btn { width: 4.64rem; }
+
+.payWrap .wrap .pay .btns .btn img { display: block; width: 100%; }
+
+.payWrap .wrap .pay .btns .btn.btn1 { margin: 0 auto; }
 
 .awardWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
 

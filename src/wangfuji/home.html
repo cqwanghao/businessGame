@@ -71,11 +71,11 @@
         <div class="head-title">来不急解释，先传个照片吧</div>
         <div class="upload-group">
           <div class="upload-area">
-            <img src="./images/bottle-bg.png" class="bottle-bg" />
+            <img src="./images/bottle-bg.png" class="bottle-bg" id="bottle-bg" />
             <div class="uploads">
-              <img src="./images/upload-bg.png" class="upload-bg" />
+              <img src="./images/upload-bg.png" class="upload-bg" id="upload-bg" />
             </div>
-            <input type="file" class="fileUpload" accept="image/*">
+            <input type="file" class="fileUpload" id="fileUpload" accept="image/*">
           </div>
           <div class="operation">
             <img src="./images/enlarge.png" class="btn" />
@@ -98,6 +98,8 @@
             <input type="range" class="range" />
           </div>
         </div>
+        <input type="file" id="image-file">
+        <canvas width="200" height="200" id="canvas"></canvas>
         <div class="link">
           <img src="./images/btn_save3.png" />
         </div>
@@ -163,6 +165,7 @@
   <script src="./js/exif.js"></script>
   <script src="./js/AlloyFinger.js"></script>
   <script src="./js/transformjs.js"></script>
+  <script src="./js/Chobi.js"></script>
   <script src="./js/html2canvas.js"></script>
   <script src="./js/index.js"></script>
   <script>
@@ -216,26 +219,62 @@
         uploadImg($(".fileUpload"), function (cvs) {
           // 替换图片
           $(".uploads").find("img").attr('src', cvs.toDataURL('image/png', 0.7));
-          if (!uploadFlag) {
-            var obj1 = $('.upload-bg')[0];
-            var obj2 = $(".fileUpload")[0];
-            //移动缩放旋转
-            transformImg(obj1, obj2);
-          }
-          uploadFlag = true;
-        });
-        // 生成图片
-        $(".page2").on("click", ".link", function () {
-          $(".pageRule").fadeIn(500);
-          html2canvas($(".upload-area")[0], {
-            backgroundColor: 'transparent', // 设置背景透明
-          }).then(function (canvas) {
-            // 生成的图片url
-            console.log(canvas.toDataURL("image/png"));
+
+          var imgObj = null, backupImg = null;
+          imgObj = new Chobi(document.getElementById("fileUpload"));
+          // imgObj = new Chobi($(".uploads").find("img")[0]);
+          // imgObj = new Chobi(document.getElementById("./images/photo2.png"));
+          imgObj.ready(function () {
+            console.log(11);
+            backupImg = imgObj.getImage();
+            // Brightness
+            imgObj.brightness(-50);
+            // Contrast 
+            imgObj.contrast(-100);
+            imgObj.canvas = document.getElementById("canvas");
+            imgObj.loadImageToCanvas();
           });
+
+            if (!uploadFlag) {
+              var obj1 = $('.upload-bg')[0];
+              var obj2 = $(".fileUpload")[0];
+              //移动缩放旋转
+              transformImg(obj1, obj2);
+            }
+            uploadFlag = true;
+          });
+          // 生成图片
+          $(".page2").on("click", ".link", function () {
+            $(".pageRule").fadeIn(500);
+            html2canvas($(".upload-area")[0], {
+              backgroundColor: 'transparent', // 设置背景透明
+            }).then(function (canvas) {
+              // 生成的图片url
+              console.log(canvas.toDataURL("image/png"));
+            });
+          });
+
+          // 处理图片黑白
+          //make global Chobi object
+          // var imgObj = null, backupImg = null;
+
+          // $("#fileUpload").on("change", function () {
+          //   //pass input type=file element to Chobi constructor
+          //   imgObj = new Chobi(document.getElementById("fileUpload"));
+          //   // imgObj = new Chobi(document.getElementById("./images/photo2.png"));
+          //   imgObj.ready(function () {
+          //     console.log(11);
+          //     backupImg = imgObj.getImage();
+          //     // Brightness
+          //     imgObj.brightness(-50);
+          //     // Contrast 
+          //     imgObj.contrast(-100);
+          //     imgObj.canvas = document.getElementById("canvas");
+          //     imgObj.loadImageToCanvas();
+          //   });
+          // });
         });
-      });
-    })();
+      })();
   </script>
 </body>
 

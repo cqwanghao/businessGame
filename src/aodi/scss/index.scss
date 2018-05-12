@@ -1,0 +1,15 @@
+@import '../../base/index.scss';
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body{
+	background-color: #dbd9c3;
+	font-family: "Microsoft YaHei";
+}
+img{
+	pointer-events: none;
+    user-select: none;
+}
+

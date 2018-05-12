@@ -47,29 +47,73 @@
     <!-- pay -->
     <div class="page">
       <div class="wrap">
-        <div class="head-title">王福记猪肉脯</div>
-        <div class="message">产品信息：</div>
-        <div class="describe">王福记猪肉脯（酥香）
-          <span>￥
-            <span>80.00</span>
-          </span>
-        </div>
-        <div class="input-box">
-          <input type="text" placeholder="请输入订购数量" />
-          <div class="tag">订购数</div>
-        </div>
-        <div class="input-box">
-          <input type="text" id="address" placeholder="选择地址" />
-          <!-- <div id="address"></div> -->
-          <div class="tag">配送至</div>
-          <div class="polygon"></div>
-        </div>
-        <div class="btns">
-          <div class="btn">
-            <img src="./images/btn_addtocart.png" />
+        <div class="pay">
+          <div class="head-title">王福记猪肉脯</div>
+          <div class="message">产品信息：</div>
+          <div class="describe">
+            <span class="name">王福记猪肉脯（酥香）</span>
+            <span class="price">￥
+              <span>80.00</span>
+            </span>
           </div>
-          <div class="btn">
-            <img src="./images/btn_pay6.png" />
+          <div class="input-box">
+            <input type="text" placeholder="请输入订购数量" />
+            <div class="tag">订购数</div>
+          </div>
+          <div class="input-box">
+            <input type="text" class="address" id="address1" placeholder="选择地址" />
+            <!-- <div id="address"></div> -->
+            <div class="tag">配送至</div>
+            <div class="polygon"></div>
+          </div>
+          <div class="btns">
+            <div class="btn">
+              <img src="./images/btn_addtocart.png" />
+            </div>
+            <div class="btn">
+              <img src="./images/btn_pay6.png" />
+            </div>
+          </div>
+        </div>
+        <div class="pay active">
+          <div class="head-title">王福记猪肉脯</div>
+          <div class="message">产品信息：</div>
+          <div class="describe">
+            <span class="name">王福记猪肉脯（酥香）王福记猪肉脯（酥香）</span>
+            <span class="price">￥
+              <span>80.00</span>
+            </span>
+            <span class="num">x1</span>
+          </div>
+          <div class="describe">
+            <span class="name">桐香猪肉脯</span>
+            <span class="price">￥
+              <span>80.00</span>
+            </span>
+            <span class="num">x1</span>
+          </div>
+          <div class="describe">
+            <span class="name">猪肉纸卷【薄如蝉</span>
+            <span class="price">￥
+              <span>80.00</span>
+            </span>
+            <span class="num">x1</span>
+          </div>
+          <div class="describe">
+              <span class="name">合计</span>
+              <span class="price price1">￥
+                <span>240.00</span>
+              </span>
+            </div>
+          <div class="input-box">
+            <input type="text" class="address" id="address2" placeholder="选择地址" />
+            <div class="tag">配送至</div>
+            <div class="polygon"></div>
+          </div>
+          <div class="btns">
+            <div class="btn btn1">
+              <img src="./images/btn_pay6.png" />
+            </div>
           </div>
         </div>
       </div>
@@ -113,13 +157,13 @@
     (function () {
       $(function () {
         // 阻止手机虚拟键盘弹起
-        $("#address").focus(function () {
+        $(".address").focus(function () {
           document.activeElement.blur();
         });
         var addressArr = ['北京市通州区人和街道光电园路288号', '重庆市江北区观音桥街道和睦路290号', '广东省广州市天河区龙塔街道和平路120号']; //长地址
         var shortAddressArr = ['北京市', '重庆市', '广东省']; //短地址
         var mobileSelect1 = new MobileSelect({
-          trigger: '#address',
+          trigger: '#address1',
           title: '地址选择',
           wheels: [
             { data: addressArr }
@@ -131,7 +175,23 @@
             // data = data.toString();
             // $("#address").val(data.substring(0,3));
             // $("#address").val(data);
-            $("#address").val(shortAddressArr[indexArr]);
+            $("#address1").val(shortAddressArr[indexArr]);
+          }
+        });
+        var mobileSelect2 = new MobileSelect({
+          trigger: '#address2',
+          title: '地址选择',
+          wheels: [
+            { data: addressArr }
+          ],
+          transitionEnd: function (indexArr, data) {
+            //console.log(data);
+          },
+          callback: function (indexArr, data) {
+            // data = data.toString();
+            // $("#address").val(data.substring(0,3));
+            // $("#address").val(data);
+            $("#address2").val(shortAddressArr[indexArr]);
           }
         });
       });

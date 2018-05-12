@@ -126,7 +126,8 @@ img{
 	width: 100%;
 	height: 30.96rem /* 774/25 */;
 	padding-top: 4rem /* 100/25 */;
-	background-image: url(../images/bg.png);
+	// background-image: url(../images/bg.png);
+	background-image: url(../images/bg.jpg);
 	background-size: 100% 30.96rem /* 774/25 */;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -607,6 +608,13 @@ img{
 					font-size: .68rem /* 17/25 */;
 					color: #d9002a;
 				}				
+			}
+			.del{
+				width: .72rem /* 18/25 */;
+				img{
+					display: block;
+					width: 100%;
+				}
 			}
 		}
 		.checkAll{
@@ -1427,77 +1435,106 @@ img{
 	.wrap{
 		padding-left: 11.4%;
 		padding-right: 11.4%;
-		.head-title{
-			letter-spacing: 2px;
-			font-size: .56rem /* 14/25 */;
-			color: #745f31;
-		}
-		.message{
-			margin-top: 0.48rem;
-			font-size: 0.48rem;
-			color: #745f31;
-		}
-		.describe{
-			margin-top: .6rem /* 15/25 */;
-			font-size: .48rem /* 12/25 */;
-			color: #3f2c01;
-			span{
-				color: #d9002a;
+		.pay{
+			display: none;
+			&.active{
+				display:block;
 			}
-		}
-		.input-box{
-			position: relative;
-			width: 10.68rem /* 267/25 */;
-			height: 2.44rem /* 61/25 */;
-			margin: 1.2rem /* 30/25 */ auto 0;
-			background-image: url(../images/textbox.png);
-			background-size: 100%;
-			background-repeat: no-repeat;
-			background-position: center;
-			input{
-				width: 100%;
-				height: 100%;
-				padding-left: 4rem /* 100/25 */;
-				padding-right: 2rem /* 50/25 */;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				border: none;
-				background: none;
+			.head-title{
+				letter-spacing: 2px;
 				font-size: .56rem /* 14/25 */;
-				color: #3f2c01;
+				color: #745f31;
 			}
-			.tag{
-				position: absolute;
-				top: 50%;
-				left: .6rem /* 15/25 */;
-				transform: translate(0,-50%);
-				font-size: .56rem /* 14/25 */;
-				color: #3f2c01;
+			.message{
+				margin-top: 0.48rem;
+				font-size: 0.48rem;
+				color: #745f31;
 			}
-			.polygon{
-				position: absolute;
-				top: 50%;
-				right: 1.12rem /* 28/25 */;
-				transform: translate(0,-50%);
-				width: .36rem /* 9/25 */;
-				height: .4rem /* 10/25 */;
-				background-image: url(../images/polygon.png);
+			.describe{
+				margin-top: .6rem /* 15/25 */;
+				font-size: .48rem /* 12/25 */;
+				color: #3f2c01;
+				span{
+					color: #d9002a;
+				}
+				.name{
+					display: inline-block;
+					width: 44%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					color: #3f2c01;
+				}
+				.price{
+					display: inline-block;
+					width: 30%;
+					margin-left: .4rem /* 10/25 */;
+					&.price1{
+						color: #d9002a;
+						font-size: .72rem /* 18/25 */;
+					}
+				}
+				.num{
+					color: #3f2c01;
+				}
+			}
+			.input-box{
+				position: relative;
+				width: 10.68rem /* 267/25 */;
+				height: 2.44rem /* 61/25 */;
+				margin: 1.2rem /* 30/25 */ auto 0;
+				background-image: url(../images/textbox.png);
 				background-size: 100%;
 				background-repeat: no-repeat;
 				background-position: center;
-			}
-		}
-		.btns{
-			display: flex;
-			justify-content: space-between;
-			width: 10.68rem /* 267/25 */;
-			margin: 1.6rem /* 40/25 */ auto 0;
-			.btn{
-				width: 4.64rem /* 116/25 */;
-				img{
-					display: block;
+				input{
 					width: 100%;
+					height: 100%;
+					padding-left: 4rem /* 100/25 */;
+					padding-right: 2rem /* 50/25 */;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					border: none;
+					background: none;
+					font-size: .56rem /* 14/25 */;
+					color: #3f2c01;
+				}
+				.tag{
+					position: absolute;
+					top: 50%;
+					left: .6rem /* 15/25 */;
+					transform: translate(0,-50%);
+					font-size: .56rem /* 14/25 */;
+					color: #3f2c01;
+				}
+				.polygon{
+					position: absolute;
+					top: 50%;
+					right: 1.12rem /* 28/25 */;
+					transform: translate(0,-50%);
+					width: .36rem /* 9/25 */;
+					height: .4rem /* 10/25 */;
+					background-image: url(../images/polygon.png);
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+			}
+			.btns{
+				display: flex;
+				justify-content: space-between;
+				width: 10.68rem /* 267/25 */;
+				margin: 1.6rem /* 40/25 */ auto 0;
+				.btn{
+					width: 4.64rem /* 116/25 */;
+					img{
+						display: block;
+						width: 100%;
+					}
+					&.btn1{
+						margin: 0 auto;
+					}
 				}
 			}
 		}
