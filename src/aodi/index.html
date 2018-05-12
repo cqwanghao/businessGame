@@ -1,31 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-	<meta name="viewport"
-	    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>奥迪</title>
   <link rel="stylesheet" href="./css/index.css">
   <script>
     (function (window, document) {
-      var setRem = function() {
+      var setRem = function () {
         var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
         if (innerWidth > 768) {
           document.documentElement.style.fontSize = 48 + 'px';
-        }else { 
-          document.documentElement.style.fontSize =  innerWidth / 15 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
         }
-      }; 
+      };
       window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
       setRem();
     })(window, document);
   </script>
 </head>
-  <body>
-    <div>hello world!</div>
-  </body>
+
+<body>
+  <!-- 背景音乐 -->
+  <div id="audio_btn" class="video_exist rotate">
+    <audio loop="" src="./music/music.mp3" id="media" preload=""></audio>
+  </div>
+  <div id="audio_btn2" class="video_exist2">
+    <audio src="./music/car.mp3" id="media2" preload=""></audio>
+  </div>
+  <!-- 横屏提示 -->
+  <div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+      <i class="icon mod-orient-layer__icon-orient"></i>
+      <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
+    </div>
+  </div>
+  <!-- page0 -->
+  <div class="page page0">
+    <div class="page0-01">
+      <img src="./images/bg.jpg" />
+    </div>
+    <div class="page0-02">
+      <img src="./images/carframe1.png" />
+    </div>
+    <div class="page0-03">
+      <img src="./images/carframe2.png" />
+    </div>
+    <div class="page0-04">
+      <img src="./images/citylight.png" />
+    </div>
+    <!-- <div class="page0-05">
+      <img src="./images/flashlight.png" />
+    </div> -->
+    <div class="page0-06">
+      <img src="./images/light1.png" />
+    </div>
+    <div class="page0-07">
+      <img src="./images/text.png" />
+    </div>
+  </div>
+  <!-- page1 -->
+  <div class="page page1">
+    <div class="page1-00"></div>
+    <!-- <div class="page1-01">
+      <img src="./images/page1-01.png" />
+    </div> -->
+    <div class="page1-04">
+      <img src="./images/01_car.png" />
+      <img src="./images/wheel.png" class="wheel wheel1 rotating" />
+      <img src="./images/wheel.png" class="wheel wheel2 rotating" />
+      <div class="page1-02">
+        <img src="./images/carlight.png" />
+      </div>
+    </div>
+    <div class="page1-03">
+      <!-- <img src="./images/page1-03.png" /> -->
+      <img src="./images/circle.png" class="circle" />
+      <img src="./images/wave1.png" class="wave1 active" />
+      <img src="./images/wave2.png" class="wave2 active" />
+      <img src="./images/wave3.png" class="wave3 active" />
+    </div>
+    <div class="page1-05">
+      <p>
+        <span class="t1">谁</span>
+        <span class="t2">知</span>
+        <span class="t3">前</span>
+        <span class="t4">进</span>
+        <span class="t5">的</span>
+        <span class="t6">一</span>
+        <span class="t7">小</span>
+        <span class="t8">步</span>
+        <span class="t9">，</span>
+      </p>
+      <p>
+        <span class="t10">不</span>
+        <span class="t11">是</span>
+        <span class="t12">一</span>
+        <span class="t13">次</span>
+        <span class="t14">次</span>
+        <span class="t15">迈</span>
+        <span class="t16">向</span>
+        <span class="t17">时</span>
+        <span class="t18">代</span>
+        <span class="t19">的</span>
+        <span class="t20">关</span>
+        <span class="t21">键</span>
+        <span class="t22">一</span>
+        <span class="t23">步</span>
+        <span class="t24">？</span>
+      </p>
+    </div>
+  </div>
+  <!-- page2 -->
+  <div class="page page2">
+    <div class="page2-01"></div>
+    <!-- <div class="page2-04">
+      <img src="./images/01_car.png" />
+      <img src="./images/wheel.png" class="wheel wheel1 rotating active" />
+      <img src="./images/wheel.png" class="wheel wheel2 rotating active" />
+      <div class="page2-02">
+        <img src="./images/carlight.png" />
+      </div>
+    </div> -->
+  </div>
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/TweenMax.min.js"></script>
+  <!-- <script src="./js/TweenMax.min.js"></script> -->
+  <script src="./js/index.js"></script>
+</body>
+
 </html>

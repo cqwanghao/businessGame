@@ -83,7 +83,7 @@
               </label>
               <div class="goods">
                 <div class="name">王福记猪肉脯（酥香）</div>
-                <div class="price">￥80.00</div>
+                <div class="price">￥81.00</div>
               </div>
             </div>
             <div class="right">
@@ -107,7 +107,7 @@
               </label>
               <div class="goods">
                 <div class="name">王福记猪肉脯（酥香）</div>
-                <div class="price">￥80.00</div>
+                <div class="price">￥83.00</div>
               </div>
             </div>
             <div class="right">
@@ -255,6 +255,10 @@
         // 去结算
         $(".page").on("click", ".btn_pay", function () {
           window.location.href = "pay.html";
+        });
+        // 删除商品
+        $(".goodlist").on("click",".del",function(){
+          $(this).closest(".list").remove();
         });
       });
     })();
