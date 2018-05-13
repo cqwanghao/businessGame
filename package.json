@@ -4,7 +4,7 @@
   "description": "activity",
   "main": "index.js",
   "scripts": {
-    "watch": "gulp --gulpfile=tools/gulpfile.babel.js --color --watch"
+    "start": "gulp --gulpfile=tools/gulpfile.babel.js --color --watch"
   },
   "repository": {
     "type": "git",

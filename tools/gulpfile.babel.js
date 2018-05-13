@@ -26,8 +26,8 @@ gulp.task('sass', cd => (
     }))
 ));
 
-gulp.task('start', function(){
+gulp.task('watch', function(){
   gulp.watch(path.join(basePath, 'src', fileSrc, 'scss', 'index.scss'), ['sass'])
 });
 
-gulp.task('default', argv.watch && ['start']);
+gulp.task('default', argv.watch && ['watch']);
