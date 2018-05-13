@@ -296,14 +296,14 @@
         }
 
         // 测试代码,正式需删除
-        // $(".page1").on("click",function(){
-        //     // 摇签动画
-        //     signLight();
-        // });
-        // $(".loading").on("click",function(){
-        //     alert(11);
-        //     createjs.Sound.play("shake");
-        // });
+        $(".page1").on("click",function(){
+            // 摇签动画
+            signLight();
+        });
+        $(".loading").on("click",function(){
+            alert(11);
+            createjs.Sound.play("shake");
+        });
 
         // 摇签动画
         function signLight(){

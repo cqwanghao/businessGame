@@ -9,24 +9,25 @@ import plumber from 'gulp-plumber'
 import path from 'path'
 
 const argv = optimist.argv;
+const fileSrc = 'aodi';
 
 let
   basePath = path.resolve(__dirname, '../');
 
 gulp.task('sass', cd => (
-  gulp.src(path.join(basePath, 'src', 'aodi', 'scss', 'index.scss'))
+  gulp.src(path.join(basePath, 'src', fileSrc, 'scss', 'index.scss'))
     .pipe(plumber())
     .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
     .pipe(autoPrefixer({browsers: ['last 20 versions']}))
-    .pipe(gulp.dest(path.join(basePath, 'src', 'aodi', 'css')))
+    .pipe(gulp.dest(path.join(basePath, 'src', fileSrc, 'css')))
     .pipe(notify("Found file: <%= file.relative %>!"))
     .on("error", notify.onError(function (error) {
       return "Message to the notifier: " + error.message;
     }))
 ));
 
-gulp.task('watch', function(){
-  gulp.watch(path.join(basePath, 'src', 'aodi', 'scss', 'index.scss'), ['sass'])
+gulp.task('start', function(){
+  gulp.watch(path.join(basePath, 'src', fileSrc, 'scss', 'index.scss'), ['sass'])
 });
 
-gulp.task('default', argv.watch && ['watch']);
+gulp.task('default', argv.watch && ['start']);

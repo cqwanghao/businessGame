@@ -1575,11 +1575,13 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .loadingWrap .page2 .wrap .upload-group .upload-area .uploads .upload-bg { display: block; width: 3.6rem; margin: 0 auto; }
 
+.loadingWrap .page2 .wrap .upload-group .upload-area .uploads .canvas2 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
 .loadingWrap .page2 .wrap .upload-group .upload-area .fileUpload { position: absolute; left: 0; top: 0; z-index: 2; display: block; width: 100%; height: 100%; opacity: 0; }
 
 .loadingWrap .page2 .wrap .upload-group .operation { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 1rem; }
 
-.loadingWrap .page2 .wrap .upload-group .operation .btn { width: 1rem; }
+.loadingWrap .page2 .wrap .upload-group .operation .btn { pointer-events: auto; width: 1rem; }
 
 .loadingWrap .page2 .wrap .upload-group .operation .btn.shrink { margin: 0.4rem auto; }
 
@@ -2087,9 +2089,9 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .commitWrap .wrap .photos { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; width: 10.68rem; margin: 0 auto; }
 
-.commitWrap .wrap .photos .left { width: 3.4rem; }
+.commitWrap .wrap .photos .left { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 3.4rem; height: 4.96rem; background: url(../images/bottle7.png) no-repeat center; -webkit-background-size: 3.4rem 4.96rem; background-size: 3.4rem 4.96rem; }
 
-.commitWrap .wrap .photos .left img { display: block; width: 100%; }
+.commitWrap .wrap .photos .left img { display: block; width: 1.28rem; }
 
 .commitWrap .wrap .photos .right { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; margin-left: 1.8rem; }
 
@@ -2135,16 +2137,50 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .posterWrap .wrap .rule-box .scanning { margin-top: 0.4rem; text-align: center; font-size: 0.4rem; color: #3f2c01; }
 
-.customizedWrap .wrap { padding-left: 11.4%; padding-right: 11.4%; }
+.customizedWrap { position: relative; }
 
-.customizedWrap .wrap .bottle { display: block; width: 4.44rem; margin: 0.6rem auto 0; pointer-events: auto; }
+.customizedWrap .page2 { position: absolute; top: 0; left: 0; z-index: -1; }
 
-.customizedWrap .wrap .tip { margin-top: 0.8rem; margin-bottom: 1.28rem; text-align: center; font-size: 0.4rem; color: #745f31; }
+.customizedWrap .wrap1 { padding-left: 11.4%; padding-right: 11.4%; }
 
-.customizedWrap .wrap .slogan { margin-bottom: 0.32rem; text-align: center; font-size: 0.56rem; color: #3f2c01; }
+.customizedWrap .wrap1 .poster-head { display: block; width: 10rem; margin: 0 auto; }
 
-.customizedWrap .wrap .btnGo { display: block; width: 2.92rem; margin: 0.64rem auto 0; }
+.customizedWrap .wrap1 .bottle { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 4.44rem; height: 6.64rem; margin: -1.6rem auto 0; background: url(../images/bottle8.png) no-repeat center; -webkit-background-size: 4.44rem 6.64rem; background-size: 4.44rem 6.64rem; }
 
-.customizedWrap .wrap .btnGo.btnGo1 { margin-bottom: 1.28rem; }
+.customizedWrap .wrap1 .bottle .person { width: 1.8rem; }
 
-.customizedWrap .wrap .btnGo img { display: block; width: 100%; }
+.customizedWrap .wrap1 .tip { margin-top: 0.8rem; margin-bottom: 1.28rem; text-align: center; font-size: 0.4rem; color: #745f31; }
+
+.customizedWrap .wrap1 .slogan { margin-bottom: 0.32rem; text-align: center; font-size: 0.56rem; color: #3f2c01; }
+
+.customizedWrap .wrap1 .btnGo { position: relative; z-index: 100; display: block; width: 2.92rem; margin: 0.64rem auto 0; }
+
+.customizedWrap .wrap1 .btnGo.btnGo1 { margin-bottom: 1.28rem; }
+
+.customizedWrap .wrap1 .btnGo img { display: block; width: 100%; }
+
+.customizedWrap .wrap2 { padding-left: 11.4%; padding-right: 11.4%; }
+
+.customizedWrap .wrap2 .poster-head { display: block; width: 10rem; margin: 0 auto; }
+
+.customizedWrap .wrap2 .bottle { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 4.44rem; height: 6.64rem; margin: -1.6rem auto 0; background: url(../images/bottle8.png) no-repeat center; -webkit-background-size: 4.44rem 6.64rem; background-size: 4.44rem 6.64rem; }
+
+.customizedWrap .wrap2 .bottle .person { width: 1.8rem; }
+
+.customizedWrap .wrap2 .rule-box { width: 9.88rem; margin: 0.8rem auto 0; }
+
+.customizedWrap .wrap2 .rule-box p { letter-spacing: 1px; color: #3f2c01; }
+
+.customizedWrap .wrap2 .rule-box .caption { margin-bottom: 0.4rem; font-size: 0.56rem; }
+
+.customizedWrap .wrap2 .rule-box .rule { line-height: 0.72rem; font-size: 0.4rem; }
+
+.customizedWrap .wrap2 .rule-box .reward { line-height: 0.64rem; margin-top: 0.48rem; font-size: 0.4rem; }
+
+.customizedWrap .wrap2 .rule-box .qrcode { display: block; width: 4.8rem; margin: 1.72rem auto 0; }
+
+.customizedWrap .wrap2 .rule-box .scanning { margin-top: 0.4rem; text-align: center; font-size: 0.4rem; color: #3f2c01; }
+
+.customizedWrap .synthesis { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0; }
+
+.customizedWrap .synthesis .result { pointer-events: auto; }

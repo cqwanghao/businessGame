@@ -45,8 +45,12 @@
     </div>
     <!-- customized -->
     <div class="page">
-      <div class="wrap">
-        <img src="./images/bottle5.png" class="bottle" />
+      <div class="wrap1">
+        <img src="./images/poster-head.png" class="poster-head" />
+        <div class="bottle">
+          <img src="./images/person.png" class="person" />
+        </div>
+        <!-- <img src="./images/bottle5.png" class="bottle" /> -->
         <p class="tip">（长按保存图片呼朋唤友来帮助点赞吧）</p>
         <p class="slogan">您将有机会成为王福记代言人</p>
         <p class="slogan">销往全世界</p>
@@ -91,8 +95,28 @@
         </ul>
       </div>
     </div>
+    <div class="page page2">
+      <div class="wrap2">
+        <img src="./images/poster-head.png" class="poster-head" />
+        <div class="bottle">
+          <img src="./images/person.png" class="person" />
+        </div>
+        <div class="rule-box">
+          <p class="caption">活动规则</p>
+          <p class="rule">活动时间：2018.05.001-2018.06.30</p>
+          <p class="rule">活动规则：上传自己照片（确认没有侵犯他人肖像权）提交个人资料可进入排行榜</p>
+          <p class="reward">奖励机制：点赞数最高者可获得iPhoneX并印在产品上销往全球。</p>
+          <img src="./images/qrcode2.png" class="qrcode" />
+          <p class="scanning">扫描二维码参加活动</p>
+        </div>
+      </div>
+    </div>
+    <div class="synthesis" id="synthesis">
+      <img src="" class="result" />
+    </div>
   </div>
   <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/html2canvas.js"></script>
   <script src="./js/index.js"></script>
   <script>
     (function () {
@@ -104,6 +128,13 @@
         // btn2
         $(".page").on("click", ".btnGo2", function () {
           window.location.href = "pay.html";
+        });
+        html2canvas($(".page2")[0], {
+          backgroundColor: 'transparent', // 设置背景透明
+        }).then(function (canvas) {
+          // 生成的图片url
+          console.log(canvas.toDataURL("image/jpeg", 0.8));
+          $("#synthesis").find(".result").attr("src",canvas.toDataURL("image/jpeg", 0.8));
         });
       });
     })();

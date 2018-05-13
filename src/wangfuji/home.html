@@ -74,11 +74,12 @@
             <img src="./images/bottle-bg.png" class="bottle-bg" id="bottle-bg" />
             <div class="uploads">
               <img src="./images/upload-bg.png" class="upload-bg" id="upload-bg" />
+              <canvas class="canvas2" id="canvas2"></canvas>
             </div>
             <input type="file" class="fileUpload" id="fileUpload" accept="image/*">
           </div>
           <div class="operation">
-            <img src="./images/enlarge.png" class="btn" />
+            <img src="./images/enlarge.png" class="btn enlarge" />
             <img src="./images/shrink.png" class="btn shrink" />
             <img src="./images/rotate.png" class="btn rotate" />
           </div>
@@ -89,17 +90,15 @@
             <div class="type">
               <img src="./images/brightness.png" class="brightness" />
             </div>
-            <input type="range" class="range" />
+            <input type="range" class="range" value="50" id="brightness" />
           </div>
           <div class="adjust">
             <div class="type">
               <img src="./images/contrast.png" class="contrast" />
             </div>
-            <input type="range" class="range" />
+            <input type="range" class="range" value="50" id="contrast" />
           </div>
         </div>
-        <input type="file" id="image-file">
-        <canvas width="200" height="200" id="canvas"></canvas>
         <div class="link">
           <img src="./images/btn_save3.png" />
         </div>
@@ -191,6 +190,103 @@
         $(".page1").on("click", ".link3", function () {
           window.location.href = "buy.html";
         });
+
+        // 是否已经上传图片
+        var uploadFlag = false;
+        $('.fileUpload').on('click', function () {
+          $(this).val('');//选择相同文件时不触发change事件，点击后先清除旧文件
+        });
+
+        // 缩放
+        var scale = 1;
+        // 旋转度数
+        var rotate = 0;
+
+        // 上传图片
+        uploadImg($(".fileUpload"), function (cvs) {
+          // 重置
+          scale = 1;
+          rotate = 0;
+          $(".range").val(50);
+          $(".canvas2").css("-webkit-transform", "scale(1) rotate(0)");
+          $(".canvas2").css("transform", "scale(1) rotate(0)");
+          // 替换图片
+          $(".uploads").find("img").attr('src', cvs.toDataURL('image/png', 0.7));
+          $(".uploads").find("img").css("display", "none");
+          uploadFlag = true;
+          var imgSrc = $("#upload-bg").attr("src");
+          var brightness = $("#brightness").val() - 100;
+          var contrast = $("#contrast").val() - 100;
+          console.log(brightness);
+          console.log(contrast);
+          // 黑白处理
+          blackAndWhite(imgSrc, brightness, contrast);
+        });
+
+        // 黑白调整
+        $(".range").on("input", function () {
+          var imgSrc = $("#upload-bg").attr("src");
+          var brightness = $("#brightness").val() - 100;
+          var contrast = $("#contrast").val() - 100;
+          console.log(brightness);
+          console.log(contrast);
+          if (uploadFlag) {
+            // 黑白处理
+            blackAndWhite(imgSrc, brightness, contrast);
+          }
+        });
+
+        // 放大
+        $(".enlarge").on("click", function () {
+          scale += 0.1;
+          $(".canvas2").css("-webkit-transform", "scale(" + scale + ") rotate(" + rotate + "deg)");
+          $(".canvas2").css("transform", "scale(" + scale + ") rotate(" + rotate + "deg)");
+          console.log(scale);
+        });
+        // 缩小
+        $(".shrink").on("click", function () {
+          scale -= 0.1;
+          if(scale <= 1){
+            scale = 1;
+          }
+          $(".canvas2").css("-webkit-transform", "scale(" + scale + ") rotate(" + rotate + "deg)");
+          $(".canvas2").css("transform", "scale(" + scale + ") rotate(" + rotate + "deg)");
+          console.log(scale);
+        });
+        // 旋转
+        $(".rotate").on("click", function () {
+          rotate += 90;
+          if (rotate == 360) {
+            rotate = 0;
+          }
+          $(".canvas2").css("-webkit-transform", "rotate(" + rotate + "deg) scale(" + scale + ")");
+          $(".canvas2").css("transform", "rotate(" + rotate + "deg) scale(" + scale + ")");
+          console.log(rotate);
+        });
+
+        // 黑白处理
+        function blackAndWhite(imgSrc, brightness, contrast) {
+          var imgObj = null, backupImg = null;
+          // imgObj = new Chobi(document.getElementById("fileUpload"));
+          // imgObj = new Chobi(document.getElementById("upload-bg"));
+          // imgObj = new Chobi(cvs.toDataURL('image/png', 0.7));
+          imgObj = new Chobi(imgSrc);
+          imgObj.ready(function () {
+            backupImg = imgObj.getImage();
+            // Brightness
+            imgObj.brightness(brightness);
+            // Contrast 
+            imgObj.contrast(contrast);
+            imgObj.canvas = document.getElementById("canvas2");
+            imgObj.loadImageToCanvas();
+          });
+        }
+
+        // 弹出同意条款
+        $(".page2").on("click", ".link", function () {
+          $(".pageRule").fadeIn(500);
+        });
+
         // 同意条款
         $(".pageRule .agree").on("click", "input", function () {
           var flag = $(this).is(':checked');
@@ -200,6 +296,7 @@
             $(this).siblings().attr("src", "./images/checkbox_n.png");
           }
         });
+
         // 确认同意
         $(".pageRule").on("click", ".link", function () {
           var flag = $(".agree").find(".checkbox").is(':checked');
@@ -211,70 +308,16 @@
             });
             return false;
           }
+          html2canvas($(".uploads")[0], {
+            backgroundColor: 'transparent', // 设置背景透明
+          }).then(function (canvas) {
+            // 生成的图片url
+            // console.log(canvas.toDataURL("image/png"));
+          });
           window.location.href = "customized.html";
         });
-
-        var uploadFlag = false;
-        // 上传图片
-        uploadImg($(".fileUpload"), function (cvs) {
-          // 替换图片
-          $(".uploads").find("img").attr('src', cvs.toDataURL('image/png', 0.7));
-
-          var imgObj = null, backupImg = null;
-          imgObj = new Chobi(document.getElementById("fileUpload"));
-          // imgObj = new Chobi($(".uploads").find("img")[0]);
-          // imgObj = new Chobi(document.getElementById("./images/photo2.png"));
-          imgObj.ready(function () {
-            console.log(11);
-            backupImg = imgObj.getImage();
-            // Brightness
-            imgObj.brightness(-50);
-            // Contrast 
-            imgObj.contrast(-100);
-            imgObj.canvas = document.getElementById("canvas");
-            imgObj.loadImageToCanvas();
-          });
-
-            if (!uploadFlag) {
-              var obj1 = $('.upload-bg')[0];
-              var obj2 = $(".fileUpload")[0];
-              //移动缩放旋转
-              transformImg(obj1, obj2);
-            }
-            uploadFlag = true;
-          });
-          // 生成图片
-          $(".page2").on("click", ".link", function () {
-            $(".pageRule").fadeIn(500);
-            html2canvas($(".upload-area")[0], {
-              backgroundColor: 'transparent', // 设置背景透明
-            }).then(function (canvas) {
-              // 生成的图片url
-              console.log(canvas.toDataURL("image/png"));
-            });
-          });
-
-          // 处理图片黑白
-          //make global Chobi object
-          // var imgObj = null, backupImg = null;
-
-          // $("#fileUpload").on("change", function () {
-          //   //pass input type=file element to Chobi constructor
-          //   imgObj = new Chobi(document.getElementById("fileUpload"));
-          //   // imgObj = new Chobi(document.getElementById("./images/photo2.png"));
-          //   imgObj.ready(function () {
-          //     console.log(11);
-          //     backupImg = imgObj.getImage();
-          //     // Brightness
-          //     imgObj.brightness(-50);
-          //     // Contrast 
-          //     imgObj.contrast(-100);
-          //     imgObj.canvas = document.getElementById("canvas");
-          //     imgObj.loadImageToCanvas();
-          //   });
-          // });
-        });
-      })();
+      });
+    })();
   </script>
 </body>
 

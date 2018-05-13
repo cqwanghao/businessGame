@@ -9,6 +9,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>王福记猪肉脯</title>
+  <link rel="stylesheet" href="./css/LArea.css" />
   <link rel="stylesheet" href="./css/index.css">
   <script>
     (function (window, document) {
@@ -48,7 +49,7 @@
       <div class="wrap">
         <div class="photos">
           <div class="left">
-            <img src="./images/bottle4.png" />
+            <img src="./images/person.png" />
           </div>
           <div class="right">
             <p>等等，</p>
@@ -74,10 +75,13 @@
             </div>
             <div class="option">
               <div class="caption">地址*</div>
-              <div class="area">
+              <!-- <div class="area">
                 <div class="addr">北京市</div>
                 <div class="addr">市辖区</div>
                 <div class="addr">东城区东城区</div>
+              </div> -->
+              <div class="input-box">
+                <input type="text" id="city" placeholder="请选择城市">
               </div>
               <div class="input-box">
                 <input type="text" placeholder="请输入详细地址" />
@@ -126,7 +130,31 @@
     </div>
   </div>
   <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/LArea.js"></script>
+  <script src="./js/LAreaData2.js"></script>
   <script src="./js/index.js"></script>
+  <script>
+    (function () {
+      $(function () {
+        // 阻止手机虚拟键盘弹起
+        $("#city").focus(function () {
+          document.activeElement.blur();
+        });
+        // 城市选择器
+        var area1 = new LArea();
+        area1.init({
+          'trigger': '#city',
+          'valueTo': '#value1',
+          'keys': {
+            id: 'value',
+            name: 'text'
+          },
+          'type': 2,
+          'data': [provs_data, citys_data, dists_data]
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
