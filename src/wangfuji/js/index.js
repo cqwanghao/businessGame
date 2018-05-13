@@ -38,10 +38,12 @@
     $(".nav_main").on("click", ".menu", function () {
       $(".pageMask").fadeIn(500);
       $(".nav_main").find(".mine").find(".menus").slideUp(500);
+      $(".pageMask").find("li").addClass("enter").removeClass("leave");
     });
     // 关闭mask
     $(".pageMask").on("click", ".close", function () {
       $(".pageMask").fadeOut(500);
+      $(".pageMask").find("li").removeClass("enter").addClass("leave");
     });
     // 你不懂得王福记
     $(".pageMask .maskMenu").find("li").eq(0).on("click", function () {
@@ -100,6 +102,10 @@ function uploadImg($obj, callback, selector) {
       var image = new Image();
       image.src = result;
       image.onload = function () { //创建一个image对象，给canvas绘制使用
+        var cw = image.width;
+        var ch = image.height;
+        var w = image.width;
+        var h = image.height;
 
         var cvs = document.createElement('canvas');
         var ctx = cvs.getContext('2d');
@@ -107,6 +113,20 @@ function uploadImg($obj, callback, selector) {
 
         cvs.width = this.width * scale;
         cvs.height = this.height * scale; //计算等比缩小后图片宽高
+
+        if (cw > 400 && cw > ch) {
+          w = 400;
+          h = (400 * ch) / cw;
+          cvs.width = w;
+          cvs.height = h;
+        }
+        if (ch > 400 && ch > cw) {
+          h = 400;
+          w = (400 * cw) / ch;
+          cvs.width = w;
+          cvs.height = h;
+
+        }
 
         if (Orientation && Orientation != 1) {
           switch (Orientation) {

@@ -1516,10 +1516,6 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .video_exist2 { display: none; }
 
-#orientLayer { display: none; }
-
-@media screen and (max-aspect-ratio: 9 / 13) { #orientLayer { display: block; } }
-
 .mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997; }
 
 .mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center; }
@@ -1529,6 +1525,12 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff; }
 
 .mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff; }
+
+.loading { position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: #000; z-index: 9996; }
+
+.loading .word { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 100%; height: 100%; }
+
+.loading .word span { letter-spacing: 2px; font-size: 0.56rem; color: #ffffff; }
 
 .page { display: none; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; overflow: hidden; }
 
@@ -1548,7 +1550,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .page1 { display: block; opacity: 0; }
 
-.page1 .page1-00 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(../images/02_bg.jpg); background-repeat: no-repeat; -webkit-background-size: auto 100%; background-size: auto 100%; }
+.page1 .page1-00 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(../images/02_bg.jpg); background-repeat: no-repeat; -webkit-background-size: auto 130%; background-size: auto 130%; }
 
 .page1 .page1-04 { position: absolute; top: 40.5%; left: 10.3%; width: 82.8%; }
 
@@ -1586,7 +1588,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .page2 { display: block; opacity: 0; }
 
-.page2 .page2-01 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(../images/04_bg.jpg); background-repeat: no-repeat; -webkit-background-size: auto 100%; background-size: auto 100%; }
+.page2 .page2-01 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(../images/04_bg.jpg); background-repeat: no-repeat; -webkit-background-size: auto 110%; background-size: auto 110%; }
 
 .page2 .page2-02 { position: absolute; top: 11.6%; left: 50%; width: 32.6%; margin-left: -16.3%; }
 
@@ -1602,21 +1604,21 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .page4 { display: block; opacity: 0; }
 
-.page4 .page4-02 { position: absolute; top: 42.6%; left: 100%; width: 68.9%; }
+.page4 .page4-02 { position: absolute; top: 38.6%; left: 100%; width: 68.9%; }
 
 .page4 .page4-03 { position: absolute; top: 14.5%; left: 50%; width: 33.5%; margin-left: -16.75%; }
 
 .page4 .page4-04 { position: absolute; bottom: 10%; left: 50%; width: 76.6%; margin-left: -38.3%; }
 
-.page4 .page5-02, .page4 .page4-05 { position: absolute; top: 34.2%; left: 50%; width: 49.5%; margin-left: -24.75%; opacity: 0; }
+.page4 .page4-05 { position: absolute; top: 34.2%; left: 50%; width: 49.5%; margin-left: -24.75%; opacity: 0; }
 
-.page4 .page5-03, .page4 .page4-06 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); }
+.page4 .page4-06 { opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); }
 
-.page4 .page5-04, .page4 .page4-07 { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 0.4rem; letter-spacing: 2px; color: #ffffff; }
+.page4 .page4-07 { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 0.4rem; letter-spacing: 2px; color: #ffffff; }
 
-.page4 .page5-04 .word.word1, .page4 .page4-07 .word.word1 { margin-right: 0.8rem; }
+.page4 .page4-07 .word.word1 { margin-right: 0.8rem; }
 
-.page4 .page5-04 .word span, .page4 .page4-07 .word span { opacity: 0; }
+.page4 .page4-07 .word span { opacity: 0; }
 
 .page5 { display: block; opacity: 0; }
 
