@@ -12,18 +12,14 @@
             { "src": baseUrl + "carlight.png", "id": "carlight" },
             { "src": baseUrl + "circle.png", "id": "circle" },
             { "src": baseUrl + "citylight.png", "id": "citylight" },
-            { "src": baseUrl + "flashlight.png", "id": "flashlight" },
             { "src": baseUrl + "light1.png", "id": "light1" },
             { "src": baseUrl + "light2.png", "id": "light2" },
             { "src": baseUrl + "normalmusic.png", "id": "normalmusic" },
-            { "src": baseUrl + "page0-01.png", "id": "page0-01" },
             { "src": baseUrl + "page0-02.png", "id": "page0-02" },
-            { "src": baseUrl + "page0-03.png", "id": "page0-03" },
             { "src": baseUrl + "page0-04.png", "id": "page0-04" },
             { "src": baseUrl + "page1-01.png", "id": "page1-01" },
             { "src": baseUrl + "page1-02.png", "id": "page1-02" },
-            { "src": baseUrl + "page1-03.png", "id": "page1-03" },
-            // { "src": baseUrl + "phone.png", "id": "phone" },
+            { "src": baseUrl + "phone.png", "id": "phone" },
             { "src": baseUrl + "text.png", "id": "text" },
             { "src": baseUrl + "wave1.png", "id": "wave1" },
             { "src": baseUrl + "wave2.png", "id": "wave2" },
@@ -50,6 +46,7 @@
         }
         audioAutoPlay('media');
 
+        // 车子启动
         document.getElementById('media2').play();
         document.getElementById('media2').pause();
         //处理iphone不能自动播放
@@ -58,15 +55,7 @@
             document.getElementById('media2').pause();
         }, false);
 
-        // document.getElementById('media2').play();
-        // document.addEventListener("WeixinJSBridgeReady", function () {
-        //     WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-        //         document.getElementById('media2').play();
-        //     });
-        // }, false);
-        // 背景音乐暂停
-        // document.getElementById('media2').pause();
-
+        // 播放暂停背景音乐
         $('.video_exist').on('click', function () {
             var media = document.getElementById('media');
             if (media.paused) {
@@ -78,16 +67,16 @@
             }
         });
 
-
-        var donghua = new TimelineMax();
-
         // 文字播放
         function playWord(obj, second) {
-            donghua.to($(".t" + obj), second, {
+            donghua.to(obj, second, {
                 ease: Linear.easeIn,
                 opacity: 1
             });
         }
+
+        // 动画实例
+        var donghua = new TimelineMax();
 
         // page0
         donghua.to($('.page0-03'), 2, {
@@ -109,47 +98,44 @@
         // page0淡出
         donghua.to($('.page0'), 2, {
             opacity: 0,
-            ease: Linear.easeIn,
-            // transform: 'translate3d(-100% , 0, 0)'
+            zIndex: 1,
+            ease: Linear.easeOut,
         });
-        donghua.to($('.page1'), 1, {
-            display: "block",
+        // page1淡入
+        donghua.to($('.page1'), 2, {
             opacity: 1,
-            ease: Linear.easeIn,
-            // delay: 5
-            // transform: 'translate3d(0 , 0, 0)'
-        }, 6);
+            zIndex: 2,
+            ease: Linear.easeIn
+        }, 5);
+
+        var timer0 = setTimeout(function(){
+            $(".page1-03").fadeIn(1000);
+        },7000);
 
 
         // 点击启动
         $(".page1-03").on("click", function () {
             $(this).off("click");
+            $(this).fadeOut(1000);
             // 文字播放
             var i = 1;
             for (; i < 25; i++) {
-                playWord(i, 0.2);
+                playWord($(".t" + i), 0.2);
             }
             var timer = setTimeout(function () {
                 // 启动车辆音乐
-                // document.getElementById('media2').play();
                 document.getElementById('media2').play();
                 document.addEventListener("WeixinJSBridgeReady", function () {
-                    // WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
                     document.getElementById('media2').play();
-                    // });
                 }, false);
+                // 添加车轮旋转样式
                 $(".page1-04").find(".wheel").addClass("active");
                 // 背景移动
                 donghua.to($('.page1-00'), 12, {
-                    // opacity: 1,
-                    // display: "block",
-                    backgroundPosition: "-900px 0",
-                    ease: Linear.easeIn,
-                    // transform: 'translate3d(-1824px , 0, 0)'
-                    // transform: 'translate3d(0 , 0, 0)'
+                    backgroundPosition: "-14.6rem 0",
+                    ease: Linear.easeIn
                 });
-                // 文字淡出
-                // page0淡出
+                // 2s后文字淡出
                 donghua.to($('.page1-05'), 2, {
                     opacity: 0,
                     ease: Linear.easeIn,
@@ -159,35 +145,114 @@
             }, 4800);
 
             var timer1 = setTimeout(function () {
+                // 移除车轮旋转样式
                 $(".page1-04").find(".wheel").removeClass("active");
+                // 3s后文字淡入
+                donghua.to($('.page1-06'), 3, {
+                    opacity: 1,
+                    ease: Linear.easeIn,
+                });
+                // page1淡出
+                donghua.to($('.page1'), 2, {
+                    opacity: 0,
+                    zIndex: 1,
+                    ease: Linear.easeOut,
+                });
+                // page2淡入
+                donghua.to($('.page2'), 2, {
+                    opacity: 1,
+                    zIndex: 2,
+                    ease: Linear.easeIn
+                });
+                // page2
+                // 背景移动
+                donghua.to($('.page2-01'), 8, {
+                    backgroundPosition: "-1.2rem 0",
+                    ease: Linear.easeIn
+                });
+                donghua.from($('.page2-02'), 2, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+
+                // page2淡出
+                donghua.to($('.page2'), 2, {
+                    opacity: 0,
+                    zIndex: 1,
+                    ease: Linear.easeOut,
+                });
+                // page3淡入
+                donghua.to($('.page3'), 2, {
+                    opacity: 1,
+                    zIndex: 2,
+                    ease: Linear.easeIn
+                });
+
+                // page3
+                donghua.to($('.page3-01'), 5, {
+                    ease: Linear.easeIn,
+                    transform: 'scale(1.6)'
+                });
+                donghua.from($('.page3-04'), 2, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+
+                // page3淡出
+                donghua.to($('.page3'), 2, {
+                    opacity: 0,
+                    zIndex: 1,
+                    ease: Linear.easeOut,
+                });
+                // page4淡入
+                donghua.to($('.page4'), 2, {
+                    opacity: 1,
+                    zIndex: 2,
+                    ease: Linear.easeIn
+                });
+
+                // page4
+                donghua.to($('.page4-02'), 5, {
+                    ease: Linear.easeIn,
+                    transform: 'translate3d(-50% , 0, 0)'
+                });
+                donghua.from($('.page4-03'), 2, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+                donghua.from($('.page4-04'), 2, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+                
+                // page4淡出
+                donghua.to($('.page4'), 2, {
+                    opacity: 0,
+                    zIndex: 1,
+                    ease: Linear.easeOut,
+                });
+                // page5淡入
+                donghua.to($('.page5'), 2, {
+                    opacity: 1,
+                    zIndex: 2,
+                    ease: Linear.easeIn
+                });
+                donghua.to($('.page5-02'), 2, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+                donghua.from($('.page5-03'), 1, {
+                    opacity: 0,
+                    ease: Linear.easeIn
+                });
+                // 文字播放
+                var j = 1;
+                for (; j < 13; j++) {
+                    playWord($(".j" + j), 0.2);
+                }
                 clearTimeout(timer1);
             }, 16800);
-            // donghua.to($('.page1-04'), 2, {
-            //     ease: Linear.easeIn,
-            //     transform: 'translate3d(40% , 0, 0)'
-            // });
-
-            // donghua.to($('.page1'), 2, {
-            //     // opacity: 0,
-            //     ease: Linear.easeIn,
-            //     // delay: 5
-            //     transform: 'translate3d(-100% , 0, 0)'
-            // },4.8);
-
-            // donghua.to($('.page1-04'), 10, {
-            //     // display: "block",
-            //     ease: Linear.easeIn,
-            //     transform: 'translate3d(100px , 0, 0)'
-            // },6.8);
-            // donghua.to($('.page2'), 2, {
-            //     // opacity: 1,
-            //     display: "block",
-            //     // backgroundPosition: "-1000px 0",
-            //     ease: Circ.easeOut,
-            //     // transform: 'translate3d(-1824px , 0, 0)'
-            //     transform: 'translate3d(0 , 0, 0)'
-            // },4.8);
-
         });
+
     });
 })();

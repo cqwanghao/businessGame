@@ -97,7 +97,7 @@ img{
 }
 .page0{
 	display: block;
-	// overflow: hidden;
+	// opacity: 0;
 	.page0-02{
 		position: absolute;
 		top: 0%;
@@ -118,12 +118,6 @@ img{
 		width: 100%;
 		opacity: 0;
 	}
-	// .page0-05{
-	// 	position: absolute;
-	// 	bottom: -8%;
-	// 	left: 0%;
-	// 	width: 100%;
-	// }
 	.page0-06{
 		position: absolute;
 		top: 0%;
@@ -141,9 +135,8 @@ img{
 	}
 }
 .page1{
-	// display: block;
+	display: block;
 	opacity: 0;
-	// z-index: 2;
 	.page1-00{
 		position: absolute;
 		top: 0;
@@ -153,11 +146,6 @@ img{
 		background-image: url(../images/02_bg.jpg);
 		background-repeat: no-repeat;
 		background-size: auto 100%;
-		img{
-			max-width: none;
-			width: auto;
-			height: 100%;
-		}
 	}
 	.page1-04{
 		position: absolute;
@@ -166,12 +154,12 @@ img{
 		width: 82.8%;
 	}
 	.page1-03{
+		display: none;
 		position: absolute;
 		bottom: 8.1%;
 		left: 50%;
 		width: 15.2%;
 		margin-left: -7.6%;
-		// animation: carLight 10s ease-in-out infinite forwards;
 		.wave1{
 			position: absolute;
 			top: 0;
@@ -248,54 +236,126 @@ img{
 			bottom: 8.5%;
 		}
 	}
+	.page1-06{
+		position: absolute;
+		top: 11.3%;
+		left: 50%;
+		width: 22.2%;
+		margin-left: -11.1%;
+		opacity: 0;
+	}
 }
 .page2{
-	// display: block;
-	// z-index: 1;
-	// transform: translate3d(-100%,0,0);
+	display: block;
+	opacity: 0;
 	.page2-01{
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-image: url(../images/02_bg.jpg);
+		background-image: url(../images/04_bg.jpg);
 		background-repeat: no-repeat;
 		background-size: auto 100%;
-		img{
-			max-width: none;
-			width: auto;
-			height: 100%;
-		}
-	}
-	.page2-04{
-		position: absolute;
-		top: 40.5%;
-		left: 10.3%;
-		width: 82.8%;
 	}
 	.page2-02{
 		position: absolute;
-		top: 38%;
-		right: -9%;
-		width: 45.9%;
-		animation: carLight 6s linear infinite forwards;
+		top: 11.6%;
+		left: 50%;
+		width: 32.6%;
+		margin-left: -16.3%;
+		// opacity: 0;
 	}
-	.wheel{
-		display: none;
+}
+.page3{
+	opacity: 0;
+	display: block;
+	.page3-01{
+		position: relative;
+	}
+	.page3-02{
 		position: absolute;
-		width: 11.5%;
-		&.active{
-			display: block;
-			animation: rotating .6s linear infinite;
+		top: 38.9%;
+		right: 0%;
+		width: 52%;
+		.page3-03{
+			position: absolute;
+			top: 22%;
+			left: 6%;
+			width: 43.8%;
+			animation: carLight 6s linear infinite forwards;
 		}
-		&.wheel1{
-			left: 15.8%;
-			bottom: 9.7%;
-		}
-		&.wheel2{
-			right: 12.8%;
-			bottom: 9.7%;
+	}
+	.page3-04{
+		position: absolute;
+		top: 16.6%;
+		left: 50%;
+		width: 38.7%;
+		margin-left: -19.35%;
+	}
+}
+.page4{
+	display: block;
+	opacity: 0;
+	.page4-02{
+		position: absolute;
+		top: 42.6%;
+		left: 68%;
+		width: 68.9%;
+	}
+	.page4-03{
+		position: absolute;
+		top: 14.5%;
+		left: 50%;
+		width: 33.5%;
+		margin-left: -16.75%;
+	}
+	.page4-04{
+		position: absolute;
+		bottom: 10%;
+		left: 50%;
+		width: 76.6%;
+		margin-left: -38.3%;
+	}
+}
+.page5{
+	display: block;
+	opacity: 0;
+	.page5-02{
+		position: absolute;
+		top: 34.2%;
+		left: 50%;
+		width: 49.5%;
+		margin-left: -24.75%;
+		opacity: .5;
+	}
+	.page5-03{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.6);
+	}
+	.page5-04{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 0.4rem;
+		letter-spacing: 2px;
+		color: #ffffff;
+		.word{
+			&.word1{
+				margin-right: .8rem /* 20/25 */;
+			}
+			span{
+				opacity: 0;
+			}
 		}
 	}
 }
