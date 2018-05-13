@@ -300,7 +300,8 @@ img{
 	.page4-02{
 		position: absolute;
 		top: 42.6%;
-		left: 68%;
+		// left: 68%;
+		left: 100%;
 		width: 68.9%;
 	}
 	.page4-03{
@@ -316,6 +317,44 @@ img{
 		left: 50%;
 		width: 76.6%;
 		margin-left: -38.3%;
+	}
+	.page5-02,.page4-05{
+		position: absolute;
+		top: 34.2%;
+		left: 50%;
+		width: 49.5%;
+		margin-left: -24.75%;
+		// opacity: .5;
+		opacity: 0;
+	}
+	.page5-03,.page4-06{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.6);
+	}
+	.page5-04,.page4-07{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 0.4rem;
+		letter-spacing: 2px;
+		color: #ffffff;
+		.word{
+			&.word1{
+				margin-right: .8rem /* 20/25 */;
+			}
+			span{
+				opacity: 0;
+			}
+		}
 	}
 }
 .page5{
