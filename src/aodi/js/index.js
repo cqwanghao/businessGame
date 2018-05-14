@@ -33,10 +33,13 @@
         var page4 = new TimelineMax();
 
         var baseUrl = "./images/";
+        var baseUrl2 = "./music/";
         // loading页图片加载
         var queue0 = new createjs.LoadQueue(true);
         var fest0 = [
-            { "src": baseUrl + "01_car.png", "id": "01_car" },
+            { "src": baseUrl2 + "music.mp3", "id": "music" },
+            { "src": baseUrl2 + "car.mp3", "id": "02_bg" },
+            { "src": baseUrl + "01_car.png", "id": "car" },
             { "src": baseUrl + "02_bg.jpg", "id": "02_bg" },
             { "src": baseUrl + "02_text.png", "id": "02_text" },
             { "src": baseUrl + "04_bg.jpg", "id": "04_bg" },
@@ -60,7 +63,6 @@
             { "src": baseUrl + "normalmusic.png", "id": "normalmusic" },
             { "src": baseUrl + "page0-02.png", "id": "page0-02" },
             { "src": baseUrl + "page0-04.png", "id": "page0-04" },
-            { "src": baseUrl + "page1-01.png", "id": "page1-01" },
             { "src": baseUrl + "page1-02.png", "id": "page1-02" },
             { "src": baseUrl + "page3-03.png", "id": "page3-03" },
             { "src": baseUrl + "page05-01.png", "id": "page05-01" },
@@ -126,7 +128,7 @@
                 opacity: 1
             });
         }
-
+        
         // 首页开始
         function startPage() {
             // page0
@@ -193,10 +195,11 @@
             });
 
             // 背景移动
-            donghua2.to($('.page1-00'), 10, {
-                backgroundPosition: "-14.6rem 0",
+            donghua2.to($('.page1-001 img'), 10, {
+                // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
-                onComplete: function () {
+                transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
+                onComplete: function(){
                     // page1淡出
                     page1.to($('.page1'), 2, {
                         opacity: 0,
@@ -211,11 +214,37 @@
                     });
                 }
             });
+
+            // 背景移动
+            // donghua2.to($('.page1-00'), 10, {
+            //     backgroundPosition: "-14.6rem 0",
+            //     ease: Linear.easeIn,
+            //     onComplete: function () {
+            //         // page1淡出
+            //         page1.to($('.page1'), 2, {
+            //             opacity: 0,
+            //             zIndex: 1,
+            //             ease: Linear.easeOut
+            //         });
+            //         // page2淡入
+            //         page2.to($('.page2'), 2, {
+            //             opacity: 1,
+            //             zIndex: 2,
+            //             ease: Linear.easeIn
+            //         });
+            //     }
+            // });
             // page2
             // 背景移动
-            donghua2.to($('.page2-01'), 6, {
-                backgroundPosition: "-1rem 0",
-                ease: Linear.easeIn
+            // donghua2.to($('.page2-01'), 6, {
+            //     backgroundPosition: "-1rem 0",
+            //     ease: Linear.easeIn
+            // });
+            // 背景移动
+            donghua2.to($('.page2-001 img'), 6, {
+                // backgroundPosition: "-1rem 0",
+                ease: Linear.easeIn,
+                transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
             });
             donghua2.from($('.page2-02'), 2, {
                 opacity: 0,

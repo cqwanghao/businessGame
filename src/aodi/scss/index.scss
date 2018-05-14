@@ -20,7 +20,7 @@ img{
 	position: absolute;
 	right: .4rem;
 	top: .4rem;
-	z-index: 10;
+	z-index: 100;
 	background: url(../images/normalmusic.png) no-repeat;
 	background-size: .8rem .8rem;
 }
@@ -161,6 +161,7 @@ img{
 .page1{
 	display: block;
 	opacity: 0;
+	// z-index: 3;
 	.page1-00{
 		position: absolute;
 		top: 0;
@@ -171,6 +172,29 @@ img{
 		background-repeat: no-repeat;
 		// background-size: auto 100%;
 		background-size: auto 130%;
+	}
+	.page1-001{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		img{
+			max-width: none;
+			width: auto;
+			height: 100%;
+			transform: scale(1.3);
+			transform-origin: 0 50%;
+		}
+	}
+	.page1-002{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
 	}
 	.page1-04{
 		position: absolute;
@@ -273,6 +297,29 @@ img{
 .page2{
 	display: block;
 	opacity: 0;
+	.page2-001{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		img{
+			max-width: none;
+			width: auto;
+			height: 100%;
+			transform: scale(1.1);
+			transform-origin: 0 50%;
+		}
+	}
+	.page2-002{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
 	.page2-01{
 		position: absolute;
 		top: 0;
