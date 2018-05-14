@@ -28,6 +28,7 @@
         var donghua2 = new TimelineMax();
         var donghua3 = new TimelineMax();
         var light = new TimelineMax();
+        var button = new TimelineMax();
         var page0 = new TimelineMax();
         var page1 = new TimelineMax();
         var page2 = new TimelineMax();
@@ -40,10 +41,17 @@
         // loading页图片加载
         var queue0 = new createjs.LoadQueue(true);
         var fest0 = [
-            { "src": baseUrl2 + "music.mp3", "id": "music" },
-            { "src": baseUrl2 + "car.mp3", "id": "02_bg" },
+            // { "src": baseUrl2 + "music.mp3", "id": "music" },
+            // { "src": baseUrl2 + "car.mp3", "id": "02_bg" },
+
+            // baseUrl + "01_car.png",
+            // baseUrl + "02_bg.jpg"
+
             { "src": baseUrl + "01_car.png", "id": "car" },
-            { "src": baseUrl + "02_bg.jpg", "id": "02_bg" },
+            // { "src": baseUrl + "02_bg.jpg", "id": "02_bg" },
+            // { "src": "./images/02bg.jpg", "id": "02bg" },
+            // { "src": "./images/02.png", "id": "02" },
+            { "src": baseUrl + "02.png", "id": "02" },
             { "src": baseUrl + "02_text.png", "id": "02_text" },
             { "src": baseUrl + "04_bg.jpg", "id": "04_bg" },
             { "src": baseUrl + "04_text.png", "id": "04_text" },
@@ -81,9 +89,22 @@
 
         var progress = 0;
 
-        queue0.installPlugin(createjs.Sound);
+        // queue0.installPlugin(createjs.Sound);
         queue0.loadManifest(fest0);
-        // queue0.on("fileload", _this.handleFileprogress0, this);
+        var progress = 0;
+        queue0.on("fileload", function(){
+            progress++;
+            var imgArrlength = parseInt((progress / fest0.length) * 100);
+            if ( imgArrlength >= 100) {
+                $(".loading").hide();
+                loadingFlag = true;
+                if (orientationFlag && loadingFlag) {
+                    // 首页开始
+                    startPage();
+                }
+            }
+            // console.log(progress);
+        }, this);
         queue0.on("complete", function () {
             $(".loading").hide();
             loadingFlag = true;
@@ -91,7 +112,7 @@
                 // 首页开始
                 startPage();
             }
-        }, this);
+        },this);
 
         // 背景音乐播放
         function audioAutoPlay(id) {
@@ -176,7 +197,11 @@
         // 点击启动
         $(".page1-03").on("click", function () {
             $(this).off("click");
-            $(this).fadeOut(1000);
+            // $(this).fadeOut(1000);
+            button.to($('.page1-03'), 2, {
+                ease: Linear.easeIn,
+                opacity: 0
+            });
             // 文字播放
             var i = 1;
             for (; i < 24; i++) {
@@ -198,7 +223,7 @@
                     // 车光向左移动
                     light.to($('.page1-004'), 10, {
                         ease: Linear.easeIn,
-                        transform: 'translate3d(-26rem , 0, 0)',
+                        transform: 'translate3d(-23rem , -60%, 0)',
                     });
                 }
             });
@@ -208,7 +233,7 @@
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
                 // transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
-                transform: 'translate3d(-26rem , 0, 0) scale(1.3)',
+                transform: 'translate3d(-23rem , 0, 0) scale(1.3)',
                 onComplete: function(){
                     // 删除车轮旋转样式
                     $(".page1-04").find(".wheel").removeClass("active");
@@ -241,7 +266,7 @@
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
                 // transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
-                transform: 'translate3d(-2rem , 0, 0) scale(1.1)'
+                transform: 'translate3d(-1rem , 0, 0) scale(1.2)'
             });
             donghua2.from($('.page2-02'), 2, {
                 opacity: 0,
