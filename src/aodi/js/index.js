@@ -34,7 +34,8 @@
         var page3 = new TimelineMax();
         var page4 = new TimelineMax();
 
-        var baseUrl = "./images/";
+        // var baseUrl = "./images/";
+        var baseUrl = "http://p28cve2yr.bkt.clouddn.com/";
         var baseUrl2 = "./music/";
         // loading页图片加载
         var queue0 = new createjs.LoadQueue(true);
@@ -197,7 +198,7 @@
                     // 车光向左移动
                     light.to($('.page1-004'), 10, {
                         ease: Linear.easeIn,
-                        transform: 'translate3d(-30rem , 0, 0)',
+                        transform: 'translate3d(-26rem , 0, 0)',
                     });
                 }
             });
@@ -207,7 +208,7 @@
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
                 // transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
-                transform: 'translate3d(-30rem , 0, 0) scale(1.3)',
+                transform: 'translate3d(-26rem , 0, 0) scale(1.3)',
                 onComplete: function(){
                     // 删除车轮旋转样式
                     $(".page1-04").find(".wheel").removeClass("active");
@@ -240,7 +241,7 @@
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
                 // transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
-                transform: 'translate3d(-3rem , 0, 0) scale(1.1)'
+                transform: 'translate3d(-2rem , 0, 0) scale(1.1)'
             });
             donghua2.from($('.page2-02'), 2, {
                 opacity: 0,
