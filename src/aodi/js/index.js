@@ -1,5 +1,8 @@
 (function () {
     $(function () {
+        // init vConsole
+        var vConsole = new VConsole();
+
         var orientationFlag = false;
         var loadingFlag = false;
         // 判断方向
@@ -92,27 +95,39 @@
         // queue0.installPlugin(createjs.Sound);
         queue0.loadManifest(fest0);
         var progress = 0;
-        queue0.on("fileload", function(){
-            progress++;
-            var imgArrlength = parseInt((progress / fest0.length) * 100);
-            if ( imgArrlength >= 100) {
-                $(".loading").hide();
-                loadingFlag = true;
-                if (orientationFlag && loadingFlag) {
-                    // 首页开始
-                    startPage();
-                }
-            }
-            // console.log(progress);
-        }, this);
+        // queue0.on("fileload", function(){
+        //     progress++;
+        //     var imgProgress = parseInt((progress / fest0.length) * 100);
+        //     if ( imgProgress >= 100) {
+        //         $(".loading").hide();
+        //         loadingFlag = true;
+        //         if (orientationFlag && loadingFlag) {
+        //             // 首页开始
+        //             startPage();
+        //         }
+        //     }
+        //     // console.log(progress);
+        // }, this);
+        // 加载完成
         queue0.on("complete", function () {
+            console.log("加载完成");
             $(".loading").hide();
             loadingFlag = true;
             if (orientationFlag && loadingFlag) {
                 // 首页开始
                 startPage();
             }
-        },this);
+        }, this);
+        // 加载失败
+        queue0.on("error", function () {
+            console.log("加载失败");
+            // $(".loading").hide();
+            // loadingFlag = true;
+            // if (orientationFlag && loadingFlag) {
+            //     // 首页开始
+            //     startPage();
+            // }
+        }, this);
 
         // 背景音乐播放
         function audioAutoPlay(id) {
@@ -154,7 +169,7 @@
                 opacity: 1
             });
         }
-        
+
         // 首页开始
         function startPage() {
             // page0
@@ -234,7 +249,7 @@
                 ease: Linear.easeIn,
                 // transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
                 transform: 'translate3d(-23rem , 0, 0) scale(1.3)',
-                onComplete: function(){
+                onComplete: function () {
                     // 删除车轮旋转样式
                     $(".page1-04").find(".wheel").removeClass("active");
                 }
@@ -244,7 +259,7 @@
             donghua2.to($('.page1-06'), 2, {
                 opacity: 1,
                 ease: Linear.easeIn,
-                onComplete: function(){
+                onComplete: function () {
                     // page1淡出
                     page1.to($('.page1'), 2, {
                         opacity: 0,
@@ -314,7 +329,7 @@
             donghua2.to($('.page4-02'), 5, {
                 ease: Linear.easeIn,
                 transform: 'translate3d(-120% , 0, 0)',
-                onComplete: function(){
+                onComplete: function () {
                     donghua3.to($('.page4-02 .car'), 1, {
                         opacity: 1,
                         ease: Linear.easeIn
