@@ -225,7 +225,7 @@
         });
 
         // 黑白调整
-        $(".range").on("input", function () {
+        $(".range").on("change", function () {
           var imgSrc = $("#upload-bg").attr("src");
           var brightness = $("#brightness").val() - 100;
           var contrast = $("#contrast").val() - 100;
@@ -247,7 +247,7 @@
         // 缩小
         $(".shrink").on("click", function () {
           scale -= 0.1;
-          if(scale <= 1){
+          if (scale <= 1) {
             scale = 1;
           }
           $(".canvas2").css("-webkit-transform", "scale(" + scale + ") rotate(" + rotate + "deg)");
@@ -267,6 +267,11 @@
 
         // 黑白处理
         function blackAndWhite(imgSrc, brightness, contrast) {
+          var loading = layer.open({
+            type: 2,
+            content: '图片处理中，请稍后...',
+            shadeClose: false
+          });
           var imgObj = null, backupImg = null;
           // imgObj = new Chobi(document.getElementById("fileUpload"));
           // imgObj = new Chobi(document.getElementById("upload-bg"));
@@ -280,6 +285,7 @@
             imgObj.contrast(contrast);
             imgObj.canvas = document.getElementById("canvas2");
             imgObj.loadImageToCanvas();
+            layer.close(loading);
           });
         }
 

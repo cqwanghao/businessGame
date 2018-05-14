@@ -202,6 +202,13 @@ img{
 		left: 10.3%;
 		width: 82.8%;
 	}
+	.page1-004{
+		position: absolute;
+		top: 0;
+		left: 5%;
+		width: 90%;
+		opacity: .4;
+	}
 	.page1-03{
 		display: none;
 		position: absolute;
@@ -376,6 +383,13 @@ img{
 		top: 38.6%;
 		left: 100%;
 		width: 68.9%;
+		.car{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+		}
 	}
 	.page4-03{
 		position: absolute;

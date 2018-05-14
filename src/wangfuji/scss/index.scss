@@ -159,7 +159,8 @@ img{
 	padding-top: 4rem /* 100/25 */;
 	// background-image: url(../images/bg.png);
 	background-image: url(../images/bg.jpg);
-	background-size: 100% 30.96rem /* 774/25 */;
+	// background-size: 100% 30.96rem /* 774/25 */;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -191,11 +192,21 @@ img{
 	// home
 	.page1{
 		// display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+		// background-size: contain;
+		background-position: center;
 		overflow-x: hidden;
+		overflow: hidden;
 		.page1-1{
 			display: block;
 			margin: 0 auto;
-			width: 49.8%;
+			// width: 49.8%;
+			width: 33%;
 		}
 		.links{
 			.link{
@@ -216,13 +227,16 @@ img{
 					margin: 0 auto;
 				}
 				.item1{
-					width: 10.32rem /* 258/25 */;
+					// width: 10.32rem /* 258/25 */;
+					width: 7.2rem /* 180/25 */;
 				}
 				.item2{
-					width: 10.32rem /* 258/25 */;
+					// width: 10.32rem /* 258/25 */;
+					width: 7.2rem /* 180/25 */;
 				}
 				.item3{
-					width: 8.72rem /* 218/25 */;
+					// width: 8.72rem /* 218/25 */;
+					width: 6.4rem /* 160/25 */;
 				}
 			}
 			.link:nth-child(1) {
@@ -548,7 +562,8 @@ img{
 		}
 		.btns{
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
+			justify-content: center;
 			margin: .8rem /* 20/25 */ auto 0;
 			.link{
 				display: block;
@@ -556,6 +571,9 @@ img{
 				img{
 					display: block;
 					width: 100%;
+				}
+				&:nth-child(2){
+					margin-left: 1.6rem /* 40/25 */;
 				}
 			}
 		}
@@ -590,7 +608,21 @@ img{
 }
 // cart
 .cartWrap{
+	height: 100%;
+	.page{
+		padding-top: 0;
+		background: none;
+		height: 100%;
+	}
 	.wrap{
+		min-height: 100%;
+		padding-top: 4.4rem /* 110/25 */;
+		padding-bottom: 2.4rem /* 60/25 */;
+		background-image: url(../images/bg.jpg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+
 		padding-left: 7.4%;
 		padding-right: 7.4%;
 		.head-title{
@@ -603,12 +635,12 @@ img{
 			}
 		}
 		.goodlist{
-			height: 5.28rem /* 132/25 */;
+			// height: 5.28rem /* 132/25 */;
 			margin-top: 1rem /* 25/25 */;
 			padding-left: .48rem /* 12/25 */;
 			padding-right: .48rem /* 12/25 */;
-			overflow: auto;
-			-webkit-overflow-scrolling: touch;
+			// overflow: auto;
+			// -webkit-overflow-scrolling: touch;
 		}
 		.list{
 			display: flex;
@@ -703,6 +735,8 @@ img{
 				color: #3f2c01;
 			}
 			.product{
+				// height: 10.4rem;
+				// overflow-y: auto;
 				padding-left: 1.8rem /* 45/25 */;
 				padding-right: 1.8rem /* 45/25 */;
 				font-size: 0;
@@ -712,8 +746,26 @@ img{
 					width: 50%;
 					margin-bottom: .4rem /* 10/25 */;
 					text-align: center;
-					.pic{
+					.item-wrap{
 						width: 3.48rem /* 87/25 */;
+						height: 3.32rem /* 83/25 */;
+						margin: 0 auto;
+						padding: .24rem /* 6/25 */ .32rem /* 8/25 */ .16rem /* 4/25 */;
+						background: url(../images/picbg.png) no-repeat center;
+						background-size: 100% 100%;
+						.pic-wrap{
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							width: 100%;
+							height: 100%;
+							overflow: hidden;
+							.pic{
+								// width: 3.48rem /* 87/25 */;
+								width: 100%;
+								// max-height: 100%;
+							}
+						}
 					}
 					p{
 						line-height: .64rem /* 16/25 */;
@@ -733,7 +785,17 @@ img{
 }
 // order
 .orderWrap{
+	height: 100%;
+	.page{
+		overflow-y: hidden;
+		padding-bottom: 2.4rem;
+		height: 100%;
+	}
 	.wrap{
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 		.head-title{
@@ -1343,7 +1405,17 @@ img{
 }
 // introduction
 .introductionWrap{
+	height: 100%;
+	.page{
+		overflow-y: hidden;
+		padding-bottom: 2.4rem;
+		height: 100%;
+	}
 	.wrap{
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 		.head-title{
@@ -1381,7 +1453,17 @@ img{
 }
 // about
 .aboutWrap{
+	height: 100%;
+	.page{
+		overflow-y: hidden;
+		padding-bottom: 2.4rem;
+		height: 100%;
+	}
 	.wrap{
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 		padding-left: 11.4%;
 		padding-right: 11.4%;
 	}
@@ -1461,11 +1543,28 @@ img{
 			margin-top: 2rem /* 50/25 */;
 			.commodity{
 				.photo{
+					display: flex;
+					align-items: center;
+					justify-content: center;
 					width: 5.48rem /* 137/25 */;
+					height: 7.68rem /* 192/25 */;
 					margin: 0 auto 2.2rem /* 55/25 */;
-					img{
-						display: block;
-						width: 100%;
+					background: url(../images/bottle8.png) no-repeat center;
+					background-size: 100% 100%;
+					overflow: hidden;
+					.photo-wrap{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 2.4rem /* 60/25 */;
+						height: 2.4rem /* 60/25 */;
+						overflow: hidden;
+						img{
+							display: block;
+							margin: 0 auto;
+							width: 100%;
+							// max-height: 100%;
+						}
 					}
 				}
 				.describe{
@@ -1480,13 +1579,17 @@ img{
 		}
 		.btns{
 			display: flex;
-			justify-content: space-between;
+			// justify-content: space-between;
+			justify-content: center;
 			margin-top: 3rem /* 75/25 */;
 			.btn{
 				width: 4.64rem /* 116/25 */;
 				img{
 					display: block;
 					width: 100%;
+				}
+				&:nth-child(2){
+					margin-left: 1.6rem /* 40/25 */;
 				}
 			}
 		}
@@ -1923,6 +2026,52 @@ img{
 		opacity: 0;
 		.result{
 			pointer-events: auto;
+		}
+	}
+}
+@media only screen and (min-device-height: 700px){
+    .loadingWrap{
+		// home
+		.page1{
+			.page1-1{
+				width: 49.8%;
+			}
+			.links{
+				.link{
+					.item1{
+						width: 8.8rem /* 220/25 */;
+					}
+					.item2{
+						width: 8.8rem /* 220/25 */;
+					}
+					.item3{
+						width: 7.2rem /* 180/25 */;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-device-height: 730px){
+    .loadingWrap{
+		// home
+		.page1{
+			.page1-1{
+				width: 49.8%;
+			}
+			.links{
+				.link{
+					.item1{
+						width: 9.6rem /* 240/25 */;
+					}
+					.item2{
+						width: 9.6rem /* 240/25 */;
+					}
+					.item3{
+						width: 8rem /* 200/25 */;
+					}
+				}
+			}
 		}
 	}
 }

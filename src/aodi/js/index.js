@@ -26,6 +26,8 @@
         // 动画实例
         var donghua = new TimelineMax();
         var donghua2 = new TimelineMax();
+        var donghua3 = new TimelineMax();
+        var light = new TimelineMax();
         var page0 = new TimelineMax();
         var page1 = new TimelineMax();
         var page2 = new TimelineMax();
@@ -49,6 +51,7 @@
             { "src": baseUrl + "06_text.png", "id": "06_text" },
             { "src": baseUrl + "07_bg_1.jpg", "id": "07_bg_1" },
             { "src": baseUrl + "07_car.png", "id": "07_car" },
+            { "src": baseUrl + "07_car_running.png", "id": "07_car_running" },
             { "src": baseUrl + "07_text1.png", "id": "07_text1" },
             { "src": baseUrl + "07_text2.png", "id": "07_text2" },
             { "src": baseUrl + "08_bg.jpg", "id": "08_bg" },
@@ -59,6 +62,7 @@
             { "src": baseUrl + "circle.png", "id": "circle" },
             { "src": baseUrl + "citylight.png", "id": "citylight" },
             { "src": baseUrl + "light1.png", "id": "light1" },
+            { "src": baseUrl + "light1_01.png", "id": "light1_01" },
             { "src": baseUrl + "light2.png", "id": "light2" },
             { "src": baseUrl + "normalmusic.png", "id": "normalmusic" },
             { "src": baseUrl + "page0-02.png", "id": "page0-02" },
@@ -137,10 +141,10 @@
                 opacity: .5,
                 ease: Linear.easeIn,
             });
-            donghua.to($('.page0-04'), 2, {
-                opacity: 1,
-                ease: Linear.easeIn
-            });
+            // donghua.to($('.page0-04'), 2, {
+            //     opacity: 1,
+            //     ease: Linear.easeIn
+            // });
             donghua.to($('.page0-06'), 2, {
                 opacity: .3,
                 // opacity: 1,
@@ -190,7 +194,11 @@
                     // 添加车轮旋转样式
                     $(".page1-04").find(".wheel").addClass("active");
                     $(".page1-05").fadeOut(2000);
-                    console.log("到这一步了");
+                    // 车光向左移动
+                    light.to($('.page1-004'), 10, {
+                        ease: Linear.easeIn,
+                        transform: 'translate3d(-30rem , 0, 0)',
+                    });
                 }
             });
 
@@ -198,7 +206,18 @@
             donghua2.to($('.page1-001 img'), 10, {
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
-                transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
+                // transform: 'translate3d(-14.6rem , 0, 0) scale(1.3)',
+                transform: 'translate3d(-30rem , 0, 0) scale(1.3)',
+                onComplete: function(){
+                    // 删除车轮旋转样式
+                    $(".page1-04").find(".wheel").removeClass("active");
+                }
+            });
+
+            // 文字出现
+            donghua2.to($('.page1-06'), 2, {
+                opacity: 1,
+                ease: Linear.easeIn,
                 onComplete: function(){
                     // page1淡出
                     page1.to($('.page1'), 2, {
@@ -215,36 +234,13 @@
                 }
             });
 
-            // 背景移动
-            // donghua2.to($('.page1-00'), 10, {
-            //     backgroundPosition: "-14.6rem 0",
-            //     ease: Linear.easeIn,
-            //     onComplete: function () {
-            //         // page1淡出
-            //         page1.to($('.page1'), 2, {
-            //             opacity: 0,
-            //             zIndex: 1,
-            //             ease: Linear.easeOut
-            //         });
-            //         // page2淡入
-            //         page2.to($('.page2'), 2, {
-            //             opacity: 1,
-            //             zIndex: 2,
-            //             ease: Linear.easeIn
-            //         });
-            //     }
-            // });
             // page2
-            // 背景移动
-            // donghua2.to($('.page2-01'), 6, {
-            //     backgroundPosition: "-1rem 0",
-            //     ease: Linear.easeIn
-            // });
             // 背景移动
             donghua2.to($('.page2-001 img'), 6, {
                 // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
-                transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
+                // transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
+                transform: 'translate3d(-3rem , 0, 0) scale(1.1)'
             });
             donghua2.from($('.page2-02'), 2, {
                 opacity: 0,
@@ -291,7 +287,13 @@
             // page4
             donghua2.to($('.page4-02'), 5, {
                 ease: Linear.easeIn,
-                transform: 'translate3d(-120% , 0, 0)'
+                transform: 'translate3d(-120% , 0, 0)',
+                onComplete: function(){
+                    donghua3.to($('.page4-02 .car'), 1, {
+                        opacity: 1,
+                        ease: Linear.easeIn
+                    });
+                }
             });
             donghua2.from($('.page4-03'), 2, {
                 opacity: 0,
