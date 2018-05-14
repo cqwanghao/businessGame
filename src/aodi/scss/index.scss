@@ -21,8 +21,8 @@ img{
 	right: .4rem;
 	top: .4rem;
 	z-index: 100;
-	// background: url(../images/normalmusic.png) no-repeat;
-	background: url(http://p28cve2yr.bkt.clouddn.com/normalmusic.png) no-repeat;
+	background: url(../images/normalmusic.png) no-repeat;
+	// background: url(http://p28cve2yr.bkt.clouddn.com/normalmusic.png) no-repeat;
 	background-size: .8rem .8rem;
 }
 .video_exist2{
@@ -126,13 +126,15 @@ img{
 	// opacity: 0;
 	.page0-02{
 		position: absolute;
-		top: 0%;
+		// top: 0%;
+		top: -12%;
 		left: 0%;
 		width: 100%;
 	}
 	.page0-03{
 		position: absolute;
-		top: 0%;
+		// top: 0%;
+		top: -12%;
 		left: 0%;
 		width: 100%;
 		opacity: 0;
@@ -146,14 +148,16 @@ img{
 	}
 	.page0-06{
 		position: absolute;
-		top: 0%;
+		// top: 0%;
+		top: -12%;
 		left: 0%;
 		width: 100%;
 		opacity: 0;
 	}
 	.page0-07{
 		position: absolute;
-		top: 25.5%;
+		// top: 25.5%;
+		top: 17.5%;
 		left: 50%;
 		margin-left: -13.6%;
 		width: 27.2%;
@@ -309,6 +313,7 @@ img{
 .page2{
 	display: block;
 	opacity: 0;
+	// z-index: 3;
 	.page2-001{
 		position: absolute;
 		top: 0;
@@ -321,8 +326,8 @@ img{
 			max-width: none;
 			width: auto;
 			height: 100%;
-			transform: scale(1.1);
-			transform-origin: 0 50%;
+			transform: scale(1.2);
+			transform-origin: 0 0;
 		}
 	}
 	.page2-002{
@@ -353,14 +358,16 @@ img{
 	}
 }
 .page3{
-	opacity: 0;
 	display: block;
+	opacity: 0;
+	// z-index: 3;
 	.page3-01{
 		position: relative;
 	}
 	.page3-02{
 		position: absolute;
-		top: 38.9%;
+		// top: 38.9%;
+		top: 34.9%;
 		right: 0%;
 		width: 52%;
 		.page3-03{
@@ -381,7 +388,13 @@ img{
 }
 .page4{
 	display: block;
-	opacity: 0;
+	// opacity: 0;
+	z-index: 3;
+	.page4-01{
+		img{
+			transform: scale(1.3);
+		}
+	}
 	.page4-02{
 		position: absolute;
 		// top: 42.6%;

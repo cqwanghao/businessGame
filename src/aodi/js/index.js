@@ -1,7 +1,7 @@
 (function () {
     $(function () {
         // init vConsole
-        var vConsole = new VConsole();
+        // var vConsole = new VConsole();
 
         var orientationFlag = false;
         var loadingFlag = false;
@@ -32,6 +32,11 @@
         var donghua3 = new TimelineMax();
         var light = new TimelineMax();
         var button = new TimelineMax();
+        var bg = new TimelineMax();
+        var word1 = new TimelineMax();
+        var word2 = new TimelineMax();
+        var word3 = new TimelineMax();
+        var word4 = new TimelineMax();
         var page0 = new TimelineMax();
         var page1 = new TimelineMax();
         var page2 = new TimelineMax();
@@ -41,6 +46,7 @@
         // var baseUrl = "./images/";
         var baseUrl = "http://p28cve2yr.bkt.clouddn.com/";
         var baseUrl2 = "./music/";
+        var baseUrl3 = "./images/";
         // loading页图片加载
         var queue0 = new createjs.LoadQueue(true);
         var fest0 = [
@@ -76,7 +82,7 @@
             { "src": baseUrl + "light1.png", "id": "light1" },
             { "src": baseUrl + "light1_01.png", "id": "light1_01" },
             { "src": baseUrl + "light2.png", "id": "light2" },
-            { "src": baseUrl + "normalmusic.png", "id": "normalmusic" },
+            { "src": baseUrl3 + "normalmusic.png", "id": "normalmusic" },
             { "src": baseUrl + "page0-02.png", "id": "page0-02" },
             { "src": baseUrl + "page0-04.png", "id": "page0-04" },
             { "src": baseUrl + "page1-02.png", "id": "page1-02" },
@@ -278,10 +284,8 @@
             // page2
             // 背景移动
             donghua2.to($('.page2-001 img'), 6, {
-                // backgroundPosition: "-1rem 0",
                 ease: Linear.easeIn,
-                // transform: 'translate3d(-1rem , 0, 0) scale(1.1)'
-                transform: 'translate3d(-1rem , 0, 0) scale(1.2)'
+                transform: 'translate3d(-10% , 0, 0) scale(1.2)'
             });
             donghua2.from($('.page2-02'), 2, {
                 opacity: 0,
@@ -305,7 +309,7 @@
             // page3
             donghua2.to($('.page3-01'), 5, {
                 ease: Linear.easeIn,
-                transform: 'scale(1.6)'
+                transform: 'scale(1.3)'
             });
             donghua2.from($('.page3-04'), 2, {
                 opacity: 0,
@@ -328,13 +332,18 @@
             // page4
             donghua2.to($('.page4-02'), 5, {
                 ease: Linear.easeIn,
-                transform: 'translate3d(-120% , 0, 0)',
+                transform: 'translate3d(-100% , 5%, 0) scale(0.7)',
                 onComplete: function () {
                     donghua3.to($('.page4-02 .car'), 1, {
                         opacity: 1,
                         ease: Linear.easeIn
                     });
                 }
+            });
+            // 背景缩小
+            bg.to($('.page4-01 img'), 5, {
+                ease: Linear.easeIn,
+                transform: 'scale(1)'
             });
             donghua2.from($('.page4-03'), 2, {
                 opacity: 0,
@@ -344,34 +353,40 @@
                 opacity: 0,
                 ease: Linear.easeIn,
                 onComplete: function () {
-                    donghua2.to($('.page4-03'), 2, {
+                    word1.to($('.page4-03'), 2, {
                         opacity: 0,
                         ease: Linear.easeIn
                     });
-                    donghua2.to($('.page4-04'), 2, {
+                    word2.to($('.page4-04'), 2, {
                         opacity: 0,
                         ease: Linear.easeIn
                     });
-                    donghua2.to($('.page4-02'), 5, {
+                    word3.to($('.page4-02'), 2, {
                         opacity: 0,
-                        ease: Linear.easeIn
-                    });
-                    donghua2.to($('.page4-05'), 4, {
-                        opacity: 0.5,
                         ease: Linear.easeIn,
-                        onComplete: function () {
-                            $('.page4-05').fadeOut(500);
+                        onComplete: function(){
+                            donghua2.to($('.page4-05'), 4, {
+                                opacity: 0.5,
+                                ease: Linear.easeIn,
+                                delay: 2,
+                                onComplete: function () {
+                                    word4.to($('.page4-05'), 2, {
+                                        opacity: 0,
+                                        ease: Linear.easeIn
+                                    });
+                                }
+                            });
+                            donghua2.to($('.page4-06'), 1, {
+                                opacity: 1,
+                                ease: Linear.easeIn
+                            });
+                            // 文字播放
+                            var j = 1;
+                            for (; j < 13; j++) {
+                                playWord($(".j" + j), 0.2);
+                            }
                         }
                     });
-                    donghua2.to($('.page4-06'), 1, {
-                        opacity: 1,
-                        ease: Linear.easeIn
-                    });
-                    // 文字播放
-                    var j = 1;
-                    for (; j < 13; j++) {
-                        playWord($(".j" + j), 0.2);
-                    }
                 }
             });
 
