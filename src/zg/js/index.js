@@ -604,6 +604,14 @@
     var initScale = "";
     var initWidth = "";
 
+    // 新增
+    var closeWidth = "";
+    var scaleWidth = "";
+    var boxWidth = "";
+    var boxScale = "";
+    var boxLeft = "";
+    var boxTop = "";
+
     $(".edit-container").on("touchstart", ".scale", function (e) {
       var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
       startPos = {
@@ -613,8 +621,13 @@
       }; //取第一个touch的坐标值
       isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
       initWidth = $(this).siblings(".close").width();
+
+      closeWidth = $(this).siblings(".close").width();
+      scaleWidth = $(this).siblings(".scale").width();
+      boxWidth = $(this).parent(".ornaments").width();
     });
 
+    
     // 缩放
     $(".edit-container").on("touchmove", ".scale", function (e) {
       if (e.target != this) {
@@ -644,15 +657,34 @@
       //   scale = 1.5;
       // }
       scale2 = 1 / scale;
+
+      boxScale = scale;
       $(this).parent(".ornaments").css("-webkit-transform", "scale3d(" + scale + "," + scale + "," + scale + ")");
       $(this).parent(".ornaments").css("transform", "scale3d(" + scale + "," + scale + "," + scale + ")");
       $(this).siblings(".close").css("-webkit-transform", "scale3d(" + scale2 + "," + scale2 + "," + scale2 + ")");
       $(this).siblings(".close").css("transform", "scale3d(" + scale2 + "," + scale2 + "," + scale2 + ")");
       $(this).css("-webkit-transform", "scale3d(" + scale2 + "," + scale2 + "," + scale2 + ")");
       $(this).css("transform", "scale3d(" + scale2 + "," + scale2 + "," + scale2 + ")");
+      boxLeft = $(this).parent(".ornaments").css('left');
+      boxTop = $(this).parent(".ornaments").css('top');
       if (isScrolling === 0) {
         event.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
       }
+    });
+
+    // 缩放完成
+    $(".edit-container").on("touchend", ".scale", function (e) {
+      console.log($(this).parent(".ornaments"));
+      $(this).parent(".ornaments").width(Math.abs(boxScale)*boxWidth);
+      $(this).parent(".ornaments").find(".photo").width(Math.abs(boxScale)*boxWidth);
+      $(this).parent(".ornaments").css("-webkit-transform","scale3d(1,1,1)");
+      $(this).parent(".ornaments").css("transform","scale3d(1,1,1)");
+      $(this).siblings(".close").css("-webkit-transform","scale3d(1,1,1)");
+      $(this).siblings(".close").css("transform","scale3d(1,1,1)");
+      $(this).css("-webkit-transform","scale3d(1,1,1)");
+      $(this).css("transform","scale3d(1,1,1)");
+      $(this).parent(".ornaments").css('left',boxLeft.split("px")[0] + "px");
+      $(this).parent(".ornaments").css('top',boxTop.split("px")[0] + "px");
     });
 
     // 显示删除按钮
