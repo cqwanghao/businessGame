@@ -9,7 +9,7 @@ import plumber from 'gulp-plumber'
 import path from 'path'
 
 const argv = optimist.argv;
-const fileSrc = 'aodi';
+const fileSrc = 'wangfuji';
 
 let
   basePath = path.resolve(__dirname, '../');

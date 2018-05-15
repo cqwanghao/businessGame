@@ -2237,12 +2237,75 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .customizedWrap .synthesis .result { pointer-events: auto; }
 
+.rewardWrap .page1 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-position: center; overflow-x: hidden; overflow: hidden; }
+
+.rewardWrap .page1 p { text-align: center; letter-spacing: 2px; color: #755824; }
+
+.rewardWrap .page1 .p1 { font-size: 0.64rem; }
+
+.rewardWrap .page1 .p2 { margin: 0.2rem auto; font-size: 0.48rem; }
+
+.rewardWrap .page1 .p3 { font-size: 0.56rem; }
+
+.rewardWrap .page1 .p3 span { font-size: 0.96rem; color: #df2b19; }
+
+.rewardWrap .page1 .phone-box { position: relative; width: 70%; margin: 1.76rem auto 0; }
+
+.rewardWrap .page1 .phone-box img { display: block; width: 100%; }
+
+.rewardWrap .page1 .phone-box .iphone { position: absolute; top: -0.64rem; left: 3%; width: 94%; }
+
+.rewardWrap .page1 .more { width: 52%; margin: 1.48rem auto 0; }
+
+.rewardWrap .page1 .more img { display: block; width: 100%; }
+
+.rewardWrap .page1 .btn { width: 51.7%; margin: 1rem auto 0; }
+
+.rewardWrap .page1 .btn img { display: block; width: 100%; }
+
+.rewardWrap .pageRule { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0%; width: 100%; z-index: 1000; overflow: auto; -webkit-overflow-scrolling: touch; padding-top: 3.52rem; padding-bottom: 1.6rem; background-color: rgba(0, 0, 0, 0.8); }
+
+.rewardWrap .pageRule .rule-box { position: absolute; top: 3.52rem; left: 10%; bottom: 6rem; overflow-y: auto; -webkit-overflow-scrolling: touch; width: 80%; margin: 0 auto; color: #ffffff; letter-spacing: 1px; text-align: center; }
+
+.rewardWrap .pageRule .rule-box .rule-title { margin-bottom: 0.48rem; font-size: 0.96rem; color: #f3dc42; }
+
+.rewardWrap .pageRule .rule-box .tag { margin-bottom: 0.4rem; font-size: 0.48rem; }
+
+.rewardWrap .pageRule .rule-box .award .rank { font-size: 0.72rem; }
+
+.rewardWrap .pageRule .rule-box .award .prize { margin: 0.4rem auto 0.52rem; text-align: left; font-size: 0.6rem; }
+
+.rewardWrap .pageRule .rule-box .p1 { text-align: left; font-size: 0.48rem; }
+
+.rewardWrap .pageRule .rule-box .activityTitle { margin-top: 1.6rem; margin-bottom: 0.6rem; text-align: left; font-size: 0.6rem; font-style: italic; }
+
+.rewardWrap .pageRule .rule-box .detail { line-height: 0.72rem; text-align: left; font-size: 0.48rem; letter-spacing: 2px; }
+
+.rewardWrap .pageRule .rule-box .detail p { margin-bottom: 0.4rem; }
+
+.rewardWrap .pageRule .rule-box .statement { margin-top: 0.8rem; margin-bottom: 0.6rem; text-align: left; font-size: 0.6rem; color: #ee7e10; }
+
+.rewardWrap .pageRule .rule-box .prompt { margin-top: 0.8rem; margin-bottom: 0.4rem; text-align: left; font-size: 0.48rem; color: #ffffff; }
+
+.rewardWrap .pageRule .rule-box .detail2 { line-height: 0.64rem; text-align: left; font-size: 0.4rem; letter-spacing: 2px; }
+
+.rewardWrap .pageRule .rule-box .detail2 p { margin-bottom: 0.4rem; }
+
+.rewardWrap .pageRule .footer { position: absolute; left: 10%; bottom: 2rem; width: 80%; margin: 0 auto; }
+
+.rewardWrap .pageRule .footer .agree { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-size: 0.56rem; color: #c40428; }
+
+.rewardWrap .pageRule .footer .agree label { margin-right: 0.68rem; }
+
+.rewardWrap .pageRule .footer .agree label .checkbox { display: none; }
+
+.rewardWrap .pageRule .footer .agree label .check { width: 0.64rem; height: 0.6rem; }
+
+.rewardWrap .pageRule .footer .link { display: block; width: 7.76rem; margin: 0.88rem auto 0; }
+
+.rewardWrap .pageRule .footer .link img { display: block; width: 100%; }
+
 @media only screen and (min-device-height: 700px) { .loadingWrap .page1 .page1-1 { width: 49.8%; }
   .loadingWrap .page1 .links .link .item1 { width: 8.8rem; }
   .loadingWrap .page1 .links .link .item2 { width: 8.8rem; }
   .loadingWrap .page1 .links .link .item3 { width: 7.2rem; } }
-
-@media only screen and (min-device-height: 730px) { .loadingWrap .page1 .page1-1 { width: 49.8%; }
-  .loadingWrap .page1 .links .link .item1 { width: 9.6rem; }
-  .loadingWrap .page1 .links .link .item2 { width: 9.6rem; }
-  .loadingWrap .page1 .links .link .item3 { width: 8rem; } }
