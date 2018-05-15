@@ -2221,6 +2221,102 @@ img{
 	}
 }
 
+// productlist
+.productlistWrap{
+	.page1{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		padding-bottom: 2rem /* 50/25 */;
+		background-size: 100% 100%;
+		background-position: center;
+		overflow-x: hidden;
+		overflow: hidden;
+		.title{
+			font-size: .6rem /* 15/25 */;
+			color: #3f2c01;
+		}
+		.goodWrap{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding-top: .8rem /* 20/25 */;
+			padding-bottom: .8rem /* 20/25 */;
+			.goodlist{
+				position: absolute;
+				top: .8rem /* 20/25 */;
+				bottom: .8rem /* 20/25 */;
+				left: 0;
+				right: 0;
+				width: 100%;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
+				.product{
+					// height: 10.4rem;
+					// overflow-y: auto;
+					// padding-left: 1.8rem /* 45/25 */;
+					// padding-right: 1.8rem /* 45/25 */;
+					font-size: 0;
+					.item{
+						display: inline-block;
+						vertical-align: top;
+						width: 50%;
+						height: 5.6rem /* 140/25 */;
+						margin-bottom: .4rem /* 10/25 */;
+						text-align: center;
+						.item-wrap{
+							width: 3.48rem /* 87/25 */;
+							height: 3.32rem /* 83/25 */;
+							margin: 0 auto;
+							padding: .24rem /* 6/25 */ .32rem /* 8/25 */ .16rem /* 4/25 */;
+							background: url(../images/picbg.png) no-repeat center;
+							background-size: 100% 100%;
+							.pic-wrap{
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								width: 100%;
+								height: 100%;
+								overflow: hidden;
+								.pic{
+									// width: 3.48rem /* 87/25 */;
+									width: 100%;
+									// max-height: 100%;
+								}
+							}
+						}
+						p{
+							line-height: .64rem /* 16/25 */;
+							margin-top: .2rem /* 5/25 */;
+							font-size: .4rem /* 10/25 */;
+						}
+						.name{
+							margin: 0 auto;
+							width: 3.48rem /* 87/25 */;
+							color: #3f2c01;
+						}
+						.detail{
+							// min-height: 1.36rem /* 34/25 */;
+							display: block;
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 2;
+							overflow: hidden;
+						}
+						.price{
+							color: #d9002a;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media only screen and (min-device-height: 700px){
     .loadingWrap{
 		// home
