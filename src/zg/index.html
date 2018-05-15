@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>榛果民宿</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css" rel="stylesheet">
+  <script>
+    (function (window, document) {
+      var setRem = function () {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+  <!-- loading -->
+  <div class="page page0">
+    <div class="cont">
+      <div class="page0-1">
+      </div>
+      <div class="page0-2">
+        <span class="page0-3"></span>
+      </div>
+      <p class="page0-4">Loading...</p>
+    </div>
+  </div>
+
+  <!-- 首页 -->
+  <div class="page page1">
+    <div class="cont">
+      <div class="page1-1">
+        <div class="page1-2"></div>
+      </div>
+      <div class="page1-3"></div>
+      <div class="page1-4"></div>
+      <div class="page1-5"></div>
+    </div>
+  </div>
+
+  <!-- 背景选择页 -->
+  <div class="page page2">
+    <div class="cont">
+      <div class="page2-1">
+        <div class="page2-2"></div>
+        <div class="btn next"></div>
+        <img class="bg-img" src="./images/icons/11.png" alt="">
+        <div class="wrap">
+          <div class="ornaments ornaments1 active" data-type="1" data-id="39" data-trans="false">
+            <img src="./images/icons/124.png" class="goods goods1" />
+            <img src="./images/icons/121.png" class="goods goods2" />
+            <img src="./images/icons/76.png" class="goods goods3" />
+            <img src="./images/icons/73.png" class="goods goods4" />
+            <img src="./images/icons/43.png" class="goods goods5" />
+          </div>
+          <div class="ornaments ornaments2" data-type="1" data-id="10" data-trans="false">
+            <img src="./images/icons/24.png" class="goods goods1" />
+            <img src="./images/icons/66.png" class="goods goods2" />
+            <img src="./images/icons/23.png" class="goods goods3" />
+            <img src="./images/icons/68.png" class="goods goods4" />
+            <img src="./images/icons/119.png" class="goods goods5" />
+          </div>
+          <div class="ornaments ornaments3" data-type="1" data-id="1" data-trans="false">
+            <img src="./images/icons/32.png" class="goods goods1" />
+            <img src="./images/icons/108.png" class="goods goods2" />
+            <img src="./images/icons/37.png" class="goods goods3" />
+            <img src="./images/icons/55.png" class="goods goods4" />
+          </div>
+          <div class="ornaments ornaments4" data-type="1" data-id="8" data-trans="false">
+            <img src="./images/icons/31.png" class="goods goods1" />
+            <img src="./images/icons/30.png" class="goods goods2" />
+            <img src="./images/icons/48.png" class="goods goods3" />
+            <img src="./images/icons/71.png" class="goods goods4" />
+            <!-- <img src="./images/icons/125.png" class="goods goods5" /> -->
+          </div>
+          <div class="ornaments ornaments5" data-type="1" data-id="14" data-trans="false">
+            <img src="./images/icons/34.png" class="goods goods1" />
+            <img src="./images/icons/90.png" class="goods goods2" />
+            <img src="./images/icons/27.png" class="goods goods3" />
+          </div>
+          <div class="ornaments ornaments6" data-type="3" data-id="1" data-trans="false">
+            <img src="./images/icons/38.png" class="goods goods1" />
+            <img src="./images/icons/122.png" class="goods goods2" />
+          </div>
+        </div>
+      </div>
+      <div class="page2-3">
+        <div class="page2-swiper">
+          <div class="swiper-container page2-swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide icon icon1 active" data-id="124" data-bg="11"></div>
+              <div class="swiper-slide icon icon2" data-id="24" data-bg="6"></div>
+              <div class="swiper-slide icon icon3" data-id="32" data-bg="16"></div>
+              <div class="swiper-slide icon icon4" data-id="30" data-bg="12"></div>
+              <div class="swiper-slide icon icon5" data-id="27" data-bg="20"></div>
+              <div class="swiper-slide icon icon6" data-id="122" data-bg="12"></div>
+            </div>
+          </div>
+          <div class="swiper-btn-prev"></div>
+          <div class="swiper-btn-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 编辑页面 -->
+  <div class="page page3">
+    <div class="cont">
+      <div class="page3-1">
+        <div class="page3-2"></div>
+        <div class="edit-container">
+          <img class="bg-img" src="./images/icons/11.png" id="scene" alt="">
+          <!-- 装饰品 -->
+          <div class="addGoods">
+            <!-- <div class="ornaments del" data-id="117" data-trans="false">
+              <img src="./images/icons/117.png" class="photo" />
+              <img src="./images/close.png" class="close">
+              <img src="./images/scale.png" class="scale">
+            </div> -->
+            <!-- <div class="ornaments">
+              <img src="./images/icon/page3/32.png" />
+              <img src="./images/close.png" class="close">
+            </div>
+            <div class="ornaments" data-type="3" data-id="4" data-trans="false">
+              <img src="./images/icon/props/4/5.png" />
+              <img src="./images/close.png" class="close">
+            </div> -->
+          </div>
+        </div>
+        <div class="btn back"></div>
+        <div class="btn fusion"></div>
+      </div>
+      <div class="page3-3">
+        <div class="page3-4">
+          <span class="menu-item menu1 active"></span>
+          <span class="menu-item menu2"></span>
+          <span class="menu-item menu3"></span>
+          <span class="menu-item menu4"></span>
+          <!-- <span class="btn-show up"></span> -->
+        </div>
+        <div class="page3-5">
+          <div class="page3-6">
+            <div class="menu-box show">
+              <ul class="menu-l">
+                <li class="meni2-item menu1 active"></li>
+                <li class="meni2-item menu2"></li>
+              </ul>
+            </div>
+            <div class="menu-box">
+              <ul class="menu-l">
+                <li class="meni2-item menu3"></li>
+                <li class="meni2-item menu4"></li>
+                <li class="meni2-item menu5"></li>
+              </ul>
+            </div>
+            <div class="menu-box">
+              <ul class="menu-l">
+                <li class="meni2-item menu6"></li>
+                <li class="meni2-item menu7"></li>
+                <li class="meni2-item menu8"></li>
+                <li class="meni2-item menu9"></li>
+              </ul>
+            </div>
+            <div class="menu-box">
+              <ul class="menu-l">
+                <li class="meni2-item menu10"></li>
+                <li class="meni2-item menu11"></li>
+                <li class="meni2-item menu12"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="page3-7">
+            <!-- 门墙 -->
+            <div class="icons-l show">
+              <div class="icons-box show">
+                <ul>
+                  <li class="icon-item icon1" data-id="1">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon2" data-id="2">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon3" data-id="3">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon4" data-id="4">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon5" data-type="1" data-id="5">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon6" data-type="1" data-id="6">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon7" data-type="1" data-id="7">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon8" data-type="1" data-id="8">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon9" data-type="1" data-id="9">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon10" data-type="1" data-id="10">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon11" data-type="1" data-id="11">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon12" data-type="1" data-id="12">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon13" data-type="1" data-id="13">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon14" data-type="1" data-id="14">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon15" data-type="1" data-id="15">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon16" data-type="1" data-id="16">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon17" data-type="1" data-id="17">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon18" data-type="1" data-id="18">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon19" data-type="1" data-id="19">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon20" data-type="1" data-id="20">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon21" data-type="1" data-id="21">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 家具 -->
+            <div class="icons-l">
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon22" data-id="22">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon23" data-id="23">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon24" data-id="24">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon25" data-id="25">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon26" data-id="26">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon27" data-id="27">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon28" data-id="28">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon29" data-id="29">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon30" data-id="30">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon31" data-id="31">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon32" data-id="32">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon33" data-id="33">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon34" data-id="34">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon35" data-id="35">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon36" data-id="36">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon37" data-id="37">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon38" data-id="38">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon39" data-id="39">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon40" data-id="40">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon41" data-id="41">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon42" data-id="42">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon43" data-id="43">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon44" data-id="44">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon45" data-id="45">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon46" data-id="46">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon47" data-id="47">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 装饰 -->
+            <div class="icons-l">
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon48" data-id="48">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon49" data-id="49">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon50" data-id="50">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon51" data-id="51">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon52" data-id="52">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon53" data-id="53">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon54" data-id="54">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon55" data-id="55">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon56" data-id="56">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon57" data-id="57">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon58" data-id="58">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon59" data-id="59">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon60" data-id="60">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon61" data-id="61">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon62" data-id="62">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon63" data-id="63">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon64" data-id="64">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon65" data-id="65">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon66" data-id="66">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon67" data-id="67">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon68" data-id="68">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon69" data-id="69">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon74" data-id="74">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon70" data-id="70">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon71" data-id="71">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon72" data-id="72">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon73" data-id="73">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon75" data-id="75">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon76" data-id="76">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon77" data-id="77">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon78" data-id="78">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon79" data-id="79">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon80" data-id="80">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon81" data-id="81">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon82" data-id="82">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon83" data-id="83">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon84" data-id="84">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon85" data-id="85">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon86" data-id="86">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon87" data-id="87">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- 个性 -->
+            <div class="icons-l">
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon88" data-id="88">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon89" data-id="89">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon90" data-id="90">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon91" data-id="91">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon92" data-id="92">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon93" data-id="93">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon94" data-id="94">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon95" data-id="95">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon96" data-id="96">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon97" data-id="97">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon98" data-id="98">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon99" data-id="99">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon100" data-id="100">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon101" data-id="101">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon102" data-id="102">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon103" data-id="103">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon104" data-id="104">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon105" data-id="105">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon106" data-id="106">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon107" data-id="107">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon108" data-id="108">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon109" data-id="109">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon110" data-id="110">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-box">
+                <ul>
+                  <li class="icon-item icon111" data-id="111">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon112" data-id="112">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon113" data-id="113">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon114" data-id="114">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon115" data-id="115">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon116" data-id="116">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon117" data-id="117">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon118" data-id="118">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon119" data-id="119">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon120" data-id="120">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon121" data-id="121">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon122" data-id="122">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                  <li class="icon-item icon123" data-id="123">
+                    <i class="icon"></i>
+                    <em></em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 生成页 -->
+  <div class="page page4">
+    <div class="cont">
+      <div class="poster" id="poster">
+        <div class="page4-1">
+          <!-- <div class="t-title">
+            <img src="./images/img-9.png?v=1" alt="">
+          </div> -->
+          <img src="./images/i-1.png" alt="" id="resultImg">
+        </div>
+        <div class="page4-2">
+          <div class="page4-3">
+            <div class="textg">
+              <img class="text" src="./images/texts/10.png" alt="">
+              <img class="logo" src="./images/img-2.png" alt="">
+            </div>
+            <div class="qrcode-box">
+              <img crossorigin="anonymous" src="" alt="">
+              <em class="line lineT"></em>
+              <em class="line lineR"></em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="resultImg2Box">
+        <p class="tip1"></p>
+        <img src="" alt="" class="resultImg2" id="resultImg2">
+      </div>
+      <div class="page4-4">
+        <!-- <div class="btn save"></div> -->
+        <div class="btn reset"></div>
+        <div class="btn comment"></div>
+      </div>
+      <div class="qrcode"></div>
+    </div>
+  </div>
+
+  <!-- 出价列表 -->
+  <div class="page page5">
+    <duc class="cont">
+      <img src="./images/img-5.png?v=1" alt="">
+      <div class="conments">
+        <!-- <div class="conmen-item">
+          <em class="photo icon1">
+            <i class="icon2"></i>
+            <img src="https://wx.qlogo.cn/mmopen/vi_32/Cxp7icNXbU5u6lmK9z3g4e1aZZd2n4z13BiaLx20TjmCMU8xJhwMRBB7vsYMYpTiatM0dmTaWfhGHtMl1AHM58GWQ/0"
+              alt="">
+          </em>
+          <p class="info">
+            <span>你好</span>
+            你的好友给你出了一个香蕉皮
+            <br>要不要丢个鸡蛋给TA？
+          </p>
+        </div> -->
+      </div>
+      <!-- <img src="./images/img-6.png" alt=""> -->
+      <div class="actions">
+        <!-- <a href="#" class="link"></a> -->
+        <div class="btn back"></div>
+      </div>
+    </duc>
+  </div>
+
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/preloadjs.js"></script>
+  <script src="./js/qrcode.min.js"></script>
+  <script src="./js/layer/layer.js"></script>
+  <script src="./js/orienter.min.js"></script>
+  <script src="./js/exif.js"></script>
+  <script src="./js/AlloyFinger.js"></script>
+  <script src="./js/transformjs.js"></script>
+  <script src="./js/html2canvas.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    $(function () {
+      var swiper = new Swiper('.page2-swiper .page2-swiper-container', {
+        slidesPerView: 'auto',
+        freeMode: true,
+        navigation: {
+          nextEl: '.swiper-btn-next',
+          prevEl: '.swiper-btn-prev',
+        },
+      });
+    })
+  </script>
+</body>
+
+</html>
