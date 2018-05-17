@@ -2278,7 +2278,7 @@ img{
 		overflow-x: hidden;
 		overflow: hidden;
 		.title{
-			font-size: .6rem /* 15/25 */;
+			font-size: .8rem /* 20/25 */;
 			color: #3f2c01;
 		}
 		.goodWrap{
@@ -2306,14 +2306,16 @@ img{
 						display: inline-block;
 						vertical-align: top;
 						width: 50%;
-						height: 5.6rem /* 140/25 */;
+						// height: 5.6rem /* 140/25 */;
 						margin-bottom: .4rem /* 10/25 */;
 						text-align: center;
 						.item-wrap{
-							width: 3.48rem /* 87/25 */;
-							height: 3.32rem /* 83/25 */;
+							// width: 3.48rem /* 87/25 */;
+							// height: 3.32rem /* 83/25 */;
+							width: 4.4rem /* 110/25 */;
+							height: 4.2rem /* 105/25 */;
 							margin: 0 auto;
-							padding: .24rem /* 6/25 */ .32rem /* 8/25 */ .16rem /* 4/25 */;
+							padding: .4rem /* 10/25 */;
 							background: url(../images/picbg.png) no-repeat center;
 							background-size: 100% 100%;
 							.pic-wrap{
@@ -2332,12 +2334,14 @@ img{
 						}
 						p{
 							line-height: .64rem /* 16/25 */;
-							margin-top: .2rem /* 5/25 */;
-							font-size: .4rem /* 10/25 */;
+							// margin-top: .2rem /* 5/25 */;
+							// font-size: .4rem /* 10/25 */;
+							font-size: .52rem /* 13/25 */;
 						}
 						.name{
-							margin: 0 auto;
-							width: 3.48rem /* 87/25 */;
+							margin: .24rem /* 6/25 */ auto;
+							// width: 3.48rem /* 87/25 */;
+							width: 4.4rem /* 110/25 */;
 							color: #3f2c01;
 						}
 						.detail{
@@ -2346,10 +2350,12 @@ img{
 							display: -webkit-box;
 							-webkit-box-orient: vertical;
 							-webkit-line-clamp: 2;
+							line-height: 1.5;
 							overflow: hidden;
 						}
 						.price{
 							color: #d9002a;
+							line-height: 1.5;
 						}
 					}
 				}
