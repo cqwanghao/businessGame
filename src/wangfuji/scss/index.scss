@@ -12,6 +12,12 @@ img{
 	pointer-events: none;
     user-select: none;
 }
+.line4-ellipsis{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
 
 // 公共头部
 .nav_main{
@@ -2358,6 +2364,90 @@ img{
 							line-height: 1.5;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+// detail
+.detailWrap{
+	.page1{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding-left: 11.4%;
+		padding-right: 11.4%;
+		padding-bottom: 2rem /* 50/25 */;
+		background-size: 100% 100%;
+		background-position: center;
+		overflow-x: hidden;
+		overflow: hidden;
+		.goodWrap{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			// padding-top: .8rem /* 20/25 */;
+			// padding-bottom: .8rem /* 20/25 */;
+			.goodlist{
+				position: absolute;
+				// top: .8rem /* 20/25 */;
+				// bottom: .8rem /* 20/25 */;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
+				.goods-detail{
+					display: flex;
+					margin-bottom: .84rem /* 21/25 */;
+					.left{
+						width: 3.6rem /* 90/25 */;
+						height: 3.6rem /* 90/25 */;
+						margin-right: .56rem /* 14/25 */;
+						img{
+							display: block;
+							width: 100%;
+						}
+					}
+					.right{
+						flex: 1;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						.introduction{
+							line-height: 1.3;
+							font-size: .56rem /* 14/25 */;
+							color: #745f31;
+						}
+						.price{
+							font-size: .56rem /* 14/25 */;
+							color: #cc2525;
+							span{
+								margin-left: .24rem /* 6/25 */;
+							}
+						}
+					}
+				}
+				.img-list{
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+			.btn{
+				position: absolute;
+				bottom: 10%;
+				left: 50%;
+				width: 4.64rem /* 116/25 */;
+				margin-left: -2.32rem /* 58/25 */;
+				img{
+					display: block;
+					width: 100%;
 				}
 			}
 		}
