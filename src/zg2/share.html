@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>你愿意花多少睡我这一晚</title>
+  <link rel="stylesheet" href="./css/index.css?v=1">
+  <link href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css" rel="stylesheet">
+  <script src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+  <script>new window.VConsole();console.log(window.location)</script>
+  <style>.vc-switch,.vc-panel{z-index: 1110101010101101010 !important;}</style>
+  <script>
+    function getQueryString(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return decodeURIComponent(r[2]);
+      return null;
+    }
+    var userInfo = JSON.parse(getQueryString("userinfo")) || {};
+    if (userInfo.openId == getQueryString('o1')) {
+      window.location.href = 'https://zhenguo.meituan.com/pub/x_group_spread/index.html' + window.location.search;
+    }
+  </script>
+  <script>
+    (function (window, document) {
+      var setRem = function () {
+        var innerWidth = document.documentElement.getBoundingClientRect().width || window.innerWidth;
+        if (innerWidth > 768) {
+          document.documentElement.style.fontSize = 48 + 'px';
+        } else {
+          document.documentElement.style.fontSize = innerWidth / 15 + 'px';
+        }
+      };
+      window.addEventListener('orientationchange' in window ? 'orientationchange' : 'resize', setRem, false);
+      setRem();
+    })(window, document);
+  </script>
+</head>
+
+<body>
+  <!-- 出价 -->
+  <div class="page page6">
+    <div class="cont">
+      <div class="page6-1">
+        <!-- <div class="page6-2">
+          <div class="photo">
+            <img src="./images/page2-1.png" alt="">
+          </div>
+          <p class="name">会飞的一毛钱</p>
+        </div> -->
+        <img id="shareImg" src="./images/page2-3.png" alt="">
+      </div>
+      <img src="./images/page6-1.png" alt="">
+      <div class="page6-3">
+        <div class="swiper-container page6-swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide icon1" data-type="0"></div>
+            <div class="swiper-slide icon10" data-type="9"></div>
+            <div class="swiper-slide icon2" data-type="1"></div>
+            <div class="swiper-slide icon9" data-type="8"></div>
+            <div class="swiper-slide icon8" data-type="7"></div>
+            <div class="swiper-slide icon3" data-type="2"></div>
+            <div class="swiper-slide icon4" data-type="3"></div>
+            <div class="swiper-slide icon6" data-type="5"></div>
+            <div class="swiper-slide icon7" data-type="6"></div>
+            <div class="swiper-slide icon5" data-type="4"></div>
+          </div>
+        </div>
+        <div class="swiper-btn-prev"></div>
+        <div class="swiper-btn-next"></div>
+      </div>
+      <div class="submit"></div>
+    </div>
+  </div>
+
+  <!-- 确认出价 -->
+  <div class="page page7">
+    <div class="container">
+      <div class="icon-sucss"></div>
+      <h2>出价成功</h2>
+      <h3>
+          你的评价TA都看得到，<br>要不要再出一次？
+      </h3>
+      <div class="btn reset"></div>
+      <a href="https://zjj.object.fun/src/zg/?o=54223452&userInfo=%7B%22openId%22%3A%22os6370OsbGWUO8EGP39_QP9W-nRM%22%2C%22nickName%22%3A%22%E5%B0%91%E5%85%83%22%2C%22avatarUrl%22%3A%22https%3A%2F%2Fwx.qlogo.cn%2Fmmopen%2Fvi_32%2FCxp7icNXbU5u6lmK9z3g4e1aZZd2n4z13BiaLx20TjmCMU8xJhwMRBB7vsYMYpTiatM0dmTaWfhGHtMl1AHM58GWQ%2F0%22%7D"
+        class="btn wan"></a>
+    </div>
+  </div>
+
+  <!-- 不是在微信打开 -->
+  <div class="zoomBox" id="zoomBox">
+    <p>
+      本活动需要在微信平台扫码打开！
+    </p>
+  </div>
+
+  <script src="./js/jquery-1.11.0.min.js"></script>
+  <script>
+    var ua = navigator.userAgent.toLowerCase();
+    var isWeixin = ua.indexOf('micromessenger') != -1;
+    var isAndroid = ua.indexOf('android') != -1;
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+    if (!isWeixin) { 
+      document.getElementById('zoomBox').style.display = "block"
+    }
+  </script>
+  <script src="./js/swiper.min.js"></script>
+  <script>
+    $(function () {
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        freeMode: true,
+
+        navigation: {
+          nextEl: '.swiper-btn-next',
+          prevEl: '.swiper-btn-prev',
+        },
+      });
+    })
+  </script>
+  <script src="./js/preloadjs.js"></script>
+  <script src="./js/layer/layer.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
