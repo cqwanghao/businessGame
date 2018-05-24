@@ -627,11 +627,30 @@ img{
 			width: 9.92rem /* 248/25 */;
 			height: 5.36rem /* 134/25 */;
 		}
-		p{
+		.word{
 			text-align: center;
 			letter-spacing: 1px;
 			font-size: .6rem /* 15/25 */;
 			color: #ffffff;
+		}
+		.award{
+			width: 75%;
+			margin: 0 auto;
+			margin-top: 1.6rem /* 40/25 */;
+			padding: .56rem /* 14/25 */;
+			font-size: .56rem /* 14/25 */;
+			color: #0b0b0b;
+			background-color: #858481;
+			p{
+				line-height: 2;
+				text-align: center;
+			}
+			span{
+				color: #ee1d29;
+			}
+			.word1{
+				padding: 0 .4rem /* 10/25 */;
+			}
 		}
 	}
 }

@@ -1717,7 +1717,15 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .ranklistWrap .pageShare .hand { position: absolute; top: 0.2rem; right: 8%; width: 9.92rem; height: 5.36rem; }
 
-.ranklistWrap .pageShare p { text-align: center; letter-spacing: 1px; font-size: 0.6rem; color: #ffffff; }
+.ranklistWrap .pageShare .word { text-align: center; letter-spacing: 1px; font-size: 0.6rem; color: #ffffff; }
+
+.ranklistWrap .pageShare .award { width: 75%; margin: 0 auto; margin-top: 1.6rem; padding: 0.56rem; font-size: 0.56rem; color: #0b0b0b; background-color: #858481; }
+
+.ranklistWrap .pageShare .award p { line-height: 2; text-align: center; }
+
+.ranklistWrap .pageShare .award span { color: #ee1d29; }
+
+.ranklistWrap .pageShare .award .word1 { padding: 0 0.4rem; }
 
 .cartWrap { height: 100%; }
 
