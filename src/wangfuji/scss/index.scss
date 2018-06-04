@@ -2110,6 +2110,7 @@ img{
 		background-position: center;
 		overflow-x: hidden;
 		overflow: hidden;
+		padding-top: 3rem /* 75/25 */;
 		p{
 			text-align: center;
 			letter-spacing: 2px;
@@ -2132,7 +2133,7 @@ img{
 		.phone-box{
 			position: relative;
 			width: 70%;
-			margin: 1.76rem /* 44/25 */ auto 0;
+			margin: 1.2rem /* 30/25 */ auto 0;
 			img{
 				display: block;
 				width: 100%;
@@ -2146,7 +2147,7 @@ img{
 		}
 		.more{
 			width: 52%;
-			margin: 1.48rem /* 37/25 */ auto 0;
+			margin: .8rem /* 20/25 */ auto 0;
 			img{
 				display: block;
 				width: 100%;
@@ -2473,49 +2474,20 @@ img{
 	}
 }
 
-// @media only screen and (min-device-height: 700px){
-//     .loadingWrap{
-// 		// home
-// 		.page1{
-// 			.page1-1{
-// 				width: 49.8%;
-// 			}
-// 			.links{
-// 				.link{
-// 					.item1{
-// 						width: 8.8rem /* 220/25 */;
-// 					}
-// 					.item2{
-// 						width: 8.8rem /* 220/25 */;
-// 					}
-// 					.item3{
-// 						width: 7.2rem /* 180/25 */;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// @media only screen and (min-device-height: 730px){
-//     .loadingWrap{
-// 		// home
-// 		.page1{
-// 			.page1-1{
-// 				width: 49.8%;
-// 			}
-// 			.links{
-// 				.link{
-// 					.item1{
-// 						width: 9.6rem /* 240/25 */;
-// 					}
-// 					.item2{
-// 						width: 9.6rem /* 240/25 */;
-// 					}
-// 					.item3{
-// 						width: 8rem /* 200/25 */;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+// iphoneX
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+// @media only screen and (min-height: 748px)  {
+	// reward
+	.rewardWrap{
+		// home
+		.page1{
+			padding-top: 4rem;
+			.phone-box{
+				margin: 1.76rem /* 44/25 */ auto 0;
+			}
+			.more{
+				margin: 1.48rem /* 37/25 */ auto 0;
+			}
+		}
+	}
+}

@@ -2261,7 +2261,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .customizedWrap .synthesis .result { pointer-events: auto; }
 
-.rewardWrap .page1 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-position: center; overflow-x: hidden; overflow: hidden; }
+.rewardWrap .page1 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; -webkit-background-size: 100% 100%; background-size: 100% 100%; background-position: center; overflow-x: hidden; overflow: hidden; padding-top: 3rem; }
 
 .rewardWrap .page1 p { text-align: center; letter-spacing: 2px; color: #755824; }
 
@@ -2273,13 +2273,13 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .rewardWrap .page1 .p3 span { font-size: 0.96rem; color: #df2b19; }
 
-.rewardWrap .page1 .phone-box { position: relative; width: 70%; margin: 1.76rem auto 0; }
+.rewardWrap .page1 .phone-box { position: relative; width: 70%; margin: 1.2rem auto 0; }
 
 .rewardWrap .page1 .phone-box img { display: block; width: 100%; }
 
 .rewardWrap .page1 .phone-box .iphone { position: absolute; top: -0.64rem; left: 3%; width: 94%; }
 
-.rewardWrap .page1 .more { width: 52%; margin: 1.48rem auto 0; }
+.rewardWrap .page1 .more { width: 52%; margin: 0.8rem auto 0; }
 
 .rewardWrap .page1 .more img { display: block; width: 100%; }
 
@@ -2380,3 +2380,7 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 .detailWrap .page1 .goodWrap .btn { position: absolute; bottom: 10%; left: 50%; width: 4.64rem; margin-left: -2.32rem; }
 
 .detailWrap .page1 .goodWrap .btn img { display: block; width: 100%; }
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) { .rewardWrap .page1 { padding-top: 4rem; }
+  .rewardWrap .page1 .phone-box { margin: 1.76rem auto 0; }
+  .rewardWrap .page1 .more { margin: 1.48rem auto 0; } }
