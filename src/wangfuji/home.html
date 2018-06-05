@@ -92,13 +92,15 @@
             <div class="type">
               <img src="./images/brightness.png" class="brightness" />
             </div>
-            <input type="range" class="range" value="50" id="brightness" />
+            <!-- <input type="range" class="range" value="50" id="brightness" /> -->
+            <input type="range" class="range" value="100" id="brightness" />
           </div>
           <div class="adjust">
             <div class="type">
               <img src="./images/contrast.png" class="contrast" />
             </div>
-            <input type="range" class="range" value="50" id="contrast" />
+            <!-- <input type="range" class="range" value="50" id="contrast" /> -->
+            <input type="range" class="range" value="100" id="contrast" />
           </div>
         </div>
         <div class="link">
@@ -210,7 +212,8 @@
           // 重置
           scale = 1;
           rotate = 0;
-          $(".range").val(50);
+          // $(".range").val(50);
+          $(".range").val(100);
           $(".canvas2").css("-webkit-transform", "scale(1) rotate(0)");
           $(".canvas2").css("transform", "scale(1) rotate(0)");
           // 替换图片
