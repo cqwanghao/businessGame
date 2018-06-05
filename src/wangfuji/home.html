@@ -92,15 +92,13 @@
             <div class="type">
               <img src="./images/brightness.png" class="brightness" />
             </div>
-            <!-- <input type="range" class="range" value="50" id="brightness" /> -->
-            <input type="range" class="range" value="100" id="brightness" />
+            <input type="range" class="range" value="50" id="brightness" />
           </div>
           <div class="adjust">
             <div class="type">
               <img src="./images/contrast.png" class="contrast" />
             </div>
-            <!-- <input type="range" class="range" value="50" id="contrast" /> -->
-            <input type="range" class="range" value="100" id="contrast" />
+            <input type="range" class="range" value="50" id="contrast" />
           </div>
         </div>
         <div class="link">
@@ -212,8 +210,7 @@
           // 重置
           scale = 1;
           rotate = 0;
-          // $(".range").val(50);
-          $(".range").val(100);
+          $(".range").val(50);
           $(".canvas2").css("-webkit-transform", "scale(1) rotate(0)");
           $(".canvas2").css("transform", "scale(1) rotate(0)");
           // 替换图片
@@ -221,8 +218,8 @@
           $(".uploads").find("img").css("display", "none");
           uploadFlag = true;
           var imgSrc = $("#upload-bg").attr("src");
-          var brightness = $("#brightness").val() - 100;
-          var contrast = $("#contrast").val() - 100;
+          var brightness = $("#brightness").val() - 50;
+          var contrast = $("#contrast").val() - 50;
           console.log(brightness);
           console.log(contrast);
           // 黑白处理
@@ -232,8 +229,8 @@
         // 黑白调整
         $(".range").on("change", function () {
           var imgSrc = $("#upload-bg").attr("src");
-          var brightness = $("#brightness").val() - 100;
-          var contrast = $("#contrast").val() - 100;
+          var brightness = $("#brightness").val() - 50;
+          var contrast = $("#contrast").val() - 50;
           console.log(brightness);
           console.log(contrast);
           if (uploadFlag) {
