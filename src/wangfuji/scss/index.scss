@@ -546,10 +546,25 @@ img{
 					align-items: center;
 					justify-content: center;
 					.photo{
+						position: relative;
 						width: 2.36rem /* 59/25 */;
 						img{
 							display: block;
 							width: 100%;
+						}
+						.rankBg{
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 2.8rem /* 70/25 */;
+							height: .72rem /* 18/25 */;
+							line-height: .72rem /* 18/25 */;
+							margin-left: -.2rem /* 5/25 */;
+							text-align: center;
+							font-size: .4rem /* 10/25 */;
+							color: #ffffff;
+							background: url(../images/rankBg.png) no-repeat center center;
+							background-size: 100% 100%;
 						}
 					}
 					.like{

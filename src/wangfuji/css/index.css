@@ -1693,9 +1693,11 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .ranklistWrap .wrap .rank-group li .bottles { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
-.ranklistWrap .wrap .rank-group li .bottles .photo { width: 2.36rem; }
+.ranklistWrap .wrap .rank-group li .bottles .photo { position: relative; width: 2.36rem; }
 
 .ranklistWrap .wrap .rank-group li .bottles .photo img { display: block; width: 100%; }
+
+.ranklistWrap .wrap .rank-group li .bottles .photo .rankBg { position: absolute; bottom: 0; left: 0; width: 2.8rem; height: 0.72rem; line-height: 0.72rem; margin-left: -0.2rem; text-align: center; font-size: 0.4rem; color: #ffffff; background: url(../images/rankBg.png) no-repeat center center; -webkit-background-size: 100% 100%; background-size: 100% 100%; }
 
 .ranklistWrap .wrap .rank-group li .bottles .like { position: relative; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; width: 0.96rem; height: 0.84rem; margin-left: 0.52rem; font-size: 0.4rem; color: #3f2c01; background-image: url(../images/like.png); -webkit-background-size: 100% 100%; background-size: 100%; background-repeat: no-repeat; background-position: center; }
 
