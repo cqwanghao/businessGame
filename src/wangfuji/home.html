@@ -76,7 +76,9 @@
             <img src="./images/bottle-bg.png" class="bottle-bg" id="bottle-bg" />
             <div class="uploads">
               <img src="./images/upload-bg.png" class="upload-bg" id="upload-bg" />
-              <canvas class="canvas2" id="canvas2"></canvas>
+              <div class="canvasBox" id="canvasBox">
+                <canvas class="canvas2" id="canvas2"></canvas>
+              </div>
             </div>
             <input type="file" class="fileUpload" id="fileUpload" accept="image/*">
           </div>
@@ -205,6 +207,23 @@
         // 旋转度数
         var rotate = 0;
 
+        // 移动
+        function pressMoveImg(obj1, obj2) {
+          var pinchRotateImg = obj1;
+          var mobanImg = obj2;
+          Transform(pinchRotateImg);
+          new AlloyFinger(mobanImg, {
+            pressMove: function (evt) {
+              pinchRotateImg.translateX += evt.deltaX;
+              pinchRotateImg.translateY += evt.deltaY;
+              evt.preventDefault();
+            }
+          });
+        }
+        var obj1 = $("#canvasBox")[0];
+        var obj2 = $("#fileUpload")[0];
+        pressMoveImg(obj1, obj2);
+
         // 上传图片
         uploadImg($(".fileUpload"), function (cvs) {
           // 重置
@@ -321,6 +340,7 @@
             backgroundColor: 'transparent', // 设置背景透明
           }).then(function (canvas) {
             // 生成的图片url
+            // $("body").append('<img src="'+ canvas.toDataURL("image/png") +'" />');
             // console.log(canvas.toDataURL("image/png"));
           });
           window.location.href = "customized.html";

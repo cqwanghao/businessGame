@@ -319,12 +319,19 @@ img{
 							width: 3.6rem /* 90/25 */;
 							margin: 0 auto;
 						}
-						.canvas2{
+						.canvasBox{
 							position: absolute;
 							top: 0;
 							left: 0;
 							width: 100%;
-							// height: 100%;
+							.canvas2{
+								width: 100%;
+								// position: absolute;
+								// top: 0;
+								// left: 0;
+								// width: 100%;
+								// height: 100%;
+							}
 						}
 					}
 					.fileUpload{
@@ -511,8 +518,40 @@ img{
 					color: #3f2c01;
 				}
 				.praise{
-					font-size: .4rem /* 10/25 */;
-					color: #745f31;
+					display: flex;
+					align-items: center;
+					.zan{
+						font-size: .4rem /* 10/25 */;
+						color: #745f31;
+					}
+					.like{
+						position: relative;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: .96rem /* 24/25 */;
+						height: .84rem /* 21/25 */;
+						margin-left: .52rem /* 13/25 */;
+						font-size: .4rem /* 10/25 */;
+						color: #3f2c01;
+						background-image: url(../images/like.png);
+						background-size: 100%;
+						background-repeat: no-repeat;
+						background-position: center;
+						&.active{
+							background-image: url(../images/like-active.png);
+							color: #ffffff;
+						}
+						.add{
+							display: none;
+							position: absolute;
+							top: 0;
+							right: 0;
+							transform: translate(100%,-100%);
+							font-size: .4rem /* 10/25 */;
+							color: #d9002a;
+						}
+					}
 				}
 			}
 			.bottle{

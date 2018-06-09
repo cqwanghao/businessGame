@@ -50,8 +50,14 @@
           <div class="rank">
             <div class="name">我的排名</div>
             <div class="ranking">2</div>
-            <div class="praise">获得：
-              <span>2900</span>赞</div>
+            <div class="praise">
+              <div class="zan">获得：<span>2900</span>赞</div>
+              <div class="like">
+                <!-- <img src="./images/like.png" /> -->
+                2K
+                <span class="add">+1</span>
+              </div>
+            </div>
           </div>
           <div class="bottle">
             <img src="./images/bottle6.png" />
@@ -173,10 +179,14 @@
         <div class="award">
           <p>您将有机会登上王福记瓶身、销往全中国</p>
           <p>奖励设置：（根据点赞数排名）</p>
-          <p>第一名：<span>iPhone X</span>一部，并成为王福记代言人</p>
-          <p>第二名：<span>王福记价值3888元</span>全年定制大礼包一份</p>
-          <p>第三名：<span>价值3888元王福记大礼包</span>一份</p>
-          <p class="word1">前10名参赛者，可获得<span>王福记3张定制礼盒兑换券</span>！</p>
+          <p>第一名：
+            <span>iPhone X</span>一部，并成为王福记代言人</p>
+          <p>第二名：
+            <span>王福记价值3888元</span>全年定制大礼包一份</p>
+          <p>第三名：
+            <span>价值3888元王福记大礼包</span>一份</p>
+          <p class="word1">前10名参赛者，可获得
+            <span>王福记3张定制礼盒兑换券</span>！</p>
         </div>
       </div>
       <!-- mask -->
@@ -235,6 +245,25 @@
         });
         // 点赞
         $(".page .rank-group").on("click", ".like", function () {
+          var _this = $(this);
+          var thumbs = $(this).hasClass("active");
+          if (thumbs) {
+            // 已点过赞
+            layer.open({
+              content: '您已经点过赞了!'
+              , skin: 'msg'
+              , time: 2 //2秒后自动关闭
+            });
+          } else {
+            $(this).addClass("active");
+            $(this).find(".add").fadeIn(500);
+            var timer = setTimeout(function () {
+              _this.find(".add").fadeOut(500);
+            }, 500);
+          }
+        });
+        // 顶部点赞
+        $(".page .rank").on("click", ".like", function () {
           var _this = $(this);
           var thumbs = $(this).hasClass("active");
           if (thumbs) {
