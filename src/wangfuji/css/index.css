@@ -2067,6 +2067,8 @@ img { pointer-events: none; -webkit-user-select: none; -moz-user-select: none; -
 
 .aboutWrap { height: 100%; }
 
+.aboutWrap img { pointer-events: auto; }
+
 .aboutWrap .page { overflow-y: hidden; padding-bottom: 2.4rem; height: 100%; }
 
 .aboutWrap .wrap { width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-left: 11.4%; padding-right: 11.4%; }

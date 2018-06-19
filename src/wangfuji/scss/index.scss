@@ -1556,6 +1556,9 @@ img{
 // about
 .aboutWrap{
 	height: 100%;
+	img{
+		pointer-events: auto;
+	}
 	.page{
 		overflow-y: hidden;
 		padding-bottom: 2.4rem;
